@@ -1,0 +1,14 @@
+/**
+ * @author: Handsoncode
+ */
+
+ .pricing .testimony {
+    padding: 9px 0 19px;
+    margin: 42px 0 69px;
+
+    .element-center {
+        @media only screen and (min-width: $largeWidth) {
+            margin-left: 6px;
+        }
+    }
+}

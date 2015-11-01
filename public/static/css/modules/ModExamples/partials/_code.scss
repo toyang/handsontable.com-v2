@@ -1,0 +1,44 @@
+/**
+ * @author: Handsoncode
+ */
+
+ .examples .code-box {
+    @include border;
+    margin-top: 33px;
+    .tabs {
+        @include border-bottom;
+        padding: 6px 14px;
+        background: $tableBackground;
+
+        a {
+            display: block;
+            padding: 3px 13px;
+        }
+
+        .action-link a {
+            color: $secondTextColor;
+        }
+
+        svg {
+
+            @include square (15px);
+            position: relative;
+            top: 2px;
+            margin-right: 4px;
+            fill: currentColor;
+        }
+
+        [aria-selected="true"] {
+            text-decoration: none;
+            color: inherit;
+            cursor: default;
+        }
+
+
+    }
+
+    .tabs-content {
+        min-height: 342px;
+        padding: 0 35px;
+    }
+}

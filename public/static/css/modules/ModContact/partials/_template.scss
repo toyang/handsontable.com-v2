@@ -1,0 +1,48 @@
+/**
+ * @author: Handsoncode
+ */
+
+.contact  {
+    @media only screen and (min-width: $largeWidth) {
+        padding-top: 30px;
+    }
+
+    .headline {
+        margin: 66px 0 57px;
+
+        .love {
+            @include square(17px);
+            position: relative;
+            fill: #e87677;
+            top: 3px;
+            left: -1px;
+            margin-right: 2px;
+        }
+    }
+
+    h3 {
+        font-size: 20px;
+        line-height: 1;
+        margin: 0 0 14px 0;
+    }
+
+    form {
+        padding-bottom: 55px;
+
+        @media only screen and (min-width: $largeWidth) {
+            padding-bottom: 0;
+        }
+
+        textarea {
+            min-height: 175px;
+            margin-bottom: 6px;
+        }
+    }   
+
+    + footer {
+        /* [ styles only for desktop ] */
+        @media only screen and (min-width: $largeWidth) {
+            margin-top: 107px;
+        }
+    }
+}

@@ -1,0 +1,103 @@
+/**
+ * @author: Handsoncode
+ */
+
+.btn {
+    @include vertical-align(42px);
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    display: inline-block;
+    padding: 0 27px;
+    border: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none; 
+    }
+
+    &.blue {
+        color: #FFF;
+        background: $linkColor;
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $brandBlueActive;
+        }
+    }
+
+    &.red {
+        color: #FFF;
+        background: $brandRed;
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $brandRedActive;
+        }
+    }
+
+    &.green {
+        color: #FFF;
+        background: $brandGreen;
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $brandGreenActive;
+        }
+    }
+
+    &.ghost-blue,
+    &.ghost-red {
+        border: 2px solid currentColor;
+        background: transparent;
+    }
+
+    &.ghost-blue {
+        color: $linkColor;
+
+        &.large {
+            line-height: 45px;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $brandBlueActive;
+            border-color: currentColor;
+        }
+    }
+
+    &.ghost-red {
+        color: $brandRed;
+
+        &.large {
+             line-height: 45px;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $brandRedActive;
+            border-color: currentColor;
+        }
+    }
+
+    &.large,
+    &.small {
+        text-transform: uppercase;
+    }
+
+    &.large {
+        @include vertical-align(50px);
+        font-size: 15px;
+        padding: 0 33px;
+    }
+
+    &.small {
+        @include vertical-align(38px);
+        font-size: 13px;
+        padding: 0 28px;
+    }
+}

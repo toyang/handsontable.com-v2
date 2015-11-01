@@ -1,0 +1,25 @@
+/**
+ * @author: Handsoncode
+ */
+
+ .examples  {
+
+    .headline {
+        margin: 97px 0 23px;
+        
+        &.centered {
+            margin: 20px 0 18px;
+        }
+    }
+
+    form {
+        /* [ styles only for desktop ] */
+        @media only screen and (min-width: $largeWidth) {
+            margin-left: 19px;
+        }
+    }
+
+    img {
+        margin-top: 52px;
+    }
+}

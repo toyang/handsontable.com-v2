@@ -1,0 +1,39 @@
+/**
+ * @author: Handsoncode
+ */
+
+ .team .testimony {
+    @include border-top;
+    padding: 68px 0 19px;
+    margin-top: 42px;
+
+    .element-center {
+        @media only screen and (min-width: $largeWidth) {
+            margin-left: 8px;
+        }
+    }
+
+    img,
+    blockquote {
+        display: inline-block;
+    }
+    @media only screen and (min-width: $largeWidth) {
+        blockquote {    
+            margin-top: -9px;
+
+        }
+    }
+
+    img {
+        border-radius: 100%;
+        max-width: 100px;   
+    }
+
+    h5 {
+        margin: 12px 0;
+    }
+
+    a {
+        font-size: inherit;
+    }
+}

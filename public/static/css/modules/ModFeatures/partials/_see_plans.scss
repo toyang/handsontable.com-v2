@@ -1,0 +1,26 @@
+/**
+ * @author: Handsoncode
+ */
+
+ .features .see-plans {
+    /* [ styles only for desktop ] */
+    @media only screen and (min-width: $largeWidth) {
+        @include border-top;
+        margin: 72px 0 30px;
+    }
+
+    h1 {
+        margin: 44px 0 30px;
+        
+        small {
+            font-size: 17px;
+            line-height: 1.5;
+            display: inline-block;
+            margin-top: 5px;
+        }
+    }
+
+    .btn {
+        min-width: 194px;
+    }
+}

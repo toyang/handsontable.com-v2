@@ -1,0 +1,24 @@
+/**
+ * @author: Handsoncode
+ */
+
+.privacy  {
+    padding: 69px 0 27px;
+    h4 {
+        font-weight: 400;
+        margin-bottom: 0;
+    }
+
+    p {
+        font-size: 15px;
+        font-weight: 300;
+        margin: 0;
+    }
+
+    + footer {
+        /* [ styles only for desktop ] */
+        @media only screen and (min-width: $largeWidth) {
+            margin-top: 107px;
+        }
+    }
+}

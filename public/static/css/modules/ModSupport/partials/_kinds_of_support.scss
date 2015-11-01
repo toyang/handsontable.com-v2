@@ -1,0 +1,44 @@
+/**
+ * @author: Handsoncode
+ */
+
+ .support .kinds-of-support {
+
+    h3 {
+        font-weight: 400;
+        margin-bottom: 0;
+    }
+
+    p,
+    a {
+        font-size: 15px;
+    }
+
+    p {
+        line-height: 1.6;
+        margin: 3px 0;
+    }
+
+    svg {
+        position: relative;
+        top: -13px;
+        width: 44px;
+        margin: 0 30px 0 0;
+    }
+
+    .community-support{
+        fill: $brandGreen;
+    }
+
+    .priority-support {
+        fill: $brandRed;
+    }
+
+    .dedicated-solutions {
+        fill: $brandBlue;
+    }
+
+    .desc {
+        width: calc(100% - 75px);
+    }
+}

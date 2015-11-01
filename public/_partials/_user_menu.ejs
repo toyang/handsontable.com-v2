@@ -1,0 +1,16 @@
+<div class="user-menu">    
+    <label for="show_user_menu">
+        User menu
+        <svg><use xlink:href="#arrow_down_icon"></use></svg>
+    </label>
+    <input id="show_user_menu" type="checkbox" />
+    <nav class="clearfix">
+        <a href="my-orders.html" class="<%- current.source == 'my-orders' ? 'active' : '' %>">My orders</a>
+        <a href="install.html" class="<%- current.source == 'install' ? 'active' : '' %>">Install</a> 
+        <a href="billing-details.html" class="<%- current.source == 'billing-details' ? 'active' : '' %>">Billing details</a>
+        <a href="forum.html" class="forum">
+            Forum<svg><use xlink:href="#external_icon"></use></svg>
+        </a>
+        <a href="/contact.html" class="right">Need a help? Contact us</a>
+    </nav>
+</div>

@@ -1,0 +1,64 @@
+/**
+ * @author: Handsoncode
+ */
+
+.pricing-plan {
+    text-align: center;
+    position: relative;
+    padding-bottom: 90px;
+    margin-bottom: 30px;
+    background: #fafafa;
+    border-width: 5px 1px 1px 1px;
+    border-style: solid;
+    border-color: $borderColor;
+    
+    /* [ styles only for desktop ] */
+    @media only screen and (min-width: $largeWidth) {
+        min-height: 476px;
+        padding-bottom: 134px;
+        margin-bottom: 6px;
+    }
+
+    &.blue {
+        border-top-color: $brandBlue;
+        h4 {
+            color: $brandBlue;
+        }
+    }
+
+    &.red {
+        border-top-color: $brandRed;
+
+        h4 {
+            color: $brandRed;
+        }
+    }
+
+    h4 {
+        font-size: 20px;
+        font-weight: 400;
+        margin: 20px 0 17px;
+    }
+
+    .price {
+        @include border-top;
+        @include border-bottom;
+        font-size: 26px;
+        font-weight: 100;
+        padding: 6px 0;
+        margin-bottom: 16px;
+        background: #FFF;
+    }
+
+    ul li {
+        font-size: 15px;
+        font-weight: 100;
+        padding: 9px 0;
+    }
+
+    .btn {
+        @include absolute-bottom-right(29px, 50%);
+        @include translateX(50%);
+        min-width: 194px;
+    }
+ }

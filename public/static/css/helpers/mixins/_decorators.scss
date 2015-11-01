@@ -1,0 +1,44 @@
+/**
+ * @author: Handsoncode
+ */
+
+@mixin placeholder {
+    ::-webkit-input-placeholder {@content}
+    :-moz-placeholder           {@content}
+    ::-moz-placeholder          {@content}
+    :-ms-input-placeholder      {@content}  
+}
+
+@mixin user-select ($rule: none) {
+    -webkit-user-select: $rule;
+       -moz-user-select: $rule;
+        -ms-user-select: $rule;
+  -webkit-touch-callout: $rule;
+}
+
+/* [ borders ] */
+@mixin border ($color: $borderColor) {
+    border: 1px solid $color;
+}
+
+@mixin border-top ($color: $borderColor) {
+    border-top: 1px solid $color;
+}
+
+@mixin border-bottom ($color: $borderColor) {
+    border-bottom: 1px solid $color;
+}
+
+@mixin border-side ($color: $borderColor) {
+    border-left: 1px solid $color;
+    border-right: 1px solid $color;
+}
+
+.sprite {
+    background: transparent url($images + 'icons/sprite.png') no-repeat;
+}
+
+@mixin sprite ($xPos, $yPos) {
+    @extend .sprite;
+    background-position: $xPos $yPos;
+}

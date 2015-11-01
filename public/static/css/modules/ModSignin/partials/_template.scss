@@ -1,0 +1,36 @@
+/**
+ * @author: Handsoncode
+ */
+
+.signin  {
+    /* [ styles only for desktop ] */
+    @media only screen and (min-width: $largeWidth) {
+        padding-top: 56px;
+    }
+
+    h2 {
+        line-height: 38px;
+        padding-bottom: 4px;
+        margin: 41px 0 16px;
+
+        small {
+            padding-bottom: 4px;
+        }
+    }
+
+    form {
+        padding-top: 16px;
+    }
+
+    fieldset a {
+        display: block;
+        margin-top: -4px;
+    }
+
+    + footer {
+        /* [ styles only for desktop ] */
+        @media only screen and (min-width: $largeWidth) {
+            margin-top: 256px;
+        }
+    }
+}

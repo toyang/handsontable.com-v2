@@ -1,0 +1,31 @@
+.testimony {
+    padding: 51px 0 52px;
+
+    .element-center {
+        @media only screen and (min-width: $largeWidth) {
+            margin-left: 50px;
+        }
+    }
+
+    img,
+    blockquote {
+        display: inline-block;
+    }
+
+    blockquote {
+        margin-top: 10px;
+    }
+
+    img {
+        border-radius: 100%;
+        max-width: 100px;   
+    }
+
+    h5 {
+        margin: 12px 0;
+    }
+
+    a {
+        font-size: inherit;
+    }
+}

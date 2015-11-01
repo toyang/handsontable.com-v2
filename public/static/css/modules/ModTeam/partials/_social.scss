@@ -1,0 +1,31 @@
+/**
+ * @author: Handsoncode
+ */
+
+ .team-member .social-links {
+    text-align: center;
+    padding-top: 6px;
+    margin-bottom: 45px;
+
+    a {
+        @include rectangle(17%, 10vh);
+        display: inline-block;
+        margin: 0 2%;
+        
+        /* [ styles only for desktop ] */
+        @media only screen and (min-width: $largeWidth) {
+            @include square(24px);
+            margin: 0 14px;
+        }
+
+        svg {
+            @include transition(fill .3s ease);
+            @include square(100%);
+            fill: #bdbdbd;
+
+            &:hover {
+                fill: #969696
+            }
+        }
+    }
+}

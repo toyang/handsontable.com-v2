@@ -1,0 +1,20 @@
+{
+    "index": {
+        "title": "Handsontable | Excel-like spreadsheet for web apps. Handsontable is ready to use, open and free JavaScript component."
+    },
+
+    "contact": {
+        "title": "Contact us | Excel-like spreadsheet for web apps. Handsontable is ready to use, open and free JavaScript component."
+    },
+
+    "signin": {
+        "title": "Signin | Excel-like spreadsheet for web apps. Handsontable is ready to use, open and free JavaScript component.",
+        "layout": "_empty_layout"
+    },
+
+    "privacy": {
+        "title": "Privacy | Excel-like spreadsheet for web apps. Handsontable is ready to use, open and free JavaScript component."
+    }
+
+}
+
