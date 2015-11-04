@@ -2,70 +2,75 @@
  * @author: Handsoncode
  */
 
- .examples .side-features  {
+.examples .side-features {
 
-    [aria-expanded="false"] form {
+  [aria-expanded="false"] form {
+    display: none;
+  }
+
+  h5 {
+    position: relative;
+    margin-bottom: 30px;
+    cursor: pointer;
+
+    svg {
+      @include square(10px);
+      margin-left: 2px;
+      fill: currentColor;
+    }
+  }
+
+  h5,
+  label {
+    font-weight: 400;
+  }
+
+  p {
+    @include border-bottom;
+    position: relative;
+    margin: 10px 0;
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  label {
+    font-size: 13px;
+    padding-right: 30px;
+    cursor: pointer;
+
+    svg {
+      @include absolute-top-right(50%, 10px);
+      @include square(16px);
+      margin-top: -13px;
+      fill: $middleGray;
+      z-index: 10;
+
+      &.checked {
         display: none;
+      }
     }
+  }
 
-    h5 {
-        position: relative;
-        margin-bottom: 30px;
-        cursor: pointer;
+  input[type="checkbox"] {
+    display: none;
 
-        svg {
-            @include square(10px);
-            margin-left: 2px;
-            fill: currentColor;
-        }
+    &:checked + label svg {
+      display: none;
+      &.checked {
+        display: block;
+        fill: $brandGreen;
+      }
     }
+  }
 
-    h5,
-    label {
-        font-weight: 400;
-    }
+  #feature_ {
+    display: none;
+  }
 
-    p {
-        @include border-bottom;
-        position: relative;
-        margin: 10px 0;
-
-        &:last-child {
-            border: none;
-        }
-    }
-
-
-    label {
-        font-size: 13px;
-        padding-right: 30px;
-        cursor: pointer;
-
-        svg {
-            @include absolute-top-right(50%, 10px);
-            @include square(16px);
-            margin-top: -13px;
-            fill: $middleGray;
-            z-index: 10;
-
-            &.checked {
-                display: none;
-            }
-        }
-    }
-
-    input[type="checkbox"] {
-        display: none;
-
-        &:checked + label svg {
-            display: none;
-            &.checked {
-                display: block;
-                fill: $brandGreen;
-            }
-        }
-    }
-
-    
+  label[for='feature_'] {
+    display: none;
+  }
 
 }
