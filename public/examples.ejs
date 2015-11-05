@@ -76,14 +76,22 @@
               </li>
             </ul>
             <div class="tabs-content">
-              <section role="tabpanel" aria-hidden="false" class="content active">
-                <p>First panel content goes here...</p>
+              <section id="js-tab" role="tabpanel" aria-hidden="false" class="content active">
+                <code>
+                  <pre>
+  var hotElement = document.getElementById('hot');
+  var hot = new Handsontable(hotElement, {
+    data: Handsontable.helper.createSpreadsheetData(40,40),
+    <span id="additional-code"></span>
+  });
+                  </pre>
+                </code>
               </section>
-              <section role="tabpanel" aria-hidden="true" class="content">
-                <p>Second panel content goes here...</p>
+              <section id="data-tab" role="tabpanel" aria-hidden="true" class="content">
+                <p></p>
               </section>
-              <section role="tabpanel" aria-hidden="true" class="content">
-                <p>Third panel content goes here...</p>
+              <section id="plugins-tab" role="tabpanel" aria-hidden="true" class="content">
+                <p></p>
               </section>
             </div>
           </div>

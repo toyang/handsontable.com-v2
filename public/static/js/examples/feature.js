@@ -37,4 +37,8 @@ function Feature(featureObject) {
   this.disableFeature = function() {
     this.enabled = false;
   };
+
+  this.isEnabled = function() {
+    return this.enabled;
+  }
 }

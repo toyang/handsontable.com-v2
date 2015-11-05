@@ -1,6 +1,17 @@
 var examples;
 
 document.addEventListener("DOMContentLoaded", function() {
+
+  var accordionHeaders = document.querySelectorAll('div[aria-expanded] h5');
+  for (var i in accordionHeaders) {
+    if (accordionHeaders.hasOwnProperty(i)) {
+      accordionHeaders[i].addEventListener('click', function(event) {
+        var section = event.target.parentNode;
+        section.setAttribute('aria-expanded', section.getAttribute('aria-expanded') !== 'true');
+      });
+    }
+  }
+
   var dataObject = [
     {price: 12, date: '01/01/2015', percent: 5,},
     {price: 33, date: '2/12/2015', percent: 3,},
@@ -10,13 +21,14 @@ document.addEventListener("DOMContentLoaded", function() {
   ];
   var hotElement = document.querySelector('#hot');
   var hotElementContainer = hotElement.parentNode;
-
-  var hot = new Handsontable(hotElement, {
-    data: dataObject,
+  var hotSettings = {
+    //data: dataObject,
+    data: Handsontable.helper.createSpreadsheetData(40,40),
     width: parseInt(hotElementContainer.offsetWidth, 10),
-    height: 400,
-    minSpareRows: true
-  });
+    height: 400
+  };
+
+  var hot = new Handsontable(hotElement, hotSettings);
 
   examples = new Examples(hot, [
     {
@@ -42,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
       label: 'Sorting',
       description: 'Enable sorting for the column data.',
       configObject: {
-        sorting: true
+        columnSorting: true
       }
     }
   ], [
@@ -72,6 +84,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   ]);
 
+  examples.setHOTsettings(hotSettings);
   examples.syncFeatures();
+  examples.bindEvents();
 
+  document.querySelector('#data-tab p').textContent = JSON.stringify(hot.getSettings().data);
 });

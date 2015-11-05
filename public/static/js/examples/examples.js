@@ -35,6 +35,10 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
    * @type {Element}
    */
   this.featureEntryObject = null;
+  //TODO: docs
+  this.standardHOTsettings = null;
+  //TODO: docs
+  this.currentlyEnabledFeatures = null
 
   /**
    * Add features of the provided type, from the feature array to the proper object.
@@ -43,9 +47,11 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
    * @param {Array} featureArray Array of objects containing feature data.
    */
   this.addFeatures = function(type, featureArray) {
-    for (var i = 0; i < featureArray.length; i++) {
-      this.addFeature(type, featureArray[i]);
-    }
+    var _this = this;
+
+    Handsontable.helper.arrayEach(featureArray, function(feature) {
+      _this.addFeature(type, feature);
+    });
   };
 
   /**
@@ -74,6 +80,50 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
    */
   this.addProFeature = function(featureDataObject) {
     this.addFeature('pro', featureDataObject);
+  };
+
+  /**
+   * Get all the enabled features.
+   *
+   * @param {String|undefined} type 'basic', 'pro' or leave empty.
+   * @returns {Array} Array of enabled features.
+   */
+  this.getEnabledFeatures = function(type) {
+    var featureContainers = [];
+    var enabledFeatures = [];
+
+    switch (type) {
+      case 'basic':
+        featureContainers.push(this.basicFeatures);
+        break;
+      case 'pro':
+        featureContainers.push(this.proFeatures);
+        break;
+      default:
+        featureContainers.push(this.basicFeatures);
+        featureContainers.push(this.proFeatures);
+    }
+
+    Handsontable.helper.arrayEach(featureContainers, function(featureContainer) {
+      Handsontable.helper.objectEach(featureContainer, function(feature) {
+
+        if (feature.isEnabled()) {
+          enabledFeatures.push(feature);
+        }
+
+      });
+    });
+
+    return enabledFeatures;
+  };
+
+  /**
+   * Set the initial HOT settings.
+   *
+   * @param {Object} hotSettings
+   */
+  this.setHOTsettings = function(hotSettings) {
+    this.standardHOTsettings = hotSettings;
   };
 
   /**
@@ -108,7 +158,15 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
     label.insertBefore(labelTextNode, label.childNodes[0]);
   };
 
+  /**
+   * Fill the form element with P elements for the provided features.
+   *
+   * @param {Element} form
+   * @param {Object} features Features object.
+   * @param {String} remainingElementId Id of the element that needs to stay in the form.
+   */
   this.fillFormWithFeatures = function(form, features, remainingElementId) {
+    var _this = this;
     var feature;
     var tempEntry;
     var featureEntryObject = this.featureEntryObject || this.fetchFeatureEntryObject();
@@ -119,14 +177,14 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
       entry = form.querySelector('p:not(#' + remainingElementId + ')');
     }
 
-    for (feature in features) {
-      if (features.hasOwnProperty(feature)) {
-        tempEntry = featureEntryObject.cloneNode(true);
-        this.fillEntryElement(tempEntry, features[feature])/**/;
+    Handsontable.helper.objectEach(features, function(feature) {
+      tempEntry = featureEntryObject.cloneNode(true);
+      _this.fillEntryElement(tempEntry, feature);
 
-        form.insertBefore(tempEntry, document.getElementById(remainingElementId));
-      }
-    }
+      form.insertBefore(tempEntry, document.getElementById(remainingElementId));
+
+      feature.domElement = tempEntry;
+    });
   };
 
   /**
@@ -138,6 +196,112 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
     this.fillFormWithFeatures(this.proFeaturesForm, this.proFeatures, 'see_pricing');
   };
 
+  /**
+   * Update (reinitialize) the Handsontable instance with the new settings.
+   */
+  this.updateHOT = function() {
+    var newSettings = Handsontable.helper.deepClone(this.standardHOTsettings);
+    var addedSettings = {};
+    this.currentlyEnabledFeatures = this.getEnabledFeatures();
+
+    this.hotInstance.destroy();
+
+    if (this.currentlyEnabledFeatures.length > 0) {
+      Handsontable.helper.arrayEach(this.currentlyEnabledFeatures, function(feature) {
+        Handsontable.helper.deepExtend(addedSettings, feature.configObject);
+      });
+
+      Handsontable.helper.deepExtend(newSettings, addedSettings);
+    }
+
+    this.initHOT(newSettings);
+  };
+
+  /**
+   * Initialize a new Handsontable instance with the provided settings.
+   *
+   * @param {Object} settings New settings.
+   */
+  this.initHOT = function(settings) {
+    var hotElement = document.querySelector('#hot');
+    this.hotInstance = new Handsontable(hotElement, settings);
+  };
+
+  ////TODO: docs
+  //this.updateTabs = function(javascriptInfo, dataInfo, pluginsInfo) {
+  //  this.updateJavascriptTab('javascript', javascriptInfo);
+  //  this.updateDataTab('data', dataInfo);
+  //  this.updatePluginsTab('plugins', pluginsInfo);
+  //};
+  //
+  //this.updateJavascriptTab = function(data) {
+  //  var tabElem = document.getElementById('js-tab');
+  //  var spanElem = tabElem.getElementsByTagName('span')[0];
+  //
+  //  spanElem.textContent = data;
+  //};
+
+  //
+  ////TODO: docs
+  //this.updateTab = function(type, data) {
+  //  if (!type || !data) {
+  //    return;
+  //  }
+  //
+  //  var tabElem;
+  //  var tabParagraphElem;
+  //
+  //  switch(type){
+  //    case 'javascript':
+  //      tabElem = document.getElementById('js-tab');
+  //      break;
+  //    case 'data':
+  //      tabElem = document.getElementById('data-tab');
+  //      break;
+  //    case 'plugins':
+  //      tabElem = document.getElementById('plugins-tab');
+  //      break;
+  //  }
+  //
+  //  tabParagraphElem = tabElem.getElementsByTagName('p')[0];
+  //
+  //
+  //
+  //};
+
+  /**
+   * Bind the feature selecting events.
+   */
+  this.bindEvents = function() {
+    var _this = this;
+    var sections = [this.basicFeatures, this.proFeatures];
+
+    Handsontable.helper.objectEach(sections, function(section) {
+      Handsontable.helper.objectEach(section, function(featureElement) {
+
+        featureElement.domElement.getElementsByTagName('label')[0].addEventListener('click', function(event) {
+          var target = event.target;
+
+          while (target.tagName.toLowerCase() !== 'label') {
+            target = target.parentNode;
+          }
+
+          var featureName = target.getAttribute('for').split('_')[1];
+
+          var currentFeatureElement = _this.basicFeatures[featureName] || _this.proFeatures[featureName];
+
+          if (currentFeatureElement.isEnabled()) {
+            currentFeatureElement.disableFeature.call(currentFeatureElement);
+          } else {
+            currentFeatureElement.enableFeature.call(currentFeatureElement);
+          }
+
+          _this.updateHOT();
+
+        });
+      });
+    });
+  };
 
   this.addFeatures('basic', basicFeatures);
   this.addFeatures('pro', proFeatures);

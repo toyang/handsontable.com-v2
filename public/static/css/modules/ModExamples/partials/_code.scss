@@ -40,5 +40,11 @@
     .tabs-content {
         min-height: 342px;
         padding: 0 35px;
+
+      #data-tab {
+        p {
+          overflow: auto;
+        }
+      }
     }
 }
