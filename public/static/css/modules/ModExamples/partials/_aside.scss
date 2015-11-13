@@ -70,6 +70,11 @@
         fill: $brandGreen;
       }
     }
+
+    &.dependency:checked + label svg {
+      display: block;
+      fill: $middleGray;
+    }
   }
 
   #feature_ {

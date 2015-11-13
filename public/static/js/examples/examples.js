@@ -1,3 +1,9 @@
+/*
+ TODO:
+ - data tab
+ - jsfiddle
+ */
+
 function Examples(hotInstance, basicFeatures, proFeatures) {
   /**
    * Handsontable instance.
@@ -38,7 +44,7 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
   //TODO: docs
   this.standardHOTsettings = null;
   //TODO: docs
-  this.currentlyEnabledFeatures = null
+  this.currentlyEnabledFeatures = null;
 
   /**
    * Add features of the provided type, from the feature array to the proper object.
@@ -197,6 +203,28 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
   };
 
   /**
+   * Set the checkbox to be enabled as a dependency.
+   *
+   * @param {Feature} feature
+   */
+  this.enableAsDependency = function(feature) {
+    var featureCheckbox = document.querySelector('input[type=checkbox]#feature_' + feature.name);
+    featureCheckbox.checked = true;
+    Handsontable.Dom.addClass(featureCheckbox, 'dependency');
+  };
+
+  /**
+   * Set the checkbox to be a disabled dependency.
+   *
+   * @param {Feature} feature
+   */
+  this.disableAsDependency = function(feature) {
+    var featureCheckbox = document.querySelector('input[type=checkbox]#feature_' + feature.name);
+    featureCheckbox.checked = false;
+    Handsontable.Dom.removeClass(featureCheckbox, 'dependency');
+  };
+
+  /**
    * Update (reinitialize) the Handsontable instance with the new settings.
    */
   this.updateHOT = function() {
@@ -227,47 +255,124 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
     this.hotInstance = new Handsontable(hotElement, settings);
   };
 
-  ////TODO: docs
-  //this.updateTabs = function(javascriptInfo, dataInfo, pluginsInfo) {
-  //  this.updateJavascriptTab('javascript', javascriptInfo);
-  //  this.updateDataTab('data', dataInfo);
-  //  this.updatePluginsTab('plugins', pluginsInfo);
-  //};
-  //
-  //this.updateJavascriptTab = function(data) {
-  //  var tabElem = document.getElementById('js-tab');
-  //  var spanElem = tabElem.getElementsByTagName('span')[0];
-  //
-  //  spanElem.textContent = data;
-  //};
+  /**
+   * Update tabs with the provided feature info.
+   *
+   * @param {Feature} feature Feature object.
+   * @param {Boolean} remove True if the feature is being removed.
+   */
+  this.updateTabs = function(feature, remove) {
+    this.updateJavascriptTab(feature, remove);
+    //this.updateDataTab(feature, remove);
+    this.updateEnabledFeaturesTab(feature, remove);
+  };
 
-  //
-  ////TODO: docs
-  //this.updateTab = function(type, data) {
-  //  if (!type || !data) {
-  //    return;
-  //  }
-  //
-  //  var tabElem;
-  //  var tabParagraphElem;
-  //
-  //  switch(type){
-  //    case 'javascript':
-  //      tabElem = document.getElementById('js-tab');
-  //      break;
-  //    case 'data':
-  //      tabElem = document.getElementById('data-tab');
-  //      break;
-  //    case 'plugins':
-  //      tabElem = document.getElementById('plugins-tab');
-  //      break;
-  //  }
-  //
-  //  tabParagraphElem = tabElem.getElementsByTagName('p')[0];
-  //
-  //
-  //
-  //};
+  /**
+   * Update the JavaScript tab.
+   *
+   * @param {Feature} feature Feature object.
+   * @param {Boolean} remove True if the feature is being removed.
+   */
+  this.updateJavascriptTab = function(feature, remove) {
+    var _this = this;
+    var spanPrefix = 'js_feature_';
+    var spanElem = document.getElementById('additional-code');
+    var featureSpan = document.getElementById(spanPrefix + feature.name);
+
+    Handsontable.helper.arrayEach(feature.dependencies, function(dependency) {
+      var feature = _this.basicFeatures[dependency] || _this.proFeatures[dependency];
+
+      if (!feature) {
+        return;
+      }
+
+      _this.updateJavascriptTab(feature, remove);
+    });
+
+    if (remove) {
+      if (featureSpan) {
+        featureSpan.parentNode.removeChild(featureSpan);
+      }
+      return;
+    }
+
+    if (featureSpan) {
+      return;
+    }
+
+    featureSpan = document.createElement('SPAN');
+
+    featureSpan.id = spanPrefix + feature.name;
+
+    Handsontable.helper.objectEach(feature.configObject, function(value, prop, obj) {
+      featureSpan.textContent += '    ' + prop.replace(/"/g, '') + ': ';
+      featureSpan.textContent += JSON.stringify(value, null, 4) + '\n';
+    });
+
+    spanElem.appendChild(featureSpan);
+  };
+
+  //TODO: docs
+  this.updateDataTab = function(feature, remove) {
+
+  };
+
+  /**
+   * Update the EnabledFeatures tab with the provided feature.
+   *
+   * @param {Feature} feature Feature object.
+   * @param {Boolean} remove True if the feature is being removed.
+   */
+  this.updateEnabledFeaturesTab = function(feature, remove) {
+    Handsontable.helper.objectEach(this.basicFeatures, function(featureEntry) {
+      if (featureEntry.name === feature.name) {
+        found = true;
+        return false;
+      }
+      i++;
+    });
+
+    if (!found) {
+      Handsontable.helper.objectEach(this.proFeatures, function(featureEntry) {
+        if (featureEntry.name === feature.name) {
+          found = true;
+          return false;
+        }
+        i++;
+      });
+    }
+
+    if (remove) {
+      var toBeRemoved = document.querySelector('li[data-feature-index', i);
+      toBeRemoved.parentNode.removeChild(toBeRemoved);
+      return ;
+    }
+
+    var baseEntry = document.querySelector('li[data-enabled-feature="hidden"]');
+    var entryParent = baseEntry.parentNode;
+    var newEntry = baseEntry.cloneNode(true);
+    var i = 0;
+    var found = false;
+    var closestEntry;
+
+    newEntry.setAttribute('data-feature-index', i);
+    newEntry.setAttribute('data-enabled-feature', 'visible');
+
+    newEntry.querySelector('h4').textContent = feature.label;
+    newEntry.querySelector('p').textContent = feature.description;
+
+    i--;
+    while(i >= 0) {
+      closestEntry = entryParent.querySelector('li[data-feature-index', i);
+      i--;
+    }
+
+    if (closestEntry) {
+      entryParent.insertBefore(newEntry, closestEntry.nextSibling);
+    } else {
+      entryParent.insertBefore(newEntry, entryParent.childNodes[0]);
+    }
+  };
 
   /**
    * Bind the feature selecting events.
@@ -287,13 +392,36 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
           }
 
           var featureName = target.getAttribute('for').split('_')[1];
-
           var currentFeatureElement = _this.basicFeatures[featureName] || _this.proFeatures[featureName];
+          var dependencyFeatures = [];
+
+          Handsontable.helper.arrayEach(currentFeatureElement.dependencies, function(dependency) {
+            var dependencyFeature = _this.basicFeatures[dependency] || _this.proFeatures[dependency];
+
+            dependencyFeatures.push(dependencyFeature);
+          });
 
           if (currentFeatureElement.isEnabled()) {
+            Handsontable.helper.arrayEach(dependencyFeatures, function(dependency) {
+              if (dependency.isEnabledAsDependency()) {
+                dependency.disableFeature.call(dependency);
+                _this.disableAsDependency(dependency);
+              }
+            });
+
             currentFeatureElement.disableFeature.call(currentFeatureElement);
+            _this.updateTabs(currentFeatureElement, true);
+
           } else {
+            Handsontable.helper.arrayEach(dependencyFeatures, function(dependency) {
+              if (!dependency.isEnabled()) {
+                dependency.enableFeature.call(dependency, true);
+                _this.enableAsDependency(dependency);
+              }
+            });
+
             currentFeatureElement.enableFeature.call(currentFeatureElement);
+            _this.updateTabs(currentFeatureElement);
           }
 
           _this.updateHOT();
