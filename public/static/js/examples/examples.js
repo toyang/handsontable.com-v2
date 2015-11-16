@@ -1,7 +1,7 @@
 /*
  TODO:
- - data tab
- - jsfiddle
+ - data
+
  */
 
 function Examples(hotInstance, basicFeatures, proFeatures) {
@@ -306,13 +306,18 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
 
     Handsontable.helper.objectEach(feature.configObject, function(value, prop, obj) {
       featureSpan.textContent += '    ' + prop.replace(/"/g, '') + ': ';
-      featureSpan.textContent += JSON.stringify(value, null, 4) + '\n';
+      featureSpan.textContent += JSON.stringify(value, null, 4) + ',\n';
     });
 
     spanElem.appendChild(featureSpan);
   };
 
-  //TODO: docs
+  /**
+   * Update the Data tab with the provided feature.
+   *
+   * @param {Feature} feature Feature object.
+   * @param {Boolean} remove True if the feature is being removed.
+   */
   this.updateDataTab = function(feature, remove) {
 
   };
@@ -322,8 +327,18 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
    *
    * @param {Feature} feature Feature object.
    * @param {Boolean} remove True if the feature is being removed.
+   * @param {Boolean} dependency True if method triggered for a dependency.
    */
-  this.updateEnabledFeaturesTab = function(feature, remove) {
+  this.updateEnabledFeaturesTab = function(feature, remove, dependency) {
+    var _this = this;
+
+    Handsontable.helper.arrayEach(feature.dependencies, function(dependency) {
+      var dependencyFeature = _this.basicFeatures[dependency] || _this.proFeatures[dependency];
+      _this.updateEnabledFeaturesTab(dependencyFeature, remove, true);
+    });
+
+    var i = 0;
+    var found = false;
     Handsontable.helper.objectEach(this.basicFeatures, function(featureEntry) {
       if (featureEntry.name === feature.name) {
         found = true;
@@ -342,17 +357,19 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
       });
     }
 
-    if (remove) {
-      var toBeRemoved = document.querySelector('li[data-feature-index', i);
+    if (remove && (!dependency || (dependency && feature.isEnabledAsDependency()))) {
+      var toBeRemoved = document.querySelector('li[data-feature-index="' + i + '"]');
       toBeRemoved.parentNode.removeChild(toBeRemoved);
-      return ;
+      return;
+    }
+
+    if (document.querySelector('li[data-feature-index="' + i + '"]')) {
+      return;
     }
 
     var baseEntry = document.querySelector('li[data-enabled-feature="hidden"]');
     var entryParent = baseEntry.parentNode;
     var newEntry = baseEntry.cloneNode(true);
-    var i = 0;
-    var found = false;
     var closestEntry;
 
     newEntry.setAttribute('data-feature-index', i);
@@ -362,8 +379,11 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
     newEntry.querySelector('p').textContent = feature.description;
 
     i--;
-    while(i >= 0) {
-      closestEntry = entryParent.querySelector('li[data-feature-index', i);
+    while (i >= 0) {
+      closestEntry = entryParent.querySelector('li[data-feature-index="' + i + '"]');
+      if (closestEntry) {
+        break;
+      }
       i--;
     }
 
@@ -402,6 +422,15 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
           });
 
           if (currentFeatureElement.isEnabled()) {
+
+            _this.updateTabs(currentFeatureElement, true);
+            if (currentFeatureElement.isEnabledAsDependency()) {
+              _this.disableAsDependency(currentFeatureElement);
+
+              event.preventDefault();
+            }
+            currentFeatureElement.disableFeature.call(currentFeatureElement);
+
             Handsontable.helper.arrayEach(dependencyFeatures, function(dependency) {
               if (dependency.isEnabledAsDependency()) {
                 dependency.disableFeature.call(dependency);
@@ -409,10 +438,10 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
               }
             });
 
-            currentFeatureElement.disableFeature.call(currentFeatureElement);
-            _this.updateTabs(currentFeatureElement, true);
-
           } else {
+            _this.updateTabs(currentFeatureElement);
+            currentFeatureElement.enableFeature.call(currentFeatureElement);
+
             Handsontable.helper.arrayEach(dependencyFeatures, function(dependency) {
               if (!dependency.isEnabled()) {
                 dependency.enableFeature.call(dependency, true);
@@ -420,12 +449,11 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
               }
             });
 
-            currentFeatureElement.enableFeature.call(currentFeatureElement);
-            _this.updateTabs(currentFeatureElement);
           }
 
           _this.updateHOT();
 
+          return false;
         });
       });
     });

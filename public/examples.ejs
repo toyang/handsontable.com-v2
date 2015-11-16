@@ -59,21 +59,21 @@
               <li class="left"><a id="data-tab-link" role="tab" aria-selected="false">Data</a></li>
               <li class="left"><a id="enabled-features-tab-link" role="tab" aria-selected="true">Enabled features</a></li>
               <li class="action-link right">
-                <a href="#">
+                <a href="#" id="jsfiddle-link">
                   <svg>
                     <use xlink:href="#edit_icon"></use>
                   </svg>
                   Edit
                 </a>
               </li>
-              <li class="action-link right">
-                <a href="#">
-                  <svg>
-                    <use xlink:href="#code_icon"></use>
-                  </svg>
-                  Copy
-                </a>
-              </li>
+              <!--<li class="action-link right">-->
+                <!--<a href="#">-->
+                  <!--<svg>-->
+                    <!--<use xlink:href="#code_icon"></use>-->
+                  <!--</svg>-->
+                  <!--Copy-->
+                <!--</a>-->
+              <!--</li>-->
             </ul>
             <div class="tabs-content">
               <section id="js-tab" role="tabpanel" aria-hidden="true" class="content active">
@@ -81,7 +81,7 @@
                   <pre>
   var hotElement = document.getElementById('hot');
   var hot = new Handsontable(hotElement, {
-    data: dataObj // see the Data tab
+    data: dataObj, // see the Data tab
 <span id="additional-code"></span>  });
                   </pre>
                 </code>
@@ -113,6 +113,7 @@
   </div>
 </section>
 
+<script src="/static/js/examples/jsfiddleExporter.js"></script>
 <script src="/static/js/examples/feature.js"></script>
 <script src="/static/js/examples/examples.js"></script>
 <script src="/static/js/examples/examples_init.js"></script>
