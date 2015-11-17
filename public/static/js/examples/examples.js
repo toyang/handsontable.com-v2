@@ -1,9 +1,3 @@
-/*
- TODO:
- - data
-
- */
-
 function Examples(hotInstance, basicFeatures, proFeatures) {
   /**
    * Handsontable instance.
@@ -41,9 +35,17 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
    * @type {Element}
    */
   this.featureEntryObject = null;
-  //TODO: docs
-  this.standardHOTsettings = null;
-  //TODO: docs
+  /**
+   * Initial HOT settings.
+   *
+   * @type {Object}
+   */
+  this.initialHOTsettings = null;
+  /**
+   * Array of currently enabled features.
+   *
+   * @type {Array}
+   */
   this.currentlyEnabledFeatures = null;
 
   /**
@@ -129,7 +131,8 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
    * @param {Object} hotSettings
    */
   this.setHOTsettings = function(hotSettings) {
-    this.standardHOTsettings = hotSettings;
+    //this.standardHOTsettings = hotSettings;
+    this.initialHOTsettings = hotSettings;
   };
 
   /**
@@ -228,7 +231,7 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
    * Update (reinitialize) the Handsontable instance with the new settings.
    */
   this.updateHOT = function() {
-    var newSettings = Handsontable.helper.deepClone(this.standardHOTsettings);
+    var newSettings = Handsontable.helper.clone(this.initialHOTsettings);
     var addedSettings = {};
     this.currentlyEnabledFeatures = this.getEnabledFeatures();
 
@@ -265,6 +268,34 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
     this.updateJavascriptTab(feature, remove);
     //this.updateDataTab(feature, remove);
     this.updateEnabledFeaturesTab(feature, remove);
+  };
+
+  /**
+   * Initial setup of the JavaScript tab.
+   */
+  this.setupJavascriptTab = function() {
+    var additionalConfigSpan = document.getElementById('additional-code');
+    var preElement = additionalConfigSpan.parentNode;
+    var flagRendererString = 'var flagRenderer = ' + this.initialHOTsettings.columns[0].renderer.toString() + ';\n';
+    var initialSettingsClone = Handsontable.helper.deepClone(this.initialHOTsettings);
+    delete initialSettingsClone.data;
+    // remove quotes around property keys and remove the brackets in the beginning and end of the string
+    var stringifiedSettings = JSON.stringify(initialSettingsClone, function(key, value) {
+
+      // Might be good to make a more generic solution sometime.
+      if (key === 'columns') {
+        value[0].renderer = 'flagRenderer';
+      }
+
+      return value;
+    }, 4).replace(/\"([^(\")"]+)\":/g, "$1:").replace(/(^\{\n|\n\}$)/mg, '').replace('"flagRenderer"', 'flagRenderer');
+
+    var initialSettingsSpan = document.createElement('SPAN');
+    initialSettingsSpan.textContent = stringifiedSettings + ',\n';
+    additionalConfigSpan.appendChild(initialSettingsSpan);
+
+    var flagRendererElement = document.createTextNode(flagRendererString);
+    preElement.insertBefore(flagRendererElement, preElement.firstChild);
   };
 
   /**
@@ -319,7 +350,7 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
    * @param {Boolean} remove True if the feature is being removed.
    */
   this.updateDataTab = function(feature, remove) {
-
+    // not needed?
   };
 
   /**

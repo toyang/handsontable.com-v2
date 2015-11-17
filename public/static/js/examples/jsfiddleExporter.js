@@ -1,25 +1,36 @@
-function JsfiddleExporter() {
+function JsfiddleExporter(hotInstance) {
   this.html = '';
   this.css = '';
   this.js = '';
+  this.hot = hotInstance;
   this.urlEndIndex = window.location.href.lastIndexOf("/");
   this.baseUrl = window.location.href.substr(0, this.urlEndIndex);
 
+  /**
+   * Prepare the HTML part for JsFiddle.
+   */
   this.prepareHtml = function() {
     this.html = '<div id="hot"></div>';
   };
 
+  /**
+   * Prepare the JS part for JsFiddle.
+   */
   this.prepareJs = function() {
     var jstab = document.getElementById('js-tab');
     var preElem = jstab.querySelector('pre');
     var datatab = document.getElementById('data-tab');
 
     this.js += 'document.addEventListener("DOMContentLoaded", function() {\n\n';
-    this.js += 'var dataObj = ' + datatab.textContent + ';\n\n';
+    this.js += 'var dataObj = ' + datatab.textContent + ';\n';
+    //this.js += 'var flagRenderer = ' + this.hot.getSettings().columns[0].renderer.toString() + ';\n\n';
     this.js += preElem.textContent;
     this.js += '\n});';
   };
 
+  /**
+   * Prepare the CSS part for JsFiddle.
+   */
   this.prepareCss = function() {
     var _this = this;
     var scriptTags = document.getElementsByTagName('script');
