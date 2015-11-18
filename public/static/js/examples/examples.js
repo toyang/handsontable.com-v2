@@ -162,7 +162,11 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
 
     input.id = input.id + dataObj.name;
     input.checked = dataObj.enabled;
-    label.setAttribute('for', input.id);
+    label.setAttribute('for', input.id)
+
+    if (dataObj.enabled) {
+      this.enableFeature(dataObj);
+    }
 
     label.insertBefore(labelTextNode, label.childNodes[0]);
   };
@@ -200,9 +204,74 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
    * Sync all the provided features with the DOM elements.
    */
   this.syncFeatures = function() {
-
     this.fillFormWithFeatures(this.basicFeaturesForm, this.basicFeatures, 'see_all_basic');
     this.fillFormWithFeatures(this.proFeaturesForm, this.proFeatures, 'see_pricing');
+  };
+
+  /**
+   * Enable the provided feature.
+   *
+   * @param {Feature} feature
+   */
+  this.enableFeature = function(feature) {
+    var _this = this;
+    var dependencies = this.getDependencies(feature);
+
+    this.updateTabs(feature);
+    feature.enableFeature.call(feature);
+
+    Handsontable.helper.arrayEach(dependencies, function(dependency) {
+      if (!dependency.isEnabled()) {
+        dependency.enableFeature.call(dependency, true);
+        _this.enableAsDependency(dependency);
+      }
+    });
+
+    this.updateHOT();
+  };
+
+  /**
+   * Disable the provided feature.
+   *
+   * @param {Feature} feature
+   */
+  this.disableFeature = function(feature) {
+    var _this = this;
+    var dependencies = this.getDependencies(feature);
+
+    this.updateTabs(feature, true);
+    if (feature.isEnabledAsDependency()) {
+      this.disableAsDependency(feature);
+
+      //event.preventDefault();
+    }
+    feature.disableFeature.call(feature);
+
+    Handsontable.helper.arrayEach(dependencies, function(dependency) {
+      if (dependency.isEnabledAsDependency()) {
+        dependency.disableFeature.call(dependency);
+        _this.disableAsDependency(dependency);
+      }
+    });
+
+    this.updateHOT();
+  };
+
+  /**
+   * Get dependencies for the provided feature.
+   *
+   * @param {Feature} feature
+   * @returns {Array} Array of Feature objects.
+   */
+  this.getDependencies = function(feature) {
+    var _this = this;
+    var dependencies = [];
+
+    Handsontable.helper.arrayEach(feature.dependencies, function(name) {
+      dependencies.push(_this.basicFeatures[name] || _this.proFeatures[name])
+    });
+
+    return dependencies;
   };
 
   /**
@@ -299,6 +368,13 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
   };
 
   /**
+   * Initial setup of the data tab.
+   */
+  this.setupDataTab = function() {
+    document.querySelector('#data-tab pre').textContent = JSON.stringify(this.hotInstance.getSettings().data, null, 4);
+  };
+
+  /**
    * Update the JavaScript tab.
    *
    * @param {Feature} feature Feature object.
@@ -337,7 +413,11 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
 
     Handsontable.helper.objectEach(feature.configObject, function(value, prop, obj) {
       featureSpan.textContent += '    ' + prop.replace(/"/g, '') + ': ';
-      featureSpan.textContent += JSON.stringify(value, null, 4) + ',\n';
+      if (typeof value === 'function') {
+        featureSpan.textContent += value.toString() + ',\n';
+      } else {
+        featureSpan.textContent += JSON.stringify(value, null, 4) + ',\n';
+      }
     });
 
     spanElem.appendChild(featureSpan);
@@ -444,45 +524,13 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
 
           var featureName = target.getAttribute('for').split('_')[1];
           var currentFeatureElement = _this.basicFeatures[featureName] || _this.proFeatures[featureName];
-          var dependencyFeatures = [];
 
-          Handsontable.helper.arrayEach(currentFeatureElement.dependencies, function(dependency) {
-            var dependencyFeature = _this.basicFeatures[dependency] || _this.proFeatures[dependency];
-
-            dependencyFeatures.push(dependencyFeature);
-          });
 
           if (currentFeatureElement.isEnabled()) {
-
-            _this.updateTabs(currentFeatureElement, true);
-            if (currentFeatureElement.isEnabledAsDependency()) {
-              _this.disableAsDependency(currentFeatureElement);
-
-              event.preventDefault();
-            }
-            currentFeatureElement.disableFeature.call(currentFeatureElement);
-
-            Handsontable.helper.arrayEach(dependencyFeatures, function(dependency) {
-              if (dependency.isEnabledAsDependency()) {
-                dependency.disableFeature.call(dependency);
-                _this.disableAsDependency(dependency);
-              }
-            });
-
+            _this.disableFeature(currentFeatureElement);
           } else {
-            _this.updateTabs(currentFeatureElement);
-            currentFeatureElement.enableFeature.call(currentFeatureElement);
-
-            Handsontable.helper.arrayEach(dependencyFeatures, function(dependency) {
-              if (!dependency.isEnabled()) {
-                dependency.enableFeature.call(dependency, true);
-                _this.enableAsDependency(dependency);
-              }
-            });
-
+            _this.enableFeature(currentFeatureElement);
           }
-
-          _this.updateHOT();
 
           return false;
         });

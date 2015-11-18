@@ -1,8 +1,8 @@
-function JsfiddleExporter(hotInstance) {
+function JsfiddleExporter(examplesObj) {
   this.html = '';
   this.css = '';
   this.js = '';
-  this.hot = hotInstance;
+  this.examplesObj = examplesObj;
   this.urlEndIndex = window.location.href.lastIndexOf("/");
   this.baseUrl = window.location.href.substr(0, this.urlEndIndex);
 
@@ -22,7 +22,7 @@ function JsfiddleExporter(hotInstance) {
     var datatab = document.getElementById('data-tab');
 
     this.js += 'document.addEventListener("DOMContentLoaded", function() {\n\n';
-    this.js += 'var dataObj = ' + datatab.textContent + ';\n';
+    this.js += 'var dataObj = ' + JSON.stringify(this.examplesObj.hotInstance.getSourceData(), null, 4) + ';\n';
     //this.js += 'var flagRenderer = ' + this.hot.getSettings().columns[0].renderer.toString() + ';\n\n';
     this.js += preElem.textContent;
     this.js += '\n});';

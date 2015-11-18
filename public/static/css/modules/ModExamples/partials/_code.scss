@@ -40,6 +40,12 @@
     min-height: 342px;
     padding: 0 35px;
 
+    code {
+      background: #FDFDFD;
+      border: 0;
+      font-size: 0.7em;
+    }
+
     #js-tab {
       span[id^="js_feature"] {
         font-weight: bold;
