@@ -6,7 +6,7 @@
     text-align: center;
     position: relative;
     padding-bottom: 90px;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
     background: #fafafa;
     border-width: 5px 1px 1px 1px;
     border-style: solid;
@@ -32,11 +32,17 @@
         h4 {
             color: $brandRed;
         }
+
+        .price {
+            color: #FFF;
+            background: $brandRed;
+        }
     }
 
     h4 {
         font-size: 20px;
         font-weight: 400;
+        text-align: inherit;
         margin: 20px 0 17px;
     }
 

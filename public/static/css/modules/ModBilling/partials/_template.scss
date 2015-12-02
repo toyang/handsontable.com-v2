@@ -10,8 +10,12 @@ $billingSideOffset: 34px;
     margin-top: 29px;
 
     h3 {
-        font-size: 20px;
+        font-size: 1.250em; /* 20px */
         font-weight: 400;
+        margin-top: 60px;
+        @media only screen and (min-width: $largeWidth) {
+            margin-top: 20px;
+        }
     }
     
     /* [ styles only for desktop ] */

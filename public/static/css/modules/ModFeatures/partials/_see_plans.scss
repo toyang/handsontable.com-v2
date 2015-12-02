@@ -10,10 +10,11 @@
     }
 
     h1 {
+        text-align: center;
         margin: 44px 0 30px;
         
         small {
-            font-size: 17px;
+            font-size: 0.472em; /* 17px */
             line-height: 1.5;
             display: inline-block;
             margin-top: 5px;

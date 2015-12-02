@@ -11,29 +11,31 @@
 
     .item {
         position: relative;
-        padding-left: 81px;
         
-        &::before {
-            @include set-pseudo-element(15px, auto, auto, 0);
-            @include square(52px);
+        /* [ styles only for desktop ] */
+        @media only screen and (min-width: $largeWidth) {
+            padding-left: 81px;
+        }
+        
+        svg {
+            @include square(110px);
+            display: block;
+            margin: 60px auto 0;
+            fill: $iconColor;
+
+            /* [ styles only for desktop ] */
+            @media only screen and (min-width: $largeWidth) {
+                @include absolute-top-left(15px, 0);
+                @include square(52px);
+                margin: 0;
+            }
         }
 
         p {
-            font-size: 13px;
+            font-size: 0.813em; /* 13px */
             line-height: 1.7;
+            font-weight: 300;
             margin: 8px 0;
         }
-    }
-
-    .easy-start::before {
-        @include sprite(0, -82px);
-    }
-
-    .developer-api::before {
-        @include sprite(-52px, -82px);
-    }
-
-    .data-source::before {
-        @include sprite(-104px, -82px);
     }
 }

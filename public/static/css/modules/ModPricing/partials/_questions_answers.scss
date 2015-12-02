@@ -2,22 +2,28 @@
  * @author: Handsoncode
  */
 
-.question-item {
-    margin-top: 47px;
-    
-    h5 {
-        font-weight: 400;
-        margin: 0;
-    }
-
-    p {
-        font-size: 15px;
-        font-weight: 100;
-        margin: 3px 0 38px;
-
-        /* [ styles only for desktop ] */
-        @media only screen and (min-width: $largeWidth) {
-            padding-right: 33px;
+.q-and-a {
+     padding-top: 47px;
+     
+    .question-item {
+       
+        
+        h5 {
+            font-weight: 400;
+            margin: 0;
         }
-    }
+
+        p {
+            font-size: 0.938em; /* 15px */
+            font-weight: 100;
+            text-align: center;
+            margin: 3px 0 38px;
+
+            /* [ styles only for desktop ] */
+            @media only screen and (min-width: $largeWidth) {
+                padding-right: 33px;
+                text-align: left;
+            }
+        }
+     }
  }

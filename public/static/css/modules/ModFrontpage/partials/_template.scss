@@ -2,16 +2,10 @@
  * @author: Handsoncode
  */
 
-.frontpage {
-    @media only screen and (min-width: $mediumWidth) {
-        margin-top: 91px;
-    }
-
-    .headline {
+.frontpage .headline {
         margin: 110px 0;
 
         @media only screen and (min-width: $mediumWidth) {
             margin: 138px 0 72px;
         }
-    }
 }

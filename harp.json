@@ -1,6 +1,8 @@
 {
     "globals": {
         "title": "Handsontable",
-        "img_path": "/static/images/"
+        "img_path": "/static/images/",
+        "tag_manager": "GTM-55L5D3",
+        "heap_analytics": "3675945729"
     }
 }

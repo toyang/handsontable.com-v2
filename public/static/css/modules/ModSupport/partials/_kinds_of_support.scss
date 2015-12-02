@@ -5,6 +5,7 @@
  .support .kinds-of-support {
 
     h3 {
+        font-size: 20px;
         font-weight: 400;
         margin-bottom: 0;
     }
@@ -15,15 +16,30 @@
     }
 
     p {
+        font-size: 0.813em; /* 13px */
+        text-align: left;
+        text-align: center;
         line-height: 1.6;
         margin: 3px 0;
+
+        @media only screen and (min-width: $largeWidth) {
+            text-align: left;
+        }
     }
 
     svg {
         position: relative;
-        top: -13px;
-        width: 44px;
-        margin: 0 30px 0 0;
+        display: block;
+        width: 100px;
+        margin: 40px auto 0;
+   
+        @media only screen and (min-width: $largeWidth) {
+            float: left;
+            top: -13px;
+            width: 44px;
+            margin: 0 30px 0 0;
+        }
+
     }
 
     .community-support{
@@ -39,6 +55,10 @@
     }
 
     .desc {
-        width: calc(100% - 75px);
+        
+
+        @media only screen and (min-width: $largeWidth) {
+            width: calc(100% - 75px);
+        }
     }
 }
