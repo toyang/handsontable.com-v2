@@ -2,7 +2,7 @@
  * @author: Handsoncode
  */
 
-.user .install  {
+ .user .install  {
     margin-top: 29px;
 
     h3 {
@@ -15,7 +15,17 @@
     }
 
     p {
+        text-align: center;
         line-height: 1.7;
+        
+        @media only screen and (min-width: $mediumWidth) {
+            text-align: left;
+        }
+
+        a {
+            font-size: inherit;
+        }
+
     }
 
     [aria-role="menubox"],
@@ -24,10 +34,16 @@
     }
 
     [aria-role="menubox"] {
-        min-width: 123px;
+        min-width: 100%;
         margin-right: 11px;
+        margin-bottom: 0;
         padding-right: 29px;
         padding-left: 20px;
+
+        @media only screen and (min-width: $mediumWidth) {
+            min-width: 123px;
+            margin-bottom: 31px;
+        }
     }
     
     .install-description {

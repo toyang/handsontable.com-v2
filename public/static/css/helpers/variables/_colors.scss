@@ -6,6 +6,7 @@
 $brandBlue: #34A9DC;
 $brandRed: #E87677;
 $brandGreen: #7EC896;
+$brandDeepNavy: #404B5B;
 $brandYellow: #FAD97F;
 
 $brandBlueActive: darken($brandBlue, 8%);
@@ -29,6 +30,7 @@ $borderColor: $lightGray;
 $inputBorder: $gray;
 $inputFocusBorder: $darkGray;
 $tableBackground: $ultraLightGray;
+$iconColor: $brandDeepNavy;
 
 $errorColor: $brandRed;
 $infoColor: $brandBlue;

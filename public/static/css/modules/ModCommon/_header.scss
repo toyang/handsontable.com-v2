@@ -13,27 +13,10 @@ header {
         padding-top: 32px;
     }
 
-    .logotype {
-        @include rectangle(100%, 50px);
-        position: relative;
-        text-indent: 100%;
-        display: inline-block;
-        background: transparent url($images + 'logotypes/handsontable_logotype.png') center center no-repeat; /* temporary should be svg file in html */
-        background-size: 139px;
-        overflow: hidden;
-        z-index: 100;
-        
-        /* [ styles only for desktop ] */
-        @media only screen and (min-width: $largeWidth) {
-            @include rectangle(187px, 47px);
-            float: left;
-            background-size: 100%;
-        }
-    }
 
     /* [ burger icon triger show menu ] */
     label[for="show_menu"] {
-        @include fixed-top-right(16px, 11px);
+        @include fixed-top-right(26px, 11px);
         @include rectangle(26px, 18px);
         text-indent: -100%;
         display: inline-block;
@@ -120,17 +103,19 @@ header {
 
             a,
             label {
+                font-size: 0.923em; /* 12px */
                 display: inline-block;
                 padding: 10px;
 
                 /* [ styles only for desktop ] */
                 @media only screen and (min-width: $largeWidth) {
-                    padding: 10px 0 1px;                    
+                    padding: 12px 0 1px;                    
                 }
             }
 
             a {
                 @include border-bottom(transparent);
+                width: 100%;
                 color: inherit;
         
                 &.active,
@@ -154,17 +139,18 @@ header {
 
             /* [ styles only for desktop ] */
             @media only screen and (min-width: $largeWidth) {
-                margin-left: 33px;
+                margin-left: 16px;
                 padding-bottom: 19px;
 
                 &:last-of-type:not(:only-of-type){
                     padding: 0;
-                    margin-left: 76px;
+                    margin-left: 36px;
                 }
             }
         }
 
-        .btn {
+        .btn.small {
+            font-size: 0.923em; /* 12px */
             display: block;
             width: 95%;
             margin: 20px auto;

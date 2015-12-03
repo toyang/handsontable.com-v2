@@ -8,4 +8,19 @@
     .headline {
         margin-bottom: 53px;
     }
+
+    .contact-us {
+        text-align: center;
+        position: relative;
+        top: -30px;
+        display: block;
+        width: 100%;
+        
+
+        /* [ styles only for desktop ] */
+        @media only screen and (min-width: $largeWidth) {
+            top: 0;
+            text-align: right;
+        }
+    }
 }

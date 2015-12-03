@@ -26,7 +26,7 @@ $dropdownColor: #FFF;
 
         /* [ styles only for desktop ] */
         @media only screen and (min-width: $largeWidth) {
-            @include absolute-top-right(45px, -44px);
+            @include absolute-top-right(45px, -20px);
             @include transform( translateY(-5px) scale(.95, .95));
             padding: 8px 0;
             border-radius: 2px;
@@ -34,6 +34,7 @@ $dropdownColor: #FFF;
         }
 
         li {
+            font-size: inherit;
             float: none;
             padding: 10px;
 

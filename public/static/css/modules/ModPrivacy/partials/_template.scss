@@ -14,11 +14,4 @@
         font-weight: 300;
         margin: 0;
     }
-
-    + footer {
-        /* [ styles only for desktop ] */
-        @media only screen and (min-width: $largeWidth) {
-            margin-top: 107px;
-        }
-    }
 }

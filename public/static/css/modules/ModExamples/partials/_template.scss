@@ -12,6 +12,12 @@
         }
     }
 
+    .plugin-preview {
+        @media only screen and (min-width: $largeWidth) {
+            margin-left: 50px;
+        }
+    }
+
     form {
         /* [ styles only for desktop ] */
         @media only screen and (min-width: $largeWidth) {

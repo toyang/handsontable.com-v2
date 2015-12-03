@@ -15,8 +15,12 @@
             position: relative;
             fill: #e87677;
             top: 3px;
-            left: -1px;
-            margin-right: 2px;
+            margin-right: 5px;
+
+            @media only screen and (min-width: $largeWidth) {
+                
+                margin-right: 2px;
+            }
         }
     }
 
@@ -24,6 +28,17 @@
         font-size: 20px;
         line-height: 1;
         margin: 0 0 14px 0;
+    }
+
+    .partner,
+    .office {
+        margin-top: 90px;
+        text-align: center;
+
+        @media only screen and (min-width: $largeWidth) {
+            text-align: left;
+            margin-top: 31px;
+        }
     }
 
     form {
@@ -39,10 +54,4 @@
         }
     }   
 
-    + footer {
-        /* [ styles only for desktop ] */
-        @media only screen and (min-width: $largeWidth) {
-            margin-top: 107px;
-        }
-    }
 }

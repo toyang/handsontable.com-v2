@@ -26,11 +26,4 @@
         display: block;
         margin-top: -4px;
     }
-
-    + footer {
-        /* [ styles only for desktop ] */
-        @media only screen and (min-width: $largeWidth) {
-            margin-top: 256px;
-        }
-    }
 }

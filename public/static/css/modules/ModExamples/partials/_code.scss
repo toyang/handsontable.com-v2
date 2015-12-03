@@ -4,15 +4,28 @@
 
 .examples .code-box {
   @include border;
-  margin-top: 33px;
+  margin-top: 40px;
+
+  @media only screen and (min-width: $largeWidth) {
+    margin: 33px 0 0 50px;
+  }
   .tabs {
     @include border-bottom;
-    padding: 6px 14px;
+    padding: 6px;
     background: $tableBackground;
 
+    @media only screen and (min-width: $largeWidth) {
+      padding: 6px 14px;
+    }
+
     a {
+      font-size: 0.803em;
       display: block;
-      padding: 3px 13px;
+      padding: 3px 6px;
+      @media only screen and (min-width: $largeWidth) {
+        font-size: inherit;
+        padding: 3px 13px;
+      }
     }
 
     .action-link a {
