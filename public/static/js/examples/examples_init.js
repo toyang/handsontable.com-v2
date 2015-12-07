@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function() {
     ],
     stretchH: 'all',
     width: parseInt(hotElementContainer.offsetWidth, 10),
-    height: 400
+    height: 441
   };
 
 
@@ -114,7 +114,9 @@ document.addEventListener("DOMContentLoaded", function() {
     {
       name: 'headers',
       label: 'Headers',
-      description: 'Enable the table headers.',
+      description: 'Adds rows or column headings to the spreadsheet. You can assign a letter to each ' +
+      'column automatically or enter your own custom name or even HTML elements.',
+
       configObject: {
         rowHeaders: true,
         colHeaders: ['Country', 'Currency Code', 'Currency', 'Level', 'Units', 'As Of', '1D Chng']
@@ -124,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
     {
       name: 'fixed',
       label: 'Fixed rows/columns',
-      description: 'Add fixed rows on the top and fixed columns on the left-side of the table.',
+      description: 'Keeps the top rows or left-hand side columns visible while scrolling down or across the table.',
       configObject: {
         fixedRowsTop: 2,
         fixedColumnsLeft: 2
@@ -133,9 +135,11 @@ document.addEventListener("DOMContentLoaded", function() {
     {
       name: 'sorting',
       label: 'Sorting',
-      description: 'Enable sorting for the column data.',
+      description: 'Sorts data in ascending or descending order throughout the column. You can optionally ' +
+      'add an arrow indicating the sorting order.',
       configObject: {
-        columnSorting: true
+        columnSorting: true,
+          sortIndicator: true
       },
       dependencies: [
         'headers'
@@ -144,7 +148,8 @@ document.addEventListener("DOMContentLoaded", function() {
     {
       name: 'merge-cells',
       label: 'Merge Cells',
-      description: 'Enable possibility to merge cells.',
+      description: 'Creates a larger, single cell by merging multiple cells. It keeps the content of ' +
+      'the upper-left cell and removes the contents of all other cells.',
       configObject: {
         mergeCells: true
       },
@@ -155,7 +160,8 @@ document.addEventListener("DOMContentLoaded", function() {
     {
       name: 'manual-resize',
       label: 'Row/Column Resize',
-      description: 'Allow resizing of rows and/or columns.',
+      description: 'Allows to manually modify the size of the rows or columns. The sizing handle ' +
+      'appears in the right part of the column header or at the bottom of the row header.',
       configObject: {
         manualRowResize: true,
         manualColumnResize: true
@@ -167,7 +173,8 @@ document.addEventListener("DOMContentLoaded", function() {
     {
       name: 'manual-move',
       label: 'Row/Column Move',
-      description: 'Allow moving of rows and/or columns.',
+      description: 'Allows to manually swap the rows or columns within the table. The moving handle ' +
+      'appears in the left part of the column header or at the top of the row header.',
       configObject: {
         manualRowMove: true,
         manualColumnMove: true
@@ -179,7 +186,8 @@ document.addEventListener("DOMContentLoaded", function() {
     {
       name: 'conditional-formatting',
       label: 'Conditional Formatting',
-      description: 'Allow conditional cell formatting.',
+      description: 'Defines how the specific cells are formatted depending on their content. ' +
+      'For instance, in this demo all negative values are marked red and the positive are green.',
       configObject: {
         cells: function (row, col, prop) {
           var cellProperties = {};
@@ -205,7 +213,8 @@ document.addEventListener("DOMContentLoaded", function() {
     {
       name: 'context-menu',
       label: 'Context Menu',
-      description: 'Enable the context menu.',
+      description: 'Opens a pop-up menu that provides a list of items to choose. ' +
+      'Right-click anywhere inside the table to invoke it.',
       configObject: {
         contextMenu: true
       }
@@ -214,7 +223,7 @@ document.addEventListener("DOMContentLoaded", function() {
     {
       name: 'fixed-bottom',
       label: 'Fixed bottom rows',
-      description: 'Add fixed rows on the bottom of the table.',
+      description: 'Keeps the bottom rows visible while scrolling down or across the table.',
       configObject: {
         fixedRowsBottom: 2
       }
@@ -222,7 +231,8 @@ document.addEventListener("DOMContentLoaded", function() {
     {
       name: 'column-summary',
       label: 'Basic calculations',
-      description: 'Allow making some simple calculations, such as sum, average (...).',
+      description: 'Displays the total numeric values for the specific range. ' +
+      'It also calculates min, max, average, count and handles custom functions.',
       configObject: {
         columnSummary: [
           {
@@ -253,7 +263,7 @@ document.addEventListener("DOMContentLoaded", function() {
     {
       name: 'nested-headers',
       label: 'Nested Headers',
-      description: 'Allow creating a nested header structure.',
+      description: 'Allows to create a multi-level, nested structure of the column headers.',
       configObject: {
         nestedHeaders: [
           [{label: 'A', colspan: 2}, {label: 'B', colspan: 4}, 'C'],
@@ -265,7 +275,8 @@ document.addEventListener("DOMContentLoaded", function() {
     {
       name: 'collapsible-columns',
       label: 'Collapsible Columns',
-      description: 'Allow collapsing extended columns.',
+      description: 'Allows to visually collapse and expand specific columns. ' +
+      'It works together with the Nested Headers plugin.',
       configObject: {
         collapsibleColumns: true,
         hiddenColumns: true
@@ -277,7 +288,7 @@ document.addEventListener("DOMContentLoaded", function() {
     {
       name: 'trim-rows',
       label: 'Trim Rows',
-      description: 'TRIM ROWS DESCRIPTION',
+      description: 'Allows to skip the specific rows while rendering the table.',
       configObject: {
         trimRows: true
       }
@@ -285,7 +296,8 @@ document.addEventListener("DOMContentLoaded", function() {
     {
       name: 'filters',
       label: 'Filters',
-      description: 'FILTERS DESCRIPTION',
+      description: 'Allows to define the criteria to display only specific rows while hiding the others. ' +
+      'Available from the dropdown menu in the header.',
       configObject: {
         filters: true
       }
@@ -293,7 +305,8 @@ document.addEventListener("DOMContentLoaded", function() {
     {
       name: 'csv-export',
       label: 'Export to CSV',
-      description: 'CSV EXPORT DESCRIPTION',
+      description: 'Adds a possibility to export the data as comma-separated values. ' +
+      'In the demo above, just click a button to download the flat file.',
       configObject: {
         csvExport: true
       }
@@ -301,7 +314,8 @@ document.addEventListener("DOMContentLoaded", function() {
     {
       name: 'select-all-button',
       label: 'Select All Button',
-      description: 'SELECT ALL BUTTON DESCRIPTION',
+      description: 'Allows to trigger the selection from the function. ' +
+      'In the demo above, click in the corner to select all the visible cells.',
       configObject: {
         selectAll: true
       }

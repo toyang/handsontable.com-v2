@@ -24,13 +24,13 @@
             width: 80%;
         }
 
-        p {
+        p, span {
             font-weight: 300;
         }
 
         .see-examples {
             text-align: center;
-            display: block;
+            display: inline-block;
 
             /* [ styles only for desktop ] */
             @media only screen and (min-width: $largeWidth) {

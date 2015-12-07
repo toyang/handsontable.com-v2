@@ -31,6 +31,10 @@ footer {
         margin-bottom: 70px;
     }
 
+    #mc_embed_signup {
+        position: relative;
+    }
+
     .subscribe-form {
         margin: 40px 0;
 
@@ -41,7 +45,7 @@ footer {
 
         h5 {
            font-weight: 600;
-            margin: 51px 0 0;
+            margin: 41px 0 0;
         }
         
         p {
@@ -55,7 +59,7 @@ footer {
         }
 
         form {
-            /* mail chimp class */
+            /* mailchimp class */
             .mc-field-group {
                 @include rectangle(100%, 42px);
                 position: relative;
@@ -108,8 +112,18 @@ footer {
                 }
             }
 
-            @media only screen and (min-width: $largeWidth) {
+            #mce-responses {
+                position: absolute;
+                top: 53px;
+                font-size: 0.813em; /* 13px */
 
+                #mce-error-response {
+                    color: $brandRed;
+                }
+
+                #mce-success-response {
+                    color: $brandGreen;
+                }
             }
         }
     }
@@ -134,14 +148,9 @@ footer {
                 @include absolute-top-left(50%, 50%);
                 margin: -16px 0 0 -16px;
                 fill: #bdbdbd;
-
-                &:hover {
-                    fill: #969696
-                }
             }
         }
     }
-
 
     .copyright {
         text-align: center;

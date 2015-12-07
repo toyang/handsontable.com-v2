@@ -6,17 +6,19 @@
      padding-top: 47px;
      
     .question-item {
-       
-        
+
+
         h5 {
             font-weight: 400;
             margin: 0;
         }
 
-        p {
+        p, a {
             font-size: 0.938em; /* 15px */
             font-weight: 100;
-            text-align: center;
+        }
+
+        p {
             margin: 3px 0 38px;
 
             /* [ styles only for desktop ] */

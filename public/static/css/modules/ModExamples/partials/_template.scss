@@ -14,11 +14,11 @@
 
     .plugin-preview {
         @media only screen and (min-width: $largeWidth) {
-            margin-left: 50px;
+            margin: 78px 0 0 50px;
         }
     }
 
-    form {
+    form, .external_links {
         /* [ styles only for desktop ] */
         @media only screen and (min-width: $largeWidth) {
             margin-left: 19px;

@@ -17,8 +17,7 @@
 
   h5 {
     position: relative;
-    margin-bottom: 30px;
-    cursor: pointer;
+    margin: 30px 0 26px;
 
     svg {
       @include square(10px);
@@ -94,6 +93,10 @@
       display: block;
       fill: $middleGray;
     }
+  }
+
+  .external_links p {
+    border-bottom: none;
   }
 
   #feature_ {

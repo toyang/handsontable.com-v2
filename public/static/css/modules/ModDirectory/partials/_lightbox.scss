@@ -12,7 +12,7 @@
     @media only screen and (min-width: $largeWidth) {
         border-radius: 5px;
         background-color: #FAFAFA;
-        box-shadow: 0px 0px 4px 0px rgba(0, 8, 0, 0.4);
+        box-shadow: 0px 0px 14px 0px rgba(0, 8, 0, 0.2);
     }
 
     .headline {
@@ -46,6 +46,23 @@
         textarea {
             background: #FFF;
             border-color: $inputBorder;
+        }
+
+        #mce-responses {
+            font-size: 0.813em; /* 13px */
+            text-align: center;
+
+            .response {
+              margin-bottom: 15px;
+            }
+
+            #mce-error-response {
+                color: $brandRed;
+            }
+
+            #mce-success-response {
+              color: $brandGreen;
+            }
         }
 
         .btn {
