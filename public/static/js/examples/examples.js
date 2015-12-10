@@ -234,8 +234,9 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
    * Disable the provided feature.
    *
    * @param {Feature} feature
+   * @param {MouseEvent} [event] Mouse event object.
    */
-  this.disableFeature = function(feature) {
+  this.disableFeature = function(feature, event) {
     var _this = this;
     var dependencies = this.getDependencies(feature);
 
@@ -243,7 +244,9 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
     if (feature.isEnabledAsDependency()) {
       this.disableAsDependency(feature);
 
-      //event.preventDefault();
+      if (event) {
+        event.preventDefault();
+      }
     }
     feature.disableFeature.call(feature);
 
@@ -527,7 +530,7 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
 
 
           if (currentFeatureElement.isEnabled()) {
-            _this.disableFeature(currentFeatureElement);
+            _this.disableFeature(currentFeatureElement, event);
           } else {
             _this.enableFeature(currentFeatureElement);
           }

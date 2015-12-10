@@ -27,41 +27,48 @@ document.addEventListener("DOMContentLoaded", function() {
   }();
 
   var dataObject = [
-    {flag: '', currencyCode: 'EUR', currency: 'Euro',	level: 0.9033, units: 'EUR per USD', asOf: '08/19/2015', onedChng: 0.0026},
-    {flag: '', currencyCode: 'JPY', currency: 'Japanese Yen', level: 124.3870, units: 'JPY per USD', asOf: '08/19/2015', onedChng: 0.0001},
-    {flag: '', currencyCode: 'GBP', currency: 'Pound Sterling', level: 0.6396, units: 'GBP per USD', asOf: '08/19/2015', onedChng: 0.00},
-    {flag: '', currencyCode: 'CHF', currency: 'Swiss Franc',	level: 0.9775, units: 'CHF per USD', asOf: '08/19/2015', onedChng: 0.0008},
-    {flag: '', currencyCode: 'CAD', currency: 'Canadian Dollar',	level: 1.3097, units: 'CAD per USD', asOf: '08/19/2015', onedChng: -0.0005},
-    {flag: '', currencyCode: 'AUD', currency: 'Australian Dollar',	level: 1.3589, units: 'AUD per USD', asOf: '08/19/2015', onedChng: 0.0020},
-    {flag: '', currencyCode: 'NZD', currency: 'New Zealand Dollar',	level: 1.5218, units: 'NZD per USD', asOf: '08/19/2015', onedChng: -0.0036},
-    {flag: '', currencyCode: 'SEK', currency: 'Swedish Krona',	level: 8.5280, units: 'SEK per USD', asOf: '08/19/2015', onedChng: 0.0016},
-    {flag: '', currencyCode: 'NOK', currency: 'Norwegian Krone',	level: 8.2433, units: 'NOK per USD', asOf: '08/19/2015', onedChng: 0.0008},
-    {flag: '', currencyCode: 'BRL', currency: 'Brazilian Real',	level: 3.4806, units: 'BRL per USD', asOf: '08/19/2015', onedChng: -0.0009},
-    {flag: '', currencyCode: 'CNY', currency: 'Chinese Yuan Renminbi',	level: 6.3961, units: 'CNY per USD', asOf: '08/19/2015', onedChng: 0.0004},
-    {flag: '', currencyCode: 'RUB', currency: 'Russian Rouble',	level: 65.5980, units: 'RUB per USD', asOf: '08/19/2015', onedChng: 0.0059},
-    {flag: '', currencyCode: 'INR', currency: 'Indian Rupee',	level: 65.3724, units: 'INR per USD', asOf: '08/19/2015', onedChng: 0.0026},
-    {flag: '', currencyCode: 'TRY', currency: 'New Turkish Lira',	level: 2.8689, units: 'TRY per USD', asOf: '08/19/2015', onedChng: 0.0092},
-    {flag: '', currencyCode: 'THB', currency: 'Thai Baht',	level: 35.5029, units: 'THB per USD', asOf: '08/19/2015', onedChng: 0.0044},
-    {flag: '', currencyCode: 'IDR', currency: 'Indonesian Rupiah',	level: 13.83, units: 'IDR per USD', asOf: '08/19/2015', onedChng: -0.0009},
-    {flag: '', currencyCode: 'MYR', currency: 'Malaysian Ringgit',	level: 4.0949, units: 'MYR per USD', asOf: '08/19/2015', onedChng: 0.0010},
-    {flag: '', currencyCode: 'MXN', currency: 'Mexican New Peso',	level: 16.4309, units: 'MXN per USD', asOf: '08/19/2015', onedChng: 0.0017},
-    {flag: '', currencyCode: 'ARS', currency: 'Argentinian Peso',	level: 9.2534, units: 'ARS per USD', asOf: '08/19/2015', onedChng: 0.0011},
-    {flag: '', currencyCode: 'DKK', currency: 'Danish Krone',	level: 6.7417, units: 'DKK per USD', asOf: '08/19/2015', onedChng: 0.0025},
-    {flag: '', currencyCode: 'ILS', currency: 'Israeli New Sheqel',	level: 3.8262, units: 'ILS per USD', asOf: '08/19/2015', onedChng: 0.0084},
-    {flag: '', currencyCode: 'PHP', currency: 'Philippine Peso',	level: 46.3108, units: 'PHP per USD', asOf: '08/19/2015', onedChng: 0.0012}
+    {flag: 'EUR', currencyCode: 'EUR', currency: 'Euro',	level: 0.9033, units: 'EUR per USD', asOf: '08/19/2015', onedChng: 0.0026},
+    {flag: 'JPY', currencyCode: 'JPY', currency: 'Japanese Yen', level: 124.3870, units: 'JPY per USD', asOf: '08/19/2015', onedChng: 0.0001},
+    {flag: 'GBP', currencyCode: 'GBP', currency: 'Pound Sterling', level: 0.6396, units: 'GBP per USD', asOf: '08/19/2015', onedChng: 0.00},
+    {flag: 'CHF', currencyCode: 'CHF', currency: 'Swiss Franc',	level: 0.9775, units: 'CHF per USD', asOf: '08/19/2015', onedChng: 0.0008},
+    {flag: 'CAD', currencyCode: 'CAD', currency: 'Canadian Dollar',	level: 1.3097, units: 'CAD per USD', asOf: '08/19/2015', onedChng: -0.0005},
+    {flag: 'AUD', currencyCode: 'AUD', currency: 'Australian Dollar',	level: 1.3589, units: 'AUD per USD', asOf: '08/19/2015', onedChng: 0.0020},
+    {flag: 'NZD', currencyCode: 'NZD', currency: 'New Zealand Dollar',	level: 1.5218, units: 'NZD per USD', asOf: '08/19/2015', onedChng: -0.0036},
+    {flag: 'SEK', currencyCode: 'SEK', currency: 'Swedish Krona',	level: 8.5280, units: 'SEK per USD', asOf: '08/19/2015', onedChng: 0.0016},
+    {flag: 'NOK', currencyCode: 'NOK', currency: 'Norwegian Krone',	level: 8.2433, units: 'NOK per USD', asOf: '08/19/2015', onedChng: 0.0008},
+    {flag: 'BRL', currencyCode: 'BRL', currency: 'Brazilian Real',	level: 3.4806, units: 'BRL per USD', asOf: '08/19/2015', onedChng: -0.0009},
+    {flag: 'CNY', currencyCode: 'CNY', currency: 'Chinese Yuan Renminbi',	level: 6.3961, units: 'CNY per USD', asOf: '08/19/2015', onedChng: 0.0004},
+    {flag: 'RUB', currencyCode: 'RUB', currency: 'Russian Rouble',	level: 65.5980, units: 'RUB per USD', asOf: '08/19/2015', onedChng: 0.0059},
+    {flag: 'INR', currencyCode: 'INR', currency: 'Indian Rupee',	level: 65.3724, units: 'INR per USD', asOf: '08/19/2015', onedChng: 0.0026},
+    {flag: 'TRY', currencyCode: 'TRY', currency: 'New Turkish Lira',	level: 2.8689, units: 'TRY per USD', asOf: '08/19/2015', onedChng: 0.0092},
+    {flag: 'THB', currencyCode: 'THB', currency: 'Thai Baht',	level: 35.5029, units: 'THB per USD', asOf: '08/19/2015', onedChng: 0.0044},
+    {flag: 'IDR', currencyCode: 'IDR', currency: 'Indonesian Rupiah',	level: 13.83, units: 'IDR per USD', asOf: '08/19/2015', onedChng: -0.0009},
+    {flag: 'MYR', currencyCode: 'MYR', currency: 'Malaysian Ringgit',	level: 4.0949, units: 'MYR per USD', asOf: '08/19/2015', onedChng: 0.0010},
+    {flag: 'MXN', currencyCode: 'MXN', currency: 'Mexican New Peso',	level: 16.4309, units: 'MXN per USD', asOf: '08/19/2015', onedChng: 0.0017},
+    {flag: 'ARS', currencyCode: 'ARS', currency: 'Argentinian Peso',	level: 9.2534, units: 'ARS per USD', asOf: '08/19/2015', onedChng: 0.0011},
+    {flag: 'DKK', currencyCode: 'DKK', currency: 'Danish Krone',	level: 6.7417, units: 'DKK per USD', asOf: '08/19/2015', onedChng: 0.0025},
+    {flag: 'ILS', currencyCode: 'ILS', currency: 'Israeli New Sheqel',	level: 3.8262, units: 'ILS per USD', asOf: '08/19/2015', onedChng: 0.0084},
+    {flag: 'PHP', currencyCode: 'PHP', currency: 'Philippine Peso',	level: 46.3108, units: 'PHP per USD', asOf: '08/19/2015', onedChng: 0.0012}
   ];
+  var currencyCodes = ['EUR', 'JPY', 'GBP', 'CHF', 'CAD', 'AUD', 'NZD', 'SEK', 'NOK', 'BRL', 'CNY', 'RUB', 'INR', 'TRY', 'THB', 'IDR', 'MYR', 'MXN', 'ARS', 'DKK', 'ILS', 'PHP'];
 
 
   var flagRenderer = function(instance, td, row, col, prop, value, cellProperties) {
-    var currencyCode = instance.getDataAtCell(row, col + 1);
-    var flagElement = document.createElement('DIV');
-    flagElement.className = 'flag ' + currencyCode.toLowerCase();
+    var currencyCode = value;
 
     while (td.firstChild) {
       td.removeChild(td.firstChild);
     }
 
-    td.appendChild(flagElement);
+    if (currencyCodes.indexOf(currencyCode) > -1) {
+      var flagElement = document.createElement('DIV');
+      flagElement.className = 'flag ' + currencyCode.toLowerCase();
+      td.appendChild(flagElement);
+
+    } else {
+      var textNode = document.createTextNode(value);
+      td.appendChild(textNode);
+    }
   };
   var hotElement = document.querySelector('#hot');
   var hotElementContainer = hotElement.parentNode;
@@ -70,8 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
     columns: [
       {
         data: 'flag',
-        renderer: flagRenderer,
-        readOnly: true
+        renderer: flagRenderer
       },
       {
         data: 'currencyCode',
@@ -194,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
           if (col === this.instance.countCols() - 1) {
             cellProperties.renderer = function (instance, td, row, col, prop, value, cellProperties) {
-              Handsontable.renderers.TextRenderer.apply(this, arguments);
+              Handsontable.cellTypes[cellProperties.type].renderer.apply(this, arguments);
 
               if (parseFloat(value) > 0) {
                 td.style.color = '#10D22B';
@@ -236,28 +242,29 @@ document.addEventListener("DOMContentLoaded", function() {
       configObject: {
         columnSummary: [
           {
-            destinationColumn: 2,
-            destinationRow: 2,
-            reversedRowCoords: true,
-            type: 'min',
+            destinationColumn: 3,
+            destinationRow: 0,
+            type: 'average',
             forceNumeric: true,
-            suppressDataTypeErrors: true
+            suppressDataTypeErrors: true,
+            readOnly: true
           },
-          {
-            destinationColumn: 2,
-            destinationRow: 1,
-            reversedRowCoords: true,
-            type: 'max',
-            forceNumeric: true,
-            suppressDataTypeErrors: true
-          },
-          {
-            destinationColumn: 2,
-            destinationRow: 52,
-            type: 'sum',
-            forceNumeric: true,
-            suppressDataTypeErrors: true
-          }]
+          //{
+          //  destinationColumn: 2,
+          //  destinationRow: 1,
+          //  reversedRowCoords: true,
+          //  type: 'max',
+          //  forceNumeric: true,
+          //  suppressDataTypeErrors: true
+          //},
+          //{
+          //  destinationColumn: 2,
+          //  destinationRow: 52,
+          //  type: 'sum',
+          //  forceNumeric: true,
+          //  suppressDataTypeErrors: true
+          //}
+        ]
       }
     },
     {
@@ -294,13 +301,24 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     },
     {
+      name: 'dropdown-menu',
+      label: 'Dropdown Menu',
+      description: 'Allows creating a dropdown menu, available in the column headers.',
+      configObject: {
+        dropdownMenu: true
+      }
+    },
+    {
       name: 'filters',
       label: 'Filters',
       description: 'Allows to define the criteria to display only specific rows while hiding the others. ' +
       'Available from the dropdown menu in the header.',
       configObject: {
         filters: true
-      }
+      },
+      dependencies: [
+        'dropdown-menu'
+      ]
     },
     {
       name: 'csv-export',
@@ -311,15 +329,15 @@ document.addEventListener("DOMContentLoaded", function() {
         csvExport: true
       }
     },
-    {
-      name: 'select-all-button',
-      label: 'Select All Button',
-      description: 'Allows to trigger the selection from the function. ' +
-      'In the demo above, click in the corner to select all the visible cells.',
-      configObject: {
-        selectAll: true
-      }
-    }
+    //{
+    //  name: 'select-all-button',
+    //  label: 'Select All Button',
+    //  description: 'Allows to trigger the selection from the function. ' +
+    //  'In the demo above, click in the corner to select all the visible cells.',
+    //  configObject: {
+    //    selectAll: true
+    //  }
+    //}
   ]);
 
   examples.setHOTsettings(hotSettings);

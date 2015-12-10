@@ -14,7 +14,8 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "flag-icon": null
+    "flag-icon": "0.11.1",
+    "handsontable-pro": "git@git.handsontable.com:handsontable/handsontable-pro.git"
   },
   "ignore": [
     "**/.*",

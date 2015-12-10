@@ -6,7 +6,7 @@
 <meta name=viewport content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="<%= img_path %>template/ModCommon/favicon.ico" />
 <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
-<link href="//localhost:8080/dist/handsontable.full.css" type="text/css" rel="stylesheet">
+<link href="/static/bower_components/handsontable-pro/dist/handsontable.full.css" type="text/css" rel="stylesheet">
 <link href="/static/css/main.css" type="text/css" rel="stylesheet">
 <script>
   (function() {var s=document.createElement('script');
@@ -18,4 +18,4 @@
       window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var n=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(n?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(a,o);for(var r=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["clearEventProperties","identify","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=r(p[c])};
       heap.load("<%= heap_analytics %>");
 </script>
-<script src="//localhost:8080/dist/handsontable.full.js"></script>
+<script src="/static/bower_components/handsontable-pro/dist/handsontable.full.js"></script>

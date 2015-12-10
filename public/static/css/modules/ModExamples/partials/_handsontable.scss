@@ -4,4 +4,18 @@
 
 .handsontable {
   font-size: 13px;
+
+  .columnSummaryResult {
+    font-weight: bold;
+
+    -moz-box-shadow: inset 0 0 3px #000000;
+    -webkit-box-shadow: inset 0 0 3px #000000;
+    box-shadow: inset 0 0 3px #000000;
+    padding-right: 5px;
+  }
+
+  .columnSummaryResult:before {
+    content: 'Average: ';
+  }
 }
+
