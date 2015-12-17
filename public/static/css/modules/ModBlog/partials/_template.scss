@@ -1,0 +1,33 @@
+/**
+ * @author: Handsoncode
+ */
+
+
+ .blog  {
+    h2 { 
+        margin-bottom: 0;
+        line-height: 1.2;
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    small {
+
+        font-size: 12px;
+        position: relative;
+        display: block;
+        margin-bottom: 10px;
+        padding-bottom: 25px;
+        &::after {
+            @include set-pseudo-element(auto, auto, 0, 0);
+            @include rectangle(23px, 2px);
+            background-color: #000;
+        }
+    }
+}

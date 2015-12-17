@@ -16,6 +16,10 @@ module.exports = function(grunt) {
                 files: {
                     'www/static/css/main.css': [dir.css + '*.css']
                 }
+<<<<<<< HEAD
+=======
+                
+>>>>>>> bbielawa/features
             }
         },
 

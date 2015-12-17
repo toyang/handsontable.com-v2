@@ -42,8 +42,15 @@
         @media only screen and (min-width: $largeWidth) {
             margin-bottom: 82px;
 
+            &.composite-architecture img {
+                width: 410px;
+                margin-top: 20px;
+            }
+
             &.data-binding {
-                margin-bottom: 137px;
+                margin-bottom: 100px;
+
+                
             }
 
             img {

@@ -7,5 +7,9 @@
     "grunt-contrib-cssmin": "^0.14.0",
     "grunt-contrib-nodeunit": "~0.3.3",
     "grunt-unused": "^0.2.0"
+<<<<<<< HEAD
+=======
+    
+>>>>>>> bbielawa/features
   }
 }
