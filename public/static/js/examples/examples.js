@@ -47,6 +47,12 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
    * @type {Array}
    */
   this.currentlyEnabledFeatures = null;
+  /**
+   * Flag enabled when user clicks a UI element (checkbox) and disabled on state change event.
+   *
+   * @type {Boolean}
+   */
+  var UIclick = false;
 
   /**
    * Add features of the provided type, from the feature array to the proper object.
@@ -180,7 +186,6 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
    */
   this.fillFormWithFeatures = function(form, features, remainingElementId) {
     var _this = this;
-    var feature;
     var tempEntry;
     var featureEntryObject = this.featureEntryObject || this.fetchFeatureEntryObject();
 
@@ -199,6 +204,43 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
       feature.domElement = tempEntry;
     });
   };
+
+  /**
+   * Add a state regarding the enabled/disabled features.
+   *
+   * @param {Object} feature Enabled/disable feature.
+   * @param {Boolean} [enable=true] Pass 'false' to disable the feature.
+   */
+  this.addState = function(feature, enable) {
+    if (enable !== false) {
+      enable = true;
+    }
+
+    var currentUrl = window.location.href;
+    var enabledQuery = feature.name;
+    var queryString = '';
+
+    if (enable && currentUrl.indexOf(enabledQuery) === -1) {
+      var questionMarkIndex = currentUrl.indexOf('?');
+
+      queryString = questionMarkIndex > -1 ? currentUrl.substr(questionMarkIndex, currentUrl.length - 1) + '&' : '?';
+      History.pushState(feature, document.title, queryString + enabledQuery);
+
+    } else if (!enable && currentUrl.indexOf(enabledQuery) > -1) {
+
+      if (currentUrl.indexOf('&') > -1) {
+        if (currentUrl.indexOf('?' + enabledQuery) > -1) {
+          queryString = currentUrl.replace(enabledQuery + '&', '');
+        } else {
+          queryString = currentUrl.replace('&' + enabledQuery, '');
+        }
+      } else {
+        queryString = currentUrl.replace('?' + enabledQuery, '');
+      }
+      History.pushState(feature, document.title, queryString);
+    }
+  };
+
 
   /**
    * Sync all the provided features with the DOM elements.
@@ -226,6 +268,8 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
         _this.enableAsDependency(dependency);
       }
     });
+
+    this.addState(feature);
 
     this.updateHOT();
   };
@@ -256,6 +300,8 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
         _this.disableAsDependency(dependency);
       }
     });
+
+    this.addState(feature, false);
 
     this.updateHOT();
   };
@@ -348,7 +394,7 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
   this.setupJavascriptTab = function() {
     var additionalConfigSpan = document.getElementById('additional-code');
     var preElement = additionalConfigSpan.parentNode;
-    var flagRendererString = 'var flagRenderer = ' + this.initialHOTsettings.columns[0].renderer.toString() + ';\n';
+    var flagRendererString = 'var flagRenderer = ' + this.initialHOTsettings.columns[1].renderer.toString() + ';\n';
     var initialSettingsClone = Handsontable.helper.deepClone(this.initialHOTsettings);
     delete initialSettingsClone.data;
     // remove quotes around property keys and remove the brackets in the beginning and end of the string
@@ -508,6 +554,37 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
     }
   };
 
+  this.updateState = function() {
+    var _this = this;
+    var state = History.getState();
+    var urlFeatureList = state.url;
+    var feature;
+    var featureInputElement;
+    urlFeatureList = urlFeatureList.split('?')[1].split('&');
+
+    Handsontable.helper.arrayEach(urlFeatureList, function(featureName) {
+      feature = _this.basicFeatures[featureName] || _this.proFeatures[featureName];
+
+      if (!feature.isEnabled()) {
+        _this.enableFeature(feature);
+
+        featureInputElement = document.getElementById('feature_' + feature.name);
+        featureInputElement.checked = !featureInputElement.checked;
+      }
+    });
+
+    Handsontable.helper.objectEach(this.currentlyEnabledFeatures, function(feature) {
+      if (urlFeatureList.indexOf(feature.name) === -1) {
+        if (feature.isEnabled() && !feature.isEnabledAsDependency()) {
+          _this.disableFeature(feature);
+
+          featureInputElement = document.getElementById('feature_' + feature.name);
+          featureInputElement.checked = !featureInputElement.checked;
+        }
+      }
+    });
+  };
+
   /**
    * Bind the feature selecting events.
    */
@@ -520,6 +597,8 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
 
         featureElement.domElement.getElementsByTagName('label')[0].addEventListener('click', function(event) {
           var target = event.target;
+
+          UIclick = true;
 
           while (target.tagName.toLowerCase() !== 'label') {
             target = target.parentNode;
@@ -539,6 +618,16 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
         });
       });
     });
+
+    if (History) {
+      History.Adapter.bind(window, 'statechange', function() {
+        if (UIclick) {
+          UIclick = false;
+          return;
+        }
+        _this.updateState.call(_this);
+      });
+    }
   };
 
   this.addFeatures('basic', basicFeatures);

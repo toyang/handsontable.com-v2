@@ -14,8 +14,12 @@
     padding-right: 5px;
   }
 
-  .columnSummaryResult:before {
+  .columnSummaryResult::before {
     content: 'Average: ';
+  }
+
+  .columnSummaryResult::after {
+    content: '\00a0\00a0';
   }
 }
 
