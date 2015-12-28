@@ -2,23 +2,23 @@
  * @author: Handsoncode
  */
 
- .features .all-features .feature-item-list  {
-    
-    > * {
-        font-size: 0.813em; /* 13px */
-        text-align: center;
-        padding: 6px 0;
-        margin: 0 0 12px 0;
-    }
-    
-    > a {
-        @include border;
-        display: block;
-        
-    }
+#feature-list .feature-item-list {
+  > * {
+    font-size: 0.813em; /* 13px */
+    text-align: center;
+    padding: 6px 0;
+    margin: 0 0 12px 0;
+  }
 
-    > div {
-        border: 1px dotted $borderColor;
-        color: $darkGray;
+  > a {
+    @include border;
+    display: block;
+  }
+}
+
+#feature-list:not(.pro-enabled) .feature-item-list {
+    a.feature-pro {
+      border: 1px dotted $borderColor;
+      color: $darkGray;
     }
 }
