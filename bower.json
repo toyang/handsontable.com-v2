@@ -16,7 +16,8 @@
   "dependencies": {
     "flag-icon": "0.11.1",
     "handsontable-pro": "git@git.handsontable.com:handsontable/handsontable-pro.git",
-    "history.js": "^1.8.0"
+    "history.js": "^1.8.0",
+    "highlightjs": "^9.0.0"
   },
   "ignore": [
     "**/.*",

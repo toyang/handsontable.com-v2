@@ -420,7 +420,7 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
    * Initial setup of the data tab.
    */
   this.setupDataTab = function() {
-    document.querySelector('#data-tab pre').textContent = JSON.stringify(this.hotInstance.getSettings().data, null, 4);
+    document.querySelector('#data-tab code').textContent = JSON.stringify(this.hotInstance.getSettings().data, null, 4);
   };
 
   /**

@@ -2,7 +2,6 @@ var examples;
 
 document.addEventListener("DOMContentLoaded", function() {
 
-
   var bindTabChangingEvents = function() {
     var tabButtons = document.querySelectorAll('.code-box ul li:not(.action-link) a');
     Handsontable.helper.arrayEach(tabButtons, function(tabButton) {
@@ -375,4 +374,8 @@ document.addEventListener("DOMContentLoaded", function() {
       jsFiddleExporter.export(true);
     });
   }();
+
+  // Highlight.js
+  hljs.initHighlightingOnLoad();
+
 });
