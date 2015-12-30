@@ -27,6 +27,11 @@
         }
     }
 
+    #form-sent,
+    #form-error {
+        display: none;
+    }
+
     form {
         padding-bottom: 120px;
 
@@ -38,6 +43,6 @@
             min-height: 175px;
             margin-bottom: 6px;
         }
-    }   
+    }
 
 }

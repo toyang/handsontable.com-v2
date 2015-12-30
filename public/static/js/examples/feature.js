@@ -28,7 +28,7 @@ function Feature(featureObject) {
    *
    * @type {Boolean}
    */
-  this.enabled = featureObject.enabled || false;
+  this.enabled = featureObject.enabled || (window.location.href.indexOf(featureObject.name) > -1);
   /**
    * List of dependent features.
    *

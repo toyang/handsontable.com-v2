@@ -2,42 +2,46 @@
  * @author: Handsoncode
  */
 
- .features .choose-version  {
-    
-    h5 {
-        font-weight: 400;
-        margin-bottom: 20px;
+.features .choose-version {
+
+  h5 {
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+
+  li {
+    @include border-bottom;
+    position: relative;
+    &:first-child {
+      @include border-top;
     }
 
-    li {
-        @include border-bottom;
-        position: relative;
-        &:first-child {
-            @include border-top;
-        }
+    a {
+      display: block;
+      padding: 4px 0;
+      font-size: 1em;
 
-        
-        a {
-            display: block;
-            padding: 4px 0;
-            font-size: 1em;
-
-            &.active {
-                text-decoration: none;
-                color: $darkGray;
-                cursor: default;
-                svg {
-                    @include absolute-top-right(50%, 19px);
-                    @include square (10px);
-                    @include rotate (-90deg);
-                    margin-top: -5px;
-                    fill: currentColor;
-                }
-            }
+      &.active {
+        text-decoration: none;
+        color: $darkGray;
+        cursor: default;
+        svg {
+          display: block;
+          @include absolute-top-right(50%, 19px);
+          @include square (10px);
+          @include rotate (-90deg);
+          margin-top: -5px;
+          fill: currentColor;
         }
+      }
+
+      svg {
+        display: none;
+      }
     }
+  }
 
-    & + div {
-        margin-top: 67px;
-    }   
+  & + div {
+    margin-top: 67px;
+  }
 }

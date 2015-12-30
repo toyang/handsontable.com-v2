@@ -73,6 +73,10 @@
     }
 
     #enabled-features-tab {
+      li[data-enabled-feature="visible"] ~ li[data-enabled-placeholder] {
+        display: none;
+      }
+
       li[data-enabled-feature="hidden"] {
         display: none;
       }
@@ -91,6 +95,10 @@
           font-weight: bold;
         }
       }
+    }
+
+    code {
+      margin: 0;
     }
   }
 }
