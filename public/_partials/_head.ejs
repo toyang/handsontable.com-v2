@@ -6,8 +6,8 @@
 <meta name=viewport content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="<%= img_path %>template/ModCommon/favicon.ico" />
 <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
-<link href="//localhost:8080/dist/handsontable.full.css" type="text/css" rel="stylesheet">
 <link href="/static/css/main.css" type="text/css" rel="stylesheet">
+
 <script>
   (function() {var s=document.createElement('script');
     s.type='text/javascript';s.async=true;
@@ -18,4 +18,22 @@
       window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var n=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(n?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(a,o);for(var r=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["clearEventProperties","identify","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=r(p[c])};
       heap.load("<%= heap_analytics %>");
 </script>
-<script src="//localhost:8080/dist/handsontable.full.js"></script>
+<% if (current.source === 'examples') {  %>
+<link href="/static/bower_components/handsontable-pro/dist/handsontable.full.css" type="text/css" rel="stylesheet">
+<link href="/static/bower_components/highlightjs/styles/github.css" type="text/css" rel="stylesheet">
+
+<script src="/static/bower_components/handsontable-pro/dist/handsontable.full.js"></script>
+<script src="/static/bower_components/history.js/scripts/bundled/html4+html5/native.history.js"></script>
+<script src="/static/bower_components/highlightjs/highlight.pack.min.js"></script>
+<% } else if (current.source === 'support' || current.source === 'contact') {  %>
+<script>
+  (function() {var s=document.createElement('script');
+    s.type='text/javascript';s.async=true;
+    s.src=('https:'==document.location.protocol?'https':'http') +
+        '://yahoo1.groovehq.com/widgets/61c040f2-413c-485c-bca2-d6608d347c65/ticket/api.js'; var q = document.getElementsByTagName('script')[0];q.parentNode.insertBefore(s, q);})();
+</script>
+<script src="/static/js/common/formHandler.js"></script>
+<script type="text/javascript">
+  var formHandler = new FormHandler('<%= current.source %>');
+</script>
+<% } %>
