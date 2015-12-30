@@ -12,7 +12,7 @@
                         <div class="small-12 medium-4 columns">
                             <svg class="community-support"><use xlink:href="#community_icon"></use></svg>
                             <div class="left desc">
-                                <h3>Community support</h3>  
+                                <h3>Community support</h3>
                                 <p>Grab a helping hand from the active comunity on <a href="https://github.com/handsontable/handsontable"
                                   target="_blank">GitHub</a>, <a href="http://stackoverflow.com/tags/handsontable"
                                   target="_blank">Stackoverflow</a> or <a href="https://groups.google.com/forum/#!forum/handsontable"
@@ -26,7 +26,7 @@
                                 <p>Buy a subscription or pay per incident. We guarantee a 24-hour initial response time.</p>
                             </div>
                         </div>
-                        <div class="small-12 medium-4 columns">                  
+                        <div class="small-12 medium-4 columns">
                             <svg class="dedicated-solutions"><use xlink:href="#cubes_icon"></use></svg>
                             <div class="left desc">
                                 <h3>Dedicated solutions</h3>
@@ -45,7 +45,10 @@
                 <div class="large-11 large-centered columns">
                     <div class="row">
                         <div class="small-12 medium-6 columns">
-                            <form class="clearfix">
+                            <div id="form-sent" class="notification info">Support e-mail sent.</div>
+                            <div id="form-error" class="notification error">Sorry, we were unable to send the form. Please check if you filled the Name, E-mail and Message fields.</div>
+
+                            <form id="support-form" class="clearfix">
                                 <input type="text" placeholder = "Full name" name="full_name"/>
                                 <input type="text" placeholder = "Company name" name="company_name"/>
                                 <input type="text" placeholder = "Email address" name="email_address"/>
@@ -69,5 +72,5 @@
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
  </section>
