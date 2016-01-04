@@ -1,5 +1,5 @@
 .idea
 node_modules/
 **/.DS_Store
-www
+www/
 public/static/bower_components
