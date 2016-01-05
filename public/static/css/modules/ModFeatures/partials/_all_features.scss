@@ -2,23 +2,33 @@
  * @author: Handsoncode
  */
 
-#feature-list .feature-item-list {
-  > * {
-    font-size: 0.813em; /* 13px */
-    text-align: center;
-    padding: 6px 0;
-    margin: 0 0 12px 0;
-  }
-
-  > a {
-    @include border;
-    display: block;
-  }
-}
-
-#feature-list:not(.pro-enabled) .feature-item-list {
-    a.feature-pro {
-      border: 1px dotted $borderColor;
-      color: $darkGray;
+#feature-list {
+  .feature-item-list {
+    > * {
+      font-size: 0.813em; /* 13px */
+      text-align: center;
+      padding: 6px 0;
+      margin: 0 0 12px 0;
     }
+
+    > a {
+      @include border ($lightGray);
+      display: block;
+    }
+  }
+
+  &:not(.pro-enabled) {
+    a.feature-pro {
+      border: 1px dotted $gray;
+      color: $gray;
+    }
+  }
+
+  &.pro-enabled {
+    a.feature-pro {
+      color: $brandRed;
+    }
+  }
+
 }
+
