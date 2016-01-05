@@ -42,13 +42,13 @@ function JsfiddleExporter(examplesObj) {
     this.css += '</style><!-- Ugly Hack due to jsFiddle issue -->\n';
 
     Handsontable.helper.arrayEach(scriptTags, function(tag) {
-      if (tag.getAttribute('src').indexOf('handsontable.full') > -1) {
+      if (tag.getAttribute('src') && tag.getAttribute('src').indexOf('handsontable.full') > -1) {
         tags.push(tag);
       }
     });
 
     Handsontable.helper.arrayEach(linkTags, function(tag) {
-      if (tag.getAttribute('href').indexOf('handsontable.full') > -1) {
+      if (tag.getAttribute('href') && tag.getAttribute('href').indexOf('handsontable.full') > -1) {
         tags.push(tag);
       }
     });

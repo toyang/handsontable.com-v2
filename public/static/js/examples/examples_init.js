@@ -250,28 +250,13 @@ document.addEventListener("DOMContentLoaded", function() {
       configObject: {
         columnSummary: [
           {
-            destinationColumn: 3,
+            destinationColumn: 4,
             destinationRow: 0,
             type: 'average',
             forceNumeric: true,
             suppressDataTypeErrors: true,
             readOnly: true
-          },
-          //{
-          //  destinationColumn: 2,
-          //  destinationRow: 1,
-          //  reversedRowCoords: true,
-          //  type: 'max',
-          //  forceNumeric: true,
-          //  suppressDataTypeErrors: true
-          //},
-          //{
-          //  destinationColumn: 2,
-          //  destinationRow: 52,
-          //  type: 'sum',
-          //  forceNumeric: true,
-          //  suppressDataTypeErrors: true
-          //}
+          }
         ]
       }
     },
@@ -305,7 +290,7 @@ document.addEventListener("DOMContentLoaded", function() {
       label: 'Trim Rows',
       description: 'Allows to skip the specific rows while rendering the table.',
       configObject: {
-        trimRows: true
+        trimRows: [1, 2, 5]
       }
     },
     {
@@ -333,19 +318,8 @@ document.addEventListener("DOMContentLoaded", function() {
       label: 'Export to CSV',
       description: 'Adds a possibility to export the data as comma-separated values. ' +
       'In the demo above, just click a button to download the flat file.',
-      configObject: {
-        csvExport: true
-      }
-    },
-    //{
-    //  name: 'select-all-button',
-    //  label: 'Select All Button',
-    //  description: 'Allows to trigger the selection from the function. ' +
-    //  'In the demo above, click in the corner to select all the visible cells.',
-    //  configObject: {
-    //    selectAll: true
-    //  }
-    //}
+      configObject: {}
+    }
   ]);
 
   examples.setHOTsettings(hotSettings);
@@ -372,6 +346,28 @@ document.addEventListener("DOMContentLoaded", function() {
     var link = document.getElementById('jsfiddle-link');
     link.addEventListener('click', function(event) {
       jsFiddleExporter.export(true);
+    });
+  }();
+
+  var bindCsvExportButtons = function () {
+    var toggleCsvButtons = function () {
+      var buttonPanel = document.getElementById('export-buttons');
+      if (window.location.href.indexOf('csv-export') > -1) {
+        buttonPanel.className = ' visible';
+      } else {
+        buttonPanel.className = buttonPanel.className.replace(' visible', '');
+      }
+    };
+
+    document.getElementById('feature_csv-export').addEventListener('change', toggleCsvButtons);
+    toggleCsvButtons();
+
+    document.getElementById('export-csv').addEventListener('click', function() {
+      examples.hotInstance.getPlugin('exportFile').downloadFile('csv', {filename: 'Handsontable CSV Export example'});
+    });
+
+    document.getElementById('export-string').addEventListener('click', function() {
+      console.log(examples.hotInstance.getPlugin('exportFile').exportAsString('csv'));
     });
   }();
 
