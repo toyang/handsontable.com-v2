@@ -18,9 +18,4 @@
 @import 'modules/ModSignin/signin';
 @import 'modules/ModSupport/support';
 @import 'modules/ModTeam/team';
-
-/* [ user pages modules ] */
-@import 'modules/ModBilling/billing';
-@import 'modules/ModMyOrders/my_orders';
-@import 'modules/ModInstall/install';
-@import 'modules/ModSshKey/ssh_key';
+@import 'modules/ModErrors/errors';
