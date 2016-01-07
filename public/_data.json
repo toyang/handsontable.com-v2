@@ -1,19 +1,38 @@
 {
     "index": {
-        "title": "Handsontable | Excel-like spreadsheet for web apps. Handsontable is ready to use, open and free JavaScript component."
+        "title": "Handsontable | The Excel-like front-end spreadsheet library for developers"
+    },
+
+    "examples": {
+        "title": "Examples | The Excel-like front-end spreadsheet library for developers"
+    },
+
+    "pricing": {
+        "title": "Pricing | The Excel-like front-end spreadsheet library for developers"
+    },
+
+    "features": {
+        "title": "Features | The Excel-like front-end spreadsheet library for developers"
+    },
+
+    "directory": {
+        "title": "Add-ons | The Excel-like front-end spreadsheet library for developers"
+    },
+
+    "support": {
+        "title": "Support | The Excel-like front-end spreadsheet library for developers"
+    },
+
+    "team": {
+        "title": "Team | The Excel-like front-end spreadsheet library for developers"
     },
 
     "contact": {
-        "title": "Contact us | Excel-like spreadsheet for web apps. Handsontable is ready to use, open and free JavaScript component."
-    },
-
-    "signin": {
-        "title": "Signin | Excel-like spreadsheet for web apps. Handsontable is ready to use, open and free JavaScript component.",
-        "layout": "_empty_layout"
+        "title": "Contact | The Excel-like front-end spreadsheet library for developers"
     },
 
     "privacy": {
-        "title": "Privacy | Excel-like spreadsheet for web apps. Handsontable is ready to use, open and free JavaScript component."
+        "title": "Privacy | The Excel-like front-end spreadsheet library for developers"
     }
 
 }
