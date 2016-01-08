@@ -113,6 +113,7 @@ document.addEventListener("DOMContentLoaded", function() {
     ],
     stretchH: 'all',
     width: parseInt(hotElementContainer.offsetWidth, 10),
+    autoWrapRow: true,
     height: 441,
     maxRows: 22
   };
