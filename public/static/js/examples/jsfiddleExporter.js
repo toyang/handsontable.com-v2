@@ -23,7 +23,11 @@ function JsfiddleExporter(examplesObj) {
 
     this.js += 'document.addEventListener("DOMContentLoaded", function() {\n\n';
     this.js += 'var dataObj = ' + JSON.stringify(this.examplesObj.hotInstance.getSourceData(), null, 4) + ';\n';
-    //this.js += 'var flagRenderer = ' + this.hot.getSettings().columns[0].renderer.toString() + ';\n\n';
+
+    if (currencyCodes) {
+      this.js += 'var currencyCodes =' + JSON.stringify(currencyCodes, null, 4) + ' \n';
+    }
+
     this.js += preElem.textContent;
     this.js += '\n});';
   };

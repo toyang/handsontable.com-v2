@@ -1,4 +1,4 @@
-var examples;
+var examples, currencyCodes;
 
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -49,8 +49,8 @@ document.addEventListener("DOMContentLoaded", function() {
     {id: 21, flag: 'ILS', currencyCode: 'ILS', currency: 'Israeli New Sheqel',	level: 3.8262, units: 'ILS / USD', asOf: '08/19/2015', onedChng: 0.0084},
     {id: 22, flag: 'PHP', currencyCode: 'PHP', currency: 'Philippine Peso',	level: 46.3108, units: 'PHP / USD', asOf: '08/19/2015', onedChng: 0.0012}
   ];
-  var currencyCodes = ['EUR', 'JPY', 'GBP', 'CHF', 'CAD', 'AUD', 'NZD', 'SEK', 'NOK', 'BRL', 'CNY', 'RUB', 'INR', 'TRY', 'THB', 'IDR', 'MYR', 'MXN', 'ARS', 'DKK', 'ILS', 'PHP'];
 
+  currencyCodes = ['EUR', 'JPY', 'GBP', 'CHF', 'CAD', 'AUD', 'NZD', 'SEK', 'NOK', 'BRL', 'CNY', 'RUB', 'INR', 'TRY', 'THB', 'IDR', 'MYR', 'MXN', 'ARS', 'DKK', 'ILS', 'PHP'];
 
   var flagRenderer = function(instance, td, row, col, prop, value, cellProperties) {
     var currencyCode = value;
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
       {
         data: 'id',
         type: 'numeric',
-        width: 20
+        width: 40
       },
       {
         data: 'flag',
@@ -113,6 +113,7 @@ document.addEventListener("DOMContentLoaded", function() {
     ],
     stretchH: 'all',
     width: parseInt(hotElementContainer.offsetWidth, 10),
+    autoWrapRow: true,
     height: 441,
     maxRows: 22
   };
@@ -140,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function() {
       description: 'Keeps the top rows or left-hand side columns visible while scrolling down or across the table.',
       configObject: {
         fixedRowsTop: 2,
-        fixedColumnsLeft: 2
+        fixedColumnsLeft: 3
       }
     },
     {
@@ -266,9 +267,9 @@ document.addEventListener("DOMContentLoaded", function() {
       description: 'Allows to create a multi-level, nested structure of the column headers.',
       configObject: {
         nestedHeaders: [
-          [{label: 'A', colspan: 2}, {label: 'B', colspan: 4}, 'C'],
-          [{label: 'D', colspan: 2}, {label: 'E', colspan: 2}, {label: 'F', colspan: 2}, 'H'],
-          ['I', 'J', 'K', 'L', 'M', 'N', 'O']
+          ['ID', {label: 'A', colspan: 2}, {label: 'B', colspan: 4}, 'C'],
+          ['ID', {label: 'D', colspan: 2}, {label: 'E', colspan: 2}, {label: 'F', colspan: 2}, 'H'],
+          ['ID', 'I', 'J', 'K', 'L', 'M', 'N', 'O']
         ]
       }
     },
@@ -322,7 +323,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   ]);
 
-  examples.setHOTsettings(hotSettings);
+  examples.setHOTsettings(Handsontable.helper.clone(hotSettings));
   examples.setupJavascriptTab();
   examples.setupDataTab();
   examples.syncFeatures();

@@ -42,6 +42,12 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
    */
   this.initialHOTsettings = null;
   /**
+   * Initial HOT data.
+   *
+   * @type {null}
+   */
+  this.initialHOTdata = null;
+  /**
    * Array of currently enabled features.
    *
    * @type {Array}
@@ -54,6 +60,21 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
    */
   var UIclick = false;
 
+
+  /**
+   * Generates the sample dataset;
+   *
+   * @type {null}
+   */
+  this.generateData = function() {
+    var data = [];
+
+    for (var i = 0; i < this.initialHOTdata.length; i++) {
+      data[i] = Handsontable.helper.clone(this.initialHOTdata[i]);
+    }
+
+    return data;
+  };
   /**
    * Add features of the provided type, from the feature array to the proper object.
    *
@@ -137,8 +158,16 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
    * @param {Object} hotSettings
    */
   this.setHOTsettings = function(hotSettings) {
-    //this.standardHOTsettings = hotSettings;
     this.initialHOTsettings = hotSettings;
+    this.initialHOTdata = function() {
+      var data = [];
+
+      for (var i = 0; i < hotSettings.data.length; i++) {
+        data[i] = Handsontable.helper.clone(hotSettings.data[i]);
+      }
+
+      return data;
+    }();
   };
 
   /**
@@ -330,8 +359,33 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
    */
   this.enableAsDependency = function(feature) {
     var featureCheckbox = document.querySelector('input[type=checkbox]#feature_' + feature.name);
-    featureCheckbox.checked = true;
-    Handsontable.Dom.addClass(featureCheckbox, 'dependency');
+    var interval = null;
+    var checks = 0;
+
+    if (featureCheckbox) {
+      check();
+    } else {
+      interval = setInterval(function() {
+        checks++;
+
+        if (checks < 10) {
+          featureCheckbox = document.querySelector('input[type=checkbox]#feature_' + feature.name);
+
+          if (featureCheckbox) {
+            check();
+            window.clearInterval(interval);
+          }
+
+        } else {
+          window.clearInterval(interval);
+        }
+      }, 50);
+    }
+
+    function check() {
+      featureCheckbox.checked = true;
+      Handsontable.Dom.addClass(featureCheckbox, 'dependency');
+    }
   };
 
   /**
@@ -351,6 +405,8 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
   this.updateHOT = function() {
     var newSettings = Handsontable.helper.clone(this.initialHOTsettings);
     var addedSettings = {};
+    var _this = this;
+
     this.currentlyEnabledFeatures = this.getEnabledFeatures();
 
     this.hotInstance.destroy();
@@ -358,6 +414,7 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
     if (this.currentlyEnabledFeatures.length > 0) {
       Handsontable.helper.arrayEach(this.currentlyEnabledFeatures, function(feature) {
         Handsontable.helper.deepExtend(addedSettings, feature.configObject);
+        Handsontable.helper.deepExtend(addedSettings, {data: _this.generateData()});
       });
 
       Handsontable.helper.deepExtend(newSettings, addedSettings);
