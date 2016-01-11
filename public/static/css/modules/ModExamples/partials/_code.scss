@@ -54,15 +54,18 @@
     }
 
     code {
-      background: #FDFDFD;
+      background: #FFF;
       border: 0;
       padding: 0;
       font-size: 0.7em;
+      font-weight: 400;
+      font-family: Consolas, "Liberation Mono", Courier, monospace;
     }
 
     #js-tab {
       span[id^="js_feature"] {
         font-weight: bold;
+        color: #E87677;
       }
     }
 
