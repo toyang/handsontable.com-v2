@@ -2,17 +2,17 @@ module.exports = function(shipit) {
   require('shipit-deploy')(shipit);
 
   shipit.initConfig({
-    //production: {
-    //  servers: 'deploy@142.4.202.189:22022',
-    //  workspace: '/tmp/handsontable.com',
-    //  deployTo: '/home/httpd/handsontable.com',
-    //  repositoryUrl: 'git@git.handsontable.com:handsontable/my.handsontable.com.git',
-    //  branch: 'develop',
-    //  ignores: ['.git', 'node_modules'],
-    //  rsync: ['--force', '--delete', '--delete-excluded', '-I', '--stats', '--chmod=ug=rwX'],
-    //  keepReleases: 5,
-    //  shallowClone: false
-    //},
+    production: {
+      servers: 'deploy@142.4.202.189:22022',
+      workspace: '/tmp/handsontable.com',
+      deployTo: '/home/httpd/handsontable.com',
+      repositoryUrl: 'git@github.com:handsontable/handsontable.com-v2.git',
+      branch: 'develop',
+      ignores: ['.git', 'node_modules'],
+      rsync: ['--force', '--delete', '--delete-excluded', '-I', '--stats', '--chmod=ug=rwX'],
+      keepReleases: 5,
+      shallowClone: false
+    },
     development: {
       servers: 'deploy@142.4.202.189:22022',
       workspace: '/tmp/dev.handsontable.com',
