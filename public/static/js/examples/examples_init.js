@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
       {
         data: 'id',
         type: 'numeric',
-        width: 20
+        width: 40
       },
       {
         data: 'flag',
