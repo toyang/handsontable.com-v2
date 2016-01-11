@@ -63,8 +63,9 @@
     }
 
     #js-tab {
-      span[id^="js_feature"] {
+      div[id^="js_feature"] {
         font-weight: bold;
+        margin-left: 26px;
         color: #E87677;
       }
     }

@@ -449,8 +449,8 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
    * Initial setup of the JavaScript tab.
    */
   this.setupJavascriptTab = function() {
-    var additionalConfigSpan = document.getElementById('additional-code');
-    var preElement = additionalConfigSpan.parentNode;
+    var additionalConfigDiv = document.getElementById('additional-code');
+    var preElement = additionalConfigDiv.parentNode;
     var flagRendererString = 'var flagRenderer = ' + this.initialHOTsettings.columns[1].renderer.toString() + ';\n';
     var initialSettingsClone = Handsontable.helper.deepClone(this.initialHOTsettings);
     delete initialSettingsClone.data;
@@ -465,9 +465,9 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
       return value;
     }, 4).replace(/\"([^(\")"]+)\":/g, "$1:").replace(/(^\{\n|\n\}$)/mg, '').replace('"flagRenderer"', 'flagRenderer');
 
-    var initialSettingsSpan = document.createElement('SPAN');
-    initialSettingsSpan.textContent = stringifiedSettings + ',\n';
-    additionalConfigSpan.appendChild(initialSettingsSpan);
+    var initialSettingsDiv = document.createElement('DIV');
+    initialSettingsDiv.textContent = stringifiedSettings + ',\n';
+    additionalConfigDiv.appendChild(initialSettingsDiv);
 
     var flagRendererElement = document.createTextNode(flagRendererString);
     preElement.insertBefore(flagRendererElement, preElement.firstChild);
@@ -488,9 +488,9 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
    */
   this.updateJavascriptTab = function(feature, remove) {
     var _this = this;
-    var spanPrefix = 'js_feature_';
-    var spanElem = document.getElementById('additional-code');
-    var featureSpan = document.getElementById(spanPrefix + feature.name);
+    var divPrefix = 'js_feature_';
+    var divElem = document.getElementById('additional-code');
+    var featureDiv = document.getElementById(divPrefix + feature.name);
 
     Handsontable.helper.arrayEach(feature.dependencies, function(dependency) {
       var feature = _this.basicFeatures[dependency] || _this.proFeatures[dependency];
@@ -503,30 +503,30 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
     });
 
     if (remove) {
-      if (featureSpan) {
-        featureSpan.parentNode.removeChild(featureSpan);
+      if (featureDiv) {
+        featureDiv.parentNode.removeChild(featureDiv);
       }
       return;
     }
 
-    if (featureSpan) {
+    if (featureDiv) {
       return;
     }
 
-    featureSpan = document.createElement('SPAN');
+    featureDiv = document.createElement('DIV');
 
-    featureSpan.id = spanPrefix + feature.name;
+    featureDiv.id = divPrefix + feature.name;
 
     Handsontable.helper.objectEach(feature.configObject, function(value, prop, obj) {
-      featureSpan.textContent += '    ' + prop.replace(/"/g, '') + ': ';
+      featureDiv.textContent += prop.replace(/"/g, '') + ': ';
       if (typeof value === 'function') {
-        featureSpan.textContent += value.toString() + ',\n';
+        featureDiv.textContent += value.toString() + ',\n';
       } else {
-        featureSpan.textContent += JSON.stringify(value, null, 4) + ',\n';
+        featureDiv.textContent += JSON.stringify(value, null, 4).replace('\n', '    \n') + ',\n';
       }
     });
 
-    spanElem.appendChild(featureSpan);
+    divElem.appendChild(featureDiv);
   };
 
   /**
