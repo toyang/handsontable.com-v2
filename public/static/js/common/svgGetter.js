@@ -5,7 +5,7 @@ function SvgGetter(filename) {
   }
 
   var ajax = new XMLHttpRequest();
-  ajax.open('GET', '/static/images/svg/' + filename + '.svg', true);
+  ajax.open('GET', 'static/images/svg/' + filename + '.svg', true);
   ajax.send();
   ajax.onload = function(e) {
     var div = document.createElement('DIV');
