@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function() {
       description: 'Keeps the top rows or left-hand side columns visible while scrolling down or across the table.',
       configObject: {
         fixedRowsTop: 2,
-        fixedColumnsLeft: 2
+        fixedColumnsLeft: 3
       }
     },
     {
@@ -267,9 +267,9 @@ document.addEventListener("DOMContentLoaded", function() {
       description: 'Allows to create a multi-level, nested structure of the column headers.',
       configObject: {
         nestedHeaders: [
-          [{label: 'A', colspan: 2}, {label: 'B', colspan: 4}, 'C'],
-          [{label: 'D', colspan: 2}, {label: 'E', colspan: 2}, {label: 'F', colspan: 2}, 'H'],
-          ['I', 'J', 'K', 'L', 'M', 'N', 'O']
+          ['ID', {label: 'A', colspan: 2}, {label: 'B', colspan: 4}, 'C'],
+          ['ID', {label: 'D', colspan: 2}, {label: 'E', colspan: 2}, {label: 'F', colspan: 2}, 'H'],
+          ['ID', 'I', 'J', 'K', 'L', 'M', 'N', 'O']
         ]
       }
     },
