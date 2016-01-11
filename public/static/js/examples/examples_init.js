@@ -302,18 +302,18 @@ document.addEventListener("DOMContentLoaded", function() {
         dropdownMenu: true
       }
     },
-    {
-      name: 'filters',
-      label: 'Filters',
-      description: 'Allows to define the criteria to display only specific rows while hiding the others. ' +
-      'Available from the dropdown menu in the header.',
-      configObject: {
-        filters: true
-      },
-      dependencies: [
-        'dropdown-menu'
-      ]
-    },
+    //{
+    //  name: 'filters',
+    //  label: 'Filters',
+    //  description: 'Allows to define the criteria to display only specific rows while hiding the others. ' +
+    //  'Available from the dropdown menu in the header.',
+    //  configObject: {
+    //    filters: true
+    //  },
+    //  dependencies: [
+    //    'dropdown-menu'
+    //  ]
+    //},
     {
       name: 'csv-export',
       label: 'Export to CSV',
