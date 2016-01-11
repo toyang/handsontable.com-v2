@@ -323,7 +323,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   ]);
 
-  examples.setHOTsettings(hotSettings);
+  examples.setHOTsettings(Handsontable.helper.clone(hotSettings));
   examples.setupJavascriptTab();
   examples.setupDataTab();
   examples.syncFeatures();
