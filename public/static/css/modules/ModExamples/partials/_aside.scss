@@ -19,7 +19,7 @@
     position: relative;
     margin: 30px 0 26px;
 
-    svg {
+    .checkbox {
       @include square(10px);
       margin-left: 2px;
       fill: currentColor;
@@ -55,12 +55,12 @@
     &:focus,
     &:active {
       color: #000;
-      svg {
+      .checkbox {
         fill: $brandGreen;
       }
     }
 
-    svg {
+    .checkbox {
       @include absolute-top-right(50%, 10px);
       @include square(20px);
       margin-top: -16px;
@@ -81,7 +81,7 @@
   input[type="checkbox"] {
     display: none;
 
-    &:checked + label svg {
+    &:checked + label .checkbox {
       display: none;
       &.checked {
         display: block;
@@ -89,7 +89,7 @@
       }
     }
 
-    &.dependency:checked + label svg {
+    &.dependency:checked + label .checkbox {
       display: block;
       fill: $middleGray;
     }
