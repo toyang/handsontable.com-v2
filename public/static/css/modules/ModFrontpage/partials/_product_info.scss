@@ -1,10 +1,11 @@
+
 /**
  * @author: Handsoncode
  */
  
 .frontpage .product-info {
     @media only screen and (min-width: $mediumWidth) {
-        padding-bottom: 45px;
+        padding: 16vh 0 7vh;
 
         > div {
             margin-bottom: 40px;
@@ -12,7 +13,8 @@
     }
 
     h1 {
-        margin-bottom: 0;
+        margin: 50px 0 0 0;
+        font-size: 2.375em;
     }
 
     h4 {
@@ -28,6 +30,14 @@
     }
 
     .btn {
-        margin-right: 10px;
+        width: calc(50% - 14px);
+        margin: 0 5px;
+        padding: 0;
+    
+        @media only screen and (min-width: $mediumWidth) {
+            width: auto;
+            padding: 0 28px;
+            margin-right: 10px;
+        }        
     }
 }

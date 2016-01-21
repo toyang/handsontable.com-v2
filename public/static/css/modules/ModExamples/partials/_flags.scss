@@ -1,0 +1,99 @@
+.flag {
+  background-size: 33px 22px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+
+  &.europe, &.eur {
+    background-image: url('/static/bower_components/flag-icon/svg/country-4x3/europeanunion.svg');
+  }
+
+  &.usa, &.usd {
+    background-image: url('/static/bower_components/flag-icon/svg/country-4x3/us.svg');
+  }
+
+  &.japan, &.jpy {
+    background-image: url('/static/bower_components/flag-icon/svg/country-4x3/jp.svg');
+  }
+
+  &.england, &.gbp {
+    background-image: url('/static/bower_components/flag-icon/svg/country-4x3/gb.svg');
+  }
+
+  &.switzerland, &.chf {
+    background-image: url('/static/bower_components/flag-icon/svg/country-4x3/ch.svg');
+  }
+
+  &.canada, &.cad {
+    background-image: url('/static/bower_components/flag-icon/svg/country-4x3/ca.svg');
+  }
+
+  &.australia, &.aud {
+    background-image: url('/static/bower_components/flag-icon/svg/country-4x3/au.svg');
+  }
+
+  &.new-zealand, &.nzd {
+    background-image: url('/static/bower_components/flag-icon/svg/country-4x3/nz.svg');
+  }
+
+  &.sweden, &.sek {
+    background-image: url('/static/bower_components/flag-icon/svg/country-4x3/se.svg');
+  }
+
+  &.norway, &.nok {
+    background-image: url('/static/bower_components/flag-icon/svg/country-4x3/no.svg');
+  }
+
+  &.brazil, &.brl {
+    background-image: url('/static/bower_components/flag-icon/svg/country-4x3/br.svg');
+  }
+
+  &.china, &.cny {
+    background-image: url('/static/bower_components/flag-icon/svg/country-4x3/cn.svg');
+  }
+
+  &.russia, &.rub {
+    background-image: url('/static/bower_components/flag-icon/svg/country-4x3/no.svg');
+  }
+
+  &.india, &.inr {
+    background-image: url('/static/bower_components/flag-icon/svg/country-4x3/in.svg');
+  }
+
+  &.turkey, &.try {
+    background-image: url('/static/bower_components/flag-icon/svg/country-4x3/tr.svg');
+  }
+
+  &.thailand, &.thb {
+    background-image: url('/static/bower_components/flag-icon/svg/country-4x3/th.svg');
+  }
+
+  &.indonesia, &.idr {
+    background-image: url('/static/bower_components/flag-icon/svg/country-4x3/id.svg');
+  }
+
+  &.malaysia, &.myr {
+    background-image: url('/static/bower_components/flag-icon/svg/country-4x3/my.svg');
+  }
+
+  &.mexico, &.mxn {
+    background-image: url('/static/bower_components/flag-icon/svg/country-4x3/mx.svg');
+  }
+
+  &.argentina, &.ars {
+    background-image: url('/static/bower_components/flag-icon/svg/country-4x3/ar.svg');
+  }
+
+  &.denmark, &.dkk {
+    background-image: url('/static/bower_components/flag-icon/svg/country-4x3/dk.svg');
+  }
+
+  &.israel, &.ils {
+    background-image: url('/static/bower_components/flag-icon/svg/country-4x3/il.svg');
+  }
+
+  &.philippines, &.php {
+    background-image: url('/static/bower_components/flag-icon/svg/country-4x3/ph.svg');
+  }
+}

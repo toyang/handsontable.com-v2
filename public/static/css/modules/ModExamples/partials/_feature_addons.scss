@@ -1,0 +1,12 @@
+#export-buttons {
+  display: none;
+  text-align: center;
+
+  .btn {
+    margin-top: 35px;
+  }
+
+  &.visible {
+    display: block;
+  }
+}

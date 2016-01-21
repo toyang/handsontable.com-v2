@@ -12,7 +12,13 @@
         }
     }
 
-    form {
+    .plugin-preview {
+        @media only screen and (min-width: $largeWidth) {
+            margin: 78px 0 0 50px;
+        }
+    }
+
+    form, .external_links {
         /* [ styles only for desktop ] */
         @media only screen and (min-width: $largeWidth) {
             margin-left: 19px;

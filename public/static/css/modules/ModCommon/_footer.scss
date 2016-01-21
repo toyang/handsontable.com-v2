@@ -5,15 +5,28 @@
 /* [ local variables ] */
 
 footer {
-    margin-top: 83px;
+    margin-top: 63px;
     padding-bottom: 47px;
     p {
         margin-bottom: 21px;
     }
 
     a {
-        display: block;
-        margin: 12px 0;
+        width: 100%;
+        margin: 0;
+
+        @media only screen and (min-width: $largeWidth) {
+            margin: 6px 0;
+        }
+
+        &[target="_blank"]:hover {
+            opacity: .8;
+        }
+
+        &:after {
+            display: block;
+            content: "";
+        }
     }
 
     .gray-stripe {
@@ -22,24 +35,36 @@ footer {
         margin-bottom: 70px;
     }
 
+    #mc_embed_signup {
+        position: relative;
+    }
+
     .subscribe-form {
+        margin: 40px 0;
 
         @media only screen and (min-width: $largeWidth) {
             padding-left: 60px;
+            margin: 0;
         }
 
         h5 {
            font-weight: 600;
-            margin: 21px 0 0;
+            margin: 41px 0 0;
         }
         
         p {
-            margin: 8px 0 20px;
+            text-align: center;
+            margin: 0 0 20px 0;
+
+            @media only screen and (min-width: $largeWidth) {
+                margin: 8px 0 20px;
+                text-align: left;
+            }
         }
 
         form {
-
-            span {
+            /* mailchimp class */
+            .mc-field-group {
                 @include rectangle(100%, 42px);
                 position: relative;
                 display: block;
@@ -55,14 +80,18 @@ footer {
                     margin-top: -5px;
                     fill: $middleGray;
                 }
+
+                div.mce_inline_error {
+                    bottom: -20px;
+                }
             }
             
-            input[type="text"],
+            input[type="email"],
             input[type="submit"] {
                 border-radius: 2px;
             }
 
-            input[type="text"] {
+            input[type="email"] {
                 padding: 10px 20px 10px 34px;
                 background: #FFF;
                 height: 42px; /* Firefox add 2 extra pixels */ 
@@ -70,6 +99,8 @@ footer {
                 @media only screen and (min-width: $largeWidth) {
                     float: left;
                     width: 248px;
+                    margin-bottom: 5px;
+                    border-right-width: 0;
                     border-radius: 2px 0 0 2px;
                 }
                 
@@ -85,8 +116,18 @@ footer {
                 }
             }
 
-            @media only screen and (min-width: $largeWidth) {
+            #mce-responses {
+                position: absolute;
+                top: 53px;
+                font-size: 0.813em; /* 13px */
 
+                #mce-error-response {
+                    color: $brandRed;
+                }
+
+                #mce-success-response {
+                    color: $brandGreen;
+                }
             }
         }
     }
@@ -111,14 +152,9 @@ footer {
                 @include absolute-top-left(50%, 50%);
                 margin: -16px 0 0 -16px;
                 fill: #bdbdbd;
-
-                &:hover {
-                    fill: #969696
-                }
             }
         }
     }
-
 
     .copyright {
         text-align: center;
@@ -129,6 +165,11 @@ footer {
 
         p {
             margin: 3px 0 21px;
+        }
+
+        .handsoncode-logotype svg {
+            @include rectangle(120px, 20px);
+            fill: #9A9A9A;
         }
     }
 }

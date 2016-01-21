@@ -1,0 +1,38 @@
+/**
+ * @author: Handsoncode
+ */
+
+ .directory .addon-bar {
+    margin-top: 77px;
+    color: #FFF;
+    background: $brandBlue;
+
+    h2 {
+        margin: 10px 0 0 0;
+    }
+
+    p {
+        font-size: 0.938em;
+        margin: 4px 0 23px;
+    }
+
+    .search {
+        display: none;
+        @media only screen and (min-width: $largeWidth) {
+            @include absolute-top-right(59%, 117px);
+            @include translateY(-50%);
+            display: block;
+            font-size: 17px;
+            font-weight: 100;
+            opacity: .4;
+
+            svg {
+                @include square(16px);
+                position: relative;
+                top: 3px;
+                margin-right: 13px;
+                fill: #FFF;
+            }
+        }
+    }
+}

@@ -1,66 +1,87 @@
 <section class="support">
-    <div class="row">
+  <div class="row">
+    <div class="large-12 large-centered columns">
+      <h2 class="headline">
+        We've got you <strong>covered</strong><br>
+        <small>Community support and Handsontable experts at your service</small>
+      </h2>
+
+      <div class="row kinds-of-support">
         <div class="large-11 large-centered columns">
-            <h2 class="headline">
-                We’ve got you <strong>covered</strong><br>
-                <small>Free comunity support and experts from Handsoncode at hand</small>
-            </h2>
-
-            <div class="row kinds-of-support">
-                <div class="large-11 large-centered columns">
-                    <div class="row">
-                        <div class="small-12 medium-4 columns">
-                            <svg class="left community-support"><use xlink:href="#community_icon"></use></svg>
-                            <div class="left desc">
-                                <h3>Community support</h3>  
-                                <p>Grab a helping hand from the active comunity on <a href="">GitHub</a>, <a href="">Stackoverflow</a> or <a href="">Google Group</a>.</p>
-                            </div>
-                        </div>
-                        <div class="small-12 medium-4 columns">
-                            <svg class="left priority-support"><use xlink:href="#help_icon"></use></svg>
-                            <div class="left desc">
-                                <h3> Priority support</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel risus eleifend, <a href="">facilisis</a> elit in.</p>
-                            </div>
-                        </div>
-                        <div class="small-12 medium-4 columns">                  
-                            <svg class="left dedicated-solutions"><use xlink:href="#cubes_icon"></use></svg>
-                            <div class="left desc">
-                                <h3>Dedicated solutions</h3>
-                                <p><a href="">Lorem ipsum</a> dolor sit amet, consectetur adipiscing elit. Proin vel risus eleifend, <a href="">facilisis</a> elit in.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div class="row">
+            <div class="small-12 medium-4 columns">
+              <svg class="community-support">
+                <use xlink:href="#community_icon"></use>
+              </svg>
+              <div class="left desc">
+                <h3>Community support</h3>
+                <p>Get a helping hand from the active community on <a
+                      href="https://github.com/handsontable/handsontable"
+                      target="_blank">GitHub</a>, <a href="http://stackoverflow.com/tags/handsontable"
+                      target="_blank">Stackoverflow</a> or <a
+                      href="https://groups.google.com/forum/#!forum/handsontable"
+                      target="_blank">Google Group</a>  for free.</p>
+              </div>
             </div>
-
-            <h3 class="headline centered">
-                <span>Get in touch today</span>
-            </h3>
-            <div class="row">
-                <div class="large-11 large-centered columns">
-                    <div class="row">
-                        <div class="small-12 medium-6 columns">
-                            <form class="clearfix">
-                                <input type="text" placeholder = "Full name" name="full_name"/>
-                                <input type="text" placeholder = "Company name" name="company_name"/>
-                                <input type="text" placeholder = "Email address" name="email_address"/>
-                                <textarea>Your message</textarea>
-                                <input type="submit" class="btn large blue right" value="SEND MESSAGE" />
-                            </form>
-                        </div>
-                        <div class="small-12 medium-offset-1 medium-5 columns">
-                            <h4>Custom implementations</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.Lorem ipsum dolor sit amet, co.</p>
-
-                            <h4>In-person training</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.Lorem ipsum dolor sit amet, co.</p>
-                            <h4>Multichannel support</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.Lorem ipsum dolor sit amet, co.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="small-12 medium-4 columns">
+              <svg class="priority-support">
+                <use xlink:href="#help_icon"></use>
+              </svg>
+              <div class="left desc">
+                <h3>Priority support</h3>
+                <p>You'll get a guaranteed initial response within in 24 hours. Pay per incident or buy a subscription.</p>
+              </div>
             </div>
+            <div class="small-12 medium-4 columns">
+              <svg class="dedicated-solutions">
+                <use xlink:href="#cubes_icon"></use>
+              </svg>
+              <div class="left desc">
+                <h3>Dedicated solutions</h3>
+                <p>Our services are to help you solving problems. Whatever, whenever, we're on hand to help.</p>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>    
- </section>
+      </div>
+
+      <h3 class="headline centered">
+        <span>Contact us today</span>
+      </h3>
+      <div class="row">
+        <div class="large-11 large-centered columns">
+          <div class="row">
+            <div class="small-12 medium-6 columns">
+              <div id="form-sent" class="notification success">Thanks for contacting us. We'll get back to you very soon.</div>
+              <div id="form-error" class="notification error">Oops! We were unable to send the form.
+                Please confirm the fields and submit them again.
+              </div>
+
+              <form id="contact-form" class="clearfix">
+                <input type="text" placeholder="Full name" name="full_name"/>
+                <input type="text" placeholder="Company name" name="company_name"/>
+                <input type="text" placeholder="Email address" name="email_address"/>
+                <textarea placeholder="Your message"></textarea>
+                <input type="submit" class="btn large blue right" value="SEND MESSAGE"/>
+              </form>
+            </div>
+            <div class="small-12 medium-offset-1 medium-5 columns">
+              <h4>Multichannel support</h4>
+              <p>We use a bunch of smart tools for seamless support. Whether you want to drop us a line on Skype, email,
+                Google Hangout or somewhere else, we'll be there.</p>
+
+              <h4>Guaranteed service levels</h4>
+              <p>Time is a crucial to the success of most projects, which is why we always respond in under 24 hours.
+                We're available Monday - Friday 8am-5pm (CET).</p>
+
+              <h4>Experts at hand</h4>
+              <p>As creators of Handsontable we know our solution inside out. That's why small and medium-sized enterprises trust us to fit
+                 Handsontable to their other systems and processes. You can expect a short response time and the right
+                 person for the right job.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

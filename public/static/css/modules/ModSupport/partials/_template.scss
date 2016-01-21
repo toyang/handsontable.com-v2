@@ -18,12 +18,27 @@
         line-height: 1;
 
         + p {
+            text-align: center;
             margin: 0 0 25px 0;
+
+            @media only screen and (min-width: $largeWidth) {
+                text-align: left;
+            }
         }
     }
 
+    #form-sent,
+    #form-error {
+        display: none;
+    }
+
+    .notification {
+        margin: 0 0 20px;
+    }
+
+
     form {
-        padding-bottom: 55px;
+        padding-bottom: 120px;
 
         @media only screen and (min-width: $largeWidth) {
             padding-bottom: 0;
@@ -33,12 +48,6 @@
             min-height: 175px;
             margin-bottom: 6px;
         }
-    }   
-
-    + footer {
-        /* [ styles only for desktop ] */
-        @media only screen and (min-width: $largeWidth) {
-            margin-top: 107px;
-        }
     }
+
 }

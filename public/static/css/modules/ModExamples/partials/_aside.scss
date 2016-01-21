@@ -2,70 +2,109 @@
  * @author: Handsoncode
  */
 
- .examples .side-features  {
+.examples .side-features {
 
-    [aria-expanded="false"] form {
+  [aria-expanded="false"] form {
+    display: none;
+  }
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  h5 {
+    position: relative;
+    margin: 30px 0 26px;
+
+    .checkbox {
+      @include square(10px);
+      margin-left: 2px;
+      fill: currentColor;
+    }
+  }
+
+  h5,
+  label {
+    font-weight: 400;
+  }
+
+  p {
+    @include border-bottom;
+    position: relative;
+    margin: 10px 0;
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  label,
+  a {
+    font-size: inherit;
+  }
+
+  label {
+    @include user-select;
+    padding-right: 30px;
+    cursor: pointer;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: #000;
+      .checkbox {
+        fill: $brandGreen;
+      }
+    }
+
+    .checkbox {
+      @include absolute-top-right(50%, 10px);
+      @include square(20px);
+      margin-top: -16px;
+      fill: $middleGray;
+      z-index: 10;
+
+      @media only screen and (min-width: $mediumWidth) {
+        @include square(16px);
+        margin-top: -13px;
+      }
+
+      &.checked {
         display: none;
+      }
+    }
+  }
+
+  input[type="checkbox"] {
+    display: none;
+
+    &:checked + label .checkbox {
+      display: none;
+      &.checked {
+        display: block;
+        fill: $brandGreen;
+      }
     }
 
-    h5 {
-        position: relative;
-        margin-bottom: 30px;
-        cursor: pointer;
-
-        svg {
-            @include square(10px);
-            margin-left: 2px;
-            fill: currentColor;
-        }
+    &.dependency:checked + label .checkbox {
+      display: block;
+      fill: $middleGray;
     }
+  }
 
-    h5,
-    label {
-        font-weight: 400;
-    }
+  .external_links p {
+    border-bottom: none;
+  }
 
-    p {
-        @include border-bottom;
-        position: relative;
-        margin: 10px 0;
+  #feature_ {
+    display: none;
+  }
 
-        &:last-child {
-            border: none;
-        }
-    }
-
-
-    label {
-        font-size: 13px;
-        padding-right: 30px;
-        cursor: pointer;
-
-        svg {
-            @include absolute-top-right(50%, 10px);
-            @include square(16px);
-            margin-top: -13px;
-            fill: $middleGray;
-            z-index: 10;
-
-            &.checked {
-                display: none;
-            }
-        }
-    }
-
-    input[type="checkbox"] {
-        display: none;
-
-        &:checked + label svg {
-            display: none;
-            &.checked {
-                display: block;
-                fill: $brandGreen;
-            }
-        }
-    }
-
-    
+  label[for='feature_'] {
+    display: none;
+  }
 
 }

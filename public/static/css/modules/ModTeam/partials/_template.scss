@@ -6,6 +6,9 @@
     margin-top: 69px;
 
     .headline {
-        margin-bottom: 79px;
+        @media only screen and (min-width: $largeWidth) {
+            margin-bottom: 79px;
+        }
+        
     }
 }

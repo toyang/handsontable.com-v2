@@ -3,6 +3,7 @@
  */
  
  /* [ components ]*/
+@import "fontface";
 @import "normalize";
 @import "grid";
 @import 'typography';
@@ -18,5 +19,6 @@
 /* [ web partials ] */
 @import 'template';
 @import 'header';
+@import 'logotype';
 @import 'brands';
 @import 'footer';

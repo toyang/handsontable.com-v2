@@ -18,23 +18,40 @@
     }
 
     .row {
-
+        @include flexbox;
+        @include align-items(center);
         img {
             margin: 30px 0;
             width: 80%;
         }
 
+        p, span {
+            font-weight: 300;
+        }
+
+        .see-examples {
+            text-align: center;
+            display: inline-block;
+
+            /* [ styles only for desktop ] */
+            @media only screen and (min-width: $largeWidth) {
+               text-align: left;
+            }
+        }
+
         /* [ styles only for desktop ] */
         @media only screen and (min-width: $largeWidth) {
-            margin-bottom: 82px;
-
-            &.data-binding {
-                margin-bottom: 137px;
-            }
-
+            margin-bottom: 98px;
             img {
                 margin: 0;
-                width: auto;
+                width: 295px;
+            }
+            &:first-child img {
+                width: 370px;
+            }
+            &.data-binding img {
+                position: relative;
+                top: 40px;
             }
         }
     }

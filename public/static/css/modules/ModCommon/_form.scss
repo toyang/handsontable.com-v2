@@ -3,7 +3,7 @@
  */
 form {
     @include placeholder {
-        font-size: 13px;
+        font-size: 0.938em; /* 13px */
     }
 
     fieldset {
@@ -11,7 +11,7 @@ form {
     }
 
     label {
-        font-size: 15px;
+        font-size: 0.938em; /* 15px */
         font-weight: 100;
         display: block;
         margin-bottom: 7px;
@@ -23,26 +23,16 @@ form {
     input[type="password"],
     textarea {
         @include border($inputBorder);
-        font-size: 15px;
+        font-size: 0.938em; /* 15px */
         width: 100%;
         padding: 11px 20px 12px;
         margin-bottom: 15px;
         border-radius: 2px;
         background: #F7F7F7;
+        -webkit-appearance: none;
         &:focus {
             border-color: $inputFocusBorder;
         }
-    }
-
-    input[type="checkbox"] {
-        
-        & + label {
-            
-        }
-
-        &:checked + {
-
-        }   
     }
 
     input[type="submit"] {
@@ -52,4 +42,25 @@ form {
     textarea {
         resize: vertical;
     }
+}
+
+/* mailchimp overwrite styles */
+.mc-field-group {
+    position: relative;
+}
+
+input.mce_inline_error {
+    color: $errorColor !important;
+    border-color: $errorColor !important;
+}
+
+div.mce_inline_error {
+    position: absolute;
+    bottom: 0;
+    font-weight: 400!important;
+    font-size: 11px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: $errorColor !important;
+    background-color: transparent !important;
 }
