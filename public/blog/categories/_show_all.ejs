@@ -5,21 +5,12 @@
     //Loop through entries and get matches
     var matches = [];
 
-    function convertToSlug(data) {
-        var slug = data.replace(/\s+/g, '-').toLowerCase();
-
-        return slug;
-    }
-
     for(var key in public.blog._data) {
         var entry = public.blog._data[key];
-
-        var slug = convertToSlug(entry.category);
 
         matches.push(entry);
         //copy slug too
         matches[matches.length-1].slug = key;
-
     }
 %>
 
