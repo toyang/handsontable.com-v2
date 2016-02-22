@@ -1,0 +1,28 @@
+<% var filter = /(\.html$)/; %>
+<% var replace = /(\.html$)|(^index\.html$)/; %>
+
+<% function tree(head, tail) { %>
+  <% for (key in head) { %>
+    <% val = head[key]; %>
+    <% if (key !== '.git' && key !== '_data' && key !== 'bower_components') { %>
+      <% if (key == '_contents') { %>
+        <% for (i in val) { %>
+          <% file = val[i] %>
+          <% if (filter.test(file) && !/^404\.html/.test(file) && !/^googleef31f9a28f704929\.html/.test(file)) { %>
+            <% file = file.replace(replace, ""); %>
+            <url>
+              <loc>https://handsontable.com<%= tail + file %></loc>
+              <lastmod>2016-01-25T13:04:20+00:00</lastmod>
+              <priority>0.7</priority>
+            </url>
+          <% } %>
+        <% } %>
+      <% } else { %>
+        <% tree(val, tail + key + "/") %>
+      <% } %>
+    <% } %>
+  <% } %>
+<% } %>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <% tree(public, "/") %>
+</urlset>

@@ -21,6 +21,8 @@ $middleGray: #C5C5C5;
 $lightGray: #E3E3E3;
 $ultraLightGray: #F5F5F5;
 
+$darkGrayActive: darken($darkGray, 8%);
+
 /* [ functional color ] */
 $textColor: $baseGray;
 $secondTextColor: $darkGray;

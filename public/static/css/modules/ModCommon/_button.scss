@@ -55,6 +55,16 @@
         }
     }
 
+    &.gray {
+        color: #FFF;
+        background: $darkGray;
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $darkGrayActive;
+        }
+    }
+
     &.ghost-blue,
     &.ghost-red {
         border: 2px solid currentColor;
