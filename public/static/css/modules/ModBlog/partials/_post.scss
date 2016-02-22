@@ -1,0 +1,130 @@
+/**
+ * @author: Handsoncode
+ */
+
+.post {
+  padding-top: 30px;
+  @media only screen and (min-width: $mediumWidth) {
+    padding-top: 100px;
+  }
+
+  .headline {
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: 2.313em;
+    text-align: center;
+    line-height: 1.2;
+    border-bottom: none;
+  }
+
+  .meta-details {
+    text-align: center;
+    
+    span {
+      margin: 0 10px;
+      font-size: 15px;
+
+      img {
+        @include circle(40px);
+        margin-right: 10px;
+      }
+      a {
+        font-size: 1em;
+      }
+      @media only screen and (min-width: $mediumWidth) {
+        font-size: 0.938em;
+        a {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+
+  .body {
+    margin-top: 50px;
+    font-family: $readFont;
+    p {
+      margin: 30px 0;
+      font-size: 1em;
+      line-height: 1.58;
+      letter-spacing: -0.003em;
+      text-align: justify;
+      @media only screen and (min-width: $mediumWidth) {
+        font-size: 1.313em;
+      }
+      a {
+        font-size: 1em;
+      }
+      label.photo-label {
+        font-size: 0.619em;
+        color: $darkGray;
+        font-family: $regularFont;
+      }
+    }
+    ul li {
+      font-size: 1em;
+      padding: 10px 0 10px 10px;
+      list-style: square;
+      margin-left: 80px;
+      @media only screen and (min-width: $mediumWidth) {
+        font-size: 1.313em;
+      }
+    }
+    h3 {
+      font-weight: 600;
+      margin-top: 50px;
+    }
+    blockquote {
+      margin: 0 0 30px 20px;
+      padding: 0.6em 1em;
+      font-style: italic;
+      font-weight: inherit;
+      border-left: 6px solid $lightGray;
+    }
+    code {
+      border: 0;
+      margin: 0;
+      padding: 0 0 20px;
+      font-size: 13px;
+      font-weight: 400;
+      font-family: $codeFont;
+    }
+    .toolbox {
+      margin-top: 20px;
+    }
+  }
+
+  .author {
+    padding: 40px 0 70px;
+
+    img,
+    blockquote {
+      display: inline-block;
+    }
+
+    blockquote {
+      margin-top: 10px;
+      font-size: 1.625em; /* 26px */
+    }
+
+    img {
+      border-radius: 100%;
+      max-width: 100px;
+    }
+
+    h5 {
+      margin: 12px 0;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    a {
+      font-size: inherit;
+      color: $baseGray;
+    }
+  }
+}
+
+#comments {
+  margin-top: 30px;
+}

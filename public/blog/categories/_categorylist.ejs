@@ -1,0 +1,54 @@
+<%
+    //what category are we?
+    var thisCat = current.source;
+
+    //Loop through entries and get matches
+    var matches = [];
+
+    function convertToSlug(data) {
+        var slug = data.replace(/\s+/g, '-').toLowerCase();
+
+        return slug;
+    }
+
+    for(var key in public.blog.posts._data) {
+        var entry = public.blog.posts._data[key];
+
+        var slug = convertToSlug(entry.category);
+
+        if(slug == thisCat) {
+            matches.push(entry);
+            //copy slug too
+            matches[matches.length-1].slug = key;
+        }
+    }
+%>
+
+<section class="blog">
+    <div class="row">
+        <div class="large-12 large-centered columns">
+            <h2 class="headline category-title"><span>Category /</span> <%- thisCat %></h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="large-12 large-centered columns">
+            <div class="row">
+                <% for(var i=0; i<matches.length; i++) { %>
+                    <div class="large-4 left columns post-element">
+                        <h3>
+                            <a href="/blog/posts/<%- matches[i].slug %>"><%- matches[i].title %></a>
+                        </h3>
+                        <p>
+                            <small>
+                                <%- matches[i].category %> / <%- matches[i].date %>
+                            </small>
+                        </p>
+                        <p><%- matches[i].description %></p>
+                        <p><a href="/blog/posts/<%- matches[i].slug %>">Read more</a></p>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</section>

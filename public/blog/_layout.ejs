@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- partial("../_partials/_head") %>
+    <%- partial("../_partials/_svg_sprite_ajax") %>
+</head>
+<body>
+    <%- partial("../_partials/_tagmanager") %>
+    <%- partial("../_partials/_header") %>
+
+    <%- yield %>
+
+    <% if (current.path[1] == "posts") { %>
+        <div class="bottom-signup">
+            <%- partial("_form") %>
+        </div>
+        <%- partial("_comments") %>
+    <% } %>
+
+    <%- partial("../_partials/_footer") %>
+    <%- partial("../_partials/_scripts") %>
+
+    <% if (current.path[1] == "posts") { %>
+        <%- partial("_blog_scripts") %>
+    <% } %>
+</body>
+</html>

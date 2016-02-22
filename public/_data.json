@@ -1,38 +1,46 @@
 {
+    "sitemap": {
+        "layout": false
+    },
+
     "index": {
-        "title": "Handsontable | The Excel-like front-end spreadsheet library for developers"
+        "title": "The Excel-like front-end spreadsheet library for developers"
     },
 
     "examples": {
-        "title": "Examples | The Excel-like front-end spreadsheet library for developers"
+        "title": "Choose Your Components"
     },
 
     "pricing": {
-        "title": "Pricing | The Excel-like front-end spreadsheet library for developers"
+        "title": "Pricing & Plans"
+    },
+
+    "pricing-maintenance": {
+        "title": "Hold tight, we're right back"
     },
 
     "features": {
-        "title": "Features | The Excel-like front-end spreadsheet library for developers"
+        "title": "Discover More Features"
     },
 
     "directory": {
-        "title": "Add-ons | The Excel-like front-end spreadsheet library for developers"
+        "title": "A Marketplace For Spreadsheet Components"
     },
 
     "support": {
-        "title": "Support | The Excel-like front-end spreadsheet library for developers"
+        "title": "Priority Support And Consulting Services"
     },
 
     "team": {
-        "title": "Team | The Excel-like front-end spreadsheet library for developers"
+        "title": "Meet Our Team"
     },
 
     "contact": {
-        "title": "Contact | The Excel-like front-end spreadsheet library for developers"
+        "title": "Get In Touch"
     },
 
     "privacy": {
-        "title": "Privacy | The Excel-like front-end spreadsheet library for developers"
+        "title": "Privacy Policy"
     }
 
 }

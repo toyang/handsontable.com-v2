@@ -1,0 +1,80 @@
+/**
+ * @author: Handsoncode
+ */
+
+ .newsletter {
+   margin-bottom: 20px;
+    @include border-bottom($lightGray);
+
+    .headline {
+        font-weight: 400;
+        text-align: center;
+        border: none;
+        padding: 0 0 10px 0;
+        margin-bottom: 0;
+
+        small {
+            font-size: 0.469em; /* 15px */
+            font-weight: 100;
+            line-height: 1.6;
+            max-width: 400px;
+            margin-top: 18px;
+        }
+    }
+
+    p {
+        font-size: 0.938em; /* 15px */
+        text-align: center;
+    }
+
+    form {
+        margin: 23px 0 59px;
+
+        input[type="text"],
+        input[type="email"], 
+        input[type="number"], 
+        input[type="password"], 
+        textarea {
+            background: #FFF;
+            border-color: $inputBorder;
+        }
+
+        #mce-responses {
+            font-size: 0.813em; /* 13px */
+            text-align: center;
+
+            .response {
+              margin-bottom: 15px;
+            }
+
+            #mce-error-response {
+                color: $brandRed;
+            }
+
+            #mce-success-response {
+              color: $brandGreen;
+            }
+        }
+
+        .btn {
+            width: 100%;
+        }
+    }
+
+    .contact-us {
+        text-align: center;
+        font-weight: 100;
+        font-size: 0.813em; /* 13px */
+        margin-bottom: 22px;
+        p,
+        a  {
+            font-size: inherit;
+            margin: 0;
+        }
+    }
+}
+
+.bottom-signup .newsletter {
+  @include border-top($lightGray);
+  padding-top: 20px;
+}

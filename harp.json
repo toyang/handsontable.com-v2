@@ -1,6 +1,9 @@
 {
     "globals": {
         "title": "Handsontable",
+        "brand": "Handsontable",
+        "url": "https://handsontable.com",
+        "description": "Handsontable is a composite spreadsheet component for apps and websites written in JavaScript and HTML",
         "img_path": "/static/images/",
         "tag_manager": "GTM-55L5D3",
         "heap_analytics": "3675945729"
