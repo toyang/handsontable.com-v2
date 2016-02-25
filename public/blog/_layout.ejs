@@ -10,7 +10,7 @@
 
     <%- yield %>
 
-    <% if (current.path[1] == "posts") { %>
+    <% if (current.path[1] == "articles") { %>
         <div class="bottom-signup">
             <%- partial("_form") %>
         </div>
@@ -20,7 +20,7 @@
     <%- partial("../_partials/_footer") %>
     <%- partial("../_partials/_scripts") %>
 
-    <% if (current.path[1] == "posts") { %>
+    <% if (current.path[1] == "articles") { %>
         <%- partial("_blog_scripts") %>
     <% } %>
 </body>

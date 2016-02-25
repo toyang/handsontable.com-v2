@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:300,400,600,700" rel="stylesheet" type="text/css">
 <link href="/static/css/main.css" type="text/css" rel="stylesheet">
 
-<% if (current.path[1] !== 'posts') { %>
+<% if (current.path[1] !== 'articles') { %>
     <script>
       (function() {var s=document.createElement('script');
         s.type='text/javascript';s.async=true;
@@ -21,7 +21,7 @@
     </script>
 <% } %>
 
-<% if (current.source === 'examples' || current.path[1] == 'posts') {  %>
+<% if (current.source === 'examples' || current.path[1] == 'articles') {  %>
     <link href="/static/bower_components/handsontable-pro/dist/handsontable.full.css" type="text/css" rel="stylesheet">
     <link href="/static/bower_components/highlightjs/styles/github.css" type="text/css" rel="stylesheet">
 

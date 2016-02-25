@@ -5,12 +5,21 @@
     //Loop through entries and get matches
     var matches = [];
 
-    for(var key in public.blog._data) {
-        var entry = public.blog._data[key];
+    function convertToSlug(data) {
+        var slug = data.replace(/\s+/g, '-').toLowerCase();
+
+        return slug;
+    }
+
+    for(var key in public.blog.articles._data) {
+        var entry = public.blog.articles._data[key];
+
+        var slug = convertToSlug(entry.category);
 
         matches.push(entry);
         //copy slug too
         matches[matches.length-1].slug = key;
+
     }
 %>
 
@@ -27,15 +36,15 @@
                 <% for(var i=0; i<matches.length; i++) { %>
                     <div class="large-4 left columns post-element">
                         <h3>
-                            <a href="/blog/posts/<%- matches[i].slug %>"><%- matches[i].title %></a>
+                            <a href="/blog/articles/<%- matches[i].slug %>"><%- matches[i].title %></a>
                         </h3>
                         <p>
                             <small>
                                 <%- matches[i].category %> / <%- matches[i].date %>
                             </small>
                         </p>
-                        <p><%- matches[i].desc %></p>
-                        <p><a href="/blog/posts/<%- matches[i].slug %>">Read more</a></p>
+                        <p><%- matches[i].description %></p>
+                        <p><a href="/blog/articles/<%- matches[i].slug %>">Read more</a></p>
                     </div>
                 <% } %>
             </div>
