@@ -11,8 +11,8 @@
         return slug;
     }
 
-    for(var key in public.blog.posts._data) {
-        var entry = public.blog.posts._data[key];
+    for(var key in public.blog.articles._data) {
+        var entry = public.blog.articles._data[key];
 
         var slug = convertToSlug(entry.category);
 
@@ -37,7 +37,7 @@
                 <% for(var i=0; i<matches.length; i++) { %>
                     <div class="large-4 left columns post-element">
                         <h3>
-                            <a href="/blog/posts/<%- matches[i].slug %>"><%- matches[i].title %></a>
+                            <a href="/blog/articles/<%- matches[i].slug %>"><%- matches[i].title %></a>
                         </h3>
                         <p>
                             <small>
@@ -45,7 +45,7 @@
                             </small>
                         </p>
                         <p><%- matches[i].description %></p>
-                        <p><a href="/blog/posts/<%- matches[i].slug %>">Read more</a></p>
+                        <p><a href="/blog/articles/<%- matches[i].slug %>">Read more</a></p>
                     </div>
                 <% } %>
             </div>

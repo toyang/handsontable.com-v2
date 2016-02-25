@@ -5,14 +5,14 @@
         <link><%- url %></link>
         <description><%- description %></description>
         <atom:link href="<%- url %>/blog/feed.xml" rel="self" type="application/rss+xml" />
-        <% for(slug in public.blog.posts._data) { %>
-        <% var post = public.blog.posts._data[slug] %>
+        <% for(slug in public.blog.articles._data) { %>
+        <% var post = public.blog.articles._data[slug] %>
         <item>
             <title><%- post.title %></title>
-            <description><![CDATA[<%- partial("blog/posts" + slug) %>]]></description>
+            <description><![CDATA[<%- partial("blog/articles" + slug) %>]]></description>
             <pubDate><%- Date(post.date) %></pubDate>
-            <link><%- url %>/blog/posts/<%- slug %></link>
-            <guid isPermaLink="true"><%- url %>/blog/posts/<%- slug %></guid>
+            <link><%- url %>/blog/articles/<%- slug %></link>
+            <guid isPermaLink="true"><%- url %>/blog/articles/<%- slug %></guid>
         </item>
         <% } %>
     </channel>
