@@ -36,15 +36,15 @@
                 <% for(var i=0; i<matches.length; i++) { %>
                     <div class="large-4 left columns post-element">
                         <h3>
-                            <a href="/blog/articles/<%- matches[i].slug %>"><%- matches[i].title %></a>
+                            <a href="/blog/posts/<%- matches[i].slug %>"><%- matches[i].title %></a>
                         </h3>
                         <p>
                             <small>
                                 <%- matches[i].category %> / <%- matches[i].date %>
                             </small>
                         </p>
-                        <p><%- matches[i].description %></p>
-                        <p><a href="/blog/articles/<%- matches[i].slug %>">Read more</a></p>
+                        <p><%- matches[i].desc %></p>
+                        <p><a href="/blog/posts/<%- matches[i].slug %>">Read more</a></p>
                     </div>
                 <% } %>
             </div>
