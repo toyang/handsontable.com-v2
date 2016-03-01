@@ -9,9 +9,9 @@
                     <img src="../attachments/authors/krzysztof-budnik.png" alt="Krzysztof Budnik" />
                     <label>Krzysztof Budnik</label>
                 </span>
-                <span><a href="/blog/categories/startups">Recipes</a> / February 29, 2016</span>
-                <meta itemprop="datePublished" content="2016-02-29T12:00:00+01:00"/>
-                <meta itemprop="dateModified" content="2016-02-29T12:00:00+01:00"/>
+                <span><a href="/blog/categories/startups">Recipes</a> / March 1, 2016</span>
+                <meta itemprop="datePublished" content="2016-03-01T12:00:00+01:00"/>
+                <meta itemprop="dateModified" content="2016-03-01T12:00:00+01:00"/>
                 <span><a href="#disqus_thread"></a></span>
             </div>
         </div>
@@ -19,44 +19,79 @@
     <article class="row body">
         <div class="large-8 medium-12 large-centered columns">
             <p itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-                <img src="../attachments/images/hidden-rows-handsontable.png" alt="Hiding rows in Handsontable illustration" />
+                <img src="../attachments/images/hidden-rows-handsontable.png" alt="Hiding rows in Handsontable" />
                 <meta itemprop="url" content="https://handsontable.com/blog/attachments/images/hidden-rows-handsontable.png">
                 <meta itemprop="width" content="757">
                 <meta itemprop="height" content="441">
             </p>
             <p>
                 There are many situations in which you may want to prevent one or more specific rows from being displayed.
-                Such hidden rows will still exist in the data set but the user won't be able to modify them using the interface.
+                Such hidden rows will still exist in the data set but will be able to decide whether the user can
+                modify them using the visual interface.
             </p>
             <p>
-                You can hide rows in the certain range using at least three different methods. Each of these has its pros
-                and cons. Note that these methods don't remove or hide the data permanently. User can access the entire
-                data set any time and see what data has been hidden.
+                You can hide rows within a certain range using at least three different methods. Each of these methods
+                has its pros and cons. Note that these methods don't remove or hide the data permanently.
+                Users can access the entire data set any time and see what data has been hidden.
             </p>
 
             <h3>Use modifyRow Hook</h3>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis dignissim nulla, id gravida diam. Duis facilisis dolor et consequat sagittis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum maximus vestibulum cursus.
+                By applying <a href="//docs.handsontable.com/pro/1.2.0/Hooks.html#event:modifyRow">this method</a>
+                you can physically exclude certain rows from the rendering process. Also, all data
+                collected using methods such as <code class="inline">getData</code> or <code class="inline">setData</code>
+                won't be visible or copyable. To access not-rendered rows you can call the method
+                <code class="inline">getSourceData</code>.
             </p>
-            <p>Pros and cons:</p>
+            <p class="title">Pros and Cons:</p>
             <ul>
-                <li class="pros">Pros</li>
-                <li class="pros">Pros</li>
-                <li class="pros">Pros</li>
-                <li class="cons">Cons</li>
-                <li class="cons">Cons</li>
-                <li class="cons">Cons</li>
+                <li class="pros">Unlimited number of hidden rows</li>
+                <li class="pros">Hidden rows don't affect the grid's performance</li>
+                <li class="pros">It is available in the free edition</li>
+                <li class="cons">You need to map and track the hidden rows yourself</li>
+                <li class="cons">Lack of visual indication of which rows are hidden</li>
+                <li class="cons">You can't copy or paste data to/from the hidden rows</li>
             </ul>
             <p>
-                In the example below we demonstrate how to load an array of objects to Handsontable and then
-                hide rows 1, 3-5, 8-10.
+                See the demonstration below on how to hide rows containing IDs 3,4 and 10.
             </p>
-            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/Lp4qn55v/embedded/"
-                    allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/81ewbapL/6/embedded/result,js,html" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+            <h3>Use Trim Rows Plugin</h3>
+            <p>
+                It is our implementation of the above mentioned <code class="inline">modifyRow</code> hook to hide the
+                specific rows. <a href="//docs.handsontable.com/pro/1.2.0/demo-trimming-rows.html">This plugin</a>
+                is available in the Pro version of Handsontable. It comes with all the pros and cons from the first example.
+            </p>
+            <p>
+                In the demonstration below we again hide the rows containing IDs 3,4 and 10.
+            </p>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/dja6yf1m/4/embedded/result,js,html" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
             <h3>Use Hiding Rows Plugin</h3>
-            <h3>Use Trim Rows Plugin</h3>
+            <p>
+                <a href="//docs.handsontable.com/pro/1.2.0/demo-hiding-rows.html">The Hiding Rows</a> plugin renders
+                all rows and then hide some of them by setting their height to 0px.
+                The greatest advantage of this plugin is that you can still use features like Copy/Paste or Auto Fill.
+            </p>
+            <p class="title">Pros and Cons:</p>
+            <ul>
+                <li class="pros">You can copy and paste data to/from the hidden rows</li>
+                <li class="pros">There is a visual indicator for hidden rows</li>
+                <li class="pros">Hidden rows stay accessible for the Auto Fill option</li>
+                <li class="cons">Limited number of hidden rows - max. 1000</li>
+                <li class="cons">It negatively affects the grid's performance</li>
+            </ul>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/3qsrnv4d/5/embedded/result,js,html" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
+            <h3>Conclusion</h3>
+            <p>
+                The most efficient way to hide the substantial amount of rows is to prevent them from being rendered. That
+                way your spreadsheet will calculate only the visible rows instead of computing the entire data set.
+                The more rows you trim, the faster the grid works. However, if the hidden rows should be editable using
+                Copy/Paste or Auto Fill options, then your optimal choice is using Hidden Rows plugin which is available in
+                the <a href="/pricing">Pro version</a> of Handsontable.
+            </p>
             <div class="addthis_native_toolbox toolbox"></div>
         </div>
     </article>

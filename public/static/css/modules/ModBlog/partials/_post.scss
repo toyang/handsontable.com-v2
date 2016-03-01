@@ -44,7 +44,7 @@
     margin-top: 50px;
     font-family: $readFont;
     p {
-      margin: 30px 0;
+      margin: 25px 0;
       font-size: 1em;
       line-height: 1.58;
       letter-spacing: -0.003em;
@@ -60,19 +60,43 @@
         color: $darkGray;
         font-family: $regularFont;
       }
+      &.title {
+        margin-bottom: 0;
+      }
     }
-    ul li {
-      font-size: 1em;
-      padding: 10px 0 10px 10px;
-      list-style: square;
-      margin-left: 80px;
-      @media only screen and (min-width: $mediumWidth) {
-        font-size: 1.313em;
+    ul {
+      margin-bottom: 25px;
+      li {
+        font-size: 1em;
+        padding: 8px 0 0 10px;
+        list-style: square;
+        margin-left: 80px;
+        position: relative;
+        @media only screen and (min-width: $mediumWidth) {
+          font-size: 1.313em;
+        }
+
+        &.pros, &.cons {
+          list-style: none;
+          &:before {
+            @include absolute-top-left (7px, -26px);
+            font-weight: 600;
+          }
+        }
+        &.pros:before {
+          content: "+";
+          color: $brandGreen;
+        }
+        &.cons:before {
+          content: "-";
+          left: -23px;
+          color: $brandRed;
+        }
       }
     }
     h3 {
       font-weight: 600;
-      margin-top: 50px;
+      margin-top: 40px;
     }
     blockquote {
       margin: 0 0 30px 20px;
@@ -88,6 +112,13 @@
       font-size: 13px;
       font-weight: 400;
       font-family: $codeFont;
+      &.inline {
+        margin: 0 2px;
+        padding: 3px 6px;
+        display: inline;
+        font-size: 18px;
+        white-space: nowrap;
+      }
     }
     .toolbox {
       margin-top: 20px;
