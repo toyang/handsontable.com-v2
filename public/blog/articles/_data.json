@@ -1,8 +1,16 @@
 {
+  "3-ways-to-hide-rows-in-handsontable": {
+    "title": "3 Ways To Hide Rows In Handsontable",
+    "category": "Recipes",
+    "date": "February 29, 2016",
+    "image_file": "hidden-rows-handsontable.png",
+    "description": "There are many situations in which you may want to prevent one or more specific rows from being displayed. Such hidden rows will still exist in the data set but will be able to decide whether the user can (...)"
+  },
   "what-to-expect-when-switching-from-open-source-to-commercial": {
     "title": "What To Expect When Switching From Open-Source To Commercial",
     "category": "Startups",
     "date": "February 22, 2016",
-    "description": "There is no handbook to guide you should you ever decide to move your software product from open-source to a commercial model. If there were, it would come with a large disclaimer: Results may vary."
+    "image_file": "going-commercial.jpg",
+    "description": "There is no handbook to guide you should you ever decide to move your software product from open-source to a commercial model."
   }
 }
