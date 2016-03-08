@@ -1,10 +1,17 @@
 {
+  "5-successful-business-models-for-web-based-open-source-projects": {
+    "title": "5 Successful Business Models For Web-Based Open-Source Projects",
+    "category": "Startups",
+    "date": "March 8, 2016",
+    "image_file": "hidden-rows-handsontable.png",
+    "description": "Even if you don't imagine your open-source project becoming next year's hottest unicorn, all but the smallest of open-source projects are always at risk of (...)"
+  },
   "3-ways-to-hide-rows-in-handsontable": {
     "title": "3 Ways To Hide Rows In Handsontable",
     "category": "Recipes",
     "date": "March 1, 2016",
     "image_file": "hidden-rows-handsontable.png",
-    "description": "There are many situations in which you may want to prevent one or more specific rows from being displayed. Such hidden rows will still exist in the data set but will be able to decide whether the user can (...)"
+    "description": "There are many situations in which you may want to prevent one or more specific rows from being displayed. Such hidden rows will still exist in the data set but you will be able to (...)"
   },
   "what-to-expect-when-switching-from-open-source-to-commercial": {
     "title": "What To Expect When Switching From Open-Source To Commercial",

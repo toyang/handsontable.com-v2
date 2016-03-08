@@ -9,7 +9,7 @@
         <% var post = public.blog.articles._data[slug] %>
         <item>
             <title><%- post.title %></title>
-            <description><![CDATA[<%- partial("blog/articles" + slug) %>]]></description>
+            <description><%- post.description %></description>
             <pubDate><%- Date(post.date) %></pubDate>
             <link><%- url %>/blog/articles/<%- slug %></link>
             <guid isPermaLink="true"><%- url %>/blog/articles/<%- slug %></guid>
