@@ -46,11 +46,14 @@
     p {
       margin: 25px 0;
       font-size: 1em;
-      line-height: 1.58;
+      line-height: 1.68;
       letter-spacing: -0.003em;
       text-align: justify;
       @media only screen and (min-width: $mediumWidth) {
         font-size: 1.313em;
+      }
+      strong {
+        font-weight: 600;
       }
       a {
         font-size: 1em;
@@ -69,13 +72,13 @@
       li {
         font-size: 1em;
         padding: 8px 0 0 10px;
+        line-height: 1.68;
         list-style: square;
         margin-left: 80px;
         position: relative;
         @media only screen and (min-width: $mediumWidth) {
           font-size: 1.313em;
         }
-
         &.pros, &.cons {
           list-style: none;
           &:before {
@@ -92,6 +95,9 @@
           left: -23px;
           color: $brandRed;
         }
+        li {
+          font-size: 1em;
+        }
       }
     }
     h3 {
@@ -101,7 +107,6 @@
     blockquote {
       margin: 0 0 30px 20px;
       padding: 0.6em 1em;
-      font-style: italic;
       font-weight: inherit;
       border-left: 6px solid $lightGray;
     }
