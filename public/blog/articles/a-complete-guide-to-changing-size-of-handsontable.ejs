@@ -1,0 +1,170 @@
+<section class="post" itemid="https://handsontable.com/<%= current.source %>" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="row">
+        <div class="large-6 large-centered columns">
+            <h2 class="headline" itemprop="headline">
+                A Complete Guide to Changing Size of Handsontable
+            </h2>
+            <div class="meta-details">
+                <span>
+                    <img src="../attachments/authors/aleksandra-budnik.jpg" alt="Aleksandra Budnik" />
+                    <label>Aleksandra Budnik</label>
+                </span>
+                <span><a href="/blog/categories/recipes">Recipes</a> / March 31, 2016</span>
+                <meta itemprop="datePublished" content="2016-03-31T12:00:00+01:00"/>
+                <meta itemprop="dateModified" content="2016-03-31T12:00:00+01:00"/>
+                <span><a href="#disqus_thread"></a></span>
+            </div>
+        </div>
+    </div>
+    <article class="row body">
+        <div class="large-8 medium-12 large-centered columns">
+            <p itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                <img src="../attachments/images/changing-size-of-handsontable.png" alt="A Complete
+                Guide to Changing Size of Handsontable" />
+                <meta itemprop="url"
+                      content="https://handsontable.com/blog/attachments/images/changing-size-of-handsontable.png">
+                <meta itemprop="width" content="757">
+                <meta itemprop="height" content="441">
+            </p>
+            <p>
+                One of the basic things you can do with Handsontable is adjusting it to the existing layout.
+                In this article I will guide you through the configuration options which will make Handsontable
+                work the way you like.
+            </p>
+            <p>
+                Handsontable was created with performance in mind, therefore it supports relatively large data sets,
+                even those exceeding 100k rows. To navigate effectively within such an amount of information
+                you may need to limit the container's width and height.
+            </p>
+            <p>
+                Handsontable by default fills its nearest parent element which has a defined width, height and the
+                CSS overflow property set to hidden.
+                Having that, you can expand your Handsontable to the window's dimension and use the native
+                scrollbars to navigate through the grid. Here are your options at a glance:
+            </p>
+
+            <ul>
+                <li>Scroll both vertically and horizontally inside a limited HTML container,</li>
+                <li>Scroll vertically inside an HTML container and horizontally inside the window (coming soon),</li>
+                <li>Scroll horizontally inside an HTML container and vertically inside the window,</li>
+                <li>Scroll both vertically and horizontally inside the window.</li>
+            </ul>
+            <p>
+                This gives you almost complete freedom in fitting Handsontable into your layout.
+                Further in this article you will find the details on how to set it all up.
+            </p>
+            <h3>1. Fixed width and height</h3>
+            <p>
+                You can enter a certain width and height of Handsontable directly in the configuration,
+                ultimately before initializing it, for example:
+            </p>
+            <p>
+<pre>
+<code lang="js">
+width: 500,
+height: 500
+</code>
+</pre>
+            </p>
+            <p>
+                That defines the container's width and height in pixel values and
+                adds the <code class="inline">overflow: hidden</code> property.
+            </p>
+            <iframe width="100%" height="370" src="//jsfiddle.net/handsoncode/tfhjd5vo/3/embedded/result,js,html/"
+                    allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+            <p>
+                You can also define the size using pure CSS:
+            </p>
+            <p>
+<pre>
+<code lang="js">
+.hot-container {
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+}
+</code>
+</pre>
+            </p>
+            <p>
+                If you use CSS then make sure you set the <code class="inline">overflow</code> property
+                to <code class="inline">hidden</code>, as Handsontable won't adjust
+                properly without it. The CSS selectors can used interchangeably with the JavaScript configuration but
+                shouldn't be used at the same time.
+            </p>
+            <iframe width="100%" height="370" src="//jsfiddle.net/handsoncode/cqp9L3zv/embedded/result,js,html/"
+                    allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                Additionally, if your spreadsheet doesn't have enough columns to fill the container,
+                you can use the <code class="inline">stretchH</code> option to stretch the
+                columns to the maximum table's width. See the demo below:
+            </p>
+            <iframe width="100%" height="370" src="//jsfiddle.net/handsoncode/ap7vof50/1/embedded/result,js,html/"
+                    allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                In the demo above we have five columns stretched to the width of 650px. Using the mentioned
+                <code class="inline">stretchH</code>
+                option is the easiest way to fill the entire container. Read more about it in
+                our
+                <a href="https://docs.handsontable.com/pro/demo-stretching.html">
+                    documentation
+                </a>.
+            </p>
+
+            <h3>2. Fixed height only (Coming soon)</h3>
+            <p>
+                If you provide height only and decide to leave the width indefinite then the spreadsheet will expand to
+                the window's full width (or any parent element with defined dimensions and
+                <code class="inline">overflow: hidden</code>).
+            </p>
+            <p>
+                This option is not yet available but we plan to add it soon.
+            </p>
+
+            <h3>3. Fixed width only</h3>
+            <p>
+                If you set only the table's width, it won't render properly until you use the
+                <a href="http://docs.handsontable.com/Options.html#preventOverflow">
+                    <code class="inline">preventOverflow</code></a> option.
+                By setting it to <code class="inline">horizontal</code> your spreadsheet will have the width of a
+                parent container and the height of the window. Scrollbars will appear if needed. Basically,
+                the <code class="inline">preventOverflow</code> option prevents the
+                table from overflowing the parent container in the provided dimension, in this case - horizontal.
+            </p>
+            <iframe width="100%" height="363" src="//jsfiddle.net/handsoncode/18wtx4vr/embedded/result,js,html/"
+                    allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+            <h3>4. No width and height</h3>
+            <p>
+                If there are no height and width settings passed in the configuration, the table will vertically and
+                horizontally fill the entire window (again, or any parent element with defined dimensions and
+                <code class="inline">overflow: hidden</code>).
+            </p>
+            <iframe width="100%" height="330" src="//jsfiddle.net/handsoncode/1fo2dvpL/1/embedded/result,js,html/"
+                    allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+            <h3>Conclusion</h3>
+            <p>
+                Handsontable becomes as simple and a flexible tool when you know the basics. Even if your layout
+                requires placing multiple instances on the same page, with the guide above you should be covered.
+            </p>
+            <p>
+                What's more, you can change the size dynamically any time after the initialization
+                by using the <code class="inline">updateSettings</code> code to update the dimensions.
+            </p>
+            <div class="addthis_native_toolbox toolbox"></div>
+        </div>
+    </article>
+
+    <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="http://handsoncode.net/images/logos/logo.png">
+            <meta itemprop="width" content="175">
+            <meta itemprop="height" content="25">
+        </div>
+        <meta itemprop="name" content="Handsoncode">
+    </div>
+
+    <%- partial("../authors/_abudnik") %>
+</section>
