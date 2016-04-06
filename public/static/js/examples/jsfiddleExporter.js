@@ -2,75 +2,63 @@ function JsfiddleExporter(examplesObj) {
   this.html = '';
   this.css = '';
   this.js = '';
-  this.examplesObj = examplesObj;
+  this.resources = '';
+
+  this.examples = examplesObj;
+  this.exampleCodeGenerator = examples.exampleCodeGenerator;
+
   this.urlEndIndex = window.location.href.lastIndexOf("/");
   this.baseUrl = window.location.href.substr(0, this.urlEndIndex);
 
+  var arrayEach = Handsontable.helper.arrayEach;
+
   /**
-   * Prepare the HTML part for JsFiddle.
+   * Prepare the HTML part of the fiddle.
    */
   this.prepareHtml = function() {
-    this.html = '<div id="hot"></div>';
+    this.html += this.exampleCodeGenerator.makeHotContainer();
   };
 
   /**
-   * Prepare the JS part for JsFiddle.
-   */
-  this.prepareJs = function() {
-    var jstab = document.getElementById('js-tab');
-    var preElem = jstab.querySelector('pre');
-    var datatab = document.getElementById('data-tab');
-
-    this.js += 'document.addEventListener("DOMContentLoaded", function() {\n\n';
-    this.js += 'var dataObj = ' + JSON.stringify(this.examplesObj.hotInstance.getSourceData(), null, 4) + ';\n';
-
-    if (currencyCodes) {
-      this.js += 'var currencyCodes =' + JSON.stringify(currencyCodes, null, 4) + ' \n';
-    }
-
-    this.js += preElem.textContent;
-    this.js += '\n});';
-  };
-
-  /**
-   * Prepare the CSS part for JsFiddle.
+   * Prepare the CSS part of the fiddle.
    */
   this.prepareCss = function() {
-    var _this = this;
-    var scriptTags = document.getElementsByTagName('script');
-    var linkTags = document.getElementsByTagName('link');
-    var tags = [];
-    var html = '';
+    // External resources hack:
+    var i;
 
-    this.css += '#hot {overflow: hidden; width: 500px; height: 300px;}\n\n';
-    this.css += '</style><!-- Ugly Hack due to jsFiddle issue -->\n';
+    this.css += '</style>\n';
+    for (i = 0; i < this.exampleCodeGenerator.externalCss.length; i++) {
+      this.css += this.exampleCodeGenerator.externalCss[i].getHtml();
+    }
 
-    Handsontable.helper.arrayEach(scriptTags, function(tag) {
-      if (tag.getAttribute('src') && tag.getAttribute('src').indexOf('handsontable.full') > -1) {
-        tags.push(tag);
+    for (i = 0; i < this.exampleCodeGenerator.externalJs.length; i++) {
+      this.css += this.exampleCodeGenerator.externalJs[i].getHtml();
+    }
+  };
+
+  /**
+   * Prepare the JS part of the fiddle.
+   */
+  this.prepareJs = function() {
+    this.js += this.exampleCodeGenerator.getInternalScripts().replace('<script>','').replace('</script>','');
+  };
+
+  /**
+   * Prepare the external resources.
+   */
+  this.prepareResources = function() {
+    var i;
+    for (i = 0; i < this.exampleCodeGenerator.externalCss.length; i++) {
+      this.resources += this.exampleCodeGenerator.externalCss[i].body + ',';
+    }
+
+    for (i = 0; i < this.exampleCodeGenerator.externalJs.length; i++) {
+      this.resources += this.exampleCodeGenerator.externalJs[i].body;
+
+      if (i !== this.exampleCodeGenerator.externalJs.length - 1) {
+        this.resources += ',';
       }
-    });
-
-    Handsontable.helper.arrayEach(linkTags, function(tag) {
-      if (tag.getAttribute('href') && tag.getAttribute('href').indexOf('handsontable.full') > -1) {
-        tags.push(tag);
-      }
-    });
-
-
-    Handsontable.helper.arrayEach(tags, function(tag) {
-        html = tag.outerHTML;
-
-      if (html.indexOf('href="http') === -1 && html.indexOf('href="//') === -1 && html.indexOf('src="http') === -1 && html.indexOf('src="//') === -1) {
-          html = html.replace('href="', 'href="' + _this.baseUrl);
-          html = html.replace('src="', 'src="' + _this.baseUrl);
-          html = html.replace('demo/../', '');
-        }
-
-        _this.css += html + '\n';
-
-      html = '';
-    });
+    }
   };
 
   /**
@@ -81,12 +69,16 @@ function JsfiddleExporter(examplesObj) {
     this.prepareJs();
     this.prepareCss();
 
+    // Currently not working - user needs to click 'Run' to make it work. Probably the external dependencies are loaded asynchrnonously.
+    // this.prepareResources();
+
     if (submit) {
       this.submit();
 
       this.css = '';
       this.js = '';
       this.html = '';
+      this.resources = '';
     }
   };
 
@@ -99,6 +91,8 @@ function JsfiddleExporter(examplesObj) {
     form.method = 'POST';
     form.target = '_blank';
     form.innerHTML = '<input type="text" name="title" value="Handsontable example">' +
+      '<textarea name="wrap">l</textarea>' +
+      // '<textarea name="resources">' + this.resources.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</textarea>' +
       '<textarea name="html">' + this.html.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</textarea>' +
       '<textarea name="js">' + this.js.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</textarea>' +
       '<textarea name="css">' + this.css.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</textarea>';
