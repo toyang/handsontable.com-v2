@@ -1,4 +1,11 @@
 {
+  "how-to-make-a-cell-dependent-of-another": {
+    "title": "How to Make a Cell Dependent of Another",
+    "category": "Recipes",
+    "date": "April 15, 2016",
+    "image_file": "changing-size-of-handsontable.png",
+    "description": "One of the basic things you can do with Handsontable is adjusting it to the existing layout. In this article I will guide you through the configuration (...)"
+  },
   "a-complete-guide-to-changing-size-of-handsontable": {
     "title": "A Complete Guide to Changing Size of Handsontable",
     "category": "Recipes",

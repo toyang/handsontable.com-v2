@@ -1,0 +1,331 @@
+<section class="post" itemid="https://handsontable.com/<%= current.source %>" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="row">
+        <div class="large-6 large-centered columns">
+            <h2 class="headline" itemprop="headline">
+                How to Make a Cell Dependent of Another
+            </h2>
+            <div class="meta-details">
+                <span>
+                    <img src="../attachments/authors/krzysztof-budnik.png" alt="Krzysztof Budnik" />
+                    <label>Krzysztof Budnik</label>
+                </span>
+                <span><a href="/blog/categories/recipes">Recipes</a> / April 15, 2016</span>
+                <meta itemprop="datePublished" content="2016-04-15T12:00:00+01:00"/>
+                <meta itemprop="dateModified" content="2016-04-15T12:00:00+01:00"/>
+                <span><a href="#disqus_thread"></a></span>
+            </div>
+        </div>
+    </div>
+    <article class="row body">
+        <div class="large-8 medium-12 large-centered columns">
+            <p itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                <img src="../attachments/images/changing-size-of-handsontable.png" alt="A Complete
+                Guide to Changing Size of Handsontable" />
+                <meta itemprop="url"
+                      content="https://handsontable.com/blog/attachments/images/changing-size-of-handsontable.png">
+                <meta itemprop="width" content="757">
+                <meta itemprop="height" content="441">
+            </p>
+
+            <p>
+                Data entered in the spreadsheet often depends one on another.
+                The user may want to choose a thing that was subordinate to previous choice.
+                You could have asked yourself thousands of times in many cases how easy it is to create
+                relationships between cells in Handsontable. We’ll do our best to explain it to you.
+            </p>
+            <h3>When cells depend on each other?</h3>
+            <p>
+                You can say so whenever value of one or more cells influences the value or attribute of other cell / cells.
+            </p>
+            <p>
+                While using Handsontable you have multiple possibilities. You can decide between date, time,
+                autocomplete and many more when choosing the type of a cell.  Despite that the process of creating
+                dependencies is mainly pretty same to each of it. Assuming we have two cells depended one on another:
+            </p>
+            <ul>
+                <li>
+                    For cell 1 we listen for a change using hook called <code class="inline">afterChange</code>.
+                </li>
+                <li>
+                    For cell 2, which depends on cell 1, we are applying a method called
+                    <code class="inline">setDataAtCell</code>.
+                    We do so whenever we wish to change its value. By using <code class="inline">setCellMeta</code> 
+                    we change its meta data
+                    (its appearance for instance).
+                </li>
+            </ul>
+            <p>
+                The possibility of connecting cells in an easy way and defining their mutual relationships is a
+                thing that makes business world your oyster. Just use it! If own an online business you can decide
+                which products are available in your store and which are not. Imagine, this is just a tip of an iceberg.
+            </p>
+            <h3>
+                Checkbox-dependent cells
+            </h3>
+            <p>
+                Let’s start our journey through cells dependencies from simple, very common example of using a checkbox.
+                It accepts only two states and in our case below the checkbox is, by default, selected.
+                Whenever it gets unselected, the background of its row changes color and all its fields become
+                read-only. See how it works here:
+            </p>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/34xo8qbn/1/embedded/result,js,css,html" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                In the above example to erase cells values after calling a hook called
+                <code class="inline">beforeChange</code> we use <code class="inline">setDataAtCell</code> method.
+            </p>
+            <p>
+                <strong>Summary</strong>
+            </p>
+            <p>
+                In presented cases we have learned how to handle checkbox states to change cells value or
+                their attributes. We may often find ourselves in a situation when we need them both at the same
+                time to achieve the intended business goal.
+            </p>
+            <h3>
+                Select-dependent cells
+            </h3>
+            <p>
+                When talking about data which are selected from a list of available options we mainly refer to
+                the dropdown type of cell. In the case below by changing the year of cars production we determine
+                the vehicle owner. See the example code here:
+            </p>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/f080wg55/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                The above is possible thanks to listening to
+                <code class="inline">beforeChange</code> and by
+                implementation of setters such as <code class="inline">setDataAtRowProp</code>. Please keep in mind to use
+                the <code class="inline">'source'='internal'</code> argument in order to avoid a loop in
+                <code class="inline">beforeChange</code> callback.
+            </p>
+            <p>
+                Next demonstration is an example on how to set a background of a distinctive color
+                for the cars produced in 2016. To present such a
+                concept we used dropdown type of cell.
+            </p>
+            <p>
+                Choose a year 2016 in a dropdown cell to make the whole row green. Want to see how does it work? Jump in:
+            </p>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/3wwk2m6k/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                We used once more <code class="inline">setCellData</code> in order to add
+                <code class="inline">highlightCell</code> class, which makes cells green.
+            </p>
+            <p>
+                <strong>
+                    Summary
+                </strong>
+            </p>
+            <p>
+                You can use the same exact methods  to change cells attributes.
+                It doesn’t matter whether you pick up select, dropdown or autocomplete type.
+            </p>
+            <h3>
+                Date-related dependencies
+            </h3>
+            <p>
+                The case below shows us how to change the format of a time display. Either from 12-hour to
+                24-hour or the other way round. See the example here:
+            </p>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/62sqmk2b/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                We call a hook named <code class="inline">beforeRenderer</code> to transfer time format to a
+                <code class="inline">getCellMeta</code> method,
+                which is then used in a render of a time type column.
+            </p>
+            <p>
+                <strong>Summary</strong>
+            </p>
+            <p>
+                If you wish to change your clock from 12 to 24-hour one you just need a few lines of code.
+                You are just one step away from making international clock displaying current time in all the
+                countries in the world! Sounds exciting, isn’t it?
+            </p>
+            <h3>
+                Content-related dependencies
+            </h3>
+            <p>
+                This time lets imagine we belong to a world of quantum physics and we want to present the
+                results of particle size measurements. According to how accurate your results ought to be you
+                can set your own decimal place. In the example below when writing down a digit in the field
+                <code class="inline">Fraction digits</code> we specify the accuracy of the result in field
+                <code class="inline">Value</code>. See how we did that here:
+            </p>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/3ap3sdco/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                The above was possible thanks to custom function called <code class="inline">makeFormat</code>.
+                It takes, as an argument,
+                a value taken from <code class="inline">Fraction digits</code> column and precisely move the
+                decimal place in the field <code class="inline">Value</code>.
+            </p>
+            <p>
+                In case you want to change data in a dropdown type cell use the example below. Theoretically
+                speaking, it is viable only through accessing instance settings. Thankfully we
+                know how to obviate that rule.
+            </p>
+            <p>
+                Enter the decimal value in any cell of <code class="inline">Colors</code> column and watch how they appear in a
+                dropdown list, beside other options, in that column. It’s pretty simple, go see it here:
+            </p>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/en3d3cee/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                In the above example we enter the decimal values as a text and treat the comma as a value separator. Next,
+                taking the entered values as a data source, we are making a list of choice for a
+                dropdown type cell. In practice we extend the renderer called <code class="inline">AutocompleteRenderer</code>
+                by possibility of getting the list of entries to a dropdown type cell from its neighbour.
+            </p>
+            <p>
+                <strong>Summary</strong>
+            </p>
+            <p>
+                Text or numeric cell types don’t have to present only static values. They can be dependent one
+                on from another, but also are be able to affect the fields of a different type such as dropdown.
+            </p>
+            <h3>
+                Conclusion
+            </h3>
+            <p>
+                What distinguish a regular spreadsheet from your application is the power of customization.
+                Only you decide how far you adjust Handsontable to the need of your users and business case.
+                Examples that we delivered for sure will help you to take a look at your spreadsheet in a
+                way you might never imagine.
+            </p>
+            <!--
+            <p>
+                Handsontable was created with performance in mind, therefore it supports relatively large data sets,
+                even those exceeding 100k rows. To navigate effectively within such an amount of information
+                you may need to limit the container's width and height.
+            </p>
+            <p>
+                Handsontable by default fills its nearest parent element which has a defined width, height and the
+                CSS overflow property set to hidden.
+                Having that, you can expand your Handsontable to the window's dimension and use the native
+                scrollbars to navigate through the grid. Here are your options at a glance:
+            </p>
+
+            <ul>
+                <li>Scroll both vertically and horizontally inside a limited HTML container,</li>
+                <li>Scroll vertically inside an HTML container and horizontally inside the window (coming soon),</li>
+                <li>Scroll horizontally inside an HTML container and vertically inside the window,</li>
+                <li>Scroll both vertically and horizontally inside the window.</li>
+            </ul>
+            <p>
+                This gives you almost complete freedom in fitting Handsontable into your layout.
+                Further in this article you will find the details on how to set it all up.
+            </p>
+            <h3>1. Fixed width and height</h3>
+            <p>
+                You can enter a certain width and height of Handsontable directly in the configuration,
+                ultimately before initializing it, for example:
+            </p>
+            <p>
+<pre>
+<code lang="js">
+width: 500,
+height: 500
+</code>
+</pre>
+            </p>
+            <p>
+                That defines the container's width and height in pixel values and
+                adds the <code class="inline">overflow: hidden</code> property.
+            </p>
+            <iframe width="100%" height="370" src="//jsfiddle.net/handsoncode/tfhjd5vo/3/embedded/result,js,html/"
+                    allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+            <p>
+                You can also define the size using pure CSS:
+            </p>
+            <p>
+<pre>
+<code lang="js">
+.hot-container {
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+}
+</code>
+</pre>
+            </p>
+            <p>
+                If you use CSS then make sure you set the <code class="inline">overflow</code> property
+                to <code class="inline">hidden</code>, as Handsontable won't adjust
+                properly without it. The CSS selectors can used interchangeably with the JavaScript configuration but
+                shouldn't be used at the same time.
+            </p>
+            <iframe width="100%" height="370" src="//jsfiddle.net/handsoncode/cqp9L3zv/embedded/result,js,html/"
+                    allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                Additionally, if your spreadsheet doesn't have enough columns to fill the container,
+                you can use the <code class="inline">stretchH</code> option to stretch the
+                columns to the maximum table's width. See the demo below:
+            </p>
+            <iframe width="100%" height="370" src="//jsfiddle.net/handsoncode/ap7vof50/embedded/result,js,html/"
+                    allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                In the demo above we have five columns stretched to the width of 650px. Using the mentioned
+                <code class="inline">stretchH</code>
+                option is the easiest way to fill the entire container. Read more about it in
+                our
+                <a href="https://docs.handsontable.com/pro/demo-stretching.html">
+                    documentation
+                </a>.
+            </p>
+
+            <h3>2. Fixed height only (Coming soon)</h3>
+            <p>
+                If you provide height only and decide to leave the width indefinite then the spreadsheet will expand to
+                the window's full width (or any parent element with defined dimensions and
+                <code class="inline">overflow: hidden</code>).
+            </p>
+            <p>
+                This option is not yet available but we plan to add it soon.
+            </p>
+
+            <h3>3. Fixed width only</h3>
+            <p>
+                If you set only the table's width, it won't render properly until you use the
+                <a href="http://docs.handsontable.com/Options.html#preventOverflow">
+                    <code class="inline">preventOverflow</code></a> option.
+                By setting it to <code class="inline">horizontal</code> your spreadsheet will have the width of a
+                parent container and the height of the window. Scrollbars will appear if needed. Basically,
+                the <code class="inline">preventOverflow</code> option prevents the
+                table from overflowing the parent container in the provided dimension, in this case - horizontal.
+            </p>
+            <iframe width="100%" height="363" src="//jsfiddle.net/handsoncode/18wtx4vr/embedded/result,js,html/"
+                    allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+            <h3>4. No width and height</h3>
+            <p>
+                If there are no height and width settings passed in the configuration, the table will vertically and
+                horizontally fill the entire window (again, or any parent element with defined dimensions and
+                <code class="inline">overflow: hidden</code>).
+            </p>
+            <iframe width="100%" height="330" src="//jsfiddle.net/handsoncode/1fo2dvpL/embedded/result,js,html/"
+                    allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+            <h3>Conclusion</h3>
+            <p>
+                Handsontable becomes as simple and a flexible tool when you know the basics. Even if your layout
+                requires placing multiple instances on the same page, with the guide above you should be covered.
+            </p>
+            <p>
+                What's more, you can change the size dynamically any time after the initialization
+                by using the <code class="inline">updateSettings</code> code to update the dimensions.
+            </p>
+
+            -->
+            <div class="addthis_native_toolbox toolbox"></div>
+        </div>
+    </article>
+
+    <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="http://handsoncode.net/images/logos/logo.png">
+            <meta itemprop="width" content="175">
+            <meta itemprop="height" content="25">
+        </div>
+        <meta itemprop="name" content="Handsoncode">
+    </div>
+
+    <%- partial("../authors/_kbudnik") %>
+</section>
