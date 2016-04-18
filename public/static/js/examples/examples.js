@@ -59,6 +59,12 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
    * @type {Boolean}
    */
   var UIclick = false;
+  /**
+   * Reference to the ExampleCodeGenerator.
+   *
+   * @type {ExampleCodeGenerator}
+   */
+  this.exampleCodeGenerator = new ExampleCodeGenerator();
 
 
   /**
@@ -197,7 +203,7 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
 
     input.id = input.id + dataObj.name;
     input.checked = dataObj.enabled;
-    label.setAttribute('for', input.id)
+    label.setAttribute('for', input.id);
 
     if (dataObj.enabled) {
       this.enableFeature(dataObj);
@@ -288,7 +294,7 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
     var _this = this;
     var dependencies = this.getDependencies(feature);
 
-    this.updateTabs(feature);
+    this.updateEnabledFeaturesTab(feature);
     feature.enableFeature.call(feature);
 
     Handsontable.helper.arrayEach(dependencies, function(dependency) {
@@ -312,8 +318,9 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
   this.disableFeature = function(feature, event) {
     var _this = this;
     var dependencies = this.getDependencies(feature);
+    
+    this.updateEnabledFeaturesTab(feature, true);
 
-    this.updateTabs(feature, true);
     if (feature.isEnabledAsDependency()) {
       this.disableAsDependency(feature);
 
@@ -421,6 +428,7 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
     }
 
     this.initHOT(newSettings);
+    this.updateCodeTab(newSettings);
   };
 
   /**
@@ -433,110 +441,45 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
     this.hotInstance = new Handsontable(hotElement, settings);
   };
 
-  /**
-   * Update tabs with the provided feature info.
-   *
-   * @param {Feature} feature Feature object.
-   * @param {Boolean} remove True if the feature is being removed.
-   */
-  this.updateTabs = function(feature, remove) {
-    this.updateJavascriptTab(feature, remove);
-    //this.updateDataTab(feature, remove);
-    this.updateEnabledFeaturesTab(feature, remove);
-  };
-
-  /**
-   * Initial setup of the JavaScript tab.
-   */
-  this.setupJavascriptTab = function() {
-    var additionalConfigDiv = document.getElementById('additional-code');
-    var preElement = additionalConfigDiv.parentNode;
-    var flagRendererString = 'var flagRenderer = ' + this.initialHOTsettings.columns[1].renderer.toString() + ';\n';
-    var initialSettingsClone = Handsontable.helper.deepClone(this.initialHOTsettings);
-    delete initialSettingsClone.data;
-    // remove quotes around property keys and remove the brackets in the beginning and end of the string
-    var stringifiedSettings = JSON.stringify(initialSettingsClone, function(key, value) {
-
-      // Might be good to make a more generic solution sometime.
-      if (key === 'columns') {
-        value[0].renderer = 'flagRenderer';
-      }
-
-      return value;
-    }, 4).replace(/\"([^(\")"]+)\":/g, "$1:").replace(/(^\{\n|\n\}$)/mg, '').replace('"flagRenderer"', 'flagRenderer');
-
-    var initialSettingsDiv = document.createElement('DIV');
-    initialSettingsDiv.textContent = stringifiedSettings + ',\n';
-    additionalConfigDiv.appendChild(initialSettingsDiv);
-
-    var flagRendererElement = document.createTextNode(flagRendererString);
-    preElement.insertBefore(flagRendererElement, preElement.firstChild);
-  };
-
-  /**
-   * Initial setup of the data tab.
-   */
-  this.setupDataTab = function() {
-    document.querySelector('#data-tab code').textContent = JSON.stringify(this.hotInstance.getSettings().data, null, 4);
-  };
-
-  /**
-   * Update the JavaScript tab.
-   *
-   * @param {Feature} feature Feature object.
-   * @param {Boolean} remove True if the feature is being removed.
-   */
-  this.updateJavascriptTab = function(feature, remove) {
-    var _this = this;
-    var divPrefix = 'js_feature_';
-    var divElem = document.getElementById('additional-code');
-    var featureDiv = document.getElementById(divPrefix + feature.name);
-
-    Handsontable.helper.arrayEach(feature.dependencies, function(dependency) {
-      var feature = _this.basicFeatures[dependency] || _this.proFeatures[dependency];
-
-      if (!feature) {
-        return;
-      }
-
-      _this.updateJavascriptTab(feature, remove);
-    });
-
-    if (remove) {
-      if (featureDiv) {
-        featureDiv.parentNode.removeChild(featureDiv);
-      }
-      return;
+  this.clearCodeTab = function() {
+    var codeTabElement = document.getElementById('code-tab');
+    while (codeTabElement.firstChild) {
+      codeTabElement.removeChild(codeTabElement.firstChild);
     }
-
-    if (featureDiv) {
-      return;
-    }
-
-    featureDiv = document.createElement('DIV');
-
-    featureDiv.id = divPrefix + feature.name;
-
-    Handsontable.helper.objectEach(feature.configObject, function(value, prop, obj) {
-      featureDiv.textContent += prop.replace(/"/g, '') + ': ';
-      if (typeof value === 'function') {
-        featureDiv.textContent += value.toString() + ',\n';
-      } else {
-        featureDiv.textContent += JSON.stringify(value, null, 4).replace('\n', '    \n') + ',\n';
-      }
-    });
-
-    divElem.appendChild(featureDiv);
   };
 
   /**
-   * Update the Data tab with the provided feature.
-   *
-   * @param {Feature} feature Feature object.
-   * @param {Boolean} remove True if the feature is being removed.
+   * Initial setup of the Code tab.
    */
-  this.updateDataTab = function(feature, remove) {
-    // not needed?
+  this.setupCodeTab = function() {
+    this.clearCodeTab();
+
+    var codeTabElement = document.getElementById('code-tab');
+    var preElement = document.createElement('PRE');
+    var codeElement = document.createElement('CODE');
+
+    codeElement.textContent = this.exampleCodeGenerator.getHtml();
+    codeElement.className = 'language-html';
+
+    preElement.appendChild(codeElement);
+    codeTabElement.appendChild(preElement);
+  };
+
+  /**
+   * Update the Code tab.
+   *
+   * @param {Object} settings New Handsontable settings.
+   */
+  this.updateCodeTab = function(settings) {
+    var settingsToDisplay = Handsontable.helper.clone(settings);
+    settingsToDisplay.data = 'getDataPlaceholder';
+
+    this.exampleCodeGenerator.updateHotSettings(settingsToDisplay);
+    this.setupCodeTab();
+
+    if (Prism) {
+      Prism.highlightAll();
+    }
   };
 
   /**

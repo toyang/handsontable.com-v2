@@ -1,0 +1,220 @@
+<section class="post" itemid="https://handsontable.com/<%= current.source %>" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="row">
+        <div class="large-6 large-centered columns">
+            <h2 class="headline" itemprop="headline">
+                Expand Your App with Cell Dependencies
+            </h2>
+            <div class="meta-details">
+                <span>
+                    <img src="../attachments/authors/krzysztof-budnik.png" alt="Krzysztof Budnik" />
+                    <label>Krzysztof Budnik</label>
+                </span>
+                <span><a href="/blog/categories/recipes">Recipes</a> / April 18, 2016</span>
+                <meta itemprop="datePublished" content="2016-04-18T12:00:00+01:00"/>
+                <meta itemprop="dateModified" content="2016-04-18T12:00:00+01:00"/>
+                <span><a href="#disqus_thread"></a></span>
+            </div>
+        </div>
+    </div>
+    <article class="row body">
+        <div class="large-8 medium-12 large-centered columns">
+            <p itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                <img src="../attachments/images/expand-your-app-with-cell-dependencies.png" alt="A Complete
+                Guide to Changing Size of Handsontable" />
+                <meta itemprop="url"
+                      content="https://handsontable.com/blog/attachments/images/expand-your-app-with-cell-dependencies.png">
+                <meta itemprop="width" content="757">
+                <meta itemprop="height" content="441">
+            </p>
+
+            <p>
+                Data entered into the spreadsheet may often contain some cell dependencies. For example, you might
+                want to make one cell’s value dependant on another. You may have asked yourself thousands of times in
+                many cases how easy it is to create relationships between cells in Handsontable. I’ll do my best to
+                explain it to you.
+            </p>
+            <h3>When do cells depend on each other?</h3>
+            <p>
+                You can say so whenever the value of one or more cells influences the value or attribute of
+                another cell or cells.
+            </p>
+            <p>
+                When using Handsontable you have multiple possibilities. You can decide between the date, time,
+                autocomplete and many more when choosing the type of cell. The process of creating dependencies is
+                pretty much same for each one. Assuming we have two cells dependant on one another:
+            </p>
+            <ul>
+                <li>
+                    For cell 1 we listen for a change using a hook called <code class="inline">afterChange</code>.
+                </li>
+                <li>
+                    For cell 2, which depends on cell 1, we apply a method called
+                    <code class="inline">setDataAtCell</code>.
+                    We do so whenever we wish to change its value. By using <code class="inline">setCellMeta</code>  we
+                    change its meta data (its appearance for instance).
+                </li>
+            </ul>
+            <p>
+                The possibility of connecting cells in an easy way and defining their mutual relationships is a thing
+                that makes the business world your oyster. Just use it! If you own an online business, you can
+                decide which products are available in your store and which are not. Imagine, this is just the
+                tip of the iceberg.
+            </p>
+            <h3>
+                Checkbox-dependent cells
+            </h3>
+            <p>
+                Let’s start our journey through cell dependencies with a simple checkbox example. It accepts only
+                two states and, in my case below, the checkbox is selected by default. Whenever it gets deselected,
+                the whole row changes its background color and becomes read-only.
+            </p>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/L4doafta/embedded/result,js,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+            <p>
+                In the example above, we added a class called <code class="inline">highlightCell</code> through the
+                <code class="inline">getCellMeta</code> method to change the background color of all cells in the row,
+                besides the checkbox column. The read-only property was also added with the
+                <code class="inline">getCellMeta</code> method.
+            </p>
+            <p>
+                In another demo, we are going to change the value inside the cell. Selecting the checkbox erases
+                the content of cells under the <code class="inline">Year of production</code> and
+                <code class="inline">Color</code> columns for this particular row. See how it works below:
+            </p>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/uwn1vb4v/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                In the example above, to erase the cell values after calling a hook called
+                <code class="inline">beforeChange</code> we use the <code class="inline">setDataAtCell</code> method.
+            </p>
+            <p>
+                <strong>Summary</strong>
+            </p>
+            <p>
+                In the presented cases we have learned how to use checkbox states to change cell values or their attributes.
+            </p>
+            <h3>
+                Select-dependent cells
+            </h3>
+            <p>
+                When talking about data selected from a list of available options, we mainly refer to the dropdown cell.
+                In the case below, by changing the car production year we determine the vehicle owner.
+                See the example code here:
+            </p>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/mg9d56Ls/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+            <p>
+                The above is possible thanks to listening
+                <code class="inline">beforeChange</code> and through the implementation of methods such as
+                <code class="inline">setDataAtRowProp</code>. Don't forget to pass a specific value, like
+                <code class="inline">internal</code> as the <code class="inline">source</code> argument in order
+                to avoid an infinite loop in the
+                <code class="inline">beforeChange</code> callback.
+            </p>
+            <p>
+                The next demonstration is an example on how to set a background color for the cars produced in 2016.
+                We used a dropdown cell to present this concept.
+            </p>
+            <p>
+                Choose the year <code class="inline">2016</code> from the dropdown to make the whole row green.
+                Want to see how this works? Jump in:
+            </p>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/7v7c4bp6/embedded/result,js,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                Once again, we used <code class="inline">setCellData</code> in order to add the
+                <code class="inline">highlightCell</code> class, which makes the cells green.
+            </p>
+            <p>
+                <strong>
+                    Summary
+                </strong>
+            </p>
+            <p>
+                You can use the exact same methods to change cell attributes. It doesn’t matter whether you pick select,
+                dropdown or autocomplete type.
+            </p>
+            <h3>
+                Date-related dependencies
+            </h3>
+            <p>
+                The case below shows you how to change the format of a time display. Either from 12-hour to 24-hour or
+                the other way round. See the example here:
+            </p>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/ajf12bzg/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+            <p>
+                We call a hook named <code class="inline">beforeRenderer</code> to transfer the time format to the
+                <code class="inline">getCellMeta</code> method, which is then used in a render of a time-type column.
+            </p>
+            <p>
+                <strong>Summary</strong>
+            </p>
+            <p>
+                If you wish to change your clock from a 12 to a 24-hour one, you just need a few lines of code.
+                You are just one step away from making an international clock displaying the current time in all the
+                countries in the world! Sounds exciting, doesn't it?
+            </p>
+            <h3>
+                Content-related dependencies
+            </h3>
+            <p>
+                This time let's imagine we belong to a world of quantum physics and we want to present the results of
+                particle size measurements. According to how accurate your results ought to be, you can set your own
+                decimal place. In the example below, when typing a digit in the
+                <code class="inline">Fraction digits</code> column we can specify the accuracy of the result displayed in the
+                <code class="inline">Value</code> column. See how it's done here:
+            </p>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/nr1ecv3s/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                The above was possible thanks to a custom function called <code class="inline">makeFormat</code>.
+                It takes a value from the <code class="inline">Fraction digits</code> column as an argument and
+                precisely sets the decimal place in the <code class="inline">Value</code> column.
+            </p>
+            <p>
+                In case you want to change data in a dropdown cell, use the example below. Theoretically speaking, it
+                is viable only through accessing instance settings. Thankfully we know how to obviate that rule.
+            </p>
+            <p>
+                Enter the value in any cell of the <code class="inline">Colors</code> column and watch how they appear
+                in the dropdown list, beside other options, in that column. It’s pretty simple, as shown below:
+            </p>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/h2Lq89ch/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                In the above example we enter the values as text and treat the comma as a value separator. Next, taking
+                the entered values as a data source, we make a list of choices for the dropdown cell. In practice, we
+                extend the renderer called  <code class="inline">AutocompleteRenderer</code>
+                by the possibility of getting the list of entries to the dropdown cell from its neighbour.
+            </p>
+            <p>
+                <strong>Summary</strong>
+            </p>
+            <p>
+                Text or numeric cell types don’t have to present only static values. They can be dependent on one another,
+                but are also able to affect the fields of a different type such as dropdown.
+            </p>
+            <h3>
+                Conclusion
+            </h3>
+            <p>
+
+                What distinguishes a regular spreadsheet from your application is the power of customization.
+                Only you decide how far you adjust Handsontable to the needs of your users and business case. The
+                examples that we delivered will surely help you take a look at your spreadsheet in a way you might
+                have never imagined.
+
+            </p>
+
+            <div class="addthis_native_toolbox toolbox"></div>
+        </div>
+    </article>
+
+    <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="http://handsoncode.net/images/logos/logo.png">
+            <meta itemprop="width" content="175">
+            <meta itemprop="height" content="25">
+        </div>
+        <meta itemprop="name" content="Handsoncode">
+    </div>
+
+    <%- partial("../authors/_kbudnik") %>
+</section>
