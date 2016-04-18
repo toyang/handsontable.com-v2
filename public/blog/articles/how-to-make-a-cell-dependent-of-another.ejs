@@ -9,9 +9,9 @@
                     <img src="../attachments/authors/krzysztof-budnik.png" alt="Krzysztof Budnik" />
                     <label>Krzysztof Budnik</label>
                 </span>
-                <span><a href="/blog/categories/recipes">Recipes</a> / April 15, 2016</span>
-                <meta itemprop="datePublished" content="2016-04-15T12:00:00+01:00"/>
-                <meta itemprop="dateModified" content="2016-04-15T12:00:00+01:00"/>
+                <span><a href="/blog/categories/recipes">Recipes</a> / April 18, 2016</span>
+                <meta itemprop="datePublished" content="2016-04-18T12:00:00+01:00"/>
+                <meta itemprop="dateModified" content="2016-04-18T12:00:00+01:00"/>
                 <span><a href="#disqus_thread"></a></span>
             </div>
         </div>
@@ -28,99 +28,100 @@
             </p>
 
             <p>
-                Data entered in the spreadsheet often depends one on another.
-                The user may want to choose a thing that was subordinate to previous choice.
-                You could have asked yourself thousands of times in many cases how easy it is to create
-                relationships between cells in Handsontable. We’ll do our best to explain it to you.
+                Data entered into the spreadsheet may often contain some cell dependencies. For example, you might
+                want to make one cell’s value dependant on another. You may have asked yourself thousands of times in
+                many cases how easy it is to create relationships between cells in Handsontable. We’ll do our best to
+                explain it to you.
             </p>
-            <h3>When cells depend on each other?</h3>
+            <h3>When do cells depend on each other?</h3>
             <p>
-                You can say so whenever value of one or more cells influences the value or attribute of other cell / cells.
+                You can say so whenever the value of one or more cells influences the value or attribute of
+                another cell or cells.
             </p>
             <p>
-                While using Handsontable you have multiple possibilities. You can decide between date, time,
-                autocomplete and many more when choosing the type of a cell.  Despite that the process of creating
-                dependencies is mainly pretty same to each of it. Assuming we have two cells depended one on another:
+                When using Handsontable you have multiple possibilities. You can decide between the date, time,
+                autocomplete and many more when choosing the type of cell. The process of creating dependencies is
+                pretty much same for each one. Assuming we have two cells dependant on one another:
             </p>
             <ul>
                 <li>
-                    For cell 1 we listen for a change using hook called <code class="inline">afterChange</code>.
+                    For cell 1 we listen for a change using a hook called <code class="inline">afterChange</code>.
                 </li>
                 <li>
-                    For cell 2, which depends on cell 1, we are applying a method called
+                    For cell 2, which depends on cell 1, we apply a method called
                     <code class="inline">setDataAtCell</code>.
-                    We do so whenever we wish to change its value. By using <code class="inline">setCellMeta</code> 
-                    we change its meta data
-                    (its appearance for instance).
+                    We do so whenever we wish to change its value. By using <code class="inline">setCellMeta</code>  we
+                    change its meta data (its appearance for instance).
                 </li>
             </ul>
             <p>
-                The possibility of connecting cells in an easy way and defining their mutual relationships is a
-                thing that makes business world your oyster. Just use it! If own an online business you can decide
-                which products are available in your store and which are not. Imagine, this is just a tip of an iceberg.
+                The possibility of connecting cells in an easy way and defining their mutual relationships is a thing
+                that makes the business world your oyster. Just use it! If you own an online business, you can
+                decide which products are available in your store and which are not. Imagine, this is just the
+                tip of the iceberg.
             </p>
             <h3>
                 Checkbox-dependent cells
             </h3>
             <p>
-                Let’s start our journey through cells dependencies from simple, very common example of using a checkbox.
-                It accepts only two states and in our case below the checkbox is, by default, selected.
-                Whenever it gets unselected, the background of its row changes color and all its fields become
-                read-only. See how it works here:
+                Let’s start our journey through cell dependencies with a simple checkbox example. It accepts only
+                two states and, in our case below, the checkbox is selected by default. Whenever it gets deselected,
+                the whole row changes its background color and becomes read-only.
             </p>
-            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/118d64jk/embedded/result,js,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/L4doafta/embedded/result,js,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
             <p>
-                In the example above we added a class called <code class="inline">highlightCell</code> through
-                <code class="inline">getCellMeta</code> method to change
-                the background color of all cells in the row besides checkbox column. Whereas read-only value was granted by
+                In the example above, we added a class called <code class="inline">highlightCell</code> through the
+                <code class="inline">getCellMeta</code> method to change the background color of all cells in the row,
+                besides the checkbox column. The read-only property was also added with the
                 <code class="inline">getCellMeta</code> method.
             </p>
             <p>
-                In another one we are going to change the value inside the cell. Selecting the checkbox erase cells
-                content under columns <code class="inline">Year of production</code> and
-                <code class="inline">Color</code> for this particular row. On how to do so see here:
+                In another demo, we are going to change the value inside the cell. Selecting the checkbox erases
+                the content of cells under the <code class="inline">Year of production</code> and
+                <code class="inline">Color</code> columns for this particular row. See how it works below:
             </p>
-            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/gy06k8k8/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/uwn1vb4v/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
             <p>
-                In the above example to erase cells values after calling a hook called
-                <code class="inline">beforeChange</code> we use <code class="inline">setDataAtCell</code> method.
+                In the example above, to erase the cell values after calling a hook called
+                <code class="inline">beforeChange</code> we use the <code class="inline">setDataAtCell</code> method.
             </p>
             <p>
                 <strong>Summary</strong>
             </p>
             <p>
-                In presented cases we have learned how to handle checkbox states to change cells value or
-                their attributes. We may often find ourselves in a situation when we need them both at the same
-                time to achieve the intended business goal.
+                In the presented cases we have learned how to use checkbox states to change cell values or their attributes.
             </p>
             <h3>
                 Select-dependent cells
             </h3>
             <p>
-                When talking about data which are selected from a list of available options we mainly refer to
-                the dropdown type of cell. In the case below by changing the year of cars production we determine
-                the vehicle owner. See the example code here:
+                When talking about data selected from a list of available options, we mainly refer to the dropdown cell.
+                In the case below, by changing the car production year we determine the vehicle owner.
+                See the example code here:
             </p>
-            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/5ppbuqzu/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/mg9d56Ls/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
             <p>
-                The above is possible thanks to listening to
-                <code class="inline">beforeChange</code> and by
-                implementation of setters such as <code class="inline">setDataAtRowProp</code>. Please keep in mind to use
-                the <code class="inline">'source'='internal'</code> argument in order to avoid a loop in
+                The above is possible thanks to listening
+                <code class="inline">beforeChange</code> and through the implementation of methods such as
+                <code class="inline">setDataAtRowProp</code>. Don't forget to pass a specific value, like
+                <code class="inline">internal</code> as the <code class="inline">source</code> argument in order
+                to avoid an infinite loop in the
                 <code class="inline">beforeChange</code> callback.
             </p>
             <p>
-                Next demonstration is an example on how to set a background of a distinctive color
-                for the cars produced in 2016. To present such a
-                concept we used dropdown type of cell.
+                The next demonstration is an example on how to set a background color for the cars produced in 2016.
+                We used a dropdown cell to present this concept.
             </p>
             <p>
-                Choose a year 2016 in a dropdown cell to make the whole row green. Want to see how does it work? Jump in:
+                Choose the year <code class="inline">2016</code> from the dropdown to make the whole row green.
+                Want to see how this works? Jump in:
             </p>
-            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/fmzd3L4b/embedded/result,js,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/7v7c4bp6/embedded/result,js,html,css" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
             <p>
-                We used once more <code class="inline">setCellData</code> in order to add
-                <code class="inline">highlightCell</code> class, which makes cells green.
+                Once again, we used <code class="inline">setCellData</code> in order to add the
+                <code class="inline">highlightCell</code> class, which makes the cells green.
             </p>
             <p>
                 <strong>
@@ -128,78 +129,78 @@
                 </strong>
             </p>
             <p>
-                You can use the same exact methods  to change cells attributes.
-                It doesn’t matter whether you pick up select, dropdown or autocomplete type.
+                You can use the exact same methods to change cell attributes. It doesn’t matter whether you pick select,
+                dropdown or autocomplete type.
             </p>
             <h3>
                 Date-related dependencies
             </h3>
             <p>
-                The case below shows us how to change the format of a time display. Either from 12-hour to
-                24-hour or the other way round. See the example here:
+                The case below shows us how to change the format of a time display. Either from 12-hour to 24-hour or
+                the other way round. See the example here:
             </p>
-            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/ywbh8a2t/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/ajf12bzg/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
             <p>
-                We call a hook named <code class="inline">beforeRenderer</code> to transfer time format to a
-                <code class="inline">getCellMeta</code> method,
-                which is then used in a render of a time type column.
+                We call a hook named <code class="inline">beforeRenderer</code> to transfer the time format to the
+                <code class="inline">getCellMeta</code> method, which is then used in a render of a time-type column.
             </p>
             <p>
                 <strong>Summary</strong>
             </p>
             <p>
-                If you wish to change your clock from 12 to 24-hour one you just need a few lines of code.
-                You are just one step away from making international clock displaying current time in all the
-                countries in the world! Sounds exciting, isn’t it?
+                If you wish to change your clock from a 12 to a 24-hour one, you just need a few lines of code.
+                You are just one step away from making an international clock displaying the current time in all the
+                countries in the world! Sounds exciting, doesn't it?
             </p>
             <h3>
                 Content-related dependencies
             </h3>
             <p>
-                This time lets imagine we belong to a world of quantum physics and we want to present the
-                results of particle size measurements. According to how accurate your results ought to be you
-                can set your own decimal place. In the example below when writing down a digit in the field
-                <code class="inline">Fraction digits</code> we specify the accuracy of the result in field
-                <code class="inline">Value</code>. See how we did that here:
+                This time let's imagine we belong to a world of quantum physics and we want to present the results of
+                particle size measurements. According to how accurate your results ought to be, you can set your own
+                decimal place. In the example below, when typing a digit in the
+                <code class="inline">Fraction digits</code> column we can specify the accuracy of the result displayed in the
+                <code class="inline">Value</code> column. See how it's done here:
             </p>
-            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/3ap3sdco/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/nr1ecv3s/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
             <p>
-                The above was possible thanks to custom function called <code class="inline">makeFormat</code>.
-                It takes, as an argument,
-                a value taken from <code class="inline">Fraction digits</code> column and precisely move the
-                decimal place in the field <code class="inline">Value</code>.
-            </p>
-            <p>
-                In case you want to change data in a dropdown type cell use the example below. Theoretically
-                speaking, it is viable only through accessing instance settings. Thankfully we
-                know how to obviate that rule.
+                The above was possible thanks to a custom function called <code class="inline">makeFormat</code>.
+                It takes a value from the <code class="inline">Fraction digits</code> column as an argument and
+                precisely sets the decimal place in the <code class="inline">Value</code> column.
             </p>
             <p>
-                Enter the value in any cell of <code class="inline">Colors</code> column and watch how they appear in a
-                dropdown list, beside other options, in that column. It’s pretty simple, go see it here:
+                In case you want to change data in a dropdown cell, use the example below. Theoretically speaking, it
+                is viable only through accessing instance settings. Thankfully we know how to obviate that rule.
             </p>
-            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/jzgkog9j/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
             <p>
-                In the above example we enter the values as a text and treat the comma as a value separator. Next,
-                taking the entered values as a data source, we are making a list of choice for a
-                dropdown type cell. In practice we extend the renderer called <code class="inline">AutocompleteRenderer</code>
-                by possibility of getting the list of entries to a dropdown type cell from its neighbour.
+                Enter the value in any cell of the <code class="inline">Colors</code> column and watch how they appear
+                in the dropdown list, beside other options, in that column. It’s pretty simple, as shown below:
+            </p>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/h2Lq89ch/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                In the above example we enter the values as text and treat the comma as a value separator. Next, taking
+                the entered values as a data source, we make a list of choices for the dropdown cell. In practice, we
+                extend the renderer called  <code class="inline">AutocompleteRenderer</code>
+                by the possibility of getting the list of entries to the dropdown cell from its neighbour.
             </p>
             <p>
                 <strong>Summary</strong>
             </p>
             <p>
-                Text or numeric cell types don’t have to present only static values. They can be dependent one
-                on from another, but also are able to affect the fields of a different type such as dropdown.
+                Text or numeric cell types don’t have to present only static values. They can be dependent on one another,
+                but are also able to affect the fields of a different type such as dropdown.
             </p>
             <h3>
                 Conclusion
             </h3>
             <p>
-                What distinguish a regular spreadsheet from your application is the power of customization.
-                Only you decide how far you adjust Handsontable to the need of your users and business case.
-                Examples that we delivered for sure will help you to take a look at your spreadsheet in a
-                way you might never imagine.
+
+                What distinguishes a regular spreadsheet from your application is the power of customization.
+                Only you decide how far you adjust Handsontable to the needs of your users and business case. The
+                examples that we delivered will surely help you take a look at your spreadsheet in a way you might
+                have never imagined.
+
             </p>
 
             <div class="addthis_native_toolbox toolbox"></div>
