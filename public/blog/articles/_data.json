@@ -1,10 +1,10 @@
 {
   "how-to-make-a-cell-dependent-of-another": {
-    "title": "How to Make a Cell Dependent of Another",
+    "title": "Expand your app with cell dependencies",
     "category": "Recipes",
     "date": "April 18, 2016",
-    "image_file": "how-to-make-a-cell-dependent-of-another.png",
-    "description": " Data entered in the spreadsheet often depends one on another. The user may want to choose a thing that was subordinate to previous choice (...)"
+    "image_file": "expand-your-app-with-cell-dependencies.png",
+    "description": "Data entered into the spreadsheet may often contain some cell dependencies. For example, you might want to make one cell’s value dependant on another (...)"
   },
   "a-complete-guide-to-changing-size-of-handsontable": {
     "title": "A Complete Guide to Changing Size of Handsontable",
