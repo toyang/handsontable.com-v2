@@ -1,0 +1,25 @@
+/**
+ * @author: Handsoncode
+ */
+
+.faq {
+
+  .headline {
+    margin: 97px 0 23px;
+  }
+
+  h3 {
+    margin: 46px 0 0;
+    font-weight: 600;
+
+    &:first-child {
+      margin-top: 26px;
+    }
+  }
+
+  h4 {
+    margin-bottom: 10px;
+    font-weight: 400;
+  }
+
+}

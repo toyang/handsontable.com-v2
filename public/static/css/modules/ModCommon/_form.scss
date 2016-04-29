@@ -21,6 +21,7 @@ form {
     input[type="email"],
     input[type="number"],
     input[type="password"],
+    .selectbox,
     textarea {
         @include border($inputBorder);
         font-size: 0.938em; /* 15px */
@@ -28,7 +29,7 @@ form {
         padding: 11px 20px 12px;
         margin-bottom: 15px;
         border-radius: 2px;
-        background: #F7F7F7;
+        background: $darkWhite;
         -webkit-appearance: none;
         &:focus {
             border-color: $inputFocusBorder;
@@ -42,6 +43,31 @@ form {
     textarea {
         resize: vertical;
     }
+
+    .selectbox {
+        position: relative;
+        padding: 0;
+
+        &:hover {
+            border-color: $darkGray;
+        }
+
+        select {
+            padding: 11px 20px 12px;
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+        }
+
+        svg {
+            @include absolute-top-right (50%,18px);
+            @include square (11px);
+            margin: -4px 0 0 0;
+            fill: #474747;
+            z-index: 10;
+        }
+    }
+
 }
 
 /* mailchimp overwrite styles */

@@ -1,0 +1,106 @@
+/**
+ * @author: Handsoncode
+ */
+
+.comparison {
+
+  h5 {
+    margin: 0 0 26px;
+    font-size:  1.125em;
+    font-weight: 400;
+
+    /* [ styles only for desktop ] */
+    @media only screen and (min-width: $largeWidth) {
+      margin-bottom: 0;
+    }
+  }
+
+  .tables {
+    max-height: 0;
+    overflow-y: hidden;
+    @include transition (all .8s ease-in-out);
+
+    .table {
+      margin-top: 30px;
+    }
+  }
+
+  table {
+    width: 100%;
+
+    tbody tr:hover {
+      background-color: $ultraLightGray;
+    }
+
+    th, td {
+      width: 25%;
+      padding: 8px 10px;
+      font-size: 0.684em;
+      text-align: center;
+      border-bottom: 1px solid $lightGray;
+
+      &:first-child {
+        width: 50%;
+        padding-left: 16px;
+        text-align: left;
+      }
+
+      a {
+        font-size: 1em;
+      }
+
+      /* [ styles only for desktop ] */
+      @media only screen and (min-width: $largeWidth) {
+        font-size: 0.813em;
+      }
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+  }
+
+  svg {
+    @include square (14px);
+    position: relative;
+    top: 3px;
+  }
+
+  /* link opening the comparison tables */
+  & > p {
+    text-align: center;
+    font-size: 1em;
+
+    svg {
+      @include square (18px);
+      @include transition (all .6s ease);
+      @include relative-top-left (4px, 4px);
+      fill: $brandBlue;
+    }
+  }
+
+  /* opened comparison */
+  &.opened {
+    & > p a {
+      color: $darkGray;
+
+      svg {
+        @include rotate (180deg);
+        fill: $darkGray;
+      }
+    }
+
+    .tables {
+      @include transition (all .8s ease-in-out);
+      max-height: 1200px;
+
+      /* [ styles only for desktop ] */
+      @media only screen and (min-width: $largeWidth) {
+        max-height: 940px;
+      }
+    }
+
+  }
+
+}
