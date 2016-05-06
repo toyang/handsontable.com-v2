@@ -16,13 +16,17 @@
   }
 
   .tables {
-    max-height: 0;
+    height: 0;
     overflow-y: hidden;
-    @include transition (all .8s ease-in-out);
+    @include transition (height .8s ease-in-out);
 
     .table {
       margin-top: 30px;
     }
+  }
+
+  .tables.expand {
+    height: 940px;
   }
 
   table {
