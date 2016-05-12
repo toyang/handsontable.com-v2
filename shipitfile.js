@@ -16,7 +16,7 @@ module.exports = function(shipit) {
     development: {
       servers: 'deploy@142.4.202.189:22022',
       workspace: '/tmp/dev.handsontable.com',
-      deployTo: '/home/httpd/dev.handsontable.com',
+      deployTo: '/home/httpd/dev/handsontable.com',
       repositoryUrl: 'https://github.com/handsontable/handsontable.com-v2.git',
       branch: 'update-pricing',
       ignores: ['.git', 'node_modules'],
