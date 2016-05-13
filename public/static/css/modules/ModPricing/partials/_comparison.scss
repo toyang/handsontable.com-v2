@@ -23,10 +23,15 @@
     .table {
       margin-top: 30px;
     }
-  }
 
-  .tables.expand {
-    height: 940px;
+    &.expand {
+      height: 1200px;
+
+      /* [ styles only for desktop ] */
+      @media only screen and (min-width: $largeWidth) {
+        height: 1020px;
+      }
+    }
   }
 
   table {
@@ -97,11 +102,10 @@
 
     .tables {
       @include transition (all .8s ease-in-out);
-      max-height: 1200px;
 
       /* [ styles only for desktop ] */
       @media only screen and (min-width: $largeWidth) {
-        max-height: 940px;
+        max-height: 1020px;
       }
     }
 
