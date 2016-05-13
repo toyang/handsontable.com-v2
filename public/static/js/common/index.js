@@ -12,7 +12,7 @@
   var markedAsUpdated = false;
 
   function init() {
-    axios('http://my.handsontable.dev/api/identity-checker', {withCredentials: true, method: 'get'})
+    axios('https://my.handsontable.com/api/identity-checker', {withCredentials: true, method: 'get'})
         .then(onIdentitySuccess);
   }
 
@@ -27,7 +27,7 @@
 
   function onLogoutClick(event) {
     event.preventDefault();
-    axios('http://my.handsontable.dev/api/sign-out', {withCredentials: true, method: 'get'});
+    axios('https://my.handsontable.com/api/sign-out', {withCredentials: true, method: 'get'});
     data.logged = false;
     update();
   }
