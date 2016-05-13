@@ -18,8 +18,21 @@
   }
 
   h4 {
-    margin-bottom: 10px;
-    font-weight: 400;
+    margin: 30px 0 0 0;
+    font-weight: 600;
+  }
+
+  p, ul {
+
+    a {
+      font-size: 1em;
+    }
+
+  }
+
+  ul li {
+      margin-left: 30px;
+      list-style: square;
   }
 
 }
