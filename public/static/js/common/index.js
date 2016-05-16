@@ -12,7 +12,7 @@
   var markedAsUpdated = false;
 
   function init() {
-    axios('https://my.handsontable.com/api/identity-checker', {withCredentials: true, method: 'get'})
+    axios('//dev-my.handsontable.com/api/identity-checker', {withCredentials: true, method: 'get'})
         .then(onIdentitySuccess);
   }
 
@@ -27,7 +27,7 @@
 
   function onLogoutClick(event) {
     event.preventDefault();
-    axios('https://my.handsontable.com/api/sign-out', {withCredentials: true, method: 'get'});
+    axios('//dev-my.handsontable.com/api/sign-out', {withCredentials: true, method: 'get'});
     data.logged = false;
     update();
   }
@@ -37,11 +37,11 @@
       nameHolder().textContent = data.firstName;
 
       if (data.logged) {
-        signedOffBar().classList.remove('hide');
-        signedInBar().classList.add('hide');
-      } else {
         signedOffBar().classList.add('hide');
         signedInBar().classList.remove('hide');
+      } else {
+        signedOffBar().classList.remove('hide');
+        signedInBar().classList.add('hide');
       }
     }
     markedAsUpdated = true;
