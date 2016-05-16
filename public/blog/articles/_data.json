@@ -1,4 +1,11 @@
 {
+  "2how-to-sort-different-types-of-data": {
+    "title": "How to Sort Different Types of Data",
+    "category": "Recipes",
+    "date": "May 16, 2016",
+    "image_file": "how-to-sort-different-types-of-data.png",
+    "description": "Have you ever wondered if you could store your data with various units and sort them really easily in Handsontable? Of course you can. You don't have to (...)"
+  },
   "the-most-common-causes-of-failed-open-source-software-projects": {
     "title": "The Most Common Causes of Failed Open-Source Software Projects",
     "category": "Startups",
