@@ -1,0 +1,216 @@
+<section class="post" itemid="https://handsontable.com/<%= current.source %>" itemscope
+         itemtype="http://schema.org/BlogPosting" xmlns="http://www.w3.org/1999/html">
+    <div class="row">
+        <div class="large-6 large-centered columns">
+            <h2 class="headline" itemprop="headline">
+                How to Sort Different Types of Data
+            </h2>
+            <div class="meta-details">
+                <span>
+                    <img src="../attachments/authors/jan-siegel.png" alt="Jan Siegel" />
+                    <label>Jan Siegel</label>
+                </span>
+                <span><a href="/blog/categories/recipes">Recipes</a> / May 16, 2016</span>
+                <meta itemprop="datePublished" content="2016-05-16T12:00:00+01:00"/>
+                <meta itemprop="dateModified" content="2016-05-16T12:00:00+01:00"/>
+                <span><a href="#disqus_thread"></a></span>
+            </div>
+        </div>
+    </div>
+    <article class="row body">
+        <div class="large-8 medium-12 large-centered columns">
+            <p itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                <img src="../attachments/images/how-to-sort-different-types-of-data.png" alt="How to Sort Different Types of Data" />
+                <meta itemprop="url"
+                      content="https://handsontable.com/blog/attachments/images/how-to-sort-different-types-of-data.png">
+                <meta itemprop="width" content="757">
+                <meta itemprop="height" content="441">
+            </p>
+            <p>
+                Have you ever wondered if you could store your data with various units and sort them really easily in
+                Handsontable? Of course you can. You don't have to take my word for it, take a look at the examples
+                below and you'll see for yourself.
+            </p>
+
+            <h3>
+                The setup
+            </h3>
+            <ul>
+                <li>
+                    To enable the sorting functionality in Handsontable, you will need to set
+                    <code class="inline">columnSorting</code> in the
+                    config object to <code class="inline">true</code> (for an initial sorting configuration,
+                    see <a href="http://docs.handsontable.com/pro/Options.html#columnSorting">our docs</a>
+                    for more information).
+                </li>
+                <li>
+                    Define the <code class="inline">sortingFunction</code> property for the column to sort it using
+                    the custom algorithms.
+                </li>
+
+            </ul>
+            <h3>
+                How does the <code class="inline">sortFunction</code> option work exactly?
+            </h3>
+            <p>
+                Every time a column is sorted, it uses a comparison function to detect which of the two currently
+                processed elements is greater. When all the rows in a column are compared to one another, we
+                can re-render the table in the proper order.
+            </p>
+            <p>
+                To make a custom sorting algorithm, you will need to create a <code class="inline">function</code> with a
+                <code class="inline">sortOrder</code> argument.
+            </p>
+            <p>
+<pre>
+<code lang="js">
+    sortFunction: function(sortOrder) {
+
+    }</code>
+</pre>
+            </p>
+            <p>
+                <code class="inline">sortOrder</code> defines if we're trying to sort the column in ascending
+                (<code class="inline">sortOrder</code>=<code class="inline">true</code>), descending
+                (<code class="inline">sortOrder</code>=<code class="inline">false</code>) or initial order
+                (<code class="inline">sortOrder</code> is not defined).
+            </p>
+            <p>
+                Then we need to make our function return another function, which will be used to compare
+                elements, so now we have:
+            </p>
+            <p>
+<pre>
+<code lang="js">
+    sortFunction: function(sortOrder) {
+        return function(a, b) {
+
+        }
+    }
+</code>
+</pre>
+            </p>
+
+            <p>
+                Each of the inner-function arguments represent the compared elements and both of them are
+                defined as an array, where
+            </p>
+            <p>
+<pre>
+<code lang="js">
+a = [row_index, element_value];
+</code>
+</pre>
+            </p>
+            <p>
+                The inner function needs to return <code class="inline">-1</code>, when we want the
+                <code class="inline">a</code> element to be rendered
+                before <code class="inline">b</code> (so, if the sorting is defined as
+                    ascending -> <code class="inline">a</code>
+
+                    <!-- missing "<" sign here that was buggy -->
+                            less than
+                    <code class="inline">b</code>
+                ), <code class="inline">1</code>
+                otherwise, and <code class="inline">0</code> if both elements are equal.
+            </p>
+            <p>
+                It may look complex at first, but it's really straightforward when you see it in real-life examples.
+            </p>
+
+
+            <h3>
+                Currencies
+            </h3>
+            <p>
+                Let's take a look at an example based on currency comparison. The demo below
+                shows a table with different art pieces, along with their prices.
+                Try sorting the <code class="inline">Price</code> column and see what happens.
+            </p>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/8xyj0hq3/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+            <p>
+                As you can see, we have used a custom <code class="inline">sortFunction</code> in order to sort
+                prices in different currencies.
+                The function itself contains an array of currency rates, which is used to properly compare them.
+            </p>
+            <h3>
+                Height and weight
+            </h3>
+            <p>
+                Alright, we've got the currencies covered - let's move on to weight and height units.
+                The demo below contains information about certain NBA players.
+                Their height is provided in feet or centimeters, their weight - in pounds or kilograms.
+            </p>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/c6xvuazb/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+            <p>
+                The logic behind this example is pretty much the same as in the
+                last one, but we needed to do some more parsing with the <code class="inline">x'x''</code> format.
+            </p>
+            <h3>
+                Distance
+            </h3>
+            <p>
+                The odds are that you use (or used) distance-related data in your Handsontable
+                implementation. Take a look at this example - it shows how far the listed cities are
+                from Paris. I've used kilometers and miles, and regardless of the units we can
+                sort the <code class="inline">Distance</code> column properly.
+            </p>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/4wfy6sov/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+            <p>
+                It's worth noting, that although this demo works pretty much the
+                same as the previous examples, I've simplified it a little to make the
+                code less redundant. I would highly recommend optimizing the sorting algorithms,
+                because when you are sorting large amounts of data, it can have a significant
+                impact on your table's performance.
+            </p>
+            <h3>
+                Unit of areas
+            </h3>
+            <p>
+                Now let's try a slightly different approach. We will create a table,
+                where the sorted column's order depends on values from another column.
+            </p>
+            <p>
+                The demo below shows a list of cities, their corresponding states
+                and areas. Let's hide the <code class="inline">Area</code> column and make the
+                <code class="inline">City</code>
+                column sorting depend on that hidden column.
+            </p>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/f041q5bv/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+            <p>
+                Note that the sorting function doesn't have any reference to the Handsontable instance
+                so you will have to inject it somehow. In this example I've achieved that with a
+                global variable and called it <code class="inline">window.hot</code>.
+            </p>
+            <h3>
+                Conclusion
+            </h3>
+            <p>
+                As you can see, the <code class="inline">sortingFunction</code> option is pretty versatile,
+                and you can write your own sorting mechanism without putting too much
+                effort into it. So if you'd like your Handsontable implementation to reflect that a
+                $20 Queens of the Stone Age T-shirt is actually worth more than a $40 Justin Bieber
+                T-shirt, now you know how.
+            </p>
+
+
+            <div class="addthis_native_toolbox toolbox"></div>
+        </div>
+    </article>
+
+    <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="http://handsoncode.net/images/logos/logo.png">
+            <meta itemprop="width" content="175">
+            <meta itemprop="height" content="25">
+        </div>
+        <meta itemprop="name" content="Handsoncode">
+    </div>
+
+    <%- partial("../authors/_jsiegel") %>
+</section>
