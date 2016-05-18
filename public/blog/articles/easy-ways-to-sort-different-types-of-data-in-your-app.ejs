@@ -3,7 +3,7 @@
     <div class="row">
         <div class="large-6 large-centered columns">
             <h2 class="headline" itemprop="headline">
-                How to Sort Different Types of Data
+                Easy Ways to Sort Different Types of Data in Your App
             </h2>
             <div class="meta-details">
                 <span>
@@ -11,8 +11,8 @@
                     <label>Jan Siegel</label>
                 </span>
                 <span><a href="/blog/categories/recipes">Recipes</a> / May 16, 2016</span>
-                <meta itemprop="datePublished" content="2016-05-16T12:00:00+01:00"/>
-                <meta itemprop="dateModified" content="2016-05-16T12:00:00+01:00"/>
+                <meta itemprop="datePublished" content="2016-05-18T12:00:00+01:00"/>
+                <meta itemprop="dateModified" content="2016-05-18T12:00:00+01:00"/>
                 <span><a href="#disqus_thread"></a></span>
             </div>
         </div>
@@ -20,9 +20,10 @@
     <article class="row body">
         <div class="large-8 medium-12 large-centered columns">
             <p itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-                <img src="../attachments/images/how-to-sort-different-types-of-data.png" alt="How to Sort Different Types of Data" />
+                <img src="../attachments/images/easy-ways-to-sort-different-types-of-data-in-your-app.png"
+                     alt="Easy Ways to Sort Different Types of Data in Your App" />
                 <meta itemprop="url"
-                      content="https://handsontable.com/blog/attachments/images/how-to-sort-different-types-of-data.png">
+                      content="https://handsontable.com/blog/attachments/images/easy-ways-to-sort-different-types-of-data-in-your-app.png">
                 <meta itemprop="width" content="757">
                 <meta itemprop="height" content="441">
             </p>
@@ -40,7 +41,7 @@
                     To enable the sorting functionality in Handsontable, you will need to set
                     <code class="inline">columnSorting</code> in the
                     config object to <code class="inline">true</code> (for an initial sorting configuration,
-                    see <a href="http://docs.handsontable.com/pro/Options.html#columnSorting">our docs</a>
+                    see <a href="http://docs.handsontable.com/pro/Options.html#columnSorting">docs</a>
                     for more information).
                 </li>
                 <li>
@@ -50,7 +51,7 @@
 
             </ul>
             <h3>
-                How does the <code class="inline">sortFunction</code> option work exactly?
+                How does the sortFunction option work exactly?
             </h3>
             <p>
                 Every time a column is sorted, it uses a comparison function to detect which of the two currently
@@ -64,9 +65,10 @@
             <p>
 <pre>
 <code lang="js">
-    sortFunction: function(sortOrder) {
+sortFunction: function(sortOrder) {
 
-    }</code>
+}
+</code>
 </pre>
             </p>
             <p>
@@ -82,11 +84,11 @@
             <p>
 <pre>
 <code lang="js">
-    sortFunction: function(sortOrder) {
-        return function(a, b) {
+sortFunction: function(sortOrder) {
+    return function(a, b) {
 
-        }
     }
+}
 </code>
 </pre>
             </p>
@@ -191,7 +193,7 @@ a = [row_index, element_value];
                 Conclusion
             </h3>
             <p>
-                As you can see, the <code class="inline">sortingFunction</code> option is pretty versatile,
+                As you can see, the <code class="inline">sortingFunction</code> feature is pretty versatile,
                 and you can write your own sorting mechanism without putting too much
                 effort into it. So if you'd like your Handsontable implementation to reflect that a
                 $20 Queens of the Stone Age T-shirt is actually worth more than a $40 Justin Bieber
