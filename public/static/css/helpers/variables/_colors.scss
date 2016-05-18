@@ -37,6 +37,12 @@ $inputFocusBorder: $darkGray;
 $tableBackground: $ultraLightGray;
 $iconColor: $brandDeepNavy;
 
+/* [ occasional colors ] */
+$vividGreen: darken($brandGreen, 12%);
+
+/* [ active occasional colors ] */
+$vividGreenActive: darken($vividGreen, 4%);
+
 $errorColor: $brandRed;
 $infoColor: $brandBlue;
 $successColor: $brandGreen;
