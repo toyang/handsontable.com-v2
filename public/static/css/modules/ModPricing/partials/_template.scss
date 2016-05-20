@@ -3,9 +3,30 @@
  */
 
  .pricing {
-    margin-top: 69px;
+   margin-top: 69px;
 
     .headline {
-        margin-bottom: 53px;
+      margin-bottom: 53px;
+
+      .currency-control {
+        position: absolute;
+        top: 40px;
+        right: 0;
+        font-family: $regularFont;
+        font-size: 0.406em;
+
+
+        span, a {
+          margin-right: 7px;
+
+          &.active {
+            color: $darkGray;
+            text-decoration: none;
+            cursor: text;
+          }
+        }
+
+      }
     }
+
 }

@@ -24,14 +24,6 @@
       margin-top: 30px;
     }
 
-    &.expand {
-      height: 1200px;
-
-      /* [ styles only for desktop ] */
-      @media only screen and (min-width: $largeWidth) {
-        height: 1020px;
-      }
-    }
   }
 
   table {
@@ -102,10 +94,11 @@
 
     .tables {
       @include transition (all .8s ease-in-out);
+      height: 100%;
 
       /* [ styles only for desktop ] */
       @media only screen and (min-width: $largeWidth) {
-        max-height: 1020px;
+        height: 1020px;
       }
     }
 
