@@ -19,18 +19,19 @@
 
     h4 {
         font-family: $regularFont;
-        margin: 13px 0px 34px;
+        margin: 13px 0 34px;
     }
 
     img {
         margin: 70px 0 0 0;
+        display: none;
         @media only screen and (min-width: $mediumWidth) {
             margin: 0;
+            display: inline;
         }
     }
 
     .btn {
-        width: calc(50% - 14px);
         margin: 0 5px;
         padding: 0;
     
@@ -38,6 +39,6 @@
             width: auto;
             padding: 0 28px;
             margin-right: 10px;
-        }        
+        }
     }
 }

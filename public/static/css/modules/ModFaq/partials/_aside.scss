@@ -1,0 +1,19 @@
+/**
+ * @author: Handsoncode
+ */
+
+.faq .side-links {
+  p {
+    margin: 0 19px 0;
+    line-height: 2.7;
+    border-bottom: 1px solid $lightGray;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    a {
+      font-size: 1em;
+    }
+  }
+}
