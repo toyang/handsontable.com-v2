@@ -103,6 +103,7 @@
     var forms = d.querySelectorAll('form[data-product-type]');
     var currencyElements = d.querySelectorAll('a[data-currency]');
     var compareLicenses = d.querySelector('#compare-licenses');
+    var compareLicensesExpander = d.querySelector('#compare-licenses-expander');
 
     var developerLicensePrice = d.querySelectorAll('.developer-license');
     var supportDeveloperPrice = d.querySelectorAll('.support-developer-price');
@@ -149,8 +150,8 @@
     });
 
     compareLicenses.addEventListener('click', function(event) {
-      compareLicenses.classList.toggle('closed');
-      compareLicenses.classList.toggle('opened');
+      compareLicensesExpander.classList.toggle('closed');
+      compareLicensesExpander.classList.toggle('opened');
       event.preventDefault();
     });
   }
