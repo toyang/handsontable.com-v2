@@ -210,9 +210,10 @@
     if (Array.isArray(currency)) {
       currency = currency[1];
     } else {
-      currency = INTERNATIONALIZED_PRICES.filter(function(price) {
-        return isLanguageMatches(price.countryCode, lang);
-      })[0].currency;
+      // currency = INTERNATIONALIZED_PRICES.filter(function(price) {
+      //   return isLanguageMatches(price.countryCode, lang);
+      // })[0].currency;
+      currency = INTERNATIONALIZED_PRICES[INTERNATIONALIZED_PRICES.length - 1].currency;
     }
 
     return currency;
