@@ -247,23 +247,11 @@
 
     return {
       getPrice: function() {
-        var price = numeral(productInfo.price * priceInfo.ratio).format('$0,0');
-
-        if (priceInfo.appendCurrencyCode) {
-          price += ' ' + this.getCurrency();
-        }
-
-        return price;
+        return this.formatPrice(productInfo.price);
       },
 
       getSavedPrice: function() {
-        var price = numeral(productInfo.saves * priceInfo.ratio).format('$0,0');
-
-        if (priceInfo.appendCurrencyCode) {
-          price += ' ' + this.getCurrency();
-        }
-
-        return price;
+        return this.formatPrice(productInfo.saves);
       },
 
       formatPrice(price) {
