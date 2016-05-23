@@ -125,8 +125,6 @@
           form.appendChild(submit);
           submit.click();
 
-          console.log(valueCarrier.getCurrency());
-
           event.preventDefault();
         };
       }(form));
