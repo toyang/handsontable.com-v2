@@ -45,6 +45,7 @@
   var DEVELOPER_LICENSE_PRICE = 490;
   var SUPPORT_DEVELOPER_PRICE = 720;
   var SUPPORT_RENEWAL_PRICE = 300;
+  var PAYMENTS_BASE_URL = 'https://sites.fastspring.com/handsontable/instant';
   var PRODUCTS = {
     'single-website': {
       basic: {
@@ -156,8 +157,6 @@
 
   function onSubmitListener(form) {
     var productType = form.dataset.productType;
-    var quantityElement = form.querySelector('[name=product_1_quantity]');
-    var productPathElement = form.querySelector('[name=product_1_path]');
     var savesElement = form.querySelector('.saves');
     var priceElement = form.parentNode.parentNode.querySelector('.price');
     var supportTypeElement = form.querySelector('[name=extended_support]');
@@ -188,8 +187,7 @@
     }
 
     return function() {
-      quantityElement.value = productInfo.quantity;
-      productPathElement.value = productInfo.name;
+      form.action = PAYMENTS_BASE_URL + productInfo.name;
     };
   }
 
