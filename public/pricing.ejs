@@ -9,11 +9,11 @@
 
                 <p class="currency-control">
                     <span>Change currency:</span>
-                    <a href="#" class="active">USD</a>
-                    <a href="#">EUR</a>
-                    <a href="#">GBP</a>
-                    <a href="#">CAD</a>
-                    <a href="#">JPY</a>
+                    <a href="/pricing.html?currency=USD" data-currency="USD">USD</a>
+                    <a href="/pricing.html?currency=EUR" data-currency="EUR">EUR</a>
+                    <a href="/pricing.html?currency=GBP" data-currency="GBP">GBP</a>
+                    <a href="/pricing.html?currency=CAD" data-currency="CAD">CAD</a>
+                    <a href="/pricing.html?currency=JPY" data-currency="JPY">JPY</a>
                 </p>
             </h2>
         </div>
@@ -38,12 +38,12 @@
                             <svg class="checkbox checked">
                                 <use xlink:href="#checkbox_checked_icon"></use>
                             </svg>
-                            <span>Include Extended Support and save $420</span>
+                            <span>Include Extended Support and save <strong class="saves">$420</strong></span>
                         </label>
                     </form>
                     <div class="tooltip-btn tooltip-top">i
                         <div class="tooltip-inner">
-                            Regular price is $720/developer.
+                            Regular price is <span class="support-developer-price">$720</span>/developer.
                             It includes 10 hours of support
                             and access to major releases.
                             <div class="tooltip-angle">
@@ -81,12 +81,12 @@
                             <svg class="checkbox checked">
                                 <use xlink:href="#checkbox_checked_icon"></use>
                             </svg>
-                            <span>Include Extended Support and save $2100</span>
+                            <span>Include Extended Support and save <strong class="saves">$2100</strong></span>
                         </label>
                     </form>
                     <div class="tooltip-btn tooltip-top">i
                         <div class="tooltip-inner">
-                            Regular price is $720/developer.
+                            Regular price is <span class="support-developer-price">$720</span>/developer.
                             It includes 10 hours of support
                             and access to major releases.
                             <div class="tooltip-angle">
@@ -123,12 +123,12 @@
                             <svg class="checkbox checked">
                                 <use xlink:href="#checkbox_checked_icon"></use>
                             </svg>
-                            <span>Include Extended Support and save $4200</span>
+                            <span>Include Extended Support and save <strong class="saves">$4200</strong></span>
                         </label>
                     </form>
                     <div class="tooltip-btn tooltip-top">i
                         <div class="tooltip-inner">
-                            Regular price is $720/developer.
+                            Regular price is <span class="support-developer-price">$720</span>/developer.
                             It includes 10 hours of support
                             and access to major releases.
                             <div class="tooltip-angle">
@@ -147,13 +147,13 @@
             </div>
         </div>
     </div>
-    <div class="row comparison closed">
+    <div id="compare-licenses" class="row comparison closed">
         <p>
-            <a href="#" id="compare-licenses">
+            <a href="#">
                 Compare licenses and support plans<svg><use xlink:href="#angle_down_icon"></use></svg>
             </a>
         </p>
-        <div id="compare-tables" class="small-12 columns tables">
+        <div class="small-12 columns tables">
             <div class="table table-license">
                 <h5>Commercial Licenses</h5>
                 <table>
@@ -218,7 +218,7 @@
                         </tr>
                         <tr>
                             <td>Price</td>
-                            <td>$490</td>
+                            <td class="developer-license">$490</td>
                             <td><a href="/contact">Contact sales</a></td>
                         </tr>
                         <tr>
@@ -288,12 +288,12 @@
                         <tr>
                             <td>Price</td>
                             <td>Included in the license</td>
-                            <td>$720 / developer</td>
+                            <td><span class="support-developer-price">$720</span> / developer</td>
                         </tr>
                         <tr>
                             <td>Discounted / Renewal price</td>
                             <td>N/A</td>
-                            <td>$300 / developer</td>
+                            <td><span class="support-renewal-price">$300</span> / developer</td>
                         </tr>
                     </tbody>
                 </table>
