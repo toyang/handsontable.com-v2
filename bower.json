@@ -26,5 +26,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "devDependencies": {
+    "numeral": "^1.5.3"
+  }
 }
