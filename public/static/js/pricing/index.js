@@ -45,6 +45,7 @@
   var DEVELOPER_LICENSE_PRICE = 490;
   var SUPPORT_DEVELOPER_PRICE = 720;
   var SUPPORT_RENEWAL_PRICE = 300;
+  var SINGLE_WEBSITE_PRICE = 149;
   var PAYMENTS_BASE_URL = 'https://sites.fastspring.com/handsontable/instant';
   var PRODUCTS = {
     'single-website': {
@@ -57,42 +58,45 @@
       basic: {
         name: '/developer-with-basic-support',
         quantity: 1,
-        price: 490,
+        discount: 0,
         saves: 420,
       },
       extended: {
         name: '/developer-with-extended-support',
         quantity: 1,
-        price: 790,
+        discount: 0,
         saves: 420,
+        support: true,
       },
     },
     '5-developers': {
       basic: {
         name: '/developer-with-basic-support',
         quantity: 5,
-        price: 2205,
+        discount: 0.1,
         saves: 2100,
       },
       extended: {
         name: '/developer-with-extended-support',
         quantity: 5,
-        price: 3705,
+        discount: 0.1,
         saves: 2100,
+        support: true,
       },
     },
     '10-developers': {
       basic: {
         name: '/developer-with-basic-support',
         quantity: 10,
-        price: 4165,
+        discount: 0.15,
         saves: 4200,
       },
       extended: {
         name: '/developer-with-extended-support',
         quantity: 10,
-        price: 7165,
+        discount: 0.15,
         saves: 4200,
+        support: true,
       },
     },
   };
@@ -108,6 +112,7 @@
     var developerLicensePrice = d.querySelectorAll('.developer-license');
     var supportDeveloperPrice = d.querySelectorAll('.support-developer-price');
     var supportRenewalPrice = d.querySelectorAll('.support-renewal-price');
+    var sibgleWebsitePrice = d.querySelectorAll('.single-website-price');
 
     for (var i = 0, len = forms.length; i < len; i++) {
       var form = forms[i];
@@ -124,6 +129,8 @@
             form.appendChild(createInput('hidden', 'mode', 'test'));
           }
           form.appendChild(createInput('hidden', 'currency', valueCarrier.getCurrency()));
+          form.appendChild(createInput('hidden', 'sessionOption', 'new'));
+          // form.appendChild(createInput('hidden', 'member', 'new'));
           form.appendChild(submit);
           submit.click();
 
@@ -147,6 +154,9 @@
     });
     forEachElements(supportRenewalPrice, function(element) {
       element.textContent = valueCarrier.formatPrice(SUPPORT_RENEWAL_PRICE);
+    });
+    forEachElements(sibgleWebsitePrice, function(element) {
+      element.textContent = valueCarrier.formatPrice(SINGLE_WEBSITE_PRICE);
     });
 
     compareLicenses.addEventListener('click', function(event) {
@@ -204,29 +214,14 @@
 
   function getCurrency() {
     var currency = search.match(/currency=([A-Z]{3})/);
-    var lang = (navigator.language || 'en').toLowerCase();
 
     if (Array.isArray(currency)) {
       currency = currency[1];
     } else {
-      // currency = INTERNATIONALIZED_PRICES.filter(function(price) {
-      //   return isLanguageMatches(price.countryCode, lang);
-      // })[0].currency;
       currency = INTERNATIONALIZED_PRICES[INTERNATIONALIZED_PRICES.length - 1].currency;
     }
 
     return currency;
-  }
-
-  function isLanguageMatches(languages, langToMatch) {
-    return languages.some(function(lang) {
-      if (lang === '*') {
-        return true;
-      }
-      var globalSearch = lang.indexOf('-') === -1;
-
-      return langToMatch === lang || (globalSearch ? langToMatch.replace(/\-\w+/, '') === lang : false);
-    });
   }
 
   function getPriceInfo(currency) {
@@ -247,7 +242,17 @@
 
     return {
       getPrice: function() {
-        return this.formatPrice(productInfo.price);
+        var base = DEVELOPER_LICENSE_PRICE;
+        var support = 0;
+
+        base = base * priceInfo.ratio;
+        base = Math.ceil(base - (base * productInfo.discount));
+
+        if (productInfo.support) {
+          support = (SUPPORT_RENEWAL_PRICE * priceInfo.ratio) * productInfo.quantity;
+        }
+
+        return this._formatPrice((base * productInfo.quantity) + support);
       },
 
       getSavedPrice: function() {
@@ -255,7 +260,15 @@
       },
 
       formatPrice(price) {
-        price = numeral(price * priceInfo.ratio).format('$0,0');
+        return this._formatPrice(Math.ceil(price * priceInfo.ratio));
+      },
+
+      getCurrency: function() {
+        return priceInfo.currency;
+      },
+
+      _formatPrice(price) {
+        price = numeral(price).format('$0,0');
 
         if (priceInfo.appendCurrencyCode) {
           price += ' ' + this.getCurrency();
@@ -263,10 +276,6 @@
 
         return price;
       },
-
-      getCurrency: function() {
-        return priceInfo.currency;
-      }
     };
   }
 
