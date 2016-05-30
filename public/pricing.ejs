@@ -24,8 +24,11 @@
                 <h4>Single Developer</h4>
                 <div class="price">$790</div>
                 <div class="extended-support">
-                    <form method="POST" data-product-type="single-developer" action="https://sites.fastspring.com/handsontable/instant/developer-with-extended-support">
-                        <input type="hidden" name="quantity" value="1"/>
+                    <form method="POST" data-product-type="single-developer" action="https://sites.fastspring.com/handsontable/api/order">
+                        <input type="hidden" name="product_1_quantity" value="1"/>
+                        <input type="hidden" name="product_1_path" value="/developer-with-extended-support"/>
+                        <input type="hidden" name="operation" value="create"/>
+                        <input type="hidden" name="destination" value="checkout"/>
 
                         <input id="extended_1" name="extended_support" type="checkbox" checked/>
                         <label for="extended_1">
@@ -65,8 +68,11 @@
                 <h4>5 Developers</h4>
                 <div class="price">$3705</div>
                 <div class="extended-support">
-                    <form method="POST" data-product-type="5-developers" action="https://sites.fastspring.com/handsontable/instant/developer-with-extended-support">
-                        <input type="hidden" name="quantity" value="5"/>
+                    <form method="POST" data-product-type="5-developers" action="https://sites.fastspring.com/handsontable/api/order">
+                        <input type="hidden" name="product_1_quantity" value="5"/>
+                        <input type="hidden" name="product_1_path" value="/developer-with-extended-support"/>
+                        <input type="hidden" name="operation" value="create"/>
+                        <input type="hidden" name="destination" value="checkout"/>
 
                         <input id="extended_5" name="extended_support" type="checkbox" checked/>
                         <label for="extended_5">
@@ -105,8 +111,11 @@
                 <h4>10 Developers</h4>
                 <div class="price">$7165</div>
                 <div class="extended-support">
-                    <form method="POST" data-product-type="10-developers" action="https://sites.fastspring.com/handsontable/instant/developer-with-extended-support">
-                        <input type="hidden" name="quantity" value="10"/>
+                    <form method="POST" data-product-type="10-developers" action="https://sites.fastspring.com/handsontable/api/order">
+                        <input type="hidden" name="product_1_quantity" value="10"/>
+                        <input type="hidden" name="product_1_path" value="/developer-with-extended-support"/>
+                        <input type="hidden" name="operation" value="create"/>
+                        <input type="hidden" name="destination" value="checkout"/>
 
                         <input id="extended_10" name="extended_support" type="checkbox" checked/>
                         <label for="extended_10">
@@ -369,8 +378,11 @@
                         and a website that doesn't allow
                         third-party users authorization.
                     </p>
-                    <form method="POST" data-product-type="single-website" action="https://sites.fastspring.com/handsontable/instant/ingle-website-with-basic-support ">
-                        <input type="hidden" name="quantity" value="1"/>
+                    <form method="POST" data-product-type="single-website" action="https://sites.fastspring.com/handsontable/api/order">
+                        <input type="hidden" name="product_1_quantity" value="1"/>
+                        <input type="hidden" name="product_1_path" value="/single-website-with-basic-support"/>
+                        <input type="hidden" name="operation" value="create"/>
+                        <input type="hidden" name="destination" value="checkout"/>
                     </form>
                     <a href="#" data-product-type="single-website">Buy now for <span class="single-website-price">$149</span></a>
                 </div>

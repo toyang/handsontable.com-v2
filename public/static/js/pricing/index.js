@@ -46,7 +46,7 @@
   var SUPPORT_DEVELOPER_PRICE = 720;
   var SUPPORT_RENEWAL_PRICE = 300;
   var SINGLE_WEBSITE_PRICE = 149;
-  var PAYMENTS_BASE_URL = 'https://sites.fastspring.com/handsontable/instant';
+  // var PAYMENTS_BASE_URL = 'https://sites.fastspring.com/handsontable/api/order';
   var PRODUCTS = {
     'single-website': {
       basic: {
@@ -131,6 +131,7 @@
           form.appendChild(createInput('hidden', 'currency', valueCarrier.getCurrency()));
           form.appendChild(createInput('hidden', 'sessionOption', 'new'));
           // form.appendChild(createInput('hidden', 'member', 'new'));
+
           form.appendChild(submit);
           submit.click();
 
@@ -171,6 +172,7 @@
     var savesElement = form.querySelector('.saves');
     var priceElement = form.parentNode.parentNode.querySelector('.price');
     var supportTypeElement = form.querySelector('[name=extended_support]');
+    var productPathElement = form.querySelector('[name=product_1_path]');
     var productInfo = PRODUCTS[productType][getSupportTypeFromElement()];
 
     valueCarrier = createValueCarrier(productInfo, getPriceInfo(getCurrency()));
@@ -198,7 +200,9 @@
     }
 
     return function() {
-      form.action = PAYMENTS_BASE_URL + productInfo.name;
+      productPathElement.value = productInfo.name;
+
+      // form.action = PAYMENTS_BASE_URL + productInfo.name + '?member=new';
     };
   }
 
