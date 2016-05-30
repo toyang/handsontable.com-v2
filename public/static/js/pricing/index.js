@@ -46,7 +46,7 @@
   var SUPPORT_DEVELOPER_PRICE = 720;
   var SUPPORT_RENEWAL_PRICE = 300;
   var SINGLE_WEBSITE_PRICE = 149;
-  // var PAYMENTS_BASE_URL = 'https://sites.fastspring.com/handsontable/api/order';
+  // var PAYMENTS_BASE_URL = 'http://sites.fastspring.com/handsontable/product';
   var PRODUCTS = {
     'single-website': {
       basic: {
