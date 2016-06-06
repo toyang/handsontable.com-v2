@@ -25,11 +25,21 @@
       @include square (25px);
       fill: $brandGreen;
     }
-
     h5 {
       margin-bottom: 10px;
       font-size: 18px;
       font-weight: 600;
+    }
+
+    @media (max-width: $largeWidth - 1) {
+      svg {
+        @include absolute-top-left (-30px,50%);
+        margin-left: -12.5px;
+      }
+      h5 {
+        text-align: center;
+        margin-top: 3em;
+      }
     }
   }
 
