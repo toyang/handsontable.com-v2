@@ -4,15 +4,19 @@
     },
 
     "index": {
-        "title": "The Excel-like front-end spreadsheet library for developers"
+        "title": "JavaScript Spreadsheet Library for Developers"
     },
 
     "examples": {
         "title": "Choose Your Components"
     },
 
+    "faq": {
+        "title": "Frequently Asked Questions"
+    },
+
     "pricing": {
-        "title": "Pricing & Plans"
+        "title": "Pricing Plans"
     },
 
     "pricing-maintenance": {
@@ -44,4 +48,3 @@
     }
 
 }
-
