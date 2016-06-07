@@ -2,30 +2,60 @@
  * @author: Handsoncode
  */
 
-.q-and-a {
-     padding-top: 47px;
-     
+.pricing .q-and-a {
+    padding: 50px 0 58px;
+    background-color: $darkWhite;
+
+    .headline {
+        margin-bottom: 110px;
+        border: none;
+
+        & > span {
+            background: transparent;
+        }
+    }
+
     .question-item {
 
-
         h5 {
-            font-weight: 400;
+            font-weight: 600;
             margin: 0 0 10px;
         }
-
-        p, a {
-            font-size: 0.938em; /* 15px */
-            font-weight: 100;
-        }
+        //
+        //p, a {
+        //    font-size: 0.938em; /* 15px */
+        //    font-weight: 100;
+        //}
 
         p {
-            margin: 3px 0 38px;
+            margin: 0 0 40px;
+            text-align: center;
+
+            a {
+                font-size: 1em;
+            }
 
             /* [ styles only for desktop ] */
             @media only screen and (min-width: $largeWidth) {
+                min-height: 130px;
+                margin-bottom: 0;
                 padding-right: 33px;
                 text-align: left;
+
+                &:last-child {
+                    min-height: 130px;
+                }
             }
         }
      }
+
+    .read-more {
+        text-align: center;
+        clear: both;
+
+        a {
+            font-size: 1em;
+        }
+    }
+
  }

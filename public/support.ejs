@@ -20,7 +20,7 @@
                       target="_blank">GitHub</a>, <a href="http://stackoverflow.com/tags/handsontable"
                       target="_blank">Stackoverflow</a> or <a
                       href="https://groups.google.com/forum/#!forum/handsontable"
-                      target="_blank">Google Group</a>  for free.</p>
+                      target="_blank">Google Group</a> for free.</p>
               </div>
             </div>
             <div class="small-12 medium-4 columns">
@@ -57,12 +57,28 @@
                 Please confirm the fields and submit them again.
               </div>
 
-              <form id="contact-form" class="clearfix">
-                <input type="text" placeholder="Full name" name="full_name"/>
-                <input type="text" placeholder="Company name" name="company_name"/>
-                <input type="text" placeholder="Email address" name="email_address"/>
-                <textarea placeholder="Your message"></textarea>
-                <input type="submit" class="btn large blue right" value="SEND MESSAGE"/>
+              <form id="contact-form" class="clearfix" action="https://my.handsontable.com/api/contact" method="post">
+                <div class="selectbox">
+                  <select required name="category">
+                    <option value="" disabled selected>Select category</option>
+                    <option value="general_question">General question</option>
+                    <option value="technical_support">Technical support</option>
+                    <option value="enterprise_inquiry">Enterprise/OEM inquiry</option>
+                    <option value="request_for_quotation">Request for quotation</option>
+                    <option value="request_for_quotation">Request for discount</option>
+                    <option value="business_opportunity">Business opportunity</option>
+                  </select>
+                  <svg>
+                    <use xlink:href="#arrow_down_icon"></use>
+                  </svg>
+                </div>
+                <input type="hidden" placeholder="License ID" name="orderId"/>
+                <input type="text" placeholder="Full name" name="name"/>
+                <input type="text" placeholder="Company name" name="companyName"/>
+                <input type="email" required placeholder="Email address" name="email"/>
+                <textarea placeholder="Your message" required name="body"></textarea>
+                <input type="hidden" name="returnTo" value="/support.html"/>
+                <input type="submit" class="btn large blue right" value="SEND"/>
               </form>
             </div>
             <div class="small-12 medium-offset-1 medium-5 columns">

@@ -9,6 +9,7 @@
     text-align: center;
     white-space: nowrap;
     display: inline-block;
+    border-radius: 4px;
     width: 100%;
     padding: 0 27px;
     border: none;
@@ -52,6 +53,16 @@
         &:focus,
         &:active {
             background-color: $brandGreenActive;
+        }
+    }
+
+    &.vivid-green {
+        color: #FFF;
+        background: $vividGreen;
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $vividGreenActive;
         }
     }
 
@@ -124,6 +135,6 @@
         font-size: 0.813em; /* 13px */
         height: 38px;
         line-height: 35px;
-        padding: 0 28px;
+        padding: 0 20px;
     }
 }

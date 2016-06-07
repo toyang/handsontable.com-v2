@@ -1,76 +1,54 @@
-function FormHandler(source) {
-  var form, email, name, companyName, message, formSentNotification, formErrorNotification, about, subject;
+(function() {
+  var d = document;
+  var search = location.search;
 
-  document.addEventListener("DOMContentLoaded", function() {
-    form = document.getElementById('contact-form');
-    email = form.querySelector('input[name=email_address]');
-    name = form.querySelector('input[name=full_name]');
-    companyName = form.querySelector('input[name=company_name]');
-    message = form.querySelector('textarea');
-    formSentNotification = document.getElementById('form-sent');
-    formErrorNotification = document.getElementById('form-error');
-    about = '';
-    subject = '';
+  function init() {
+    var urlState = search.match(/state=(success|error)/);
+    var urlCategory = search.match(/category=(\w+)/);
 
-    switch (source) {
-      case 'support':
-        about = 'Support';
-        subject = 'Support question';
+    var form = d.querySelector('#contact-form');
+    var categorySelect = form.querySelector('[name=category]');
+    var orderIdInput = form.querySelector('[name=orderId]');
+    var submitButton = form.querySelector('[type=submit]');
+    var isCategoryExists = false;
 
-        break;
-      case 'contact':
-        about = 'Contact';
-        subject = 'Contact question';
+    if (Array.isArray(urlState)) {
+      urlState = urlState[1];
 
-        break;
+      if (urlState === 'success') {
+        d.getElementById('form-sent').style.display = 'block';
+      }
+      if (urlState === 'error') {
+        d.getElementById('form-error').style.display = 'block';
+      }
+    }
+    if (Array.isArray(urlCategory)) {
+      isCategoryExists = Array.prototype.map.call(categorySelect.options, function(element) {
+        return element.value;
+      }).indexOf(urlCategory[1]) >= 0;
+
+      if (isCategoryExists) {
+        categorySelect.value = urlCategory[1];
+        onCategoryChange();
+      }
     }
 
-    form.addEventListener('submit', function(event) {
-      hideNotifications();
+    categorySelect.addEventListener('change', onCategoryChange);
 
-      if (Groove) {
-        if (email.value === '' || name.value === '' || message.value === '') {
-          showError();
-
-        } else {
-          Groove.createTicket({
-            email: email.value,
-            name: name.value + (companyName.value !== '' ? ' (' + companyName.value + ')' : ''),
-            about: about,
-            subject: subject,
-            message: message.value
-          }, function(req) {
-            if (req.statusText === 'OK') {
-              clearForm();
-              showConfirmation();
-            } else {
-              showError();
-            }
-          });
-        }
+    function onCategoryChange() {
+      if (categorySelect.value === 'technical_support') {
+        orderIdInput.type = 'text';
+      } else {
+        orderIdInput.type = 'hidden';
       }
+    }
 
-      event.preventDefault();
+    form.addEventListener('submit', function() {
+      submitButton.classList.remove('blue');
+      submitButton.classList.add('grey');
+      submitButton.value = 'Sending...';
     });
-  });
-
-  function clearForm() {
-    email.value = '';
-    name.value = '';
-    companyName.value = '';
-    message.value = '';
   }
 
-  function hideNotifications() {
-    formSentNotification.style.display = 'none';
-    formErrorNotification.style.display = 'none';
-  }
-
-  function showConfirmation() {
-    formSentNotification.style.display = 'block';
-  }
-
-  function showError() {
-    formErrorNotification.style.display = 'block';
-  }
-}
+  document.addEventListener("DOMContentLoaded", init);
+}());

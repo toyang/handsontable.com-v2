@@ -2,25 +2,33 @@
  * @author: Handsoncode
  */
 
- .pricing {
-    margin-top: 69px;
+.pricing {
+  overflow: hidden;
+  margin-top: 69px;
 
-    .headline {
-        margin-bottom: 53px;
-    }
+  .headline {
+    margin-bottom: 53px;
 
-    .contact-us {
-        text-align: center;
-        position: relative;
-        top: -30px;
-        display: block;
-        width: 100%;
-        
+    .currency-control {
+      position: absolute;
+      top: 40px;
+      right: 0;
+      font-family: $regularFont;
+      font-size: 0.406em;
 
-        /* [ styles only for desktop ] */
-        @media only screen and (min-width: $largeWidth) {
-            top: 0;
-            text-align: right;
+      span, a {
+        margin-right: 7px;
+
+        &.active {
+          color: $darkGray;
+          text-decoration: none;
+          cursor: text;
         }
+      }
+
+      @media (max-width: $mediumWidth - 1) {
+        position: static;
+      }
     }
+  }
 }

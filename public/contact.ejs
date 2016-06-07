@@ -6,23 +6,38 @@
         <small>We'd
           <svg class="love">
             <use xlink:href="#love_icon"></use>
-          </svg>
-          to hear from you
+          </svg>to hear from you
         </small>
       </h2>
       <div class="row">
         <div class="small-12 medium-6 columns">
           <div id="form-sent" class="notification success">Thanks for contacting us. We'll get back to you very soon.</div>
           <div id="form-error" class="notification error">Oops! We were unable to send the form.
-            Please confirm the fields and submit them again.
+            Please check the invalid fields and try again.
           </div>
 
-          <form id="contact-form" class="clearfix">
-            <input type="text" placeholder="Full name" name="full_name"/>
-            <input type="text" placeholder="Company name" name="company_name"/>
-            <input type="text" placeholder="Email address" name="email_address"/>
-            <textarea placeholder="Your message"></textarea>
-            <input type="submit" class="btn large blue right" value="SEND MESSAGE"/>
+          <form id="contact-form" class="clearfix" action="https://dev-my.handsontable.com/api/contact" method="post">
+            <div class="selectbox">
+              <select required name="category">
+                <option value="" disabled selected>Select category</option>
+                <option value="general_question">General question</option>
+                <option value="technical_support">Technical support</option>
+                <option value="enterprise_inquiry">Enterprise/OEM inquiry</option>
+                <option value="request_for_quotation">Request for quotation</option>
+                <option value="request_for_discount">Request for discount</option>
+                <option value="business_opportunity">Business opportunity</option>
+              </select>
+              <svg>
+                <use xlink:href="#arrow_down_icon"></use>
+              </svg>
+            </div>
+            <input type="hidden" placeholder="License ID" name="orderId"/>
+            <input type="text" placeholder="Full name" name="name"/>
+            <input type="text" placeholder="Company name" name="companyName"/>
+            <input type="email" required placeholder="Email address" name="email"/>
+            <textarea placeholder="Your message" required name="body"></textarea>
+            <input type="hidden" name="returnTo" value="/contact.html"/>
+            <input type="submit" class="btn large blue right" value="SEND"/>
           </form>
         </div>
         <div class="small-12 medium-offset-1 medium-5 columns">
@@ -38,7 +53,7 @@
                 <use xlink:href="#twitter_icon"></use>
               </svg>
             </a>
-            <a href="https://github.com/handsontable/handsontable" target="_blank">
+            <a href="https://github.com/handsontable" target="_blank">
               <svg>
                 <use xlink:href="#github_icon"></use>
               </svg>
@@ -49,16 +64,16 @@
               </svg>
             </a>
           </div>
-          <div class="partner">
-            <h3>Want to become a partner?</h3>
-            <a href="mailto:partners@handsontable.com">partners@handsontable.com</a>
-          </div>
           <div class="office">
             <p>
               Handsoncode sp. z o.o.<br/>
               Aleja Zwycięstwa 96/98<br/>
               81-451 Gdynia<br/>
               Poland
+            </p>
+            <p>
+              <strong>Business hours</strong> <br/>
+              8:00 AM - 5:00 PM CET
             </p>
             <a href="mailto:hello@handsontable.com">hello@handsontable.com</a>
           </div>

@@ -135,16 +135,42 @@ header {
             }
         }
 
-        > ul > li {
+        > ul {
 
-            /* [ styles only for desktop ] */
-            @media only screen and (min-width: $largeWidth) {
-                margin-left: 16px;
-                padding-bottom: 19px;
+            > li {
+                /* [ styles only for desktop ] */
+                @media only screen and (min-width: $largeWidth) {
+                    margin-left: 10px;
+                    padding-bottom: 19px;
+                }
+            }
 
-                &:last-of-type:not(:only-of-type){
+            &.login_menu {
+                /* [ styles only for desktop ] */
+                @media only screen and (min-width: $largeWidth) {
+                    @include absolute-top-right (-40px, 0);
+                }
+
+                li {
+                    margin: 0;
                     padding: 0;
-                    margin-left: 36px;
+
+                    &:last-child {
+                        margin-right: 8px;
+                    }
+
+                    a, p {
+                        width: auto;
+                        margin: 0;
+                        padding: 14px 6px 0;
+                        font-size: 0.846em;
+                        color: $darkGray;
+                        border-bottom: none;
+                    }
+
+                    a:hover {
+                        color: $darkGrayActive;
+                    }
                 }
             }
         }
