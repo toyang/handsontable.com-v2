@@ -10,6 +10,7 @@
     var categorySelect = form.querySelector('[name=category]');
     var orderIdInput = form.querySelector('[name=orderId]');
     var submitButton = form.querySelector('[type=submit]');
+    var isCategoryExists = false;
 
     if (Array.isArray(urlState)) {
       urlState = urlState[1];
@@ -22,8 +23,14 @@
       }
     }
     if (Array.isArray(urlCategory)) {
-      categorySelect.value = urlCategory[1];
-      onCategoryChange();
+      isCategoryExists = Array.prototype.map.call(categorySelect.options, function(element) {
+        return element.value;
+      }).indexOf(urlCategory[1]) >= 0;
+
+      if (isCategoryExists) {
+        categorySelect.value = urlCategory[1];
+        onCategoryChange();
+      }
     }
 
     categorySelect.addEventListener('change', onCategoryChange);

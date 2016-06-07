@@ -56,6 +56,16 @@
         }
     }
 
+    &.vivid-green {
+        color: #FFF;
+        background: $vividGreen;
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $vividGreenActive;
+        }
+    }
+
     &.gray {
         color: #FFF;
         background: $darkGray;
