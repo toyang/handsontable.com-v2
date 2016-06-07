@@ -65,8 +65,6 @@
 
       span {
         margin-left: 42px;
-        padding-right: 42px;
-        display: inline-block;
       }
       .checkbox {
         @include absolute-top-left(13px, 16px);
@@ -100,16 +98,6 @@
       &.dependency:checked + label .checkbox {
         display: block;
         fill: $middleGray;
-      }
-    }
-    .tooltip-btn {
-      @media (max-width: $mediumWidth - 1) {
-        .tooltip-inner {
-          left: -179px;
-        }
-        .tooltip-angle {
-          left: 180px;
-        }
       }
     }
   }
