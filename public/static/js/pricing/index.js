@@ -1,7 +1,7 @@
 (function() {
   var d = document;
   var search = location.search;
-  var TEST = true;
+  var TEST = false;
 
   var INTERNATIONALIZED_PRICES = [
     {
