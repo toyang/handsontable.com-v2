@@ -7,7 +7,7 @@
     {
       countryCode: ['en-ca', 'fr-ca'],
       currency: 'CAD',
-      formatCode: 'en',
+      formatCode: 'en-US',
       appendCurrencyCode: true,
       ratio: 1.3,
     },
@@ -15,28 +15,28 @@
       countryCode: ['en-ie', 'cs', 'da', 'nl', 'fr', 'de', 'el', 'hu', 'it', 'la', 'lt', 'lb', 'no', 'nb', 'pl', 'pt', 'ro',
         'ru', 'sk', 'sl', 'sv', 'uk'],
       currency: 'EUR',
-      formatCode: 'de',
+      formatCode: 'fr-FR',
       appendCurrencyCode: false,
       ratio: 0.9,
     },
     {
       countryCode: ['en-gb'],
       currency: 'GBP',
-      formatCode: 'en-gb',
+      formatCode: 'en-GB',
       appendCurrencyCode: false,
       ratio: 0.7,
     },
     {
       countryCode: ['ja'],
       currency: 'JPY',
-      formatCode: 'ja',
+      formatCode: 'ja-JP',
       appendCurrencyCode: false,
       ratio: 110,
     },
     {
       countryCode: ['*'],
       currency: 'USD',
-      formatCode: 'en',
+      formatCode: 'en-US',
       appendCurrencyCode: false,
       ratio: 1,
     },
@@ -242,7 +242,7 @@
   }
 
   function createValueCarrier(productInfo, priceInfo) {
-    numeral.language(priceInfo.formatCode);
+    numbro.culture(priceInfo.formatCode);
 
     return {
       getPrice: function() {
@@ -272,7 +272,7 @@
       },
 
       _formatPrice(price) {
-        price = numeral(price).format('$0,0');
+        price = numbro(price).format('$0,0');
 
         if (priceInfo.appendCurrencyCode) {
           price += ' ' + this.getCurrency();
