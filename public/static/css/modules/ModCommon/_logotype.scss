@@ -34,6 +34,7 @@ header .logotype {
         @media only screen and (min-width: $largeWidth) {
             @include rectangle(187px, 47px);
             float: left;
+            padding-left: 15px;
         }
     }
 

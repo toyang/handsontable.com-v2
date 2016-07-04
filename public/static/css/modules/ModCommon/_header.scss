@@ -3,7 +3,7 @@
  */
 
 header {
-    @include fixed-top-left(0, 0);
+
     background: #FFF;
     z-index: 10000;
 
@@ -16,8 +16,7 @@ header {
 
     /* [ burger icon triger show menu ] */
     label[for="show_menu"] {
-        @include fixed-top-right(26px, 11px);
-        @include rectangle(26px, 18px);
+        @include absolute-top-right(26px, 11px);
         text-indent: -100%;
         display: inline-block;
         cursor: pointer;
@@ -26,6 +25,7 @@ header {
         &:hover {
             &::after {
                 @include transform(rotate(45deg) translate(7px, 7px));
+
             }
 
             &::before {
@@ -55,23 +55,20 @@ header {
     }
 
     #show_menu {
-        @include fixed-top-left(-10000px, 0);
+        @include absolute-top-left(-10000px, 0);
 
         &:checked + nav {
             @include transition(all .3s ease);
             @include transform(translateY(0));
             opacity: 1;
+            display: block;
         }
     }
 
     nav {
         @include transform(translateY(-100%));
-        @include fixed-top-left($topMenuHeight, 0);
-        min-height: 100%;
-        max-height: 100%;
-        width: 100%;
-        background: #FFF;
         opacity: 0;
+        display: none;
 
         /* [ styles only for desktop ] */
         @media only screen and (min-width: $largeWidth) {
@@ -81,6 +78,7 @@ header {
             top: 3px;
             float: right;
             opacity: 1;
+            display: block;
         }
 
         li {
@@ -137,6 +135,15 @@ header {
 
         > ul {
 
+            margin: 0;
+            overflow: auto;
+
+            /* [ styles only for desktop ] */
+            @media only screen and (min-width: $largeWidth) {
+              max-height: auto;
+               overflow: inherit;
+            }
+
             > li {
                 /* [ styles only for desktop ] */
                 @media only screen and (min-width: $largeWidth) {
@@ -161,10 +168,7 @@ header {
 
                     a, p {
                         width: auto;
-                        margin: 0;
-                        padding: 14px 6px 0;
                         font-size: 0.846em;
-                        color: $darkGray;
                         border-bottom: none;
                     }
 
@@ -178,7 +182,7 @@ header {
         .btn.small {
             font-size: 0.923em; /* 12px */
             display: block;
-            width: 95%;
+            width: 75%;
             margin: 20px auto;
 
             /* [ styles only for desktop ] */

@@ -38,7 +38,7 @@
 
     form {
         margin: 23px 0 59px;
-
+        text-align: center;
         input[type="text"],
         input[type="email"], 
         input[type="number"], 
@@ -46,6 +46,7 @@
         textarea {
             background: #FFF;
             border-color: $inputBorder;
+            width: 75%;
         }
 
         #mce-responses {
@@ -66,7 +67,7 @@
         }
 
         .btn {
-            width: 100%;
+            width: 50%;
         }
     }
 
@@ -81,5 +82,4 @@
             margin: 0;
         }
     }
-
 }
