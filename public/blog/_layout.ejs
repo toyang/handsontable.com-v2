@@ -23,22 +23,5 @@
     <% if (current.path[1] == "articles") { %>
         <%- partial("_blog_scripts") %>
     <% } %>
-
-    <script>
-        (function() {
-            var orgSuccess = mc.ajaxOptions.success;
-
-            mc.ajaxOptions.success = function(resp) {
-                if (resp.result === 'success') {
-                    dataLayer.push({'event': 'Newsletter footer subscribe'});
-                }
-                orgSuccess(resp);
-            }
-
-            document.querySelector('#mc_embed_free form').addEventListener('submit', function() {
-                dataLayer.push({'event': 'Newsletter header subscribe'});
-            });
-        }());
-    </script>
 </body>
 </html>
