@@ -58,5 +58,22 @@
 
   d.addEventListener('DOMContentLoaded', function() {
     logoutButton().addEventListener('click', onLogoutClick);
+
+    // click on external iframe snippet (https://gist.github.com/jaydson/1780598)
+    var iframeMouseOver = false;
+
+    window.addEventListener('blur', function() {
+      if (iframeMouseOver) {
+        dataLayer.push({'event': 'Github iframe click'});
+      }
+    });
+
+    document.getElementById('github-star').addEventListener('mouseover', function() {
+      iframeMouseOver = true;
+    });
+    document.getElementById('github-star').addEventListener('mouseout', function() {
+      iframeMouseOver = false;
+    });
+    // end
   })
 }());
