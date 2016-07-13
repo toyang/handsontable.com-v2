@@ -3,9 +3,12 @@
  */
 
  .directory .addon-bar {
-    margin-top: 77px;
+    margin-top: 0;
     color: #FFF;
     background: $brandBlue;
+    @media only screen and (min-width: $largeWidth) {
+      margin-top:77px;
+    }
 
     h2 {
         margin: 10px 0 0 0;
@@ -14,6 +17,10 @@
     p {
         font-size: 0.938em;
         margin: 4px 0 23px;
+        text-align: center;
+        @media only screen and (min-width: $largeWidth) {
+          text-align: left;
+        }
     }
 
     .search {

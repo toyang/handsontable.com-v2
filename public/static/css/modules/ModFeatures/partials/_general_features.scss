@@ -5,7 +5,6 @@
  .features .general-features {
     @include border-top;
 
-    /* [ styles only for desktop ] */
     @media only screen and (min-width: $largeWidth) {
         margin-top: 37px;
         padding-top: 95px;
@@ -14,19 +13,21 @@
     h3 {
         font-family: $optionalFont;
         font-weight: 400;
-        margin-bottom: 18px;
+        margin: 40px 0 18px;
+        @media only screen and (min-width: $largeWidth) {
+          margin: 0 0 18px;
+        }
     }
 
     .row {
-            display: block;
-        @include align-items(center);
+        display: block;
         img {
             margin: 30px 0;
             width: 80%;
-
-          @media only screen and (min-width: $largeWidth) {
-            @include flexbox;
-          }
+            display: none;
+            @media only screen and (min-width: $largeWidth) {
+              display: inline;
+            }
         }
 
         p, span {
@@ -36,14 +37,11 @@
         .see-examples {
             text-align: center;
             display: inline-block;
-
-            /* [ styles only for desktop ] */
             @media only screen and (min-width: $largeWidth) {
                text-align: left;
             }
         }
 
-        /* [ styles only for desktop ] */
         @media only screen and (min-width: $largeWidth) {
             margin-bottom: 98px;
             img {
