@@ -13,7 +13,7 @@
     "grunt-unused": "^0.2.0"
   },
   "devDependencies": {
-    "generate-release": "^0.8.0",
+    "generate-release": "^0.10.2",
     "shipit-deploy": "^2.1.2"
   }
 }
