@@ -1,9 +1,9 @@
 {
-  "four-ways-to-handle-read-only-cells": {
-    "title": "Four Ways to Handle Read-only Cells",
+  "4-ways-to-handle-read-only-cells": {
+    "title": "4 Ways to Handle Read-only Cells",
     "category": "Recipes",
     "date": "July 14, 2016",
-    "image_file": "four-ways-to-handle-read-only-cells.png",
+    "image_file": "4-ways-to-handle-read-only-cells.png",
     "description": "Handsontable enables you to change and manipulate data. But every spreadsheet has its constants, such as data from external sources. Regardless of (...)"
   },
   "why-outsourcing-is-important-for-your-startup": {
