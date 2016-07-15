@@ -1,0 +1,163 @@
+<section class="post" itemid="https://handsontable.com/<%= current.source %>" itemscope
+         itemtype="http://schema.org/BlogPosting" xmlns="http://www.w3.org/1999/html">
+    <div class="row">
+        <div class="large-6 large-centered columns">
+            <h2 class="headline" itemprop="headline">
+                4 Ways to Handle Read-only Cells
+            </h2>
+            <div class="meta-details">
+                <span>
+                    <img src="../attachments/authors/aleksandra-budnik.jpg" alt="Aleksandra Budnik" />
+                    <label>Aleksandra Budnik</label>
+                </span>
+                <span><a href="/blog/categories/recipes">Recipes</a> / July 15, 2016</span>
+                <meta itemprop="datePublished" content="2016-07-15T12:00:00+01:00"/>
+                <meta itemprop="dateModified" content="2016-07-15T12:00:00+01:00"/>
+                <span><a href="#disqus_thread"></a></span>
+            </div>
+        </div>
+    </div>
+    <article class="row body">
+        <div class="large-8 medium-12 large-centered columns">
+            <p itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                <img src="../attachments/images/4-ways-to-handle-read-only-cells.png"
+                     alt="4 Ways to Handle Read-only Cells" />
+                <meta itemprop="url"
+                      content="https://handsontable.com/blog/attachments/images/4-ways-to-handle-read-only-cells.png">
+                <meta itemprop="width" content="757">
+                <meta itemprop="height" content="441">
+            </p>
+            <p>
+                Handsontable enables you to change and manipulate data. But every spreadsheet has its constants,
+                such as data coming from external sources. Regardless of the type of information you are dealing with,
+                I will show how to protect your data easily by locking cells, rows, columns or ranges in Handsontable.
+            </p>
+            <p>
+                Handsontable is intended, for most of the time, to easily edit data. But in every spreadsheet
+                there are areas that should stay intact, for example constant values or variables taken from external
+                sources. Whichever it is, I will show you how to easily protect your data by locking certain cells,
+                rows, columns or ranges in Handsontable.
+            </p>
+            <p>
+                Let's start with some basics first.  When a cell is set to read-only, then:
+            </p>
+            <ul>
+                <li>
+                    It is immutable for changes
+                </li>
+                <li>
+                    A cell editor doesn't open
+                </li>
+                <li>
+                    It has a new class name (<code class="inline">htDimmed</code>) which paints it gray
+                </li>
+                <li>
+                    It doesn't trigger <code class="inline">beforeChange</code> and
+                    <code class="inline">afterChange</code> callbacks
+                </li>
+                <li>
+                    It can't be changed via the context menu to editable if set in the
+                    <code class="inline">cells</code> configuration
+                </li>
+                <li>
+                    It still can be selected
+                </li>
+                <li>
+                    It still can be copied
+                </li>
+            </ul>
+            <p>
+                See also: <a href="http://docs.handsontable.com/pro/demo-disabled-editing.html#page-cells" target="_blank">
+                    Read-only cells vs non-editable cells</a>
+            </p>
+            <h3>
+                Read-only: entire spreadsheet
+            </h3>
+            <p>
+                To do so, lock all of the cells at once and simply set <code class="inline">readOnly</code> to
+                <code class="inline">true</code> in the grid's configuration.
+                The entire spreadsheet will be turned into a passive table that can be read-only for the users.
+                See it live in the example below:
+            </p>
+            <iframe width="100%" height="280" src="//jsfiddle.net/handsoncode/8y4xk33o/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <h3>
+                Read-only: columns only
+            </h3>
+            <p>
+                If only some columns should stay editable with the rest being locked, you should define the
+                <code class="inline">readOnly</code> state for certain <code class="inline">columns</code> in the configuration.
+            </p>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/8jbzyae5/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                In the example above we have created a list of Clients.
+                You can find their <code class="inline">Name</code> and <code class="inline">Surname</code>, which we
+                don't want to change. The list also contains their contact data: <code class="inline">Telephone</code>
+                and <code class="inline">E-mail</code> which can change over time, hence the users are
+                allowed to modify them inside the grid.
+            </p>
+            <p>
+                You can also revert the configuration by passing on only the columns that should not be set to
+                read-only state:
+            </p>
+            <iframe width="100%" height="300" src="//jsfiddle.net/handsoncode/15x1jfdr/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                Last but not least, there is a <code class="inline">prop</code> parameter passed via
+                <code class="inline">cells</code> method. It links the <code class="inline">readOnly</code> state
+                to the provided property passed in the source.
+            </p>
+            <iframe width="100%" height="280" src="//jsfiddle.net/handsoncode/vsquve6h/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <h3>
+                Read-only: rows only
+            </h3>
+            <p>
+                Setting your rows to read-only is as simple as in the previous examples. You will need
+                to refer to the <code class="inline">col</code> parameter instead of
+                <code class="inline">row</code> in your cells method.
+                This is shown in the simple demo below:
+            </p>
+            <iframe width="100%" height="280" src="//jsfiddle.net/handsoncode/uob16bhm/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                In this case we set the second row to read-only (the one with the index <code class="inline">1</code>).
+            </p>
+            <h3>
+                Read-only: certain cells
+            </h3>
+            <p>
+                In some situations you might want to lock only certain cells instead of whole rows or columns.
+                To do that you should use the  <code class="inline">cells</code> method to pass on the
+                coordinates (row, col) of the read-only cells.
+            </p>
+            <iframe width="100%" height="325" src="//jsfiddle.net/handsoncode/Lyzpcwrx/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                In the example above I have created an instance in which cells containing the
+                <code class="inline">readOnly</code> value become read-only. You can replace the value
+                triggering the read-only state with any other text.
+            </p>
+            <h3>
+                Conclusion
+            </h3>
+            <p>
+                The read-only state is by far one of the most commonly used features of Handsontable.
+                It gives you full control over which cells, rows or columns can be edited and which should
+                be locked.
+                Learn more about this feature from
+                <a href="http://docs.handsontable.com/pro/demo-read-only.html" target="_blank">our documentation</a>.
+
+            </p>
+
+
+            <div class="addthis_native_toolbox toolbox"></div>
+        </div>
+    </article>
+
+    <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="http://handsoncode.net/images/logos/logo.png">
+            <meta itemprop="width" content="175">
+            <meta itemprop="height" content="25">
+        </div>
+        <meta itemprop="name" content="Handsoncode">
+    </div>
+
+    <%- partial("../authors/_abudnik") %>
+</section>

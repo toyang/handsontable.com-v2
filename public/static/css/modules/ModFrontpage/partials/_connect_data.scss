@@ -4,6 +4,10 @@
  
  .connect-data {
     margin-top: 65px;
+    text-align: center;
+    @media only screen and (min-width: $largeWidth) {
+     text-align: left;
+    }
 
     h1 {
         margin: 84px 0 0;

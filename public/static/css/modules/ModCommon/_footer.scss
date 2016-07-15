@@ -40,16 +40,20 @@ footer {
     }
 
     .subscribe-form {
-        margin: 40px 0;
+        margin: 40px 0 80px;
 
         @media only screen and (min-width: $largeWidth) {
-            padding-left: 60px;
             margin: 0;
         }
 
         h5 {
            font-weight: 600;
-            margin: 41px 0 0;
+            margin: 13px 0 0;
+            text-align: center;
+
+          @media only screen and (min-width: $largeWidth) {
+            text-align: left;
+          }
         }
         
         p {
@@ -65,10 +69,9 @@ footer {
         form {
             /* mailchimp class */
             .mc-field-group {
-                @include rectangle(100%, 42px);
+                @include rectangle(75%, 42px);
                 position: relative;
-                display: block;
-                float: left;
+                margin: 0 auto;
 
                 @media only screen and (min-width: $largeWidth) {
                     width: auto;
@@ -82,7 +85,11 @@ footer {
                 }
 
                 div.mce_inline_error {
-                    bottom: -20px;
+                    bottom: 44px;
+
+                    @media only screen and (min-width: $largeWidth) {
+                      bottom: -20px;
+                    }
                 }
             }
             
@@ -92,15 +99,15 @@ footer {
             }
 
             input[type="email"] {
+                margin: 0;
                 padding: 10px 20px 10px 34px;
                 background: #FFF;
-                height: 42px; /* Firefox add 2 extra pixels */ 
+                height: 42px; /* Firefox adds 2 extra pixels */
 
                 @media only screen and (min-width: $largeWidth) {
                     float: left;
-                    width: 248px;
+                    width: 70%;
                     margin-bottom: 5px;
-                    border-right-width: 0;
                     border-radius: 2px 0 0 2px;
                 }
                 
@@ -109,17 +116,32 @@ footer {
             input[type="submit"] {
                 width: 100%;
                 margin-top: 10px;
+
                 @media only screen and (min-width: $largeWidth) {
-                    width: auto;
-                    margin: 0;
-                    border-radius: 0 2px 2px 0;
+                  width: 30%;
+                  margin: 0;
+                  padding: 0;
+                  position: relative;
+                  left: -5px;
+                  float: left;
+                  border-radius: 0 2px 2px 0;
                 }
             }
 
             #mce-responses {
                 position: absolute;
-                top: 53px;
                 font-size: 0.813em; /* 13px */
+                min-height: 110px;
+                padding: 0 5%;
+                top: 0;
+                background: $ultraLightGray;
+                text-align: center;
+                @media only screen and (min-width: $largeWidth) {
+                  top: 53px;
+                  padding: 0;
+                  min-height: auto;
+                  text-align: left;
+                }
 
                 #mce-error-response {
                     color: $brandRed;
@@ -151,7 +173,7 @@ footer {
                 @include square(32px);
                 @include absolute-top-left(50%, 50%);
                 margin: -16px 0 0 -16px;
-                fill: #bdbdbd;
+                fill: $brandBlue;
             }
         }
     }
@@ -169,7 +191,7 @@ footer {
 
         .handsoncode-logotype svg {
             @include rectangle(120px, 20px);
-            fill: #9A9A9A;
+            fill: $middleGray;
         }
     }
 }

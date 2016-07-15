@@ -3,11 +3,24 @@
  */
 
 .pricing .more-questions {
-  margin: 35px auto 100px;
+  margin: 35px auto 0px;
   text-align: center;
+
+  /* [ styles only for desktop ] */
+  @media only screen and (min-width: $largeWidth) {
+    margin: 35px auto 30px;
+    text-align: center;
+  }
 
   .headline {
     margin-bottom: 60px;
+  }
+
+  .btn {
+    width: 75%;
+    @media only screen and (min-width: $largeWidth) {
+      width: auto;
+    }
   }
 
 }
