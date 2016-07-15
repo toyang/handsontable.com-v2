@@ -19,7 +19,7 @@
   .btn {
     width: 75%;
     @media only screen and (min-width: $largeWidth) {
-      width: 100%;
+      width: auto;
     }
   }
 

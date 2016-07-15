@@ -46,8 +46,10 @@
     }
 
    .post-element {
-     height: 320px;
      overflow: hidden;
+     @media only screen and (min-width: $mediumWidth) {
+       height: 320px;
+     }
    }
 
    .categories {
