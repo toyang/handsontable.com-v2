@@ -7,7 +7,14 @@
 
   .headline {
     margin-bottom: 80px;
+    text-align: center;
     border: none;
+    font-weight: 400;
+  }
+
+  img {
+    @include filter(grayscale, 0%);
+    opacity: 1;
   }
 
 }

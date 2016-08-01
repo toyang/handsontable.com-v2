@@ -11,9 +11,10 @@
     }
   }
   .brands .headline {
+    line-height: 1.5;
     @media only screen and (min-width: $mediumWidth) {
-      margin-top: 0;
-      padding-top: 0;
+      margin: 0 0 82px;
+      padding: 0 0 0 0.9375rem;
       font-size: 15px;
       border: none;
     }
