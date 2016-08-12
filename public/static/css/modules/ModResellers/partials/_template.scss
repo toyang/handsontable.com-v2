@@ -1,0 +1,32 @@
+/**
+ * @author: Handsoncode
+ */
+
+.resellers {
+
+    .headline {
+        margin: 97px 0 21px;
+        &.centered {
+            margin: 64px 0 68px;
+        }
+    }
+
+    .resellers-list {
+        .columns {
+            margin-bottom: 10px;
+
+            h3 {
+                font-size: 1.3em;
+            }
+
+            p {
+                margin: 5px;
+
+                a {
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+
+}
