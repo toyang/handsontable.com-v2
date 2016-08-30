@@ -23,7 +23,7 @@
   border: 1px solid $borderColor;
 
   /* [ styles only for desktop ] */
-   @media only screen and (min-width: $largeWidth) {
+   @media only screen and (min-width: $mediumWidth) {
     margin-bottom: 6px;
     padding-bottom: 34px;
     top: 38px;
@@ -47,9 +47,13 @@
     font-weight: 400;
     padding: 12px 0;
     position: relative;
+    display: none;
     margin-bottom: 16px;
     text-align: center;
     background: #fff;
+    @media only screen and (min-width: $largeWidth) {
+      display: block;
+    }
 
     [aria-expanded="false"] form {
       display: none;

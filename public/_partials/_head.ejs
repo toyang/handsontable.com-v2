@@ -16,15 +16,6 @@
 <script src="/static/bower_components/numbro/dist/languages.min.js"></script>
 <script src="/static/js/common/index.js"></script>
 
-<% if (current.path[1] !== 'articles') { %>
-    <script>
-      (function() {var s=document.createElement('script');
-        s.type='text/javascript';s.async=true;
-        s.src=('https:'==document.location.protocol?'https':'http') +
-        '://handsoncode.groovehq.com/widgets/61c040f2-413c-485c-bca2-d6608d347c65/ticket.js'; var q = document.getElementsByTagName('script')[0];q.parentNode.insertBefore(s, q);})();
-    </script>
-<% } %>
-
 <% if (current.source === 'examples' || current.path[1] == 'articles') {  %>
     <link href="/static/bower_components/handsontable-pro/dist/handsontable.full.css" type="text/css" rel="stylesheet">
     <link href="/static/bower_components/highlightjs/styles/github.css" type="text/css" rel="stylesheet">
