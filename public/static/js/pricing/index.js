@@ -128,9 +128,9 @@
           if (TEST) {
             form.appendChild(createInput('hidden', 'mode', 'test'));
           }
-          form.appendChild(createInput('hidden', 'currency', valueCarrier.getCurrency()));
+          // form.appendChild(createInput('hidden', 'currency', valueCarrier.getCurrency()));
+          form.appendChild(createInput('hidden', 'currency', 'USD'));
           form.appendChild(createInput('hidden', 'sessionOption', 'new'));
-          // form.appendChild(createInput('hidden', 'member', 'new'));
 
           form.appendChild(submit);
           submit.click();
@@ -217,15 +217,14 @@
   }
 
   function getCurrency() {
-    var currency = search.match(/currency=([A-Z]{3})/);
-
-    if (Array.isArray(currency)) {
-      currency = currency[1];
-    } else {
-      currency = INTERNATIONALIZED_PRICES[INTERNATIONALIZED_PRICES.length - 1].currency;
-    }
-
-    return currency;
+    // var currency = search.match(/currency=([A-Z]{3})/);
+    //
+    // if (Array.isArray(currency)) {
+    //   currency = currency[1];
+    // } else {
+    //   currency = INTERNATIONALIZED_PRICES[INTERNATIONALIZED_PRICES.length - 1].currency;
+    // }
+    return INTERNATIONALIZED_PRICES[INTERNATIONALIZED_PRICES.length - 1].currency;
   }
 
   function getPriceInfo(currency) {
