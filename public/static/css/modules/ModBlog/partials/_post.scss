@@ -43,32 +43,38 @@
   .body {
     margin-top: 50px;
     font-family: $readFont;
+
     p {
       margin: 25px 0;
       font-size: 1em;
       line-height: 1.68;
       letter-spacing: -0.003em;
-      text-align: justify;
       @media only screen and (min-width: $mediumWidth) {
         font-size: 1.313em;
       }
+
       strong {
         font-weight: 600;
       }
+
       a {
         font-size: 1em;
       }
+
       label.photo-label {
         font-size: 0.619em;
         color: $darkGray;
         font-family: $regularFont;
       }
+
       &.title {
         margin-bottom: 0;
       }
     }
+
     ul {
       margin-bottom: 25px;
+
       li {
         font-size: 1em;
         padding: 8px 0 0 10px;
@@ -79,6 +85,7 @@
         @media only screen and (min-width: $mediumWidth) {
           font-size: 1.313em;
         }
+
         &.pros, &.cons {
           list-style: none;
           &:before {
@@ -86,36 +93,45 @@
             font-weight: 600;
           }
         }
+
         &.pros:before {
           content: "+";
           color: $brandGreen;
         }
+
         &.cons:before {
           content: "-";
           left: -23px;
           color: $brandRed;
         }
+
         a, li {
           font-size: 1em;
         }
+
         strong {
           font-weight: 600;
         }
+
       }
     }
+
     h3 {
       font-weight: 600;
       margin-top: 40px;
     }
+
     blockquote {
       margin: 0 0 30px 20px;
       padding: 0.6em 1em;
       font-weight: inherit;
       border-left: 6px solid $lightGray;
     }
+
     pre {
       line-height: 1;
     }
+
     code {
       border: 0;
       margin: 0;
@@ -132,6 +148,7 @@
         white-space: nowrap;
       }
     }
+
     .toolbox {
       margin-top: 20px;
     }

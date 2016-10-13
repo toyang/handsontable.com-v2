@@ -1,0 +1,126 @@
+/**
+ * @author: Handsoncode
+ */
+
+.customer-story {
+
+  .breadcrumbs {
+    margin: 97px 0 10px;
+    color: $darkGray;
+    font-size: 0.813em;
+
+    a {
+      font-size: 1em;
+    }
+  }
+
+  .banner {
+    @include rectangle(100%, 490px);
+    margin: 0 auto 30px;
+    padding: 102px 20px 20px;
+    position: relative;
+    color: #fff;
+    text-align: center;
+    background-color: $brandDarkNavy;
+    @media only screen and (min-width: $mediumWidth) {
+      @include rectangle(100%, 360px);
+    }
+
+    &:after {
+      @include set-pseudo-element(0, 0, auto, auto);
+      @include square(100%);
+      opacity: .15;
+      z-index: 2;
+      background-size: cover;
+    }
+
+    &.akindi:after {
+      background-image: url($images + 'template/ModCustomers/akindi/akindi-bg.png');
+    }
+
+    img, h1, h2 {
+      margin: 0;
+      position: relative;
+      text-align: center;
+      z-index: 3;
+    }
+
+    h1 {
+      margin: 20px 0 10px;
+      font-weight: 400;
+    }
+  }
+
+  .content {
+
+    h3 {
+      margin: 40px 0 0;
+      font-weight: 600;
+    }
+
+    p, a {
+      font-size: 1.125em;
+      line-height: 1.8;
+    }
+
+    p.photo-credit {
+      margin: 5px 0 0;
+      font-size: 0.688em;
+      color: $darkGray;
+    }
+
+    a.download {
+      font-size: 0.813em;
+    }
+
+    img.illustration {
+      margin-top: 20px;
+    }
+
+    .head-testimony {
+      padding: 5px 0 20px;
+      @media only screen and (min-width: $mediumWidth) {
+        padding: 40px 0 20px;
+      }
+
+      h4 {
+        font-size: 1.250em;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .company-details {
+    margin-top: 60px;
+    text-align: center;
+
+    p {
+      margin: 0;
+    }
+
+    .name {
+      margin-top: 20px;
+      font-size: 1.500em;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    ul {
+      margin-top: 30px;
+
+      li {
+        margin: 10px 0;
+
+        svg {
+          @include square(16px);
+          @include relative-top-left(3px, -5px);
+          fill: $darkGray;
+        }
+
+        a {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+}
