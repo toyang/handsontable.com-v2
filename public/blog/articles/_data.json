@@ -1,4 +1,11 @@
 {
+  "organising-your-life-with-spreadsheets": {
+    "title": "Organising Your Life With Spreadsheets",
+    "category": "Tools",
+    "date": "October 25, 2016",
+    "image_file": "organising-your-life-with-spreadsheets.png",
+    "description": "If you're a die-hard fan of spreadsheets you need no reminding of how awesome they are for keeping things organised, and keeping tabs on virtually (...)"
+  },
   "essential-tips-for-building-an-add-on-marketplace": {
     "title": "Essential Tips for Building an Add-On Marketplace",
     "category": "Startups",
@@ -19,14 +26,14 @@
     "date": "August 23, 2016",
     "image_file": "internship-at-handsoncode.png",
     "description": "First year of university has ended, and its time go back and return to my hometown Gdynia in Poland. This summer I aim to intern at the (...)"
-},
+  },
   "why-you-will-never-give-up-spreadsheets": {
-  "title": "Why You Will Never Give Up Spreadsheets",
-  "category": "Startups",
-  "date": "July 29, 2016",
-  "image_file": "why-you-will-never-give-up-spreadsheets.png",
-  "description": "The electronic spreadsheet has been around in some form or other since 1962, with use becoming more widespread in the 1980s following the release of VisiCalc (...)"
-},
+    "title": "Why You Will Never Give Up Spreadsheets",
+    "category": "Startups",
+    "date": "July 29, 2016",
+    "image_file": "why-you-will-never-give-up-spreadsheets.png",
+    "description": "The electronic spreadsheet has been around in some form or other since 1962, with use becoming more widespread in the 1980s following the release of VisiCalc (...)"
+  },
   "4-ways-to-handle-read-only-cells": {
     "title": "4 Ways to Handle Read-only Cells",
     "category": "Recipes",
@@ -35,12 +42,12 @@
     "description": "Handsontable enables you to change and manipulate data. But every spreadsheet has its constants, such as data from external sources. Regardless of (...)"
   },
   "why-outsourcing-is-important-for-your-startup": {
-  "title": "Why Outsourcing is Important for Your Startup",
-  "category": "Startups",
-  "date": "June 28, 2016",
-  "image_file": "why-outsourcing-is-important-for-your-startup.png",
-  "description": "There are a great many definitions of what a startup is, but the one I like the most is the one found at Investopedia, which states: A startup is a (...)"
-},
+    "title": "Why Outsourcing is Important for Your Startup",
+    "category": "Startups",
+    "date": "June 28, 2016",
+    "image_file": "why-outsourcing-is-important-for-your-startup.png",
+    "description": "There are a great many definitions of what a startup is, but the one I like the most is the one found at Investopedia, which states: A startup is a (...)"
+  },
   "easy-ways-to-sort-different-types-of-data-in-your-app": {
     "title": "Easy Ways to Sort Different Types of Data in Your App",
     "category": "Recipes",
