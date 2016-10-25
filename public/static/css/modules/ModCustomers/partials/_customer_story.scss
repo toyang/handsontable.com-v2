@@ -38,6 +38,26 @@
       background-image: url($images + 'template/ModCustomers/akindi/akindi-bg.png');
     }
 
+    &.bittitan:after {
+      background-image: url($images + 'template/ModCustomers/bittitan/bittitan-bg.png');
+    }
+
+    &.infogram:after {
+      background-image: url($images + 'template/ModCustomers/infogram/infogram-bg.png');
+    }
+
+    &.nuxeo:after {
+      background-image: url($images + 'template/ModCustomers/nuxeo/nuxeo-bg.png');
+    }
+
+    &.trackingfirst:after {
+      background-image: url($images + 'template/ModCustomers/trackingfirst/trackingfirst-bg.png');
+    }
+
+    &.datawrapper:after {
+      background-image: url($images + 'template/ModCustomers/datawrapper/datawrapper-bg.png');
+    }
+
     img, h1, h2 {
       margin: 0;
       position: relative;
