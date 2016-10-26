@@ -144,7 +144,11 @@
       var currency = element.dataset.currency;
 
       if (currency === valueCarrier.getCurrency()) {
-        element.classList.add('active');
+        if (element.classList) {
+          element.classList.add('active');
+        } else {
+          element.className = 'active';
+        }
       }
     });
     forEachElements(developerLicensePrice, function(element) {
@@ -161,8 +165,16 @@
     });
 
     compareLicenses.addEventListener('click', function(event) {
-      compareLicensesExpander.classList.toggle('closed');
-      compareLicensesExpander.classList.toggle('opened');
+      if (compareLicensesExpander.classList) {
+        compareLicensesExpander.classList.toggle('closed');
+        compareLicensesExpander.classList.toggle('opened');
+      } else {
+        if (compareLicensesExpander.className.indexOf('opened') >= 0) {
+          compareLicensesExpander.className = 'row comparison closed';
+        } else {
+          compareLicensesExpander.className = 'row comparison opened';
+        }
+      }
       event.preventDefault();
     });
   }
