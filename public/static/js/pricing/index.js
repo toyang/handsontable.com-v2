@@ -119,7 +119,7 @@
 
       form.addEventListener('submit', onSubmitListener(form));
 
-      d.querySelector('a[data-product-type="' + form.dataset.productType + '"]').addEventListener('click', function(form) {
+      d.querySelector('a[data-product-type="' + form.getAttribute('data-product-type') + '"]').addEventListener('click', function(form) {
         return function(event) {
           var submit = createInput('submit');
 
@@ -168,7 +168,7 @@
   }
 
   function onSubmitListener(form) {
-    var productType = form.dataset.productType;
+    var productType = form.getAttribute('data-product-type');
     var savesElement = form.querySelector('.saves');
     var priceElement = form.parentNode.parentNode.querySelector('.price');
     var supportTypeElement = form.querySelector('[name=extended_support]');
@@ -262,7 +262,7 @@
         return this.formatPrice(productInfo.saves);
       },
 
-      formatPrice(price) {
+      formatPrice: function(price) {
         return this._formatPrice(Math.ceil(price * priceInfo.ratio));
       },
 
@@ -270,7 +270,7 @@
         return priceInfo.currency;
       },
 
-      _formatPrice(price) {
+      _formatPrice: function(price) {
         price = numbro(price).format('$0,0');
 
         if (priceInfo.appendCurrencyCode) {
