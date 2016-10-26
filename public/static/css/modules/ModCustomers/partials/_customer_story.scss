@@ -6,8 +6,12 @@
 
   .breadcrumbs {
     margin: 97px 0 10px;
+    padding-left: 20px;
     color: $darkGray;
     font-size: 0.813em;
+    @media only screen and (min-width: $mediumWidth) {
+      padding-left: 0;
+    }
 
     a {
       font-size: 1em;
