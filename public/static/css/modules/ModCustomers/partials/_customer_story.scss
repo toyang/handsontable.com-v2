@@ -58,6 +58,10 @@
       background-image: url($images + 'template/ModCustomers/datawrapper/datawrapper-bg.png');
     }
 
+    &.socialpoint:after {
+      background-image: url($images + 'template/ModCustomers/socialpoint/socialpoint-bg.png');
+    }
+
     img, h1, h2 {
       margin: 0;
       position: relative;

@@ -52,6 +52,10 @@
         background-image: url($images + 'template/ModCustomers/datawrapper/datawrapper-el.png');
       }
 
+      &.socialpoint:after {
+        background-image: url($images + 'template/ModCustomers/socialpoint/socialpoint-el.png');
+      }
+
       &.coming-soon {
         cursor: default;
         background-color: $lightGray;
