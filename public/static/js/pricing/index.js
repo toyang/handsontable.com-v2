@@ -119,7 +119,7 @@
 
       form.addEventListener('submit', onSubmitListener(form));
 
-      d.querySelector('a[data-product-type="' + form.dataset.productType + '"]').addEventListener('click', function(form) {
+      d.querySelector('a[data-product-type="' + form.getAttribute('data-product-type') + '"]').addEventListener('click', function(form) {
         return function(event) {
           var submit = createInput('submit');
 
@@ -144,7 +144,11 @@
       var currency = element.dataset.currency;
 
       if (currency === valueCarrier.getCurrency()) {
-        element.classList.add('active');
+        if (element.classList) {
+          element.classList.add('active');
+        } else {
+          element.className = 'active';
+        }
       }
     });
     forEachElements(developerLicensePrice, function(element) {
@@ -161,14 +165,22 @@
     });
 
     compareLicenses.addEventListener('click', function(event) {
-      compareLicensesExpander.classList.toggle('closed');
-      compareLicensesExpander.classList.toggle('opened');
+      if (compareLicensesExpander.classList) {
+        compareLicensesExpander.classList.toggle('closed');
+        compareLicensesExpander.classList.toggle('opened');
+      } else {
+        if (compareLicensesExpander.className.indexOf('opened') >= 0) {
+          compareLicensesExpander.className = 'row comparison closed';
+        } else {
+          compareLicensesExpander.className = 'row comparison opened';
+        }
+      }
       event.preventDefault();
     });
   }
 
   function onSubmitListener(form) {
-    var productType = form.dataset.productType;
+    var productType = form.getAttribute('data-product-type');
     var savesElement = form.querySelector('.saves');
     var priceElement = form.parentNode.parentNode.querySelector('.price');
     var supportTypeElement = form.querySelector('[name=extended_support]');
@@ -262,7 +274,7 @@
         return this.formatPrice(productInfo.saves);
       },
 
-      formatPrice(price) {
+      formatPrice: function(price) {
         return this._formatPrice(Math.ceil(price * priceInfo.ratio));
       },
 
@@ -270,7 +282,7 @@
         return priceInfo.currency;
       },
 
-      _formatPrice(price) {
+      _formatPrice: function(price) {
         price = numbro(price).format('$0,0');
 
         if (priceInfo.appendCurrencyCode) {
