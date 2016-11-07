@@ -112,7 +112,7 @@
             <p>
                 Here is a working demo for this example:
             </p>
-            <iframe width="100%" height="340" src="//jsfiddle.net/jah2t9ur/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <iframe width="100%" height="340" src="//jsfiddle.net/handsoncode/aqapmtnu/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
            <h3>
                Adding custom items to a context menu
            </h3>
@@ -127,16 +127,17 @@
                     “Make it bold” – makes the text inside a cell bold. Underneath it just wraps
                     the contents with HTML elements
                     <code class="inline">&lt;strong&gt;&lt;strong&gt;</code>
-                    <iframe width="100%" height="340" src="//jsfiddle.net/dq163had/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+                    <iframe width="100%" height="340" src="//jsfiddle.net/handsoncode/eu6y4b0s/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
                 </li>
                 <li>
-                    “Export to CSV” – <a href="https://docs.handsontable.com/pro/1.7.4/demo-export-file.html" target="_blank">
+                    “Export to CSV” – <a href="https://docs.handsontable.com/pro/demo-export-file.html" target="_blank">
                         exports your table to a CSV file
                     </a>.
                     This feature is available in the PRO version of Handsontable.
-                    <iframe width="100%" height="357" src="//jsfiddle.net/hjgprdeo/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+                    <iframe width="100%" height="340" src="//jsfiddle.net/handsoncode/xbejdsz0/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
                 </li>
             </ul>
+            <!-- issue reported
             <h3>
                 Copy and paste in a context menu
             </h3>
@@ -175,6 +176,7 @@
                 See it live below:
             </p>
             <iframe width="100%" height="340" src="//jsfiddle.net/mjt1uyb1/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            -->
             <h3>
                 Disabling certain items
             </h3>
@@ -185,8 +187,9 @@
             </p>
             <p>
                 Furthermore, certain basic actions have their own parameters. I’m particularly referring to inserting and
-                removing rows and columns. They are set to “true” by default, so to disable them just pass the
-                following options:
+                removing rows and columns. They are set to "true" by default and to remove them from a context menu
+                you can pass the following options:
+
             </p>
             <ul>
                 <li>
@@ -205,16 +208,16 @@
             <p>
                 See it live yourself:
             </p>
-            <iframe width="100%" height="340" src="//jsfiddle.net/d9v56d01/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <iframe width="100%" height="340" src="//jsfiddle.net/handsoncode/7su79yjc/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
             <h3>
                 Pre-defined items in the PRO version
             </h3>
             <p>
                 You should know that a context menu extends the powers of two plugins available in Handsontable PRO, i.e.
-                <a href="https://docs.handsontable.com/pro/1.7.4/demo-hiding-columns.html" target="_blank">
+                <a href="https://docs.handsontable.com/pro/demo-hiding-columns.html" target="_blank">
                 “Hiding columns”</a>
                 and
-                <a href="https://docs.handsontable.com/pro/1.7.4/demo-hiding-rows.html" target="_blank">
+                <a href="https://docs.handsontable.com/pro/demo-hiding-rows.html" target="_blank">
                 “Hiding rows”
                 </a>. To hide or show certain parts of the grid use the following keys:
             </p>
@@ -240,12 +243,12 @@
                     </code>
                 </li>
             </ul>
-            <iframe width="100%" height="340" src="//jsfiddle.net/3oakLkpL/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <iframe width="100%" height="340" src="//jsfiddle.net/handsoncode/8271fyoy/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
             <h3>
                 Interesting facts
             </h3>
             <p>
-                Consider this rather off-topic, but still worth mentioning. Did you know that a context menu is just
+                Consider this rather off-topic, but still worth mentioning. Did you know that the context menu is just
                 another instance of Handsontable itself? Surprised? To make it more confusing, look at the Filter
                 plugin which is a part of Handsontable Pro. It allows you to filter data and is available for the
                 user from the dropdown menu in the column’s header. This is how we built the filter plugin:
@@ -261,14 +264,14 @@
                     … then created a dropdown menu upon it,
                 </li>
                 <li>
-                    … then we put another Handsontable instance inside of it to create a list of values that are able
+                    … then we put another Handsontable instance inside it to create a list of values that are able
                     to be filtered.
                 </li>
             </ul>
             <p>
                 See it live here:
             </p>
-            <iframe width="100%" height="570" src="//jsfiddle.net/0enmtc9q/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <iframe width="100%" height="570" src="//jsfiddle.net/handsoncode/e47hp9qL/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
             <p>
                 Yeah, we freakin’ love Handsontable and re-use it whenever possible.
             </p>
@@ -276,14 +279,14 @@
                 Limitations
             </h3>
             <p>
-                The most known limitation is the disability to create multi-level submenus and no-go for touchscreens.
+                The most known limitation is the inability to create multi-level submenus and no-go for touchscreens.
                 Don’t worry, we will catch up soon.
             </p>
             <h3>
                 Conclusion
             </h3>
             <p>
-                Enjoy the context menu but don’t overload it with many different options. It should be treated as any
+                Enjoy the context menu but don’t overload it with too many different options. It should be treated as any
                 other UI component in your application, always created with the user’s needs in mind.
             </p>
 
