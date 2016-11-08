@@ -1,4 +1,11 @@
 {
+  "customize-handsontable-context-menu": {
+    "title": "Customize Handsontable Context Menu",
+    "category": "Recipes",
+    "date": "November 8, 2016",
+    "image_file": "customize-handsontable-context-menu.png",
+    "description": "We distinguish two most common ways to manipulate the spreadsheet and its contents. One is by using external controls like buttons utilizing the (...)"
+  },
   "organising-your-life-with-spreadsheets": {
     "title": "Organising Your Life With Spreadsheets",
     "category": "Tools",
