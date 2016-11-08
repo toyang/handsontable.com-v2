@@ -18,4 +18,32 @@
             max-height: 66px;
         }
     }
+
+    /* Workaround for IE */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        &:nth-child(1) img {
+            width: 115px;
+            height: 49px;
+        }
+        &:nth-child(2) img {
+            width: 115px;
+            height: 43px;
+        }
+        &:nth-child(3) img {
+            width: 115px;
+            height: 27px;
+        }
+        &:nth-child(4) img {
+            width: 87px;
+            height: 66px;
+        }
+        &:nth-child(5) img {
+            width: 115px;
+            height: 21px;
+        }
+        &:nth-child(6) img {
+            width: 55px;
+            height: 66px;
+        }
+    }
 }

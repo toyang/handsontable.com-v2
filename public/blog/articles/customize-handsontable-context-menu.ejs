@@ -1,0 +1,328 @@
+<section class="post" itemid="https://handsontable.com/<%= current.source %>" itemscope
+         itemtype="http://schema.org/BlogPosting" xmlns="http://www.w3.org/1999/html">
+    <div class="row">
+        <div class="large-6 large-centered columns">
+            <h2 class="headline" itemprop="headline">
+                Customize Handsontable Context Menu
+            </h2>
+            <div class="meta-details">
+                <span>
+                    <img src="../attachments/authors/aleksandra-budnik.png" alt="Aleksandra Budnik" />
+                    <label>Aleksandra Budnik</label>
+                </span>
+                <span><a href="/blog/categories/recipes">Recipes</a> / November 8, 2016</span>
+                <meta itemprop="datePublished" content="2016-11-08T12:00:00+01:00"/>
+                <meta itemprop="dateModified" content="2016-11-08T12:00:00+01:00"/>
+                <span><a href="#disqus_thread"></a></span>
+            </div>
+        </div>
+    </div>
+    <article class="row body">
+        <div class="large-8 medium-12 large-centered columns">
+            <p itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                <img src="../attachments/images/customize-handsontable-context-menu.png"
+                     alt="Customize Handsontable Context Menu" />
+                <meta itemprop="url"
+                      content="https://handsontable.com/blog/attachments/images/customize-handsontable-context-menu.png">
+                <meta itemprop="width" content="757">
+                <meta itemprop="height" content="441">
+            </p>
+            <p>
+                We distinguish two most common ways to manipulate the spreadsheet and its contents. One is by using
+            external controls like buttons utilizing the API. Whenever possible though it is much better
+            to use some of the built-in plugins, such as the context menu. It is surprisingly easy to use
+            and highly customizable. In this article I will tell you a bit about it and show you how to
+                adapt it to your needs.
+            </p>
+            <h3>What is a context menu?</h3>
+            <p>
+                A context menu is an additional menu which is hidden by default and can be shown with the right-click
+                of the mouse anywhere in the body of a spreadsheet or a header of row and column. To turn on a context
+                menu with the default items, just pass the following configuration:
+            </p>
+            <code class="inline">contextMenu: true</code>
+            <p>
+                By default, it includes the following items separated with the thin horizontal line called a separator.
+                Each of the options has a corresponding key (in the brackets) which will be described
+                further in this article.
+            </p>
+            <ul>
+                <li>
+                    Insert row above (<code class="inline">row_above</code>)
+                </li>
+                <li>
+                    Insert row below (<code class="inline">row_below</code>)
+                </li>
+                <li>
+                    Insert column on the left (<code class="inline">col_left</code>)
+                </li>
+                <li>
+                    Insert column on the right (<code class="inline">col_right</code>)
+                </li>
+                <li>
+                    Remove row (<code class="inline">remove_row</code>)
+                </li>
+                <li>
+                    Remove column (<code class="inline">remove_col</code>)
+                </li>
+                <li>
+                    Undo (<code class="inline">undo</code>)
+                </li>
+                <li>
+                    Redo (<code class="inline">redo</code>)
+                </li>
+                <li>
+                    Read only (<code class="inline">make_read_only</code>)
+                </li>
+                <li>
+                    <ul>
+                        Alignment (<code class="inline">alignment</code>)
+                        <li>
+                            Left, Center, Justify
+                        </li>
+                        <li>
+                            Top, Middle, Bottom
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <p>
+                And there is one more pre-defined item, which is not available out of the box,
+                but highly useful in some cases:
+            </p>
+            <ul>
+                <li>
+                    Custom borders (<code class="inline">customBorders</code>)
+                </li>
+            </ul>
+            <p>
+                It allows to change a cell’s border straight from the context menu.
+            </p>
+            <h3>
+                Adding pre-defined items to a context menu
+            </h3>
+            <p>
+                Let’s assume that you need to remove some options from the context menu and leave the rest.
+                To do that, pass the keys assigned to the required items. For example, if you want to display a
+                context menu including only Undo, Redo and Alignment, pass the following configuration:
+            </p>
+            <code class="inline">
+                contextMenu: ['undo', 'redo', 'alignment']
+            </code>
+            <p>
+                Here is a working demo for this example:
+            </p>
+            <iframe width="100%" height="340" src="//jsfiddle.net/handsoncode/aqapmtnu/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+           <h3>
+               Adding custom items to a context menu
+           </h3>
+           <p>
+               If you build a complex application, you might find it useful to put some options in the context menu
+               instead of making them available at first sight. Luckily, there are almost no limitations to what your
+               custom options can or cannot do. By using a context menu configuration, you can just pass the labels
+               and then bind them with any given logic. Take a look at the demos that I have prepared:
+           </p>
+            <ul>
+                <li>
+                    “Make it bold” – makes the text inside a cell bold.
+                    <!--
+                    Underneath it just wraps the contents with HTML elements
+                    <code class="inline">&lt;strong&gt;&lt;strong&gt;</code> -->
+                    <iframe width="100%" height="340" src="//jsfiddle.net/handsoncode/wfd3qtp7/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+                </li>
+                <li>
+                    “Export to CSV” – <a href="https://docs.handsontable.com/pro/demo-export-file.html" target="_blank">
+                        exports your table to a CSV file
+                    </a>.
+                    This feature is available in the PRO version of Handsontable.
+                    <iframe width="100%" height="340" src="//jsfiddle.net/handsoncode/xbejdsz0/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+                </li>
+            </ul>
+
+
+
+
+
+
+
+            <h3>
+                Copy and paste in a context menu
+            </h3>
+            <p>
+                Instead of using a shortcut key to copy-paste data, you can make those options available in the context
+                menu. Some users may be accustomed to such a functionality. To turn it on for your spreadsheet,
+                you need to use the
+                <a href="https://github.com/zeroclipboard/zeroclipboard" target="_blank">ZeroClipboard</a>
+
+                    flash library. It is not an elegant solution these days, but the
+
+                only one that works seamlessly across all browsers.
+            </p>
+            <p>
+                First, add a script to your page:
+            </p>
+            <p>
+<pre>
+<code lang="js">
+    &lt;script src="/bower_components/zeroclipboard/dist/ZeroClipboard.min.js"&gt;&lt;/script&gt;
+</code>
+</pre>
+            </p>
+            <p>
+                Next point is to refer to the SWF file included in the ZeroClipboard library. If you used Bower to
+                install it, then your address may look like this:
+            </p>
+<pre>
+<code lang="js">
+    contextMenuCopyPaste: {
+        swfPath: '/bower_components/zeroclipboard/dist/ZeroClipboard.swf'
+    }
+</code>
+</pre>
+
+            <!--
+
+            <p>
+                See it live below:
+            </p>
+            <iframe width="100%" height="340" src="//jsfiddle.net/mjt1uyb1/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+-->
+
+
+
+
+
+
+
+
+
+
+            <h3>
+                Disabling certain items
+            </h3>
+            <p>
+                Handsontable automatically disables options that can’t be applied in a certain situation. For
+                instance, if you open a context menu for a row’s header then you won’t be able to insert or
+                remove a column. You will experience a similar scenario with the column’s header.
+            </p>
+            <p>
+                Furthermore, certain basic actions have their own parameters. I’m particularly referring to inserting and
+                removing rows and columns. They are set to "true" by default and to remove them from a context menu
+                you can pass the following options:
+
+            </p>
+            <ul>
+                <li>
+                    <code class="inline">allowInsertRow: false</code>
+                </li>
+                <li>
+                    <code class="inline">allowInsertColumn: false</code>
+                </li>
+                <li>
+                    <code class="inline">allowRemoveRow: false</code>
+                </li>
+                <li>
+                    <code class="inline">allowRemoveColumn: false</code>
+                </li>
+            </ul>
+            <p>
+                See it live yourself:
+            </p>
+            <iframe width="100%" height="340" src="//jsfiddle.net/handsoncode/7su79yjc/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <h3>
+                Pre-defined items in the PRO version
+            </h3>
+            <p>
+                You should know that a context menu extends the powers of two plugins available in Handsontable PRO, i.e.
+                <a href="https://docs.handsontable.com/pro/demo-hiding-columns.html" target="_blank">
+                “Hiding columns”</a>
+                and
+                <a href="https://docs.handsontable.com/pro/demo-hiding-rows.html" target="_blank">
+                “Hiding rows”
+                </a>. To hide or show certain parts of the grid use the following keys:
+            </p>
+            <ul>
+                <li>
+                    <code class="inline">
+                        hidden_columns_show
+                    </code>
+                </li>
+                <li>
+                    <code class="inline">
+                        hidden_columns_hide
+                    </code>
+                </li>
+                <li>
+                    <code class="inline">
+                        hidden_rows_show
+                    </code>
+                </li>
+                <li>
+                    <code class="inline">
+                        hidden_rows_hide
+                    </code>
+                </li>
+            </ul>
+            <iframe width="100%" height="340" src="//jsfiddle.net/handsoncode/8271fyoy/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <h3>
+                Interesting facts
+            </h3>
+            <p>
+                Consider this rather off-topic, but still worth mentioning. Did you know that the context menu is just
+                another instance of Handsontable itself? Surprised? To make it more confusing, look at the Filter
+                plugin which is a part of Handsontable Pro. It allows you to filter data and is available for the
+                user from the dropdown menu in the column’s header. This is how we built the filter plugin:
+            </p>
+            <ul>
+                <li>
+                    first we took an instance of Handsontable,
+                </li>
+                <li>
+                    … then created a context menu out of it,
+                </li>
+                <li>
+                    … then created a dropdown menu upon it,
+                </li>
+                <li>
+                    … then we put another Handsontable instance inside it to create a list of values that are able
+                    to be filtered.
+                </li>
+            </ul>
+            <p>
+                See it live here:
+            </p>
+            <iframe width="100%" height="570" src="//jsfiddle.net/handsoncode/e47hp9qL/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                Yeah, we freakin’ love Handsontable and re-use it whenever possible.
+            </p>
+            <h3>
+                Limitations
+            </h3>
+            <p>
+                The most known limitation is the inability to create multi-level submenus and no-go for touchscreens.
+                Don’t worry, we will catch up soon.
+            </p>
+            <h3>
+                Conclusion
+            </h3>
+            <p>
+                Enjoy the context menu but don’t overload it with too many different options. It should be treated as any
+                other UI component in your application, always created with the user’s needs in mind.
+            </p>
+
+
+            <div class="addthis_native_toolbox toolbox"></div>
+        </div>
+    </article>
+
+    <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="http://handsoncode.net/images/logos/logo.png">
+            <meta itemprop="width" content="175">
+            <meta itemprop="height" content="25">
+        </div>
+        <meta itemprop="name" content="Handsoncode">
+    </div>
+
+    <%- partial("../authors/_abudnik") %>
+</section>
