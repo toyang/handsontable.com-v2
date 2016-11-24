@@ -90,6 +90,16 @@
       font-size: 1.125em;
       line-height: 1.8;
     }
+    
+    ul.list {
+        
+        li {
+            margin-left: 50px;
+            padding: 8px 0 0 10px;
+            font-size: 1.125em;
+            list-style: square;
+        }
+    }
 
     p.photo-credit {
       margin: 5px 0 0;
