@@ -65,6 +65,10 @@
     &.socialpoint:after {
       background-image: url($images + 'template/ModCustomers/socialpoint/socialpoint-bg.png');
     }
+    
+    &.omnidb:after {
+      background-image: url($images + 'template/ModCustomers/omnidb/omnidb-bg.png');
+    }
 
     img, h1, h2 {
       margin: 0;
