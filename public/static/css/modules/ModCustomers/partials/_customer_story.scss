@@ -69,6 +69,10 @@
     &.omnidb:after {
       background-image: url($images + 'template/ModCustomers/omnidb/omnidb-bg.png');
     }
+    
+    &.visible:after {
+      background-image: url($images + 'template/ModCustomers/visible/visible-bg.png');
+    }
 
     img, h1, h2 {
       margin: 0;
