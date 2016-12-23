@@ -1,4 +1,11 @@
 {
+  "getting-started-with-cell-renderers": {
+    "title": "Getting Started with Cell Renderers",
+    "category": "Recipes",
+    "date": "December 27, 2016",
+    "image_file": "getting-started-with-cell-renderers.png",
+    "description": "Adapting Handsontable may be challenging, especially if your spreadsheet looks more like a fully-featured application, and not a typical spreadsheet (...)"
+  },
   "top-9-nosql-cloud-platforms-to-store-your-data": {
     "title": "Top 9 NoSQL cloud platforms to store your data",
     "category": "Tools",

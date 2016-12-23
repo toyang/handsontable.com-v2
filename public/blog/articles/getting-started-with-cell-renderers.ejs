@@ -1,0 +1,223 @@
+<section class="post" itemid="https://handsontable.com/<%= current.source %>" itemscope
+         itemtype="http://schema.org/BlogPosting" xmlns="http://www.w3.org/1999/html">
+    <div class="row">
+        <div class="large-6 large-centered columns">
+            <h2 class="headline" itemprop="headline">
+                Getting Started with Cell Renderers
+            </h2>
+            <div class="meta-details">
+                <span>
+                    <img src="../attachments/authors/aleksandra-budnik.png" alt="Aleksandra Budnik" />
+                    <label>Aleksandra Budnik</label>
+                </span>
+                <span><a href="/blog/categories/recipes">Recipes</a> / December 27, 2016</span>
+                <meta itemprop="datePublished" content="2016-12-27T12:00:00+01:00"/>
+                <meta itemprop="dateModified" content="2016-12-27T12:00:00+01:00"/>
+                <span><a href="#disqus_thread"></a></span>
+            </div>
+        </div>
+    </div>
+    <article class="row body">
+        <div class="large-8 medium-12 large-centered columns">
+            <p itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                <img src="../attachments/images/getting-started-with-cell-renderers.png" alt="Getting Started with Cell Renderers" />
+                <meta itemprop="url"
+                      content="https://handsontable.com/blog/attachments/images/getting-started-with-cell-renderers.png">
+                <meta itemprop="width" content="757">
+                <meta itemprop="height" content="441">
+            </p>
+            <p>
+                Adapting Handsontable may be challenging, especially if your spreadsheet looks more like a
+                fully-featured application, and not a typical spreadsheet. Although Handsontable comes with six
+                pre-built cell renderers, they won’t address the needs of developers in all scenarios, particularly
+                when it comes to complex applications. Which is why Handsontable also supports the creation of custom
+                renderers, separate to the extendibility of the pre-built renderers, addressing almost any custom grid
+                functionality needed by developers.
+            </p>
+            <p>
+                One of the key elements extending Handsontable's capabilities is the cell. Its structure consists of
+                just three elements:
+            </p>
+            <ul>
+                <li>
+                    Editor
+                </li>
+                <li>
+                    <b>Renderer</b>
+                </li>
+                <li>
+                    Validator
+                </li>
+            </ul>
+            <p>
+                Depending on how a particular cell or range of cells should behave, these three functions can be defined
+                separately or together. It might be confusing in the beginning, so in this article I will focus mainly
+                on how to apply different types of renderers into your grid.
+            </p>
+            <h3>What is a cell renderer</h3>
+            <p>
+                Handsontable displays the values stored in the data source indirectly. This means that every time a
+                value from a data source needs to be displayed in a table cell, it is passed to the cell renderer
+                function, together with the table cell object type <code class="inline">HTMLTableCellElement</code>.
+            </p>
+            <p>
+                The cell renderer is expected to format the passed value and place it as content of the cell object.
+                Renderers can also alter the CSS class, i.e. to let the user know that the displayed value is invalid.
+            </p>
+            <h3>
+                Native cell renderers
+            </h3>
+            <p>
+                Handsontable has 6 built-in renderers which can be used out of the box, or extended when necessary.
+                They are well-documented, but let me recap them briefly below:
+            </p>
+            <p>
+                <b>textRenderer</b>
+            </p>
+            <p>
+                This is the default cell renderer which allows users to type in anything as plain text,
+                and it does not trigger any validator.
+            </p>
+            <p>
+                The first example below is pretty simple. It just loads a few basic pieces of information about different
+                type of plants:
+            </p>
+
+            <iframe width="100%" height="220" src="//jsfiddle.net/handsoncode/xuf0u4yp/embedded/result,js,css,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                <b>autocompleteRenderer</b>
+            </p>
+            <p>
+                This popular option renders an autocomplete field which allows users to quickly
+                find and pick values from the pre-defined list.
+            </p>
+            <iframe width="100%" height="220" src="//jsfiddle.net/handsoncode/fpyrjzut/embedded/result,js,css,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                The goal of the following demo is to mark one of the fields red if certain conditions have been met.
+                In this case if you choose an <code class="inline">Age</code> above <code class="inline">50</code>, it will turn red, otherwise
+                it remains green. Under the hood I just used a
+                <a href="http://docs.handsontable.com/pro/Options.html#cells" target="_blank">
+                    <code class="inline">cells</code></a> method to determine values and added the relevant CSS class to the cell.
+            </p>
+            <p>
+                <b>checkboxRenderer</b>
+            </p>
+            <p>
+                This renderer allows users to display a checkbox in a cell. It can be set as a
+                boolean type or any other type, depending on your configuration.
+            </p>
+            <p>
+                Here you can see how to change the background color depending on the current checkbox value:
+            </p>
+            <iframe width="100%" height="220" src="//jsfiddle.net/handsoncode/mLmg0h4u/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                <b>
+                    htmlRenderer
+                </b>
+            </p>
+            <p>
+                This renderer enables users to place HTML code inside a cell. Note that this renderer does not prevent
+                any XSS attacks by default, so be sure to add adequate security measures to your app.
+            </p>
+            <p>
+                In the following demo I placed HTML code in each column, displaying information about the most notable
+                contributors to popular GitHub projects.
+            </p>
+            <iframe width="100%" height="330" src="//jsfiddle.net/handsoncode/d9vzoxdw/embedded/result,js,css,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                <b>
+                    numericRenderer
+                </b>
+            </p>
+            <p>
+                This renderer allows users to properly display different formats of numbers. It also handles our date
+                and time cells.
+            </p>
+            <iframe width="100%" height="160" src="//jsfiddle.net/handsoncode/sbo4zeew/embedded/result,js,css,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                In the demo below I display the same value in the various decimal formats typical for France, US and
+                Spain. The last two columns contain date and time values.
+            </p>
+            <p>
+                <b>
+                    passwordRenderer
+                </b>
+            </p>
+            <p>
+                This allows users to display masked characters. By default it uses asterisks, but this can easily be
+                replaced with custom characters, like circles. The data is saved and stored as plain text.
+            </p>
+            <p>
+                All the rendered passwords always have the same length for security purposes, though the edited values
+                have the correct length. In the example below I present you three different scenarios:
+            </p>
+            <ul>
+                <li>
+                    Default configuration showing a fixed length of the rendered password
+                </li>
+                <li>
+                    The rendered length of the masked value is the same as the length of the actual password
+                </li>
+                <li>
+                    The edited value is displayed as a plain, unmasked value
+                </li>
+            </ul>
+            <iframe width="100%" height="250" src="//jsfiddle.net/handsoncode/60v78czc/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <h3>
+                Custom cell renderers
+            </h3>
+            <p>
+                The true beauty of Handsontable as a framework is in its flexibility, and the fact that it doesn't want
+                to confine users in any way. I won't be digging deep into the technical details, as by studying the
+                code below you'll be able to check which API methods we used to create the example:
+            </p>
+            <iframe width="100%" height="378" src="//jsfiddle.net/handsoncode/k8y0se5d/embedded/result,js,css,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <p>
+                For more information about the technical details you can visit
+                <a href="https://docs.handsontable.com/pro/demo-custom-renderers.html" target="_blank">custom renderers tutorial</a>.
+            </p>
+            <h3>
+                Skeleton
+            </h3>
+            <p>
+                Instead of building your custom renderer from scratch you can lean on the Skeleton prepared by the
+                Handsontable Team to cut your development time. You can find it on
+                <a href="https://github.com/handsontable/handsontable-skeleton" target="_blank">GitHub</a>.
+            </p>
+            <h3>
+                Performance matters
+            </h3>
+            <p>
+                It is easy to forget about performance issues with Handsontable handling most of the work for you.
+                However, it must be stated that filling your spreadsheet with custom renderers will inevitably affect
+                your grid's performance. For a grid of 100 columns and rows, you are basically triggering 10 000
+                additional functions. Luckily, there are several ways to optimize the performance of renderers, which
+                I will outline in another blog post.
+            </p>
+            <h3>
+                Conclusion
+            </h3>
+            <p>
+                At the first glance, Spreadsheets may look like a simple set of different sized rectangles.
+                And maybe while they seem to be very uncomplicated, the 'logic' beneath them may be very complex and
+                advanced. In this article I have shown how easy it is to modify a cell's body by using predefined
+                options, as well as by creating more sophisticated constructions relying on the Handsontable API.
+            </p>
+
+
+
+            <div class="addthis_native_toolbox toolbox"></div>
+        </div>
+    </article>
+
+    <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="http://handsoncode.net/images/logos/logo.png">
+            <meta itemprop="width" content="175">
+            <meta itemprop="height" content="25">
+        </div>
+        <meta itemprop="name" content="Handsoncode">
+    </div>
+
+    <%- partial("../authors/_abudnik") %>
+</section>
