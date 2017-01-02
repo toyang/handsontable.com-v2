@@ -63,6 +63,10 @@
       &.visible:after {
         background-image: url($images + 'template/ModCustomers/visible/visible-el.png');
       }
+      
+      &.amcharts:after {
+        background-image: url($images + 'template/ModCustomers/amcharts/amcharts-el.png');
+      }
 
       &.coming-soon {
         cursor: default;
