@@ -73,6 +73,10 @@
     &.visible:after {
       background-image: url($images + 'template/ModCustomers/visible/visible-bg.png');
     }
+    
+    &.amcharts:after {
+      background-image: url($images + 'template/ModCustomers/amcharts/amcharts-bg.png');
+    }
 
     img, h1, h2 {
       margin: 0;
