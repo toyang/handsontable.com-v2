@@ -1,0 +1,185 @@
+<section class="post" itemid="https://handsontable.com/<%= current.source %>" itemscope
+         itemtype="http://schema.org/BlogPosting" xmlns="http://www.w3.org/1999/html">
+    <div class="row">
+        <div class="large-6 large-centered columns">
+            <h2 class="headline" itemprop="headline">
+                How to Build a Custom Version of Handsontable
+            </h2>
+            <div class="meta-details">
+                <span>
+                    <img src="../attachments/authors/aleksandra-budnik.png" alt="Aleksandra Budnik" />
+                    <label>Aleksandra Budnik</label>
+                </span>
+                <span><a href="/blog/categories/recipes">Recipes</a> / January 25, 2017</span>
+                <meta itemprop="datePublished" content="2017-01-25T12:00:00+01:00"/>
+                <meta itemprop="dateModified" content="2017-01-25T12:00:00+01:00"/>
+                <span><a href="#disqus_thread"></a></span>
+            </div>
+        </div>
+    </div>
+    <article class="row body">
+        <div class="large-8 medium-12 large-centered columns">
+            <p itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                <img src="../attachments/images/how-to-build-a-custom-version-of-handsontable.png" alt="How to Build a Custom Version of Handsontable" />
+                <meta itemprop="url"
+                      content="https://handsontable.com/blog/attachments/images/how-to-build-a-custom-version-of-handsontable.png">
+                <meta itemprop="width" content="757">
+                <meta itemprop="height" content="441">
+            </p>
+            <p>
+                One of the key features of Handsontable is its scalability. As a modular library, Handsontable -
+                when paired with the hot-builder - allows you to create a custom version of Handsontable,
+                tailored to your exact needs, with the
+                <a href="https://github.com/handsontable/hot-builder" target="_blank">
+                    hot-builder
+                </a>
+                being a CLI tool which enables you to select
+                which plugins to include in your build.
+            </p>
+            <p>
+                It should be noted that with a custom build you aren’t fundamentally changing any of the core
+                features of Handsontable, but rather deciding which of them are included in your build, and how
+                your end-users are able to interact with them. The table below shows Handsontable’s core features,
+                along with features accessible via plugins:
+            </p>
+            <!-- table here -->
+            <iframe width="100%" height="1700" src="//jsfiddle.net/handsoncode/ug7jev90/embedded/result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+            <h3>
+                Why build a custom package
+            </h3>
+            <p>
+                Each developer's needs are unique, and it would be presumptuous of us to explicitly state why anyone
+                would want or need to build a custom package. However, we know that there are benefits to building a
+                custom package, and these include:
+            </p>
+            <ul>
+                <li>
+                    The ability to create software packages that are smaller, and therefore easier to deploy and manage.
+                </li>
+                <li>
+                    Better control over the available features,
+                </li>
+                <li>
+                    Better handling of each version, helping with overall control of the library,
+                </li>
+                <li>
+                    It is easier for you to implement and manage your custom-made plugins, separate from the core product.
+                </li>
+            </ul>
+            <h3>
+                How do you build a custom package
+            </h3>
+            <p>
+                The Community Edition (MIT-licensed) and the Pro (commercial) versions of Handsontable have different
+                structures, so before you start working on your custom build you first need to know which version you
+                are using, and what steps to follow in order to get started.
+            </p>
+            <p>
+                <strong>
+                    Getting started with the community edition
+                </strong>
+            </p>
+            <p>
+                Before starting on your custom build, first download and install the
+                <a href="https://github.com/handsontable/hot-builder" target="_blank">
+                    Handsontable hot-builder</a>, following
+                the steps outlined on GitHub. Once you have done that, access your console and run the following command:
+            </p>
+<pre>
+<code lang="js">
+    hot-builder build --output-dir my-dist-dir
+</code>
+</pre>
+            <p>
+                replacing <code class="inline">my-dist-dir</code> with the name of your Handsontable directory.
+                This will bring up the hot-builder UI as shown.
+            </p>
+            <img src="../attachments/images/how-to-build-a-custom-version-of-handsontable-terminal.png" alt="how to build a custom version of handsontable terminal">
+            <p>
+                Keyboard functions are limited, with the space bar used to select and deselect plugins, and the Enter
+                key used to build your custom package. The supported arguments are listed on the hot-builder GitHub
+                page, but by way of example: if you wanted to install all the plugins that come standard with the
+                Community Edition - except the ability to move or freeze columns and rows - you would type the
+                following:
+            </p>
+<pre>
+<code lang="js">
+    hot-builder build --output-dir my-dist -a
+    --remove-module=manualcolumnmove,manualcolumnfreeze,manualrowmove,manualrowfreeze -D
+</code>
+</pre>
+            <p>
+                The -D argument is used to disable/exit the hot-builder UI, and both --add-module and --remove-module
+                are supported; we recommend you use --add if you are only adding a few plugins, and if you are adding
+                a lot of the plugins, then use --remove to ‘exclude’ the plugins you don’t want instead.
+            </p>
+            <h3>
+                Getting started with the PRO version
+            </h3>
+            <p>
+                Unlike with Community Edition, with the Pro version of Handsontable the first step is to ensure you have
+                the Handsontable library downloaded and installed. The process for doing this is described in detail under
+                the Install tab of the Client account.
+            </p>
+            <p>
+                Another difference is that with the Pro version the command for the hot-builder UI must point to a
+                package.json file in the Handsontable catalog, for example:
+            </p>
+<pre>
+<code lang="js">
+    hot-builder build --input package.json --output-dir my-dist-dir
+</code>
+</pre>
+            <p>
+                (note that something like 'hot-builder build --input catalog1/catalog2/package.json --output-dir
+                my-dist-dir' is also acceptable)
+            </p>
+            <p>
+                Thereafter the procedure is similar to that followed with the Community Edition - using the same
+                arguments listed on the
+                <a href="https://github.com/handsontable/hot-builder" target="_blank">
+                    hot-build GitHub page
+                </a>- but the number of plugins you have access to in the
+                Pro version is greater than in the Community Edition. However, you must remember to check which
+                plugins and dependencies are needed for each feature; if you want to include filtering in your
+                custom build, you have to include:
+            </p>
+            <ul>
+                <li>
+                    The Filters plugin,
+                </li>
+                <li>
+                    The DropdownMenu plugin, and
+                </li>
+                <li>
+                    The ContextMenu plugin
+                </li>
+            </ul>
+
+            <h3>
+                Conclusion
+            </h3>
+            <p>
+                Using the hot-builder to create a custom build is not that difficult, and after using it a few
+                times you will discover that there are many pros to creating a custom build of Handsontable for
+                your project, not least the smaller package you end up with. And the only con, if you really want
+                to call it that, is having to create a new custom build whenever you want to update to using a new
+                library version.
+            </p>
+
+
+            <div class="addthis_native_toolbox toolbox"></div>
+        </div>
+    </article>
+
+    <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="http://handsoncode.net/images/logos/logo.png">
+            <meta itemprop="width" content="175">
+            <meta itemprop="height" content="25">
+        </div>
+        <meta itemprop="name" content="Handsoncode">
+    </div>
+
+    <%- partial("../authors/_abudnik") %>
+</section>
