@@ -1,4 +1,11 @@
 {
+  "how-to-build-a-custom-version-of-handsontable": {
+  "title": "How to Build a Custom Version of Handsontable",
+  "category": "Recipes",
+  "date": "January 25, 2017",
+  "image_file": "how-to-build-a-custom-version-of-handsontable.png",
+  "description": "One of the key features of Handsontable is its scalability. As a modular library, Handsontable - when paired with the hot-builder - allows you to (...)"
+  },
   "getting-started-with-cell-renderers": {
     "title": "Getting Started with Cell Renderers",
     "category": "Recipes",
@@ -7,7 +14,7 @@
     "description": "Adapting Handsontable may be challenging, especially if your spreadsheet looks more like a fully-featured application, and not a typical spreadsheet (...)"
   },
   "top-9-nosql-cloud-platforms-to-store-your-data": {
-    "title": "Top 9 NoSQL cloud platforms to store your data",
+    "title": "Top 9 NoSQL Cloud Platforms to Store Your Data",
     "category": "Tools",
     "date": "December 6, 2016",
     "image_file": "top-9-nosql-cloud-platforms-to-store-your-data.png",
