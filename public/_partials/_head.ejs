@@ -13,6 +13,12 @@
 <script src="/static/bower_components/axios/dist/axios.min.js"></script>
 <script src="/static/bower_components/numbro/dist/numbro.min.js"></script>
 <script src="/static/bower_components/numbro/dist/languages.min.js"></script>
+
+<script>
+  if (typeof Promises === 'undefined') {
+      document.write('<scr'+'ipt src="/static/bower_components/promise-polyfill/promise.min.js"></scr'+'ipt>');
+  }
+</script>
 <script src="/static/js/common/index.js"></script>
 
 <% if (current.source === 'examples' || current.path[1] == 'articles') {  %>

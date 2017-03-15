@@ -1,6 +1,41 @@
 {
+  "most-interesting-open-data-sources": {
+    "title": "Most Interesting Open Data Sources",
+    "category": "Resources",
+    "date": "March 07, 2017",
+    "image_file": "most-interesting-open-data-sources.png",
+    "description": "In this post I wanted to introduce you to some of the most interesting open data sources available online.  And I’m hoping it is going (...)"
+  },
+  "best-chart-libraries-for-2017": {
+    "title": "Best Chart Libraries for 2017",
+    "category": "Tools",
+    "date": "February 27, 2017",
+    "image_file": "best-chart-libraries-for-2017.png",
+    "description": "We recently did a roundup of the best online spreadsheet software for 2017, but while spreadsheets are undeniably great for managing data (...)"
+  },
+  "best-online-spreadsheets-for-2017": {
+   "title": "Best Online Spreadsheets for 2017",
+   "category": "Tools",
+   "date": "February 14, 2017",
+   "image_file": "best-online-spreadsheets-for-2017.png",
+   "description": "The internet has brought many benefits to most industries, with the most striking for businesses being online collaboration. Various (...)"
+  },
+  "how-to-build-a-custom-version-of-handsontable": {
+    "title": "How to Build a Custom Version of Handsontable",
+    "category": "Recipes",
+    "date": "January 26, 2017",
+    "image_file": "how-to-build-a-custom-version-of-handsontable.png",
+    "description": "One of the key features of Handsontable is its scalability. As a modular library, Handsontable - when paired with the hot-builder - allows you to (...)"
+  },
+  "getting-started-with-cell-renderers": {
+    "title": "Getting Started with Cell Renderers",
+    "category": "Recipes",
+    "date": "December 28, 2016",
+    "image_file": "getting-started-with-cell-renderers.png",
+    "description": "Adapting Handsontable may be challenging, especially if your spreadsheet looks more like a fully-featured application, and not a typical spreadsheet (...)"
+  },
   "top-9-nosql-cloud-platforms-to-store-your-data": {
-    "title": "Top 9 NoSQL cloud platforms to store your data",
+    "title": "Top 9 NoSQL Cloud Platforms to Store Your Data",
     "category": "Tools",
     "date": "December 6, 2016",
     "image_file": "top-9-nosql-cloud-platforms-to-store-your-data.png",
