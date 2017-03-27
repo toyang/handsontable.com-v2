@@ -11,7 +11,7 @@
             <title><%- post.title %></title>
             <description><%- post.description %></description>
             <pubDate><%- Date(post.date) %></pubDate>
-            <link><%- url %>/blog/articles/<%- post.directory %>/<%- slug %></link>
+            <link><%- url %>/blog/articles/<%- post.directory %><%- slug %></link>
             <guid isPermaLink="true"><%- url %>/blog/articles/<%- slug %></guid>
         </item>
         <% } %>
