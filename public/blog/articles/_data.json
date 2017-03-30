@@ -1,8 +1,18 @@
 {
+  "open-source-slack-alternatives": {
+    "directory": "2017/3/",
+    "title": "Open Source Slack Alternatives",
+    "category": "Resources",
+    "date": "March 30, 2017",
+    "pubDate": "Thu, 30 Mar 2017 13:00:00 EST",
+    "image_file": "open-source-slack-alternatives.png",
+    "description": "Whether you are a small business or a thriving company you definitely need a good and effective communication channel that will bring (...)"
+  },
   "best-resources-to-learn-javascript": {
     "title": "Best Resources To Learn JavaScript",
     "category": "Resources",
     "date": "March 15, 2017",
+    "pubDate": "Wed, 15 Mar 2017 13:00:00 EST",
     "image_file": "best-resources-to-learn-javascript.png",
     "description": "Let’s say you want to start working with Handsontable but you don’t know JavaScript. You will soon face the obvious question – where do (...)"
   },
@@ -10,6 +20,7 @@
     "title": "Most Interesting Open Data Sources",
     "category": "Resources",
     "date": "March 07, 2017",
+    "pubDate": "Tue, 07 Mar 2017 13:00:00 EST",
     "image_file": "most-interesting-open-data-sources.png",
     "description": "In this post I wanted to introduce you to some of the most interesting open data sources available online.  And I’m hoping it is going (...)"
   },
@@ -17,6 +28,7 @@
     "title": "Best Chart Libraries for 2017",
     "category": "Tools",
     "date": "February 27, 2017",
+    "pubDate": "Mon, 27 Feb 2017 13:00:00 EST",
     "image_file": "best-chart-libraries-for-2017.png",
     "description": "We recently did a roundup of the best online spreadsheet software for 2017, but while spreadsheets are undeniably great for managing data (...)"
   },
@@ -24,6 +36,7 @@
    "title": "Best Online Spreadsheets for 2017",
    "category": "Tools",
    "date": "February 14, 2017",
+   "pubDate": "Tue, 14 Feb 2017 13:00:00 EST",
    "image_file": "best-online-spreadsheets-for-2017.png",
    "description": "The internet has brought many benefits to most industries, with the most striking for businesses being online collaboration. Various (...)"
   },
@@ -31,6 +44,7 @@
     "title": "How to Build a Custom Version of Handsontable",
     "category": "Recipes",
     "date": "January 26, 2017",
+    "pubDate": "Thu, 26 Jan 2017 13:00:00 EST",
     "image_file": "how-to-build-a-custom-version-of-handsontable.png",
     "description": "One of the key features of Handsontable is its scalability. As a modular library, Handsontable - when paired with the hot-builder - allows you to (...)"
   },
@@ -38,6 +52,7 @@
     "title": "Getting Started with Cell Renderers",
     "category": "Recipes",
     "date": "December 28, 2016",
+    "pubDate": "Wed, 28 Dec 2016 13:00:00 EST",
     "image_file": "getting-started-with-cell-renderers.png",
     "description": "Adapting Handsontable may be challenging, especially if your spreadsheet looks more like a fully-featured application, and not a typical spreadsheet (...)"
   },
@@ -45,6 +60,7 @@
     "title": "Top 9 NoSQL Cloud Platforms to Store Your Data",
     "category": "Tools",
     "date": "December 6, 2016",
+    "pubDate": "Tue, 06 Dec 2016 13:00:00 EST",
     "image_file": "top-9-nosql-cloud-platforms-to-store-your-data.png",
     "description": "Any organisation using a database to store, manage and sort information will - at some stage - need to consider moving the database onto a cloud (...)"
   },
@@ -52,6 +68,7 @@
     "title": "Customize Handsontable Context Menu",
     "category": "Recipes",
     "date": "November 8, 2016",
+    "pubDate": "Tue, 08 Nov 2016 13:00:00 EST",
     "image_file": "customize-handsontable-context-menu.png",
     "description": "We distinguish two most common ways to manipulate the spreadsheet and its contents. One is by using external controls like buttons utilizing the (...)"
   },
@@ -59,6 +76,7 @@
     "title": "Organising Your Life With Spreadsheets",
     "category": "Tools",
     "date": "October 25, 2016",
+    "pubDate": "Tue, 25 Oct 2016 13:00:00 EST",
     "image_file": "organising-your-life-with-spreadsheets.png",
     "description": "If you're a die-hard fan of spreadsheets you need no reminding of how awesome they are for keeping things organised, and keeping tabs on virtually (...)"
   },
@@ -66,6 +84,7 @@
     "title": "Essential Tips for Building an Add-On Marketplace",
     "category": "Startups",
     "date": "October 7, 2016",
+    "pubDate": "Fri, 07 Oct 2016 13:00:00 EST",
     "image_file": "essential-tips-for-building-an-add-on-marketplace.png",
     "description": "The practice of extending the functionality of a product - physical or digital - through the use of add-ons and plugins is not new, nor is the (...)"
   },
@@ -73,6 +92,7 @@
     "title": "10 Suggestions to Boost Your B2B Software Sales",
     "category": "Startups",
     "date": "September 21, 2016",
+    "pubDate": "Wed, 21 Sep 2016 13:00:00 EST",
     "image_file": "10-suggestions-to-boost-your-b2b-software-sales.png",
     "description": "Business-to-Business (B2B) sales are a core component of many business strategies, not only because they can signal the start of a long-term (...)"
   },
@@ -80,6 +100,7 @@
     "title": "What Did I Learn During My Internship at Handsoncode",
     "category": "Culture",
     "date": "August 23, 2016",
+    "pubDate": "Tue, 23 Aug 2016 13:00:00 EST",
     "image_file": "internship-at-handsoncode.png",
     "description": "First year of university has ended, and its time go back and return to my hometown Gdynia in Poland. This summer I aim to intern at the (...)"
   },
@@ -87,6 +108,7 @@
     "title": "Why You Will Never Give Up Spreadsheets",
     "category": "Startups",
     "date": "July 29, 2016",
+    "pubDate": "Fri, 29 Jul 2016 13:00:00 EST",
     "image_file": "why-you-will-never-give-up-spreadsheets.png",
     "description": "The electronic spreadsheet has been around in some form or other since 1962, with use becoming more widespread in the 1980s following the release of VisiCalc (...)"
   },
@@ -94,6 +116,7 @@
     "title": "4 Ways to Handle Read-only Cells",
     "category": "Recipes",
     "date": "July 15, 2016",
+    "pubDate": "Fri, 15 Jul 2016 13:00:00 EST",
     "image_file": "4-ways-to-handle-read-only-cells.png",
     "description": "Handsontable enables you to change and manipulate data. But every spreadsheet has its constants, such as data from external sources. Regardless of (...)"
   },
@@ -101,6 +124,7 @@
     "title": "Why Outsourcing is Important for Your Startup",
     "category": "Startups",
     "date": "June 28, 2016",
+    "pubDate": "Tue, 28 Jun 2016 13:00:00 EST",
     "image_file": "why-outsourcing-is-important-for-your-startup.png",
     "description": "There are a great many definitions of what a startup is, but the one I like the most is the one found at Investopedia, which states: A startup is a (...)"
   },
@@ -108,6 +132,7 @@
     "title": "Easy Ways to Sort Different Types of Data in Your App",
     "category": "Recipes",
     "date": "June 7, 2016",
+    "pubDate": "Tue, 07 Jun 2016 13:00:00 EST",
     "image_file": "easy-ways-to-sort-different-types-of-data-in-your-app.png",
     "description": "Have you ever wondered if you could store your data with various units and sort them really easily in Handsontable? Of course you can. You don't have to (...)"
   },
@@ -115,6 +140,7 @@
     "title": "The Most Common Causes of Failed Open-Source Software Projects",
     "category": "Startups",
     "date": "April 29, 2016",
+    "pubDate": "Fri, 29 Apr 2016 13:00:00 EST",
     "image_file": "the-most-common-causes-of-failed-open-source-software-projects.png",
     "description": "Nobody has ever achieved success without making some mistakes, and writing off a few failures. But just as we (hopefully) learn from our own mistakes, we (...)"
   },
@@ -122,6 +148,7 @@
     "title": "Expand Your App with Cell Dependencies",
     "category": "Recipes",
     "date": "April 18, 2016",
+    "pubDate": "Mon, 18 Apr 2016 13:00:00 EST",
     "image_file": "expand-your-app-with-cell-dependencies.png",
     "description": "Data entered into the spreadsheet may often contain some cell dependencies. For example, you might want to make one cell’s value dependant on another (...)"
   },
@@ -129,6 +156,7 @@
     "title": "A Complete Guide to Changing Size of Handsontable",
     "category": "Recipes",
     "date": "March 31, 2016",
+    "pubDate": "Thu, 31 Mar 2016 13:00:00 EST",
     "image_file": "changing-size-of-handsontable.png",
     "description": "One of the basic things you can do with Handsontable is adjusting it to the existing layout. In this article I will guide you through the configuration (...)"
   },
@@ -136,6 +164,7 @@
     "title": "5 Successful Business Models For Web-Based Open-Source Projects",
     "category": "Startups",
     "date": "March 8, 2016",
+    "pubDate": "Tue, 08 Mar 2016 13:00:00 EST",
     "image_file": "hidden-rows-handsontable.png",
     "description": "Even if you don't imagine your open-source project becoming next year's hottest unicorn, all but the smallest of open-source projects are always at risk of (...)"
   },
@@ -143,6 +172,7 @@
     "title": "3 Ways To Hide Rows In Handsontable",
     "category": "Recipes",
     "date": "March 1, 2016",
+    "pubDate": "Tue, 1 Mar 2016 13:00:00 EST",
     "image_file": "hidden-rows-handsontable.png",
     "description": "There are many situations in which you may want to prevent one or more specific rows from being displayed. Such hidden rows will still exist in the data set but you will be able to (...)"
   },
@@ -150,6 +180,7 @@
     "title": "What To Expect When Switching From Open-Source To Commercial",
     "category": "Startups",
     "date": "February 22, 2016",
+    "pubDate": "Mon, 22 Feb 2016 13:00:00 EST",
     "image_file": "going-commercial.jpg",
     "description": "There is no handbook to guide you should you ever decide to move your software product from open-source to a commercial model."
   }
