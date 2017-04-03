@@ -1,6 +1,6 @@
 {
   "name": "Handsontable",
-  "version": "3.0.69",
+  "version": "3.0.70",
   "scripts": {
     "release": "generate-release",
     "deploy": "shipit production deploy"
