@@ -1,0 +1,19 @@
+/**
+ * @author: Handsoncode
+ */
+ 
+ .branding .logo-final {
+    padding-top: 60px;
+
+   h3 {
+     margin: 0;
+     text-align: left;
+   }
+
+   .svg {
+     @include square(30px);
+
+     fill: $baseGray;
+     margin: 0;
+   }
+}

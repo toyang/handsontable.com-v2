@@ -1,0 +1,38 @@
+/**
+ * @author: Handsoncode
+ */
+
+.branding .logo-invertions {
+
+  .logo-holder {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    display: block;
+    background-color: $darkWhite;
+  }
+
+  .logo-holder-black {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    display: block;
+    background-color: $brandBlack;
+  }
+
+  h1 {
+    margin: 0;
+    text-align: left;
+
+    @media only screen and (min-width: $mediumWidth) {
+      margin: 60px 0 0 0;
+      text-align: center;
+    }
+  }
+
+  h3 {
+    margin: 40px 0 0 0;
+    text-align: left;
+  }
+
+}

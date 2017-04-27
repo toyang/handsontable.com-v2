@@ -8,11 +8,22 @@
 <% } %>
 
 <link rel="shortcut icon" href="<%= img_path %>template/ModCommon/favicon.ico" />
-<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:300,400,600,700" type="text/css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 <link href="/static/css/main.css" type="text/css" rel="stylesheet">
 <script src="/static/bower_components/axios/dist/axios.min.js"></script>
 <script src="/static/bower_components/numbro/dist/numbro.min.js"></script>
 <script src="/static/bower_components/numbro/dist/languages.min.js"></script>
+
+<script>
+    (function(d) {
+        var config = {
+                kitId: 'koz1efc',
+                scriptTimeout: 3000,
+                async: false
+            },
+            h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+</script>
 
 <script>
   if (typeof Promises === 'undefined') {

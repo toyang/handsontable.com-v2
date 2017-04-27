@@ -2,108 +2,53 @@
  * @author: Handsoncode
  */
 
-.recommend-badge {
-  width: 100%;
-  padding: 8px 0 2px;
-  position: relative;
-  z-index: 3;
-  color: #fff;
-  text-align: center;
-  border-radius: 4px 4px 0 0;
-  background-color: $brandBlue;
-}
-
 .pricing-plan {
+  display: flex;
+  flex-direction: column;
+  position:relative;
   text-align: center;
-  position: relative;
-  margin-bottom: 30px;
-  background: #fafafa;
+  background: #fff;
   border-radius: 4px;
-  box-shadow: 0 0 14px 0 rgba(160, 160, 160, 0.2);
-  border: 1px solid $borderColor;
+  border: 1px solid $accentBorderColor;
 
-  /* [ styles only for desktop ] */
-   @media only screen and (min-width: $mediumWidth) {
-    margin-bottom: 6px;
-    padding-bottom: 34px;
-    top: 38px;
+
+
+  .developer-plus {
+    margin-top: 20px;
+    box-shadow: 0 5px 20px 0 rgba(160, 160, 160, 0.9);
+    text-align: center;
+    background: $brandDarkNavy;
+    color: #fff;
+    padding-bottom: 20px;
+
+    @media only screen and (min-width: $mediumWidth) {
+      margin-top: -8px;
+      margin-bottom: -5px;
+      border-radius: 4px;
+    }
+  }
+
+
+  .vibrant-blue {
+    color: $brandVibrantBlue;
+    font-weight: 400;
   }
 
   h4 {
+    margin: 10px 0 14px;
     font-size: 21px;
     font-weight: 300;
-    text-align: inherit;
-    margin: 24px 0 14px;
+    text-align: center;
+
+    @media only screen and (min-width: $mediumWidth) {
+      margin:0;
+    }
   }
+
   .price {
     margin-bottom: 20px;
     font-size: 1.875em;
-    font-weight: 500;
-  }
-  .extended-support {
-    @include border-top;
-    @include border-bottom;
-    font-size: 0.813em;
     font-weight: 400;
-    padding: 12px 0;
-    position: relative;
-    display: none;
-    margin-bottom: 16px;
-    text-align: center;
-    background: #fff;
-    @media only screen and (min-width: $largeWidth) {
-      display: block;
-    }
-
-    [aria-expanded="false"] form {
-      display: none;
-    }
-
-    label {
-      @include user-select;
-      margin: 0;
-      font-size: 13px;
-      font-weight: 400;
-      cursor: pointer;
-      text-align: left;
-
-      span {
-        margin-left: 42px;
-      }
-      .checkbox {
-        @include absolute-top-left(13px, 16px);
-        @include square(20px);
-        fill: $middleGray;
-
-        @media only screen and (min-width: $mediumWidth) {
-          @include square(16px);
-        }
-
-        &.checked {
-          display: none;
-        }
-      }
-    }
-
-    input[type="checkbox"] {
-      display: none;
-
-      &:checked + label .checkbox {
-        display: none;
-        &.checked {
-          display: block;
-          fill: $brandGreen;
-        }
-        &.checked:hover {
-          fill: $brandGreenActive;
-        }
-      }
-
-      &.dependency:checked + label .checkbox {
-        display: block;
-        fill: $middleGray;
-      }
-    }
   }
 
   &.blue {
@@ -121,16 +66,104 @@
       }
     }
   }
+
+  ul {
+    margin: 40px 0 40px 0;
+
+  }
+
+  li {
+    padding: 10px 5px;
+
+  }
+
   ul li {
-    font-size: 15px;
-    padding: 7px 0;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.2em;
+
+    @media only screen and (min-width: $mediumWidth) {
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.2em;
+
+    }
+
+    @media only screen and (min-width: $semiWidth) {
+      padding: 4px 20px;
+      text-align: left;
+    }
 
     a {
       font-size: 15px;
     }
   }
+
   .btn {
-    min-width: 60%;
-    margin-top: 30px;
+    min-width: 70%;
+    height: 30px;
+    font-weight: 400;
+
+    &.green {
+      padding-bottom: 50px;
+
+      @media only screen and (min-width: $mediumWidth) {
+        margin-bottom: 20px;
+        padding-bottom: 42px;
+        position: absolute;
+        bottom: 0;
+        right: 20%;
+        left:15%;
+      }
+    }
+
+    &.navy {
+      margin-bottom: 20px;
+      padding-bottom: 50px;
+
+      @media only screen and (min-width: $mediumWidth) {
+        width: 80%;
+        margin: 20px 0 20px 0;
+        padding-bottom: 42px;
+        bottom: 0;
+        right: 20%;
+        left: 15%;
+
+      }
+    }
+
+    &.blue {
+      padding-bottom: 50px;
+
+      @media only screen and (min-width: $mediumWidth) {
+        margin-bottom: 24px;
+        padding-bottom: 42px;
+        position: absolute;
+        bottom: 0;
+        right: 20%;
+        left:15%;
+      }
+    }
+
+    &.blue-add {
+      padding-bottom: 50px;
+
+      @media only screen and (min-width: $mediumWidth) {
+        margin-bottom: 20px;
+        padding-bottom: 42px;
+        bottom: 0;
+        right: 20%;
+        left: 15%;
+      }
+    }
+  }
+
+  svg {
+      display: none;
+
+    @media only screen and (min-width: $semiWidth) {
+      margin-right: 10px;
+      display: inline;
+    }
   }
 }

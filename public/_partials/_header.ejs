@@ -1,51 +1,57 @@
-<header class="row">
-    <div class="logotype clearfix">
-        <a href="/index.html" class="brand-logo">
-            <svg><use xlink:href="#handsontable_logo"></use></svg>
-        </a>
-        <div id="github-star" class="github-star">
-            <a class="github-button" href="https://github.com/handsontable/handsontable"
-               data-icon="octicon-star"
-               data-count-href="/handsontable/handsontable/stargazers"
-               data-count-api="/repos/handsontable/handsontable#stargazers_count"
-               data-count-aria-label="# stargazers on GitHub"
-               aria-label="Star handsontable/handsontable on GitHub">Star</a>
+<div class="header-bg">
+    <header class="row header-bg">
+        <div class="logotype clearfix">
+            <a href="/index.html" class="brand-logo">
+                <svg>
+                    <use xlink:href="#handsontable-logo"></use>
+                </svg>
+            </a>
+            <div id="github-star" class="github-star">
+                <a class="github-button" href="https://github.com/handsontable/handsontable"
+                   data-icon="octicon-star"
+                   data-count-href="/handsontable/handsontable/stargazers"
+                   data-count-api="/repos/handsontable/handsontable#stargazers_count"
+                   data-count-aria-label="# stargazers on GitHub"
+                   aria-label="Star handsontable/handsontable on GitHub">Star</a>
+            </div>
         </div>
-    </div>
-    <label for="show_menu">MENU</label>
-    <input id="show_menu" type="checkbox" />
-    <nav>
-        <ul id="login_menu_signed_off" class="login_menu hide">
-            <li><a href="//my.handsontable.com/sign-up.html">Sign up</a></li>
-            <li><a href="//my.handsontable.com/">My account</a></li>
-        </ul>
+        <label for="show_menu">MENU</label>
+        <input id="show_menu" type="checkbox"/>
+        <nav>
+            <ul id="login_menu_signed_off" class="login_menu hide">
+                <li><a href="//my.handsontable.com/sign-up.html">Sign up</a></li>
+                <li><a href="//my.handsontable.com/">My account</a></li>
+            </ul>
 
-        <ul id="login_menu_signed_on" class="login_menu hide">
-            <li><p>Nice to see you, <strong id="login_menu_name"></strong></p></li>
-            <li><a href="//my.handsontable.com">My account</a></li>
-            <li><a id="logout" href="#">Logout</a></li>
-        </ul>
-        <script>LoginBar.update()</script>
-        <ul class="clearfix">
-            <li><a href="/examples.html">EXAMPLES</a></li>
-            <li><a href="/customers">CUSTOMERS</a></li>
-            <li><a href="/pricing.html">PRICING</a></li>
-            <li><a href="/support.html">SUPPORT</a></li>
-            <li><a href="//docs.handsontable.com">DOCS</a></li>
-            <li class="dropdown bottom">
-                <label for="show_dropdown">MORE</label>
-                <svg><use xlink:href="#arrow_down_icon"></use></svg>
-                <input id="show_dropdown" type="checkbox" />
-                <ul>
-                    <li><a href="/features.html">Features</a></li>
-                    <li><a href="/resellers.html">Resellers</a></li>
-                    <li><a href="//forum.handsontable.com" target="_blank">Forum</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
-                </ul>
-            </li>
-            <li><a id="free-trial-menu" class="btn small ghost-red"
-                   href="//my.handsontable.com/sign-up-trial.html">FREE TRIAL</a></li>
-        </ul>
-    </nav>
-</header>
+            <ul id="login_menu_signed_on" class="login_menu hide">
+                <li><p>Nice to see you, <strong id="login_menu_name"></strong></p></li>
+                <li><a href="//my.handsontable.com">My account</a></li>
+                <li><a id="logout" href="#">Logout</a></li>
+            </ul>
+            <script>LoginBar.update()</script>
+            <ul class="clearfix">
+                <li><a href="/examples.html">EXAMPLES</a></li>
+                <li><a href="/customers">CUSTOMERS</a></li>
+                <li><a href="/pricing.html">PRICING</a></li>
+                <li><a href="/support.html">SUPPORT</a></li>
+                <li><a href="//docs.handsontable.com">DOCS</a></li>
+                <li class="dropdown bottom">
+                    <label for="show_dropdown">MORE</label>
+                    <svg>
+                        <use xlink:href="#arrow_down_icon"></use>
+                    </svg>
+                    <input id="show_dropdown" type="checkbox"/>
+                    <ul>
+                        <li><a href="/features.html">Features</a></li>
+                        <li><a href="/resellers.html">Resellers</a></li>
+                        <li><a href="//forum.handsontable.com" target="_blank">Forum</a></li>
+                        <li><a href="/branding.html">Branding</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </li>
+                <li><a id="free-trial-menu" class="btn small green" href="//my.handsontable.com/sign-up-trial.html">Download</a></li>
+            </ul>
+        </nav>
+    </header>
+</div>

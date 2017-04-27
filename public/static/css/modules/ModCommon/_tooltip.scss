@@ -4,25 +4,28 @@
  */
 
 .tooltip-btn {
-  @include absolute-top-right (13px, 14px);
+  @include relative-top-left (-15px, 5px);
   @include square (16px, false);
   margin-left: 4px;
   display: inline-block;
-  color: #fff;
+  color: $lightGray;
   line-height: 1.3;
   text-align: center;
   cursor: pointer;
   font-size: 12px;
+  font-weight: 600;
   border-radius: 100%;
-  background-color: $lightGray;
+  border: 1px solid $lightGray;
 
   &:hover {
-    background-color: $lightGrayActive;
+    background-color: $lightGray;
+    color: $darkWhite;
+    border: 1px solid transparent;
   }
 
   .tooltip-inner {
-    @include absolute-top-left (-75px, -89px);
-    @include rectangle (208px, auto);
+    @include absolute-top-left (-95px, -90px);
+    @include rectangle (auto, auto);
     @include transition (opacity .3s ease);
     font-weight: 400;
     font-size: 0.917em;
@@ -32,7 +35,7 @@
     cursor: default;
     color: $baseGray;
     background-color: #fff;
-    border: 1px solid $lightGray;
+    border: 1px solid $darkWhite;
     border-radius: 4px;
     visibility: hidden;
     opacity: 0;

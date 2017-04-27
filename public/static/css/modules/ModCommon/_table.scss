@@ -11,24 +11,19 @@
     }
 
     table {
-        font-size: 0.813em; /* 13px */
-        font-weight: 300;
-        text-align: left;
+        font-size: 0.875em; /* 13px */
+        text-align: center;
         width: 100%;
 
 
         th {
-            font-weight: 300;
+            font-weight: 500;
         }
 
         th,
         td {
             white-space: nowrap;
-            padding: 10px 18px;        
-        }
-
-        tr {
-            @include border-bottom;
+            padding: 20px 20px;
         }
 
         &.striped {
@@ -40,7 +35,9 @@
         a,
         a:hover,
         a:focus {
-            color: $brandRed;
+            color: $brandBlue;
+            font-size: 1em;
+            text-align: center;
         }
     }
 }

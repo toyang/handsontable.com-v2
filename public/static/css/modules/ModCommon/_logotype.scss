@@ -1,15 +1,13 @@
 /**
  * @author: Handsoncode
  */
-
 header .logotype {
     @include absolute-top-left(0, 50%);
     @include translateX(-50%);
     text-align: center;
     width: 100%;
-    padding: 16px 0 10px;
-    background: #FFF;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    padding: 34px 0 5px;
+    box-shadow: 0 0 60px rgba(0, 0, 0, .2);
     z-index: 100;
 
     /* [ styles only for desktop ] */
@@ -23,19 +21,18 @@ header .logotype {
             float: left;
         }
     }
-
     .brand-logo {
         @media only screen and (min-width: $largeWidth) {
-            margin-left: 15px;
+            margin-top: 12px;
         }
 
         svg {
-            @include rectangle(151px, 38px);
-            fill: #5d5d5d;
+            @include rectangle(150px, 24.93px);
+            fill: #000;
 
             /* [ styles only for desktop ] */
             @media only screen and (min-width: $largeWidth) {
-                @include rectangle(187px, 47px);
+                @include rectangle(200px, 40px);
                 float: left;
             }
         }

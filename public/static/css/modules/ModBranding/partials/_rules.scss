@@ -1,0 +1,30 @@
+/**
+ * @author: Handsoncode
+ */
+ 
+ .branding .logo-ar {
+    padding-top: 60px;
+
+   .extraBottom {
+     padding: 0 0 3.2em 0;
+   }
+
+   h3 {
+     margin: 0;
+     text-align: left;
+   }
+
+   h4 {
+     text-align: left;
+   }
+
+   h1 {
+     text-align: left;
+     margin: 0;
+
+     @media only screen and (min-width: $mediumWidth) {
+       margin: 60px 0 0 0;
+       text-align: center;
+     }
+   }
+}

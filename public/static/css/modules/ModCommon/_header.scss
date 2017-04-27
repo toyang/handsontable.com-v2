@@ -1,10 +1,13 @@
 /**
  * @author: Handsoncode
  */
-
+.header-bg {
+    background: $brandHeaderWhite;
+}
 header {
-    background: #FFF;
+    background: $brandHeaderWhite;
     z-index: 10000;
+    padding-bottom: 20px;
 
     /* [ styles only for desktop ] */
     @media only screen and (min-width: $largeWidth) {
@@ -102,7 +105,7 @@ header {
             label {
                 font-size: 0.923em; /* 12px */
                 display: inline-block;
-                padding: 10px;
+                padding: 20px;
 
                 /* [ styles only for desktop ] */
                 @media only screen and (min-width: $largeWidth) {
@@ -185,7 +188,7 @@ header {
                     }
 
                     a:hover {
-                        color: $darkGrayActive;
+                        color: $brandHeaderWhite;
                     }
                 }
             }
@@ -193,14 +196,18 @@ header {
 
         .btn.small {
             font-size: 0.923em; /* 12px */
-            display: block;
-            width: 95%;
-            margin: 20px auto;
+            font-weight: 400;
+            text-transform: none;
 
             /* [ styles only for desktop ] */
             @media only screen and (min-width: $largeWidth) {
                 width: auto;
-                margin: 0;
+                margin: 5px 0 0 0;
+            }
+            @media only screen and (max-width: $mediumWidth) {
+                margin: 25px 25px 0 25px;
+                padding: 10px 0  40px 0;
+                width: 90%;
             }
         }
     }

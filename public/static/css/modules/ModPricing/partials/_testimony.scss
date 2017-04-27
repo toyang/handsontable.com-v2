@@ -3,8 +3,16 @@
  */
 
 .pricing .testimony {
-  padding: 9px 0 19px;
-  margin: 42px auto 60px;
+  padding: 40px 0 19px;
+  margin: 42px auto 42px;
+
+  h5 {
+    text-align: center;
+
+    @media only screen and (min-width: $mediumWidth) {
+      text-align: left;
+    }
+  }
 
  blockquote {
    margin-top: 10px;

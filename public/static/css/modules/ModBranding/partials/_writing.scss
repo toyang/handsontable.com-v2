@@ -1,0 +1,51 @@
+/**
+ * @author: Handsoncode
+ */
+
+.branding .logo-writing {
+  padding-top: 60px;
+
+  .logo-holder {
+    margin: 20px 0 20px 0;
+    padding: 40px 20px 40px 40px;
+    background-color: $darkWhite;
+
+  }
+  .crossedout {
+    font-size: 1em;
+    font-weight: 700;
+    text-decoration: line-through;
+  }
+
+  .heavy {
+    font-weight: 700;
+  }
+
+  .extraBottomCrossed {
+    padding: 0 0 1.9em 0;
+  }
+
+  .extraBottomSpell {
+    padding: 0 0 1.2em 0;
+  }
+
+  .extraBottom {
+    padding: 0 0 3.2em 0;
+  }
+
+  h3 {
+    margin: 0;
+    text-align: left;
+    line-height: 1em;
+  }
+
+  h1 {
+    text-align: left;
+    margin: 0;
+
+    @media only screen and (min-width: $mediumWidth) {
+      margin: 60px 0 0 0;
+      text-align: center;
+    }
+  }
+}

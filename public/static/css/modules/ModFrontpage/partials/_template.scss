@@ -6,8 +6,16 @@
   .headline {
     margin: 110px 0;
 
+
     @media only screen and (min-width: $mediumWidth) {
       margin: 88px 0 82px;
+    }
+  }
+
+  h1 {
+    text-align: center;
+    @media only screen and (min-width: $mediumWidth) {
+      text-align: left;
     }
   }
   .brands .headline {

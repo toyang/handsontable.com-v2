@@ -3,32 +3,125 @@
  */
 
 .pricing {
-  overflow: hidden;
-  margin-top: 69px;
 
-  .headline {
-    margin-bottom: 53px;
-    
-    .currency-control {
-      position: absolute;
-      top: 40px;
-      right: 0;
-      font-family: $regularFont;
-      font-size: 0.406em;
+  .border-bottom {
+    width: 40px;
+    margin: 0 60px 20px 20px;
+    border-bottom: solid 2px $brandBlue;
 
-      span, a {
-        margin-right: 7px;
 
-        &.active {
-          color: $darkGray;
-          text-decoration: none;
-          cursor: text;
-        }
+    @media only screen and (min-width: $mediumWidth) {
+      margin: 10px auto 20px auto;
+      display: block;
+    }
+  }
+
+  .row-plan {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media only screen and (min-width: $mediumWidth) {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .table-header {
+    margin-bottom: -20px;
+    text-align: left;
+  }
+
+  .table {
+    width: 100%;
+
+    td {
+      height: auto;
+      font-weight: 300;
+
+      span {
+        font-size: 24px;
       }
+    }
 
-      @media (max-width: $mediumWidth - 1) {
-        position: static;
+    .under {
+      @include border-bottom;
+    }
+
+    .left {
+      text-align: left;
+      padding-top: 25px;
+    }
+
+    .bg {
+      background-color: $brandHeaderWhite;
+    }
+
+  }
+
+  svg {
+    @include square(15px);
+    fill: $brandLightGreen;
+  }
+
+  .header-pricing {
+    margin-bottom: 40px;
+    padding-bottom: 60px;
+    background-color: $brandHeaderWhite;
+
+    .header-dist {
+      padding-top: 20px;
+
+      @media only screen and (min-width: $mediumWidth) {
+        padding: 100px 30px 0 30px;
       }
+    }
+
+  }
+
+  h1 {
+    padding: 0 20px 0 20px;
+    text-align: left;
+    line-height: 1.1em;
+
+
+    @media only screen and (min-width: $mediumWidth) {
+      padding: 0 20px 0 0;
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+  h3 {
+    font-weight: 400;
+
+    @media only screen and (min-width: $mediumWidth) {
+      padding: 20px 0 0 0;
+      line-height: 1.5em;
+    }
+  }
+
+  h4 {
+    padding: 0 30px 40px 30px;
+    line-height: 1.2em;
+    text-align: left;
+
+    @media only screen and (min-width: $mediumWidth) {
+      padding-bottom: 40px;
+      line-height: 1.2em;
+      text-align: center;
+    }
+  }
+
+  h5 {
+    text-align: left;
+    line-height: 1.2em;
+    font-size: 1.1em;
+
+    @media only screen and (min-width: $mediumWidth) {
+      padding-bottom: 20px;
+
     }
   }
 }
+
