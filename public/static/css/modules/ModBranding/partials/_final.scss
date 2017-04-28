@@ -13,7 +13,7 @@
    .svg {
      @include square(30px);
 
-     fill: $baseGray;
      margin: 0;
+     fill: $baseGray;
    }
 }

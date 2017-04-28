@@ -4,14 +4,10 @@
 
 .branding .logo-spacing {
 
-  h1 {
-    margin: 0;
-    text-align: left;
+  padding-bottom: 40px;
 
-    @media only screen and (min-width: $mediumWidth) {
-      margin: 60px 0 0 0;
-      text-align: center;
-    }
+  @media only screen and (min-width: $mediumWidth) {
+    padding: 0 0 40px 0;
   }
 
   .logo-holder {
@@ -21,12 +17,23 @@
 
   .logo {
     width: 250px;
+
+    @media only screen and (min-width: $mediumWidth) {
+      margin-top: 10%;
+      width: 280px;
+    }
   }
   .logo-two {
-    width: 400px;
+    width: 250px;
+    @media only screen and (min-width: $mediumWidth) {
+      width: 400px;
+    }
   }
   .logo-three {
     width: 100px;
+    @media only screen and (min-width: $mediumWidth) {
+      width: 90px;
+    }
   }
 }
 

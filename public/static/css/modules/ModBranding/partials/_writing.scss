@@ -3,12 +3,19 @@
  */
 
 .branding .logo-writing {
-  padding-top: 60px;
+
+  h3 {
+    padding-top: 20px;
+
+    @media only screen and (min-width: $mediumWidth) {
+    margin: 0;
+    text-align: left;
+    line-height: 1em;
+    }
+  }
 
   .logo-holder {
-    margin: 20px 0 20px 0;
-    padding: 40px 20px 40px 40px;
-    background-color: $darkWhite;
+    padding: 0 40px 0 0;
 
   }
   .crossedout {
@@ -33,19 +40,5 @@
     padding: 0 0 3.2em 0;
   }
 
-  h3 {
-    margin: 0;
-    text-align: left;
-    line-height: 1em;
-  }
 
-  h1 {
-    text-align: left;
-    margin: 0;
-
-    @media only screen and (min-width: $mediumWidth) {
-      margin: 60px 0 0 0;
-      text-align: center;
-    }
-  }
 }

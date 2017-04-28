@@ -2,44 +2,33 @@
  * @author: Handsoncode
  */
 
-.branding {
+.branding .brand-g {
 
-  h2 {
-    margin-bottom: 0;
+  h1 {
+    padding: 0;
     text-align: left;
-  }
+    line-height: 1.1em;
 
-  .branding-header {
-
-    padding: 90px 0 90px 0;
-    background-color: $darkWhite;
-
-    h1 {
-      margin: 0;
+    @media only screen and (min-width: $mediumWidth) {
+      margin-top: 0;
+      text-align: center;
     }
-
-    h4 {
-      margin: 2px 0 0 0;
-    }
-
   }
 
   .large-logo {
-    width: 99%;
-    padding: 60px 0 20px 0;
+    width: 100%;
+
     @media only screen and (min-width: $mediumWidth) {
       width: 90%;
+      padding-top: 40px;
     }
   }
 
   .brand-guide {
-    @media only screen and (min-width: $mediumWidth) {
-      padding-top: 90px;
-    }
+    padding-bottom: 40px;
 
-    h1 {
-      margin: 40px 0 0 0;
-      text-align: left;
+    @media only screen and (min-width: $mediumWidth) {
+      padding: 60px 0 40px 0;
     }
 
     .style {
@@ -69,13 +58,14 @@
     }
 
     .btn {
-      height: 55px;
       margin-top: 20px;
+      height: 55px;
       float: right;
       color: $brandGreen;
       border: 2px solid transparent;
       background-color: $darkWhite;
       font-weight: 600;
+
       @media only screen and (min-width: $mediumWidth) {
         height: 45px;
       }
@@ -86,6 +76,7 @@
         border: 2px solid $darkWhite;
 
       }
+
       &:focus {
         color: $darkWhite;
       }

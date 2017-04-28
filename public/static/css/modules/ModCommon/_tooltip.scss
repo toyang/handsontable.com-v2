@@ -4,37 +4,39 @@
  */
 
 .tooltip-btn {
-  @include relative-top-left (-15px, 5px);
-  @include square (16px, false);
-  margin-left: 4px;
+  @include relative-top-left (0px, 5px);
+  @include square (21px, false);
+
+  margin-left: 3px;
+  padding-top: 1px;
   display: inline-block;
-  color: $lightGray;
-  line-height: 1.3;
+  color: $brandBlue;
+  line-height: 1.2;
   text-align: center;
   cursor: pointer;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 14px;
   border-radius: 100%;
-  border: 1px solid $lightGray;
+  border: 1px solid $brandBlue;
 
   &:hover {
-    background-color: $lightGray;
+    background-color: $brandBlue;
     color: $darkWhite;
     border: 1px solid transparent;
   }
 
   .tooltip-inner {
-    @include absolute-top-left (-95px, -90px);
+    @include absolute-top-left (-24px, 29px);
     @include rectangle (auto, auto);
     @include transition (opacity .3s ease);
-    font-weight: 400;
+
+    font-weight: 600;
     font-size: 0.917em;
     line-height: 1.5;
     text-align: left;
     padding: 8px 13px;
     cursor: default;
-    color: $baseGray;
-    background-color: #fff;
+    color: $darkWhite;
+    background-color: $brandBlue;
     border: 1px solid $darkWhite;
     border-radius: 4px;
     visibility: hidden;
@@ -67,7 +69,7 @@
       left: 90px;
       border-width: 7px 6px 0 6px;
       border-style: solid;
-      border-color: $lightGray transparent;
+      border-color: $brandBlue transparent;
     }
     .tooltip-angle-inner {
       top: -8px;
@@ -81,11 +83,11 @@
   /* tooltip on the right hand side */
   &.tooltip-right {
     .tooltip-angle {
-      top: 10px;
+      top: 25px;
       left: -6px;
       border-width: 5px 6px 7px 0;
       border-style: solid;
-      border-color: transparent $lightGray;
+      border-color: transparent $brandBlue;
     }
     .tooltip-angle-inner {
       top: -5px;

@@ -3,7 +3,11 @@
  */
 
 .pricing .license-renewal {
-    padding: 100px 0 80px;
+    padding: 40px 0 90px;
+
+    .left {
+        text-align: left;
+    }
 
     h3 {
         margin: 0 20px 10px 20px;
@@ -36,15 +40,13 @@
             }
         }
      }
+
     .renew {
         margin: 10px auto 0 auto;
         padding-top: 60px;
         display: block;
         text-align: center;
         clear: both;
-
-
-
 
         @media only screen and (max-width: $mediumWidth) {
             padding: 60px 20px 0 20px;
@@ -56,5 +58,4 @@
             font-weight: 400;
         }
     }
-
  }

@@ -3,20 +3,15 @@
  */
 
 .branding .logo-colour {
+  padding-bottom: 40px;
 
-  h1 {
-    text-align: left;
-    margin: 0;
-
-    @media only screen and (min-width: $mediumWidth) {
-      margin: 60px 0 0 0;
-      text-align: center;
-    }
+  @media only screen and (min-width: $mediumWidth) {
+    padding: 0 0 40px 0;
   }
 
   h4 {
     margin: 0;
-    padding: 20px 0 0 0;
+    padding: 10px 0 0 0;
     text-align: left;
     font-weight: 500;
   }
@@ -24,7 +19,6 @@
   p {
     padding: 0 0 10px 0;
     font-size: 0.700em;
-
   }
 
   .brand-blue {
@@ -47,10 +41,12 @@
   .brand-red,
   .brand-green,
   .brand-navy {
+    padding: 0 20px;
     color: $backgroundTextColor;
   }
 
   .brand-yellow {
+    padding: 0 20px;
     background-color: $brandYellow;
     color: $darkGray;
   }

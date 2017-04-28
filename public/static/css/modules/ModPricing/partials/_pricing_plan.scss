@@ -3,6 +3,12 @@
  */
 
 .pricing-plan {
+
+  h3 {
+    font-weight: 400;
+    padding-top: 20px;
+  }
+
   display: flex;
   flex-direction: column;
   position:relative;
@@ -14,12 +20,19 @@
 
 
   .developer-plus {
+
+    h3 {
+      padding-top: 26px;
+    }
+
     margin-top: 20px;
     box-shadow: 0 5px 20px 0 rgba(160, 160, 160, 0.9);
     text-align: center;
     background: $brandDarkNavy;
     color: #fff;
     padding-bottom: 20px;
+
+
 
     @media only screen and (min-width: $mediumWidth) {
       margin-top: -8px;
@@ -32,17 +45,6 @@
   .vibrant-blue {
     color: $brandVibrantBlue;
     font-weight: 400;
-  }
-
-  h4 {
-    margin: 10px 0 14px;
-    font-size: 21px;
-    font-weight: 300;
-    text-align: center;
-
-    @media only screen and (min-width: $mediumWidth) {
-      margin:0;
-    }
   }
 
   .price {

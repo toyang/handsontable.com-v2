@@ -4,15 +4,6 @@
 
 .pricing .q-and-a {
 
-    h1 {
-        padding: 20px 20px 0 20px;
-
-
-        @media only screen and (min-width: $mediumWidth) {
-            padding-bottom: 10px;
-        }
-    }
-
     .question-item {
         padding-top: 20px;
 
@@ -61,5 +52,4 @@
             line-height: 2.7em;
         }
     }
-
  }
