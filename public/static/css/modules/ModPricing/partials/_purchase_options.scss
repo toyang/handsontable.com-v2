@@ -39,12 +39,12 @@
 
     .svg-icon {
 
-        @include square(120px);
+        @include square(140px);
         margin: 60px auto 0 auto;
         display: block;
 
         @media only screen and (min-width: $mediumWidth) {
-            @include square(180px);
+            @include square(120px);
         }
     }
  }
