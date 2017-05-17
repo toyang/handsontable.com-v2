@@ -1,4 +1,13 @@
 {
+  "1.11.0-beta1-0.32.0-beta1": {
+    "directory": "2017/5/",
+    "title": "New compiler and enhancements for IE - Handsontable Pro 1.11.0-beta1 (CE 0.32.0-beta1)",
+    "category": "Release",
+    "date": "May 17, 2017",
+    "pubDate": "Wed, 17 May 2017 13:00:00 EST",
+    "image_file": "1.11.0-beta1-0.32.0-beta1.png",
+    "description": "We are happy to announce that today we have released Handsontable (...)"
+  },
   "an-interview-with-mirko-lorenz-from-datawrapper": {
     "directory": "2017/4/",
     "title": "An Interview with Mirko Lorenz from Datawrapper",
@@ -6,7 +15,7 @@
     "date": "April 13, 2017",
     "pubDate": "Thu, 13 Apr 2017 13:00:00 EST",
     "image_file": "an-interview-with-mirko-lorenz-from-datawrapper.png",
-    "description": " Have you ever heard about Datawrapper? If you are a journalist working in a fast-paced environment I am sure you have. Datawrapper (...)"
+    "description": "Have you ever heard about Datawrapper? If you are a journalist working in a fast-paced environment I am sure you have. Datawrapper (...)"
   },
   "open-source-slack-alternatives": {
     "directory": "2017/3/",
