@@ -19,17 +19,17 @@
     <article class="row body">
         <div class="large-8 medium-12 large-centered columns">
             <p itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-                <img src="../../../attachments/images/2017/5/1.11.0-beta1-0.32.0-beta1/<%= current.source %>.png"
+                <img src="../../../attachments/images/2017/5/1.11.0-beta1-0.32.0-beta1/new-release.png"
                      alt="New compiler and enhancements for IE - Handsontable Pro 1.11.0-beta1 (CE 0.32.0-beta1)" />
                 <meta itemprop="url"
-                      content="https://handsontable.com/blog/attachments/images/2017/5/1.11.0-beta1-0.32.0-beta1/<%= current.source %>.png">
+                      content="https://handsontable.com/blog/attachments/images/2017/5/1.11.0-beta1-0.32.0-beta1/new-release.png">
                 <meta itemprop="width" content="757">
                 <meta itemprop="height" content="504">
             </p>
 
             <p>
                 We are happy to announce that today we have released Handsontable PRO 1.11.0-beta1 (Community Edition:
-                0.32.0-beta1). Learn more about what we delivered within this version.
+                0.32.0-beta1). Learn more about what we delivered in this version.
             </p>
             <h3>
                 A new JavaScript compiler: Babel
@@ -38,14 +38,14 @@
                 This change was expected for a long time as we reached a dead end with Traceur, our previous transpiler.
                 It seriously limited our development of Handsontable by not letting us to use the latest features of
                 ES2015. We could work around this of course, but in the end Handsontable would be much heavier than it
-                is now. But the size of the output file wasn’t the only thing that made us switch to Babel:
+                is now. But the size of the output file was not the only thing that made us switch to Babel:
             </p>
             <ul>
                 <li>
                     Traceur is not actively maintained anymore.
                 </li>
                 <li>
-                    We couldn’t use Webpack.
+                    We couldn't use Webpack.
                 </li>
                 <li>
                     We had to create workarounds in order to make our wrappers working.
@@ -56,7 +56,7 @@
                 new transpiler. The output code is now 47KB larger but the performance and readability remained intact.
             </p>
             <p>
-                What’s the most important, we can now use all the ES2015 features except Generators. We can debug the
+                What is the most important, we can now use all the ES2015 features except Generators. We can debug the
                 code faster thanks to sourceMaps (yep, we haven’t got that comfort before in our version of Traceur!)
                 and get a better standardized code.
             </p>
@@ -84,61 +84,36 @@
             </h3>
             <ul>
                 <li>
-                    Fixed documentation for the cells config option. (
-                    <a href="https://github.com/handsontable/handsontable/issues/4185" target="_blank">
-                        GH#4185
-                    </a>
-                    )
+                    Fixed documentation for the cells config option
+                    (<a href="https://github.com/handsontable/handsontable/issues/4185" target="_blank">#4185</a>).
                 </li>
                 <li>
-                    Fixed a problem with the maxRows functionality. (
-                    <a href="https://github.com/handsontable/handsontable/issues/4180" target="_blank">
-                        GH#4180
-                    </a>
-                    )
+                    Fixed a problem with the maxRows functionality
+                    (<a href="https://github.com/handsontable/handsontable/issues/4180" target="_blank">#4180</a>).
                 </li>
                 <li>
-                    Fixed a problem with the maxCols functionality. (
-                    <a href="https://github.com/handsontable/handsontable/issues/4156" target="_blank">
-                        GH#4156
-                    </a>
-                    )
+                    Fixed a problem with the maxCols functionality
+                    (<a href="https://github.com/handsontable/handsontable/issues/4156" target="_blank">#4156</a>).
                 </li>
                 <li>
-                    Fixed a bug, where passing integer values to a dropdown caused the cell to be marked as invalid.
-                    (
-                    <a href="https://github.com/handsontable/handsontable/issues/4143" target="_blank">
-                        GH#4143
-                    </a>
-                    )
+                    Fixed a bug, where passing integer values to a dropdown caused the cell to be marked as invalid
+                    (<a href="https://github.com/handsontable/handsontable/issues/4143" target="_blank">#4143</a>).
                 </li>
                 <li>
-                    Added the TypeScript definitions to the repository. (
-                    <a href="https://github.com/handsontable/handsontable/issues/4112" target="_blank">
-                        GH#4112
-                    </a>
-                    )
+                    Added the TypeScript definitions to the repository
+                    (<a href="https://github.com/handsontable/handsontable/issues/4112" target="_blank">#4112</a>).
                 </li>
                 <li>
-                    Fixed a bug with getCoords throwing an error when used on non-cell elements. (
-                    <a href="https://github.com/handsontable/handsontable/issues/4074" target="_blank">
-                        GH#4074
-                    </a>
-                    )
+                    Fixed a bug with getCoords throwing an error when used on non-cell elements
+                    (<a href="https://github.com/handsontable/handsontable/issues/4074" target="_blank">#4074</a>).
                 </li>
                 <li>
-                    Data copied from the table will no longer have a newline at the end. (
-                    <a href="https://github.com/handsontable/handsontable/issues/3801" target="_blank">
-                        GH#3801
-                    </a>
-                    )
+                    Data copied from the table will no longer have a newline at the end
+                    (<a href="https://github.com/handsontable/handsontable/issues/3801" target="_blank">#3801</a>).
                 </li>
                 <li>
-                    Fixed a problem with scrolling on IE9+. (
-                    <a href="https://github.com/handsontable/handsontable/issues/2350" target="_blank">
-                        GH#2350
-                    </a>
-                    )
+                    Fixed a problem with scrolling on IE9+
+                    (<a href="https://github.com/handsontable/handsontable/issues/2350" target="_blank">#2350</a>).
                 </li>
             </ul>
             <h3>
@@ -198,7 +173,7 @@
                     Alex from GrooveHQ
                 </a>
                 who wrote a story about his angry customer who complained about the slow
-                development of the his app. The thing is that the development wasn’t slow at all. It was the lack of
+                development of the his app. The thing is that the development was not slow at all. It was the lack of
                 information about the progress that caused this situation.
             </p>
             <p>
