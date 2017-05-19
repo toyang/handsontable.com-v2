@@ -1,0 +1,89 @@
+
+.community .tabs-in {
+
+  padding-left: 10px;
+  padding-right: 10px;
+
+  @media only screen and (min-width: $mediumWidth) {
+
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+
+  div.tab {
+    margin-bottom: -3px;
+    overflow: auto;
+    display: inline-flex;
+    width: 100%;
+    border: 0px solid $darkWhite;
+    background: -moz-linear-gradient(left, rgba(0,0,0,0) 80%, rgba(0,0,0,0.15) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(0,0,0,0) 80%,rgba(0,0,0,0.15) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(0,0,0,0) 80%,rgba(0,0,0,0.15) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */
+
+    @media only screen and (min-width: $mediumWidth) {
+      background: none;
+    }
+  }
+
+  /* Style the buttons inside the tab */
+  div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    border-bottom: 3px solid transparent;
+  }
+
+  /* Change background color of buttons on hover */
+  div.tab button:hover {
+    border-bottom: 3px solid $brandBlue;
+  }
+
+  //Create an active/current tablink class
+
+  div.tab button:active {
+    border-bottom: 3px solid $brandBlue;
+  }
+
+
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    background-color: $brandHeaderWhite;
+  }
+
+  .subscriber-r {
+    width: 96%;
+    margin: 0 2% 20px 2%;
+    padding: 20px 10px 20px 10px;
+
+    @media only screen and (min-width: $largeWidth) {
+      padding: 20px 40px 20px 40px;
+      margin: 40px 0 0 0;
+      width: 48%;
+    }
+
+    span {
+      font-size: 0.7em;
+      float: left;
+      margin: 0 0 10px 0;
+      padding: 0;
+      color: $middleGray;
+
+      @media only screen and (min-width: $largeWidth) {
+        float: right;
+      }
+    }
+
+    a {
+      font-size: inherit;
+    }
+  }
+}

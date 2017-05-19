@@ -1,0 +1,19 @@
+
+.download .wrappers-w {
+
+  text-align: center;
+
+  .svg-wrappers {
+    @include square(80px);
+    margin: 8px;
+    fill: $darkWhite;
+
+    @media only screen and (min-width: $largeWidth) {
+      margin: 6px;
+    }
+  }
+.in-progress {
+  filter: grayscale(100%) brightness(140%) opacity(40%);
+  -webkit-filter: grayscale(100%) brightness(140%) opacity(40%);
+}
+}

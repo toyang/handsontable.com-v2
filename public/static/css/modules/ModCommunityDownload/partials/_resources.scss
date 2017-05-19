@@ -1,0 +1,37 @@
+
+.download .resources {
+
+  margin-bottom: 60px;
+
+  .header-dist {
+
+    padding: 40px 10px 40px 10px;
+
+    @media only screen and (min-width: $mediumWidth) {
+      padding: 60px 10px 20px 10px;
+    }
+  }
+
+  .links {
+    float: left;
+    display: inline-block;
+    text-align: center;
+
+    @media only screen and (min-width: $largeWidth) {
+      text-align: left;
+      margin-left: 20px;
+    }
+  }
+  .align {
+    width: 100%;
+    display: block;
+    text-align: center;
+
+    @media only screen and (min-width: $largeWidth) {
+      width: 90%;
+      margin-left: 330px;
+      text-align: left;
+    }
+  }
+
+}

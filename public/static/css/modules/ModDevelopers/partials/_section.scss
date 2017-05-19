@@ -1,0 +1,91 @@
+
+.developers .section{
+
+  display: flex;
+  flex-wrap: wrap;
+
+  @media only screen and (min-width: $mediumWidth) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .header-repo {
+
+    padding: 40px 0 40px 0;
+    text-align: left;
+
+    @media only screen and (min-width: $mediumWidth) {
+      padding: 40px 0 0 0;
+    }
+  }
+
+  .header-repo-right {
+
+    padding: 40px 0 40px 0;
+    text-align: left;
+
+    @media only screen and (min-width: $mediumWidth) {
+      padding: 40px 0 0 20px;
+    }
+  }
+
+
+  .btn {
+    height: 45px;
+    font-size: medium;
+    line-height: inherit;
+    padding-top: 7px;
+
+    @media only screen and (min-width: $largeWidth) {
+      padding-top: 10px;
+    }
+  }
+
+  .btn.green {
+    height: 47px;
+    font-size: medium;
+    padding-top: 10px;
+    margin-top: 20px;
+
+    @media only screen and (min-width: $largeWidth) {
+      padding-top: 12px;
+      margin-top: 20px;
+    }
+  }
+
+  .repo {
+    padding: 40px 15px 40px 15px;
+    background-color: $brandHeaderWhite;
+    color: $baseGray;
+
+    @media only screen and (min-width: $largeWidth) {
+      margin: 5px 20px 0 0;
+      padding: 40px 20px 40px 30px;
+    }
+
+    a {
+      font-size: inherit;
+      line-height: inherit;
+    }
+  }
+
+  .repo-right {
+    padding: 40px 15px 40px 15px;
+    background-color: $brandHeaderWhite;
+    color: $baseGray;
+
+    @media only screen and (min-width: $largeWidth) {
+      margin: 5px 0 0 20px;
+      padding: 40px 20px 40px 30px;
+    }
+  }
+
+  .tabs-content {
+    padding: 20px 5px 0 0;
+  }
+
+  .tabs {
+    width: 100%;
+
+  }
+}
