@@ -1,89 +1,19 @@
 
-.download .products {
+.download .wrappers-w {
 
-  .handsontable-ce {
+  text-align: center;
 
-    width: 96%;
-    margin: 0 2% 20px 2%;
-    padding: 20px 40px 20px 40px;
-    border-top: 10px solid $brandGreenActive;
-    background-color: $brandGreen;
-    color: $darkWhite;
+  .svg-wrappers {
+    @include square(80px);
+    margin: 8px;
+    fill: $darkWhite;
 
     @media only screen and (min-width: $largeWidth) {
-      margin: 0;
-      width: 48%;
-    }
-
-  }
-
-  .handsontable-pro {
-
-    width: 96%;
-    margin: 0 2% 20px 2%;
-    padding: 20px 40px 20px 40px;
-    border-top: 10px solid $brandBlueActive;
-    background-color: $brandBlue;
-    color: $darkWhite;
-
-    @media only screen and (min-width: $largeWidth) {
-      margin: 0;
-      width: 48%;
+      margin: 6px;
     }
   }
-  .download-builder {
-
-    width: 96%;
-    margin: 0 2% 20px 2%;
-    padding: 20px 40px 20px 40px;
-    border-top: 10px solid $middleGray;
-    background-color: $lightGray;
-    color: $darkWhite;
-
-    @media only screen and (min-width: $largeWidth) {
-      margin: 40px 0 0 0;
-      width: 48%;
-    }
-  }
-
-  .subscriber-r {
-    width: 96%;
-    margin: 0 2% 20px 2%;
-    padding: 20px 40px 20px 40px;
-
-    @media only screen and (min-width: $largeWidth) {
-      margin: 40px 0 0 0;
-      width: 48%;
-    }
-
-    span {
-      font-size: 0.7em;
-      float: right;
-      margin: 0 0 10px 0;
-      padding: 0;
-      color: $middleGray
-    }
-
-    h3 {
-
-      font-weight: 300;
-      margin: 0 0 20px 0;
-    }
-
-    .btn {
-      margin-top: 4px;
-    }
-  }
-
-  p {
-    padding: 20px 0 40px 0;
-  }
-
-  h3 {
-
-    font-weight: 600;
-    margin: 0;
-
-  }
-
+.in-progress {
+  filter: grayscale(100%) brightness(140%) opacity(40%);
+  -webkit-filter: grayscale(100%) brightness(140%) opacity(40%);
+}
 }

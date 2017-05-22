@@ -9,6 +9,14 @@
         text-align: left;
     }
 
+    .header-dist {
+        padding-top: 20px;
+
+        @media only screen and (min-width: $mediumWidth) {
+            padding: 20px 0 0px 0;
+        }
+    }
+
     h3 {
         margin: 0 20px 10px 20px;
         font-weight: 300;

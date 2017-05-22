@@ -4,6 +4,28 @@
 
 .branding {
 
+  h1 {
+    padding: 0;
+    text-align: left;
+    line-height: 1.1em;
+
+    @media only screen and (min-width: $mediumWidth) {
+      margin-top: 0;
+      text-align: center;
+    }
+  }
+
+  h2 {
+    padding: 0 10px 0 20px;
+    text-align: left;
+    line-height: 1.1em;
+
+    @media only screen and (min-width: $mediumWidth) {
+      margin-top: 0;
+      text-align: center;
+    }
+  }
+
   .columns {
     padding: 0 20px 0 20px;
 

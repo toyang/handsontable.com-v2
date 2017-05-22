@@ -14,6 +14,7 @@
 <script src="/static/bower_components/numbro/dist/numbro.min.js"></script>
 <script src="/static/bower_components/numbro/dist/languages.min.js"></script>
 
+<!-- TypeKit -->
 <script>
     (function(d) {
         var config = {
@@ -30,9 +31,10 @@
       document.write('<scr'+'ipt src="/static/bower_components/promise-polyfill/promise.min.js"></scr'+'ipt>');
   }
 </script>
+
 <script src="/static/js/common/index.js"></script>
 
-<% if (current.source === 'examples' || current.path[1] == 'articles') {  %>
+<% if (current.source === 'examples'|| current.path[1] == 'articles') {  %>
     <link href="/static/bower_components/handsontable-pro/dist/handsontable.full.css" type="text/css" rel="stylesheet">
     <link href="/static/bower_components/highlightjs/styles/github.css" type="text/css" rel="stylesheet">
     <link href="/static/css/vendors/prismjs/prism-ghcolors-customised.css" type="text/css" rel="stylesheet">
@@ -44,3 +46,8 @@
 <% } else if (current.source === 'support' || current.source === 'contact') {  %>
     <script src="/static/js/common/formHandler.js"></script>
 <% } %>
+
+
+<!-- Testing -->
+<script src="https://docs.handsontable.com/0.31.2/bower_components/handsontable/dist/handsontable.full.js"></script>
+<link type="text/css" rel="stylesheet" href="https://docs.handsontable.com/0.31.2/bower_components/handsontable/dist/handsontable.full.min.css">

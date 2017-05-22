@@ -2,91 +2,101 @@
  * @author: Handsoncode
  */
 form {
-    @include placeholder {
-        font-size: 0.938em; /* 13px */
+  @include placeholder {
+    font-size: 0.938em; /* 13px */
+  }
+
+  fieldset {
+    margin: 2px 0;
+  }
+
+  label {
+    font-size: 0.938em; /* 15px */
+    font-weight: 100;
+    display: block;
+    margin-bottom: 7px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="password"],
+  .selectbox,
+  textarea {
+    @include border($inputBorder);
+    font-size: 0.938em; /* 15px */
+    width: 100%;
+    padding: 11px 20px 12px;
+    margin-bottom: 15px;
+    border-radius: 2px;
+    background: $darkWhite;
+    -webkit-appearance: none;
+    &:focus {
+      border-color: $inputFocusBorder;
+    }
+  }
+
+  input[type="submit"] {
+    @include transition(background .3s ease);
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  .selectbox {
+    position: relative;
+    padding: 0;
+
+    &:hover {
+      border-color: $darkGray;
     }
 
-    fieldset {
-        margin: 2px 0;
+    select {
+      padding: 11px 20px 12px;
+      background-color: transparent;
+      border: none;
+      box-shadow: none;
     }
 
-    label {
-        font-size: 0.938em; /* 15px */
-        font-weight: 100;
-        display: block;
-        margin-bottom: 7px;
+    svg {
+      @include absolute-top-right (50%, 18px);
+      @include square (11px);
+      margin: -4px 0 0 0;
+      fill: #474747;
+      z-index: 10;
     }
+  }
 
-    input[type="text"],
-    input[type="email"],
-    input[type="number"],
-    input[type="password"],
-    .selectbox,
-    textarea {
-        @include border($inputBorder);
-        font-size: 0.938em; /* 15px */
-        width: 100%;
-        padding: 11px 20px 12px;
-        margin-bottom: 15px;
-        border-radius: 2px;
-        background: $darkWhite;
-        -webkit-appearance: none;
-        &:focus {
-            border-color: $inputFocusBorder;
-        }
-    }
+}
 
-    input[type="submit"] {
-        @include transition(background .3s ease);
-    }
+form.light {
 
-    textarea {
-        resize: vertical;
-    }
+  padding: 10px 0 10px 0;
 
-    .selectbox {
-        position: relative;
-        padding: 0;
-
-        &:hover {
-            border-color: $darkGray;
-        }
-
-        select {
-            padding: 11px 20px 12px;
-            background-color: transparent;
-            border: none;
-            box-shadow: none;
-        }
-
-        svg {
-            @include absolute-top-right (50%,18px);
-            @include square (11px);
-            margin: -4px 0 0 0;
-            fill: #474747;
-            z-index: 10;
-        }
-    }
-
+  input[type="text"], textarea {
+    background: #fff;
+    border-color: $lightGray;
+  }
 }
 
 /* mailchimp overwrite styles */
 .mc-field-group {
-    position: relative;
+  position: relative;
 }
 
 input.mce_inline_error {
-    color: $errorColor !important;
-    border-color: $errorColor !important;
+  color: $errorColor !important;
+  border-color: $errorColor !important;
 }
 
 div.mce_inline_error {
-    position: absolute;
-    bottom: 0;
-    font-weight: 400!important;
-    font-size: 11px !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    color: $errorColor !important;
-    background-color: transparent !important;
+  position: absolute;
+  bottom: 0;
+  font-weight: 400 !important;
+  font-size: 11px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: $errorColor !important;
+  background-color: transparent !important;
 }

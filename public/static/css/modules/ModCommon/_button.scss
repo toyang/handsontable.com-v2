@@ -67,9 +67,31 @@
     }
   }
 
+  &.white {
+    color: $brandVibrantGreen;
+    background: $darkWhite;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $brandGreenActive;
+      color: $darkWhite;
+    }
+  }
+
+  &.white-blue {
+    color: $brandBlue;
+    background: $darkWhite;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $brandBlueActive;
+      color: $darkWhite;
+    }
+  }
+
   &.vivid-green {
     color: #FFF;
-    background: $vividGreen;
+    background: $brandVibrantGreen;
     &:hover,
     &:focus,
     &:active {
@@ -88,7 +110,8 @@
   }
 
   &.ghost-blue,
-  &.ghost-red {
+  &.ghost-red,
+  &.ghost-white  {
     border: 2px solid currentColor;
     background: transparent;
   }
@@ -102,6 +125,21 @@
       @media only screen and (min-width: $mediumWidth) {
         line-height: 45px;
       }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $brandBlueActive;
+      border-color: currentColor;
+    }
+  }
+
+  &.ghost-white {
+    color: $darkWhite;
+
+    &.large {
+      line-height: 45px;
     }
 
     &:hover,

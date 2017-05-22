@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-       
+
         cssmin: {
             options: {
                 shorthandCompacting: false,
@@ -37,6 +37,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
 
     grunt.registerTask('default', 'build');
-    grunt.registerTask('build', ['unused', 'cssmin', 'clean']);
+    grunt.registerTask('build',  ['unused', 'cssmin', 'clean']);
     
 };

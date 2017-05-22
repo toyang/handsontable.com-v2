@@ -1,19 +1,29 @@
 
-.download .wrappers-w {
+.community .wrappers-w {
 
   text-align: center;
+  margin: 0 auto 0 auto;
+  display: block;
+
+
+  @media only screen and (min-width: $largeWidth) {
+    height: 200px;
+    display: flex;
+  }
 
   .svg-wrappers {
-    @include square(80px);
-    margin: 8px;
-    fill: $darkWhite;
+
+    @include square(120px);
+    margin: 30px 0 0 0;
 
     @media only screen and (min-width: $largeWidth) {
-      margin: 6px;
+      @include square(50px);
+      margin: 30px 20px 0 20px;
     }
   }
-.in-progress {
-  filter: grayscale(100%) brightness(140%) opacity(40%);
-  -webkit-filter: grayscale(100%) brightness(140%) opacity(40%);
-}
+
+  .in-progress {
+    filter: grayscale(100%) brightness(140%) opacity(40%);
+    -webkit-filter: grayscale(100%) brightness(140%) opacity(40%);
+  }
 }

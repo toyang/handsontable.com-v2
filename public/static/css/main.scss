@@ -2,6 +2,7 @@
  * @author: Handsoncode
  */
 
+
 /* [ global helpers ] */
 @import 'helpers/variables';
 @import 'helpers/mixins';
@@ -11,6 +12,9 @@
 @import 'modules/ModBlog/blog';
 @import 'modules/ModBranding/branding';
 @import 'modules/ModContact/contact';
+@import 'modules/ModCommunityDownload/community';
+@import 'modules/ModDownload/download';
+@import 'modules/ModDevelopers/developers';
 @import 'modules/ModCustomers/customers';
 @import 'modules/ModExamples/examples';
 @import 'modules/ModFaq/faq';

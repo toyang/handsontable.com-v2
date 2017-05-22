@@ -14,13 +14,13 @@
         opacity: .6;
         @media only screen and (min-width: $largeWidth) {
             margin: 0;
-            max-width: 66%;
-            max-height: 66px;
+            max-width: 60%;
+            max-height: 50px;
         }
     }
 
     /* Workaround for IE */
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @media screen and (-ms-high-contrast: none), (-ms-high-contrast: none) {
         &:nth-child(1) img {
             width: 115px;
             height: 49px;

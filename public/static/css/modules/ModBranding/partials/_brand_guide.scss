@@ -4,16 +4,6 @@
 
 .branding .brand-g {
 
-  h1 {
-    padding: 0;
-    text-align: left;
-    line-height: 1.1em;
-
-    @media only screen and (min-width: $mediumWidth) {
-      margin-top: 0;
-      text-align: center;
-    }
-  }
 
   .large-logo {
     width: 100%;
@@ -28,17 +18,50 @@
     padding-bottom: 40px;
 
     @media only screen and (min-width: $mediumWidth) {
-      padding: 60px 0 40px 0;
+      padding: 60px 0 90px 0;
     }
 
     .style {
       padding: 60px 20px 60px 20px;
+
       @media only screen and (min-width: $mediumWidth) {
         padding: 0 60px 40px 20px;
+      }
+
+      h2 {
+        padding: 0;
+        text-align: left;
+        line-height: 1.1em;
+
+        @media only screen and (min-width: $mediumWidth) {
+          margin-top: 0;
+          padding-top: 40px;
+          text-align: left;
+        }
       }
     }
 
     .download {
+
+      padding: 0 20px 40px 20px;
+      background-color: $brandGreen;
+      display: block;
+      color: #fff;
+      @media only screen and (min-width: $mediumWidth) {
+        padding: 0 40px 30px 40px;
+      }
+
+      h2 {
+        padding: 0;
+        text-align: left;
+        line-height: 1.1em;
+
+        @media only screen and (min-width: $mediumWidth) {
+          margin-top: 0;
+          padding-top:40px;
+          text-align: left;
+        }
+      }
 
       p {
         width: 100%;
@@ -47,13 +70,6 @@
         @media only screen and (min-width: $mediumWidth) {
           width: 60%;
         }
-      }
-      padding: 0 20px 40px 20px;
-      background-color: $brandGreen;
-      display: block;
-      color: #fff;
-      @media only screen and (min-width: $mediumWidth) {
-        padding: 0 40px 30px 40px;
       }
     }
 

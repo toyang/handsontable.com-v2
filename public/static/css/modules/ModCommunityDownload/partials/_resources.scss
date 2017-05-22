@@ -1,7 +1,13 @@
 
-.download .resources {
+.community .resources {
 
-  margin-bottom: 60px;
+  width: 100%;
+  margin: 0 auto 60px auto;
+
+  @media only screen and (min-width: $mediumWidth) {
+    width: 50%;
+  }
+
 
   .header-dist {
 
@@ -13,25 +19,17 @@
   }
 
   .links {
-    float: left;
-    display: inline-block;
     text-align: center;
+    padding-top: 20px;
 
     @media only screen and (min-width: $largeWidth) {
       text-align: left;
-      margin-left: 20px;
     }
   }
-  .align {
-    width: 100%;
-    display: block;
-    text-align: center;
 
-    @media only screen and (min-width: $largeWidth) {
-      width: 90%;
-      margin-left: 330px;
-      text-align: left;
-    }
+  a {
+    font-size: inherit;
+    line-height: 2em;
   }
 
 }

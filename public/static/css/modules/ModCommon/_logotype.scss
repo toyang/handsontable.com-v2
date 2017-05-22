@@ -39,6 +39,26 @@ header .logotype {
 
     }
 
+    .brand-logo-white {
+        @media only screen and (min-width: $largeWidth) {
+            margin-top: 12px;
+        }
+
+        svg {
+            @include rectangle(150px, 24.93px);
+
+
+            /* [ styles only for desktop ] */
+            @media only screen and (min-width: $largeWidth) {
+                @include rectangle(200px, 40px);
+                float: left;
+                fill: #fff;
+            }
+        }
+
+    }
+
+
     .github-star {
         display: none;
 

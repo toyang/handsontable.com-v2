@@ -1,0 +1,95 @@
+
+.download .products {
+
+  .handsontable-ce {
+
+    width: 96%;
+    margin: 0 2% 20px 2%;
+    padding: 20px 40px 20px 40px;
+    border-top: 10px solid $brandGreenActive;
+    background-color: $brandGreen;
+    color: $darkWhite;
+
+    @media only screen and (min-width: $largeWidth) {
+      margin: 0;
+      width: 48%;
+    }
+
+  }
+
+  .handsontable-pro {
+
+    width: 96%;
+    margin: 0 2% 20px 2%;
+    padding: 20px 40px 20px 40px;
+    border-top: 10px solid $brandBlueActive;
+    background-color: $brandBlue;
+    color: $darkWhite;
+
+    @media only screen and (min-width: $largeWidth) {
+      margin: 0;
+      width: 48%;
+    }
+  }
+  .download-builder {
+
+    width: 96%;
+    margin: 0 2% 20px 2%;
+    padding: 20px 40px 20px 40px;
+    border-top: 10px solid $middleGray;
+    background-color: $lightGray;
+    color: $darkWhite;
+
+    @media only screen and (min-width: $largeWidth) {
+      margin: 40px 0 0 0;
+      width: 48%;
+    }
+  }
+
+  .subscriber-r {
+    width: 96%;
+    margin: 0 2% 20px 2%;
+    padding: 20px 10px 20px 10px;
+
+    @media only screen and (min-width: $largeWidth) {
+      padding: 20px 40px 20px 40px;
+      margin: 40px 0 0 0;
+      width: 48%;
+    }
+
+    span {
+      font-size: 0.7em;
+      float: left;
+      margin: 0 0 10px 0;
+      padding: 0;
+      color: $middleGray;
+
+      @media only screen and (min-width: $largeWidth) {
+        float: right;
+      }
+    }
+
+    h3 {
+
+      font-weight: 300;
+      margin: 0 0 20px 0;
+    }
+
+    .btn {
+      padding-top: 4px;
+      margin-top: 4px;
+    }
+  }
+
+  p {
+    padding: 20px 0 40px 0;
+  }
+
+  h3 {
+
+    font-weight: 600;
+    margin: 0;
+
+  }
+
+}

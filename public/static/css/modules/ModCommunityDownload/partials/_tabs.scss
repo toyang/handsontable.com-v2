@@ -10,13 +10,42 @@
     padding-right: 0;
   }
 
+  a {
+    font-size: inherit;
+  }
+
+  .instalation {
+    background-color: #fff;
+    padding: 8px 5px 8px 10px;
+    font-size: 0.6em;
+    font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+    border: 1px solid $gray;
+    overflow: auto;
+
+    @media only screen and (min-width: $mediumWidth) {
+
+      font-size: 0.9em;
+    }
+
+    .color-red {
+      color: $brandRed;
+      font-size: 0.9em;
+    }
+  }
+
+  .extra {
+    margin: 10px 0 15px 0;
+  }
+
+
 
   div.tab {
     margin-bottom: -3px;
     overflow: auto;
     display: inline-flex;
     width: 100%;
-    border: 0px solid $darkWhite;
+    border: 0 solid $darkWhite;
+    border-bottom: 1px solid $lightGray;
     background: -moz-linear-gradient(left, rgba(0,0,0,0) 80%, rgba(0,0,0,0.15) 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(left, rgba(0,0,0,0) 80%,rgba(0,0,0,0.15) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right, rgba(0,0,0,0) 80%,rgba(0,0,0,0.15) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -29,15 +58,15 @@
 
   /* Style the buttons inside the tab */
   div.tab button {
-    background-color: inherit;
     float: left;
     border: none;
+    border-bottom: 3px solid transparent;
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
-    font-size: 17px;
-    border-bottom: 3px solid transparent;
+    font-size: 14px;
+    background-color: inherit;
   }
 
   /* Change background color of buttons on hover */
@@ -51,11 +80,25 @@
     border-bottom: 3px solid $brandBlue;
   }
 
+  div.tab button:focus {
+    border-bottom: 3px solid $brandBlue;
+  }
+
 
   /* Style the tab content */
+
   .tabcontent {
+
     display: none;
-    padding: 6px 12px;
+    padding: 20px 20px 20px 20px;
+    background-color: $brandHeaderWhite;
+    margin-top: 3px;
+  }
+
+  .tabcontent-s {
+
+    display: none;
+    padding: 20px 0 20px 0;
     background-color: $brandHeaderWhite;
   }
 
@@ -80,10 +123,6 @@
       @media only screen and (min-width: $largeWidth) {
         float: right;
       }
-    }
-
-    a {
-      font-size: inherit;
     }
   }
 }

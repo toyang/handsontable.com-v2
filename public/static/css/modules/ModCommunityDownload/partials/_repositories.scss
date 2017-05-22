@@ -1,67 +1,97 @@
 
 .community .repositories {
 
-  h3 {
-    margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media only screen and (min-width: $mediumWidth) {
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  .repo {
-    width: 96%;
-    margin: 0 2% 20px 2%;
-    padding: 20px 40px 20px 40px;
-    background-color: $lightGray;
-    color: $darkWhite;
+  .header-repo {
 
-    @media only screen and (min-width: $largeWidth) {
-      margin: 40px 0 0 0;
-      width: 48%;
+    padding: 40px 0 40px 0;
+    text-align: left;
+
+    @media only screen and (min-width: $mediumWidth) {
+      padding: 40px 0 0 22px;
     }
   }
 
-  .subscriber-r {
-    width: 96%;
-    margin: 0 2% 20px 2%;
-    padding: 20px 10px 20px 10px;
+  .header-repo-right {
 
-    @media only screen and (min-width: $largeWidth) {
-      padding: 20px 40px 20px 40px;
-      margin: 40px 0 0 0;
-      width: 48%;
-    }
+    padding: 40px 0 40px 0;
+    text-align: left;
 
-    span {
-      font-size: 0.7em;
-      float: left;
-      margin: 0 0 10px 0;
-      padding: 0;
-      color: $middleGray;
-
-      @media only screen and (min-width: $largeWidth) {
-        float: right;
-      }
-    }
-
-    h3 {
-
-      font-weight: 300;
-      margin: 0 0 20px 0;
-    }
-
-    .btn {
-      padding-top: 4px;
-      margin-top: 4px;
+    @media only screen and (min-width: $mediumWidth) {
+      padding: 40px 0 0 44px;
     }
   }
 
   p {
-    padding: 20px 0 40px 0;
-  }
-
-  h3 {
-
-    font-weight: 600;
     margin: 0;
-
+    padding: 0;
   }
 
+  .btn {
+    height: 45px;
+    margin-top: 20px;
+    font-size: medium;
+    line-height: inherit;
+    padding-top: 7px;
+
+    @media only screen and (min-width: $largeWidth) {
+      padding-top: 10px;
+      margin-top: 20px;
+    }
+  }
+
+  .btn.green {
+    height: 47px;
+    font-size: medium;
+    padding-top: 10px;
+    margin-top: 20px;
+
+    @media only screen and (min-width: $largeWidth) {
+      padding-top: 12px;
+      margin-top: 20px;
+    }
+  }
+
+  .repo {
+    padding: 40px 15px 40px 15px;
+    background-color: $brandHeaderWhite;
+    color: $baseGray;
+
+    @media only screen and (min-width: $largeWidth) {
+      margin: 5px 20px 0 0;
+      padding: 40px 20px 40px 30px;
+    }
+
+    a {
+      font-size: inherit;
+      line-height: inherit;
+    }
+  }
+
+  .repo-right {
+    padding: 40px 15px 40px 15px;
+    background-color: $brandHeaderWhite;
+    color: $baseGray;
+
+    @media only screen and (min-width: $largeWidth) {
+      margin: 5px 0 0 20px;
+      padding: 40px 20px 40px 30px;
+    }
+  }
+
+  .tabs-content {
+    padding: 20px 5px 0 0;
+  }
+
+  .tabs {
+    width: 100%;
+
+  }
 }

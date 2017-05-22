@@ -5,6 +5,18 @@
 /* [ component variables ] */
 $dropdownColor: #FFF;
 
+.dropdown-f {
+    @media only screen and (max-width: $largeWidth) {
+        background-color: $brandHeaderWhite;
+    }
+
+    ul {
+        li {
+            color: $baseGray;
+        }
+    }
+}
+
 .dropdown {
 
     /* [ arrow down ] */
