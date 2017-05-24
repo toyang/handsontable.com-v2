@@ -1,11 +1,20 @@
 {
+  "1.11.0-beta2-0.32.0-beta2": {
+    "directory": "2017/5/",
+    "title": "Improvements to API and important bug fixes - Handsontable Pro 1.11.0-beta2 (CE 0.32.0-beta2)",
+    "category": "Release",
+    "date": "May 24, 2017",
+    "pubDate": "Wed, 24 May 2017 13:00:00 EST",
+    "image_file": "1.11.0-beta2-0.32.0-beta2/new-release.png",
+    "description": "Today we have released Handsontable PRO 1.11.0-beta2 (CE 0.32.0-beta2) (...)"
+  },
   "1.11.0-beta1-0.32.0-beta1": {
     "directory": "2017/5/",
     "title": "New compiler and enhancements for IE - Handsontable Pro 1.11.0-beta1 (CE 0.32.0-beta1)",
     "category": "Release",
     "date": "May 17, 2017",
     "pubDate": "Wed, 17 May 2017 13:00:00 EST",
-    "image_file": "1.11.0-beta1-0.32.0-beta1.png",
+    "image_file": "1.11.0-beta1-0.32.0-beta1/new-release.png",
     "description": "We are happy to announce that today we have released Handsontable (...)"
   },
   "an-interview-with-mirko-lorenz-from-datawrapper": {
