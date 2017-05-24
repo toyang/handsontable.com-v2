@@ -318,7 +318,7 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
   this.disableFeature = function(feature, event) {
     var _this = this;
     var dependencies = this.getDependencies(feature);
-    
+
     this.updateEnabledFeaturesTab(feature, true);
 
     if (feature.isEnabledAsDependency()) {
@@ -391,7 +391,7 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
 
     function check() {
       featureCheckbox.checked = true;
-      Handsontable.Dom.addClass(featureCheckbox, 'dependency');
+      Handsontable.dom.addClass(featureCheckbox, 'dependency');
     }
   };
 
@@ -403,7 +403,7 @@ function Examples(hotInstance, basicFeatures, proFeatures) {
   this.disableAsDependency = function(feature) {
     var featureCheckbox = document.querySelector('input[type=checkbox]#feature_' + feature.name);
     featureCheckbox.checked = false;
-    Handsontable.Dom.removeClass(featureCheckbox, 'dependency');
+    Handsontable.dom.removeClass(featureCheckbox, 'dependency');
   };
 
   /**
