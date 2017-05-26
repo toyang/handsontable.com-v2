@@ -15,6 +15,8 @@ $brandDarkNavy: #15202f;
 $brandYellow: #FAD97F;
 $brandHeaderWhite: #f7f8fa;
 $brandVibrantBlue: #00e5ff;
+$barndLuminentGreen: #2fd069;
+$brandLightBlue: #b5dafd;
 
 /* [ shades of grays] */
 $baseGray: #363636;
@@ -33,6 +35,7 @@ $brandGreenActive: darken($brandGreen, 8%);
 $darkGrayActive: darken($darkGray, 8%);
 $lightGrayActive: darken($lightGray, 8%);
 $darkWhiteActive: darken($darkWhite, 8%);
+$brandLuminentGreenActive: #00eb55;
 
 /* [ functional color ] */
 $textColor: $baseGray;
@@ -48,10 +51,10 @@ $iconColor: $brandDeepNavy;
 $backgroundTextColor: $darkWhite;
 
 /* [ occasional colors ] */
-$vividGreen: darken($brandGreen, 12%);
+$vividGreen: darken($barndLuminentGreen, 5%);
 
 /* [ active occasional colors ] */
-$vividGreenActive: darken($vividGreen, 4%);
+$vividGreenActive: darken($vividGreen, 20%);
 
 $errorColor: $brandRed;
 $infoColor: $brandBlue;

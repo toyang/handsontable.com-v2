@@ -4,6 +4,16 @@
 
  .features  {
 
+
+  .large-offset-2 {
+
+    margin-left: 0;
+
+     @media only screen and (min-width: $mediumWidth) {
+      margin-left :12.3333% !important;
+    }
+   }
+
    .main-background {
      @include gradient(#33a9dd, #4ebeed);
    }
@@ -45,13 +55,13 @@
    }
 
    h2 {
-     margin-left: 20px;
+     margin: 20px 0 60px 30px;
      text-align: left;
      line-height: 1.1em;
      font-weight: 500;
 
      @media only screen and (min-width: $mediumWidth) {
-       margin-top: 0;
+       margin-top: 40px;
        text-align: center;
        font-weight: 500;
      }
@@ -59,9 +69,11 @@
 
    h3 {
      padding: 0 10px 0 10px;
+     margin: 40px 0 2px 0;
+     font-weight: 500;
 
      @media only screen and (min-width: $mediumWidth) {
-       padding-bottom: 20px;
+       padding-bottom: 2px;
      }
    }
 
@@ -76,7 +88,7 @@
 
    .border-bottom {
      width: 40px;
-     margin: 10px 60px 20px 20px;
+     margin: 10px 0 20px 0;
      border-bottom: solid 2px $brandBlue;
 
      @media only screen and (min-width: $mediumWidth) {
@@ -96,7 +108,8 @@
      }
    }
 
-   .read-more {
+   .cta {
+
      margin: 10px auto 20px auto;
      padding: 60px 10px 0;
      text-align: center;
@@ -104,10 +117,8 @@
      display: block;
 
      @media only screen and (min-width: $mediumWidth) {
-       margin: 60px auto 20px auto;
+       margin: 20px auto 20px auto;
        padding: 0;
-
-
      }
 
      a {
@@ -136,19 +147,30 @@
      font-weight: 400;
    }
 
+   .svg-icon-fiddle {
+
+     @include square(20px);
+     fill: $brandBlue;
+     margin:0 10px 0 20px;
+
+     @media only screen and (min-width: $mediumWidth) {
+
+       margin: 0 10px 0 20px;
+       float: left;
+     }
+   }
+
 
    .svg-icon {
 
      @include square(160px);
-     margin: 40px 0 0 -25px;
+     margin: 20px 0 0 0;
      padding: 0;
-     float: inherit;
 
      @media only screen and (min-width: $mediumWidth) {
 
-       @include square(100px);
-
-          margin: 0 0 60px 0;
+          @include square(75px);
+          margin: 20px 10px 90px 0;
           float: left;
      }
    }

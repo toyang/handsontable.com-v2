@@ -6,6 +6,16 @@
 
   padding: 60px 0 90px;
 
+  blockquote {
+
+    width: auto;
+
+    @media only screen and (min-width: $mediumWidth) {
+      width: 770px;
+    }
+
+  }
+
   .centered {
     margin: 0 auto 0 auto;
     display:inline-block;

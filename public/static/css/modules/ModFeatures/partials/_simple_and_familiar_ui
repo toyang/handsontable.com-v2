@@ -1,0 +1,53 @@
+/**
+ * @author: Handsoncode
+ */
+
+.features .simple {
+
+  .code-box {
+    background-color: #4f4f4f;
+    overflow: auto;
+    color: $darkWhite;
+    padding: 20px;
+    height: 400px;
+  }
+
+  .plugin-preview {
+
+    padding-top: 23px;
+
+  }
+
+  h5 {
+
+    margin: 0 0 5px 0;
+    padding:0;
+    text-align: left;
+
+  }
+
+  ol {
+    padding: 0;
+    margin: 0;
+  }
+
+  .left {
+
+    margin-top: 5px;
+    float: left;
+    a {
+      margin-left: 5px;
+    }
+  }
+
+  .right {
+
+    margin-top: 5px;
+    float: right;
+    a {
+      margin-right: 5px;
+    }
+
+  }
+
+}

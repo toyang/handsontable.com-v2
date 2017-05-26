@@ -1,0 +1,9 @@
+/**
+ * @author: Handsoncode
+ */
+
+.features .head {
+
+  margin-bottom: 20px;
+
+}

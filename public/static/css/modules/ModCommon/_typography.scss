@@ -24,6 +24,7 @@ h5,
 code,
 blockquote {
   font-weight: 300;
+  letter-spacing: -0.023em;
 }
 
 h1 {
@@ -32,7 +33,6 @@ h1 {
   padding: 0 20px 0 20px;
   text-align: left;
   line-height: 1em;
-  letter-spacing: -0.023em;
 
   @media only screen and (min-width: $mediumWidth) {
     margin: 60px 0 0 0;
@@ -103,6 +103,7 @@ h2 {
 
 h3 {
   line-height: 1em;
+  font-family: $optionalFont;
 
   @media only screen and (min-width: $mediumWidth) {
     margin: 20px 0 0 0;

@@ -91,11 +91,12 @@
 
   &.vivid-green {
     color: #FFF;
-    background: $brandVibrantGreen;
+    background: $barndLuminentGreen;
     &:hover,
     &:focus,
     &:active {
-      background-color: $vividGreenActive;
+      color: #FFFFFF;
+      background-color: $brandLuminentGreenActive;
     }
   }
 
@@ -145,7 +146,7 @@
     &:hover,
     &:focus,
     &:active {
-      color: $brandBlueActive;
+      color: $brandLightBlue;
       border-color: currentColor;
     }
   }

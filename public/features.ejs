@@ -1,12 +1,14 @@
 <section class="features">
     <div class="main-background">
-        <div class="row">
+        <div class="row ">
             <div class="large-12 large-centered columns">
                 <h1 class="header-dist">
-                    Spreadsheet data managment<br>
+                    Spreadsheet data management<br>
                     for your web applications.
                 </h1>
-                <div class="row read-more"><a class="btn medium ghost-white" href="/faq.html">Get started</a></div>
+                <div class="cta">
+                    <a class="btn medium ghost-white" href="/pricing.html">Get started</a>
+                </div>
                 <img class="table-pad" src="/static/resources/ModFeatures/features-spreadsheet-demo.png">
             </div>
         </div>
@@ -15,135 +17,153 @@
     <div class="row brands-f">
         <%- partial("_partials/_brands") %>
     </div>
+
     <!-- Fast and easy deployment -->
     <div class="row fast">
         <h2>
             Fast and easy development
+            <div class="border-bottom"></div>
         </h2>
-        <div class="border-bottom"></div>
-
-        <div class="row header-space">
-            <div class="small-12 medium-4 columns">
-                <div class="align">
-                    <svg class="svg-icon">
-                        <use xlink:href="#easy-to-learn"></use>
-                    </svg>
-                    <h3>Easy to learn</h3>
-                    <p>You can literally start your project within
-                        minutes, not hours. Use cascade configuration
-                        to adjust it to your business needs.</p>
-                </div>
-            </div>
-            <div class="small-12 medium-4 columns">
-                <div>
-                    <svg class="svg-icon">
-                        <use xlink:href="#data-security"></use>
-                    </svg>
-                    <h3>Data security</h3>
-                    <p>Handsontable lets you keep all your business
-                        data on your own servers. Bind any given
-                        data source by just passing JSON format.</p>
-                </div>
-            </div>
-            <div class="small-12 medium-4 columns ">
-                <div>
-                    <svg class="svg-icon">
-                        <use xlink:href="#multiple-frameworks"></use>
-                    </svg>
-                    <h3>Multiple frameworks</h3>
-                    <p>Handsontable is available in variety of
-                        technologies including React, Angular,
-                        Polymer, Vue and as a pure JavaScript code.</p>
-                </div>
-            </div>
+        <div class="small-12 medium-4 columns">
+            <svg class="svg-icon">
+                <use xlink:href="#easy-to-learn"></use>
+            </svg>
+            <h3>Easy to learn</h3>
+            <p>You can literally start your project within
+                minutes, not hours. Use cascade configuration
+                to adjust it to your business needs.</p>
         </div>
+        <div class="small-12 medium-4 columns">
+            <svg class="svg-icon">
+                <use xlink:href="#data-security"></use>
+            </svg>
+            <h3>Data security</h3>
+            <p>Handsontable lets you keep all your business
+                data on your own servers. Bind any given
+                data source by just passing JSON format.</p>
+        </div>
+        <div class="small-12 medium-4 columns ">
+            <svg class="svg-icon">
+                <use xlink:href="#multiple-frameworks"></use>
+            </svg>
+            <h3>Multiple frameworks</h3>
+            <p>Handsontable is available in variety of
+                technologies including React, Angular,
+                Polymer, Vue and as a pure JavaScript code.</p>
+        </div>
+    </div>
+    <!-- F&E row 2 -->
 
-        <!-- F&E row 2 -->
-
-        <div class="row">
-            <div class="small-12 medium-4 columns">
-                <div>
-                    <svg class="svg-icon">
-                        <use xlink:href="#cross-browser"></use>
-                    </svg>
-                    <h3>Cross-browser</h3>
-                    <p>Handsontable supports all the modern
-                        browsers but also has a backward
-                        compatibility for IE9+.</p>
-                </div>
-            </div>
-            <div class="small-12 medium-4 columns">
-                <div>
-                    <svg class="svg-icon">
-                        <use xlink:href="#high-performance"></use>
-                    </svg>
-                    <h3>High performance</h3>
-                    <p>Handle hunderds of thousands of cells
-                        with peak performance. Search, sort or
-                        filter data without any delay.</p>
-                </div>
-            </div>
-            <div class="small-12 medium-4 columns ">
-                <div>
-                    <svg class="svg-icon">
-                        <use xlink:href="#support-included"></use>
-                    </svg>
-                    <h3>Support included</h3>
-                    <p>Each plan includes a free support time
-                        and access to the developers forum.
-                        Also, large community is supporting us.</p>
-                </div>
-            </div>
+    <div class="row fast">
+        <div class="small-12 medium-4 columns">
+            <svg class="svg-icon">
+                <use xlink:href="#cross-browser"></use>
+            </svg>
+            <h3>Cross-browser</h3>
+            <p>Handsontable supports all the modern
+                browsers but also has a backward
+                compatibility for IE9+.</p>
+        </div>
+        <div class="small-12 medium-4 columns">
+            <svg class="svg-icon">
+                <use xlink:href="#high-performance"></use>
+            </svg>
+            <h3>High performance</h3>
+            <p>Handle hunderds of thousands of cells
+                with peak performance. Search, sort or
+                filter data without any delay.</p>
+        </div>
+        <div class="small-12 medium-4 columns">
+            <svg class="svg-icon">
+                <use xlink:href="#support-included"></use>
+            </svg>
+            <h3>Support included</h3>
+            <p>Each plan includes a free support time
+                and access to the developers forum.
+                Also, large community is supporting us.</p>
         </div>
     </div>
 
-    <!-- Simple UI -->
-    <div class="row general-features">
-        <div class="large-12 large-centered columns">
 
+    <!-- Simple UI -->
+    <div class="row simple">
+        <h2>
+            Simple and familiar UI
+            <div class="border-bottom"></div>
+        </h2>
+
+        <div class="large-9 columns">
             <div class="plugin-preview">
                 <div id="hot"></div>
                 <div id="export-buttons">
                     <button id="export-csv" class="btn small ghost-blue">Export to a .csv file</button>
-                    <button id="export-string" class="btn small ghost-blue">Export to string (displayed in the browser
+                    <button id="export-string" class="btn small ghost-blue">Export to string (displayed in the
+                        browser
                         console)
                     </button>
                 </div>
             </div>
+        </div>
+        <div class="large-3 columns">
+            <h5>Live Editor</h5>
             <div class="code-box">
-                <ul class="tabs clearfix" data-tab role="tablist">
-                    <li class="left"><a id="enabled-features-tab-link" role="tab" aria-selected="true">Enabled
-                            features</a>
-                    <li class="left"><a id="code-tab-link" role="tab" aria-selected="false">Code</a></li>
+                <ol>
+                    <li data-enabled-placeholder>
+                        var hotSettings = {
+                        data: dataObject,
+                        columns: [
+                        {
+                        data: 'id',
+                        type: 'numeric',
+                        width: 40
+                        },
+                        {
+                        data: 'flag',
+                        renderer: flagRenderer
+                        },
+                        {
+                        data: 'currencyCode',
+                        type: 'text'
+                        },
+                        {
+                        data: 'currency',
+                        type: 'text'
+                        },
+                        {
+                        data: 'level',
+                        type: 'numeric',
+                        format: '0.0000'
+                        },
+                        {
+                        data: 'units',
+                        type: 'text'
+                        },
+                        {
+                        data: 'asOf',
+                        type: 'date',
+                        dateFormat: 'MM/DD/YYYY'
+                        },
+                        {
+                        data: 'onedChng',
+                        type: 'numeric',
                     </li>
-                    <li class="action-link right">
-                        <a href="#" id="jsfiddle-link">
-                            <svg class="left">
-                                <use xlink:href="#edit_icon"></use>
-                            </svg>
-                            Edit
-                        </a>
-                    </li>
-                </ul>
-                <div class="tabs-content">
-                    <section id="enabled-features-tab" role="tabpanel" aria-hidden="false" class="content">
-                        <ol>
-                            <li data-enabled-placeholder>
-                                No features enabled.
-                            </li>
-                            <li data-enabled-feature="hidden">
-                                <h4></h4>
-
-                                <p></p>
-                            </li>
-                        </ol>
-                    </section>
-                    <section id="code-tab" role="tabpanel" aria-hidden="true" class="content active">
-
-                    </section>
-                </div>
+                    <li data-enabled-feature="hidden"></li>
+                </ol>
+                <section id="code-tab" role="tabpanel" aria-hidden="true" class="content active">
+                </section>
             </div>
-
+            <ul>
+                <li class="left"><a>Enabled features</a>
+                <li class="left"><a>Code</a></li>
+                <li class="action-link right">
+                    <a href="#" id="jsfiddle-link">
+                        <svg class="svg-icon-fiddle">
+                            <use xlink:href="#edit_icon"></use>
+                        </svg>
+                        Edit
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 
@@ -152,96 +172,94 @@
         <div class="large-12 large-centered columns centered">
             <div>
                 <blockquote>
-                    Handsontable was a perfect fit because it looks and feels just like Excel,<br/>
+                    Handsontable was a perfect fit because it looks and feels just like Excel,
                     a tool teachers are already familiar with.
                 </blockquote>
             </div>
             <div>
-                <img src="<%= img_path %>testimony/mike_preuss.jpg" alt="Mike Preuss"/>
+                <img src="<%= img_path %>testimony/david_wolever.jpg" alt="David Wolever"/>
 
             </div>
             <div>
-                <h5><strong>Mike Preuss</strong> - CEO at <a href="https://visible.vc/" target="_blank">Visible</a></h5>
+                <h5>David Wolever, CTO at Akindi</h5>
             </div>
-            <div class=" read-more"><a class="btn medium ghost-blue" href="/faq.html">Learn more</a></div>
-
+            <div class="cta">
+                <a class="btn medium ghost-blue" href="/faq.html">Learn more</a>
+            </div>
         </div>
     </div>
     <!-- ALL FEATURES -->
     <div class="all-features">
-        <h2>
-            All features and plugins
-        </h2>
         <div class="row">
-            <div class="large-12 large-centered columns align">
-                <div class="row">
-                    <div class="large-2 small-12 links">
-                        <h4>Most popular</h4>
-                        <ul>
-                            <li><a href="">Drag-down</a></li>
-                            <li><a href="">Copy-paste</a></li>
-                            <li><a href="">Undo-redo</a></li>
-                            <li><a href="">Sorting</a></li>
-                            <li><a href="">Data validation</a></li>
-                            <li><a href="">Conditional formatting</a></li>
-                            <li><a href="">Keyboard shortcuts</a></li>
-                        </ul>
-                    </div>
-                    <div class="large-2 small-12 links">
-                        <h4>Community edition</h4>
-                        <ul>
-                            <li><a href="">Fixed rows / columns</a></li>
-                            <li><a href="">Various cell types</a></li>
-                            <li><a href="">Context menu</a></li>
-                            <li><a href="">Alignment</a></li>
-                            <li><a href="">Moving rows / columns</a></li>
-                            <li><a href="">Resizing rows / columns</a></li>
-                            <li><a href="">Merged cells</a></li>
-                            <li><a href="">Comments</a></li>
-                            <li><a href="">Context menu</a></li>
-                            <li><a href="">Stretching</a></li>
-                        </ul>
-                    </div>
-                    <div class="large-2 small-12 links">
-                        <h4>Handsontable Pro</h4>
-                        <ul>
-                            <li><a href="">Filtering</a></li>
-                            <li><a href="">Export to file</a></li>
-                            <li><a href="">Dropdown menu</a></li>
-                            <li><a href="">Nested headers</a></li>
-                            <li><a href="">Collapsing columns</a></li>
-                            <li><a href="">Hiding rows</a></li>
-                            <li><a href="">Hiding columns</a></li>
-                            <li><a href="">Trimming rows</a></li>
-                            <li><a href="">Column summary</a></li>
-                            <li><a href="">Header tooltips</a></li>
-                            <li><a href="">Binding rows with headers</a></li>
-                            <li><a href="">Formulas</a> <sup>alpha</sup></li>
-                            <li><a href="">Gantt Chart </a><sup>beta</sup></li>
-                        </ul>
-                    </div>
-                    <div class="large-2 small-12 links">
-                        <h4>Advanced options</h4>
-                        <ul>
-                            <li><a href="">Handling big data</a></li>
-                            <li><a href="">Custom renderers</a></li>
-                            <li><a href="">Custom buttons</a></li>
-                            <li><a href="">Custom borders</a></li>
-                            <li><a href="">Custom plugins</a></li>
-                        </ul>
-                    </div>
-                    <div class="large-2 small-12 links">
-                        <h4>Technologies</h4>
-                        <ul>
-                            <li><a href="">ReactJS</a></li>
-                            <li><a href="">VueJS</a></li>
-                            <li><a href="">AngularJS (1)</a></li>
-                            <li><a href="">Angular</a></li>
-                            <li><a href="">Polymer</a></li>
-                            <li><a href="">Typescript</a></li>
-                        </ul>
-                    </div>
-                </div>
+            <h2>
+                All features and plugins
+            </h2>
+
+            <div class="large-2 large-offset-2 small-12 columns">
+                <h4>Most popular</h4>
+                <ul>
+                    <li><a href="">Drag-down</a></li>
+                    <li><a href="">Copy-paste</a></li>
+                    <li><a href="">Undo-redo</a></li>
+                    <li><a href="">Sorting</a></li>
+                    <li><a href="">Data validation</a></li>
+                    <li><a href="">Conditional formatting</a></li>
+                    <li><a href="">Keyboard shortcuts</a></li>
+                </ul>
+            </div>
+            <div class="large-2 small-12 columns">
+                <h4>Community edition</h4>
+                <ul>
+                    <li><a href="">Fixed rows / columns</a></li>
+                    <li><a href="">Various cell types</a></li>
+                    <li><a href="">Context menu</a></li>
+                    <li><a href="">Alignment</a></li>
+                    <li><a href="">Moving rows / columns</a></li>
+                    <li><a href="">Resizing rows / columns</a></li>
+                    <li><a href="">Merged cells</a></li>
+                    <li><a href="">Comments</a></li>
+                    <li><a href="">Context menu</a></li>
+                    <li><a href="">Stretching</a></li>
+                </ul>
+            </div>
+            <div class="large-2 small-12 columns">
+                <h4>Handsontable Pro</h4>
+                <ul>
+                    <li><a href="">Filtering</a></li>
+                    <li><a href="">Export to file</a></li>
+                    <li><a href="">Dropdown menu</a></li>
+                    <li><a href="">Nested headers</a></li>
+                    <li><a href="">Collapsing columns</a></li>
+                    <li><a href="">Hiding rows</a></li>
+                    <li><a href="">Hiding columns</a></li>
+                    <li><a href="">Trimming rows</a></li>
+                    <li><a href="">Column summary</a></li>
+                    <li><a href="">Header tooltips</a></li>
+                    <li><a href="">Binding rows with headers</a></li>
+                    <li><a href="">Formulas</a> <sup>alpha</sup></li>
+                    <li><a href="">Gantt Chart </a><sup>beta</sup></li>
+                </ul>
+            </div>
+            <div class="large-2 small-12 columns">
+                <h4>Advanced options</h4>
+                <ul>
+                    <li><a href="">Handling big data</a></li>
+                    <li><a href="">Custom renderers</a></li>
+                    <li><a href="">Custom buttons</a></li>
+                    <li><a href="">Custom borders</a></li>
+                    <li><a href="">Custom plugins</a></li>
+                </ul>
+            </div>
+            <div class="large-2 small-12 end columns">
+                <h4>Technologies</h4>
+                <ul>
+                    <li><a href="">ReactJS</a></li>
+                    <li><a href="">VueJS</a></li>
+                    <li><a href="">AngularJS (1)</a></li>
+                    <li><a href="">Angular</a></li>
+                    <li><a href="">Polymer</a></li>
+                    <li><a href="">Typescript</a></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -562,7 +580,7 @@
         stretchH: 'all',
         width: parseInt(hotElementContainer.offsetWidth, 10),
         autoWrapRow: true,
-        height: 441,
+        height: 420,
         maxRows: 22
     };
 

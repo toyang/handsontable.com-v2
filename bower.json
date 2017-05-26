@@ -21,7 +21,6 @@
     "prism": "^1.4.1",
     "numbro": "^1.8.1",
     "promise-polyfill": "^6.0.2",
-    "foundation": "zurb/bower-foundation"
   },
   "ignore": [
     "**/.*",
