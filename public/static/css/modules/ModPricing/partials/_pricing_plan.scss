@@ -48,7 +48,7 @@
   }
 
   .price {
-    margin-bottom: 20px;
+    margin: 40px 0;
     font-size: 1.875em;
     font-weight: 400;
   }
@@ -70,7 +70,7 @@
   }
 
   ul {
-    margin: 40px 0 40px 0;
+    margin: 40px 0 20px 0;
 
   }
 
@@ -87,7 +87,7 @@
     @media only screen and (min-width: $mediumWidth) {
       text-align: center;
       font-size: 14px;
-      line-height: 1.2em;
+      line-height: 1.8em;
 
     }
 

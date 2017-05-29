@@ -8,14 +8,23 @@
 
   h5 {
     text-align: center;
+    font-size: 1em;
+    font-family: $regularFont;
+    font-weight: 400;
 
     @media only screen and (min-width: $mediumWidth) {
       text-align: left;
     }
   }
 
- blockquote {
-   margin-top: 10px;
-   font-size: 30px;
- }
+  .img-center {
+
+    margin-left: 40%;
+  }
+
+  blockquote {
+    font-weight: 300;
+    margin-top: 10px;
+    font-size: 30px;
+  }
 }
