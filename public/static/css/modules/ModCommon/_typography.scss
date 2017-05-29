@@ -137,8 +137,9 @@ h5 {
 
 blockquote {
   margin: 0;
-  font-size: 1.50em; /* 24px */
+  font-size: 1.80em; /* 24px */
   text-align: center;
+  font-family: $optionalFont;
 
   @media only screen and (min-width: $mediumWidth) {
     text-align: left;

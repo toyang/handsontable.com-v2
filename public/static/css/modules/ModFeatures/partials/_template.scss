@@ -5,14 +5,14 @@
  .features  {
 
 
-  .large-offset-2 {
-
-    margin-left: 0;
-
-     @media only screen and (min-width: $mediumWidth) {
-      margin-left :12.3333% !important;
-    }
-   }
+  //.large-offset-2 {
+  //
+  //  margin-left: 0;
+  //
+  //   @media only screen and (min-width: $mediumWidth) {
+  //    margin-left :12.3333% !important;
+  //  }
+  // }
 
    .main-background {
      @include gradient(#33a9dd, #4ebeed);
@@ -147,6 +147,16 @@
      font-weight: 400;
    }
 
+   .p-icon {
+
+    margin-left:0;
+
+     @media only screen and (min-width: $mediumWidth) {
+       margin-left: 87px;
+     }
+
+   }
+
    .svg-icon-fiddle {
 
      @include square(20px);
@@ -160,7 +170,6 @@
      }
    }
 
-
    .svg-icon {
 
      @include square(160px);
@@ -170,7 +179,7 @@
      @media only screen and (min-width: $mediumWidth) {
 
           @include square(75px);
-          margin: 20px 10px 90px 0;
+          margin: 20px 10px 50px 0;
           float: left;
      }
    }

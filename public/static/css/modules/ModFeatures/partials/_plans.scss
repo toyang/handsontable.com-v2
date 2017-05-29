@@ -16,13 +16,13 @@
     padding: 20px;
     background-color: $brandVibrantGreen;
     border: 1px solid $brandVibrantGreen;
-    border-radius: 10px;
+    border-radius: 5px;
 
     @media only screen and (min-width: $largeWidth) {
       width: 49%;
       margin: 30px 1% 20px 0;
       padding: 20px 40px 20px 0;
-      border-radius: 0 10px 10px 0;
+      border-radius: 0 5px 5px 0;
       text-align: right;
 
     }
@@ -69,10 +69,11 @@
     }
 
     .btn {
-      padding-top: 8px;
+      padding-top: 10px;
+      font-weight: 400;
 
       @media only screen and (min-width: $largeWidth) {
-        padding-top: 10px;
+        padding-top: 7px;
       }
     }
   }
@@ -84,13 +85,13 @@
     text-align: center;
     background-color: $brandBlue;
     border: 1px solid $brandBlue;
-    border-radius: 10px;
+    border-radius: 5px;
 
     @media only screen and (min-width: $largeWidth) {
       width: 49%;
       margin: 30px 0 20px 20px;
       padding: 20px 0 20px 40px;
-      border-radius: 10px 0 0 10px;
+      border-radius: 5px 0 0 5px;
       text-align: left
     }
 
@@ -138,10 +139,11 @@
 
     .btn {
 
-      padding-top: 8px;
+      padding-top: 10px;
+      font-weight: 400;
 
       @media only screen and (min-width: $largeWidth) {
-        padding-top: 10px;
+        padding-top: 8px;
       }
     }
   }

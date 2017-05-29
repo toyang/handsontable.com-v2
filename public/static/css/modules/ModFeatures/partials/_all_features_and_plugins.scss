@@ -12,15 +12,14 @@
     text-align: center;
   }
 
-  h2 {
-    padding-bottom: 40px;
-    text-align: center;
-  }
 
   h4 {
-    margin:0 0 20px 0;
+    margin:10px 0 20px 0;
     padding: 0;
+    font-family: $regularFont;
+    font-weight: 400;
     text-align: center;
+
 
     @media only screen and (min-width: $largeWidth) {
       text-align: left;
@@ -30,6 +29,11 @@
 
   ul, li {
     line-height: 2em;
+    text-align: center;
+
+    @media only screen and (min-width: $largeWidth) {
+      text-align: left;
+    }
   }
 
   .links {

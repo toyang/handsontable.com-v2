@@ -70,22 +70,26 @@
   &.white {
     color: $brandVibrantGreen;
     background: $darkWhite;
+    border: 2px solid transparent;
     &:hover,
     &:focus,
     &:active {
-      background-color: $brandGreenActive;
+      background-color: transparent;
       color: $darkWhite;
+      border: 2px solid $darkWhite;
     }
   }
 
   &.white-blue {
     color: $brandBlue;
     background: $darkWhite;
+    border: 2px solid transparent;
     &:hover,
     &:focus,
     &:active {
-      background-color: $brandBlueActive;
+      background-color: transparent;
       color: $darkWhite;
+      border: 2px solid $darkWhite;
     }
   }
 

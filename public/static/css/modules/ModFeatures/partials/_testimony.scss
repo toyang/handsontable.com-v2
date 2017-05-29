@@ -9,10 +9,22 @@
   blockquote {
 
     width: auto;
+    line-height: 1.4em;
 
     @media only screen and (min-width: $mediumWidth) {
-      width: 770px;
+      width: 790px;
     }
+  }
+
+  .quotation {
+
+    margin: 20px -5px 0 0;
+    padding: 0;
+    color: $ultraLightGray;
+    font-size: 4em;
+    font-family: $optionalFont;
+    transform: rotate(180deg);
+    float: left;
 
   }
 
