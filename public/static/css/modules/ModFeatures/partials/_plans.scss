@@ -71,9 +71,10 @@
     .btn {
       padding-top: 10px;
       font-weight: 400;
+      font-size: 0.875em;
 
       @media only screen and (min-width: $largeWidth) {
-        padding-top: 7px;
+        padding-top: 8px;
       }
     }
   }
@@ -141,9 +142,10 @@
 
       padding-top: 10px;
       font-weight: 400;
+      font-size: 0.875em;
 
       @media only screen and (min-width: $largeWidth) {
-        padding-top: 6px;
+        padding-top: 8px;
       }
     }
   }
