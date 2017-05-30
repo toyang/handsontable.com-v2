@@ -8,14 +8,13 @@
   @include relative-top-left (0px, 5px);
   @include square (21px, false);
 
-  margin-left: 3px;
   padding-top: 1px;
   display: inline-block;
   color: $brandBlue;
   line-height: 1.2;
   text-align: center;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 1em;
   border-radius: 100%;
   border: 1px solid $brandBlue;
 
@@ -34,7 +33,7 @@
     font-size: 0.917em;
     line-height: 1.5;
     text-align: left;
-    padding: 8px 13px;
+    padding: 8px 15px;
     cursor: default;
     color: $darkWhite;
     background-color: $brandBlue;

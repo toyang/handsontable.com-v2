@@ -72,6 +72,7 @@
     &:hover + label {
       color: $brandBlack;
     }
+
     &:focus + label {
       color: $brandBlack;
     }
@@ -92,6 +93,7 @@
     transition: .3s all;
     overflow: hidden;
     border-left: 10px solid $brandHeaderWhite;
+
   }
 
   // Open content when clicking label
@@ -100,7 +102,44 @@
   #can-i-use-ce-for-commercial-products:checked ~ #can-i-use-ce-for-commercial-products,
   #which-browser:checked ~ #which-browser,
   #which-devices:checked ~ #which-devices,
-  #which-frameworks:checked ~ #which-frameworks {
+  #issue-report:checked ~ #issue-report,
+  #which-frameworks:checked ~ #which-frameworks,
+  #do-i-get-support:checked ~ #do-i-get-support,
+  #what-do-i-get:checked ~ #what-do-i-get,
+  #can-i-call:checked ~ #can-i-call,
+  #how-do-i-install:checked ~ #how-do-i-install,
+  #pro-consulting:checked ~ #pro-consulting,
+  #hourly-rate:checked ~ #hourly-rate,
+  #password:checked ~ #password,
+  #email:checked ~ #email,
+  #account-transfer:checked ~ #account-transfer,
+  #account-remove:checked ~ #account-remove,
+  #define-developer:checked ~ #define-developer,
+  #license-includes:checked ~ #license-includes,
+  #how-many-licenses:checked ~ #how-many-licenses,
+  #multiple-projects:checked ~ #multiple-projects,
+  #product-behind:checked ~ #product-behind,
+  #official-quote:checked ~ #official-quote,
+  #license-on-behalf:checked ~ #license-on-behalf,
+  #payment-methods:checked ~ #payment-methods,
+  #currencies:checked ~ #currencies,
+  #discounts:checked ~ #discounts,
+  #credit-card-info:checked ~ #credit-card-info,
+  #tax:checked ~ #tax,
+  #invoice:checked ~ #invoice,
+  #email-confirmation:checked ~ #email-confirmation,
+  #refounds:checked ~ #refounds,
+  #developer-l:checked ~ #developer-l,
+  #license-includes-l:checked ~ #license-includes-l,
+  #how-many-licenses-l:checked ~ #how-many-licenses-l,
+  #multiple-projects-l:checked ~ #multiple-projects-l,
+  #software-expires:checked ~ #software-expires,
+  #difference-dev-ent:checked ~ #difference-dev-ent,
+  #oem:checked ~ #oem,
+  #resellers-sell:checked ~ #resellers-sell,
+  #become-reseller:checked ~ #become-reseller,
+  #reseller-discounts:checked ~ #reseller-discounts,
+  #reseller-list:checked ~ #reseller-list {
     // set height for transition duration to work
     // (also can set to auto without transition)
     height: inherit;
@@ -115,21 +154,33 @@
 
   p {
     margin: 1em 0 .5em 1em;
+
   }
 
   .togglebox {
     margin: 0 auto;
+
+    ul {
+      margin: 0 0 0 1.5em;
+      font-weight: 400;
+      font-size: 1.14em;
+    }
+
+    li {
+      margin-left: 20px;
+      list-style-type: disc;
+    }
   }
 
   .btn {
     height: 45px;
     margin-top: 20px;
-    font-size: medium;
+    font-weight: 400;
     line-height: inherit;
     padding-top: 7px;
 
     @media only screen and (min-width: $largeWidth) {
-      padding-top: 10px;
+      padding-top: 8px;
       margin-top: 20px;
     }
   }
