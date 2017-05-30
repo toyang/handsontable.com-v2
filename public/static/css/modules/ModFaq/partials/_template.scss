@@ -44,7 +44,7 @@
   h5 {
     color: $brandBlue;
     margin: 0;
-    padding:0;
+    padding: 0;
     line-height: 2em;
     font-weight: 400;
     font-size: 1.1em;
@@ -64,58 +64,61 @@
   a {
     font-size: inherit;
   }
+  // hide checkbox
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
 
-  ul.accordion {
-    margin: 0 0 2px 0;
-
-  }
-  ul.accordion > li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-  }
-
-  ul.accordion > li > div.title {
-    cursor: pointer;
-    margin: 0;
-    position: relative;
-    -webkit-transition: 0.15s background linear;
-    -moz-transition: 0.15s background linear;
-    -o-transition: 0.15s background linear;
-    transition: 0.15s background linear;
-
+    &:hover + label {
+      color: $brandBlack;
+    }
+    &:focus + label {
+      color: $brandBlack;
+    }
   }
 
-  ul.accordion > li > div.title h1, ul.accordion > li > div.title h2, ul.accordion > li > div.title h3,
-  ul.accordion > li > div.title h4, ul.accordion > li > div.title h5 {
-    margin: 0;
-
-  }
-  ul.accordion > li > div.title:after {
-
-  }
-  ul.accordion > li .content {
-    display: none;
-    padding-left: 30px;
-    border-left: 10px solid $brandHeaderWhite;
-
-  }
-
-  ul.accordion > li.active {
-
-  }
-
-  ul.accordion > li.active .title {
-    background: white;
-  }
-
-  ul.accordion > li.active .title:after {
-  }
-
-  ul.accordion > li.active .content {
-    background: white;
+  // Style label/entry for accordion
+  label {
     display: block;
+    cursor: pointer;
+    color: $brandBlue;
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid transparent;
+  }
+
+  // Style accordion content
+  section {
+    height: 0;
+    transition: .3s all;
+    overflow: hidden;
+    border-left: 10px solid $brandHeaderWhite;
+  }
+
+  // Open content when clicking label
+  #what-is-handsontable:checked ~ #what-is-handsontable,
+  #ce-or-pro:checked ~ #ce-or-pro,
+  #can-i-use-ce-for-commercial-products:checked ~ #can-i-use-ce-for-commercial-products,
+  #which-browser:checked ~ #which-browser,
+  #which-devices:checked ~ #which-devices,
+  #which-frameworks:checked ~ #which-frameworks {
+    // set height for transition duration to work
+    // (also can set to auto without transition)
+    height: inherit;
+    margin-bottom: 1em;
+  }
+
+  // just some styling
+
+  body {
+    font-family: $regularFont;
+  }
+
+  p {
+    margin: 1em 0 .5em 1em;
+  }
+
+  .togglebox {
+    margin: 0 auto;
   }
 
   .btn {

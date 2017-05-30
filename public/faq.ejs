@@ -10,70 +10,64 @@
 
                     <!-- About products -->
                     <h3>About products</h3>
-                    <ul class="accordion">
-                        <li>
-                            <div class="title">
-                                <h5>What is Handsontable?</h5>
-                            </div>
-                            <div class="content">
+                    <div class="togglebox">
+                        <input id="what-is-handsontable" type="checkbox" name="toggle"/>
+                        <label for="what-is-handsontable"> What is Handsontable?</label>
+                        <section id="what-is-handsontable"><p><span>Handsontable is a spreadsheet component for developers.
+                                    It is written in pure JavaScript and not constrained by any external framework.</span>
+                            </p>
+                        </section>
 
-                            </div>
-                        </li>
-                        <li class="active">
-                            <div class="title">
-                                <h5>What is the difference between Handsontable CE and Pro?</h5>
-                            </div>
-                            <div class="content">
-                                <p>
-                                    Handsontable Community Edition (CE) is a free software released under the MIT
-                                    license.
-                                    Handsontable Pro comes with a commercial license and contains additional features
-                                    such as filters.
-                                    It has free maintenance and support plan included for limited time,
-                                    depending on the type of the license. <a href="">Here</a> you can find
-                                    a comparison of features available for each Handsontable version.
+                        <input id="ce-or-pro" type="checkbox" name="toggle"/>
+                        <label for="ce-or-pro">What is the difference between Handsontable CE and Pro?</label>
+                        <section id="ce-or-pro"><p><span>Handsontable Community Edition (CE) is a free software released under the MIT license.
+                                    Handsontable Pro comes with a commercial license and contains additional features such as filters.
+                                    It has free maintenance and support plan included for limited time, depending on the type of the license.
+                                    <a href="/features.html">Here</a> you can find a comparison of features available for each Handsontable version.</span>
+                            </p>
+                        </section>
 
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="title">
-                                <h5>Can I use Handsontable CE to build commercial products?</h5>
-                            </div>
-                            <div class="content">
+                        <input id="can-i-use-ce-for-commercial-products" type="checkbox" name="toggle"/>
+                        <label for="can-i-use-ce-for-commercial-products">Can I use Handsontable CE to build commercial
+                            products?</label>
+                        <section id="can-i-use-ce-for-commercial-products"><p><span>Of course you can. Handsontable CE is released under the MIT license which
+                                    allows you to use it both for commercial and noncommercial products.
+                                    <a href="https://choosealicense.com/licenses/mit/" target="_blank">Read more</a> about the MIT license.
+                                    </span></p>
+                        </section>
 
-                            </div>
-                        </li>
-                        <li>
-                            <div class="title">
-                                <h5>Which browsers do you support?</h5>
-                            </div>
-                            <div class="content">
+                        <input id="which-browser" type="checkbox" name="toggle"/>
+                        <label for="which-browser">Which browsers do you support?</label>
+                        <section id="which-browser"><p><span>We support all the modern browsers including Chrome,
+                                    Firefox, Opera, Safari, Internet Explorer 9-11 and Edge.
+                                    </span></p>
+                        </section>
 
-                            </div>
-                        </li>
-                        <li>
-                            <div class="title">
-                                <h5>Which devices do you support?</h5>
-                            </div>
-                            <div class="content">
+                        <input id="which-devices" type="checkbox" name="toggle"/>
+                        <label for="which-devices">Which devices do you support?</label>
+                        <section id="which-devices"><p><span>Handsontable should work on all desktop devices.
+                                    On mobile devices you can only display the grid, edit data and navigate across the spreadsheet.
+                                    </span></p>
+                        </section>
 
-                            </div>
-                        </li>
-                        <li>
-                            <div class="title">
-                                <h5>Which frameworks do you support?</h5>
-                            </div>
-                            <div class="content">
+                        <input id="which-frameworks" type="checkbox" name="toggle"/>
+                        <label for="which-frameworks">Which frameworks do you support?</label>
+                        <section id="which-frameworks"><p><span>Handsontable is written in pure JavaScript but is also available for React, Angular, and Vue.
+                                    There are also TypeScript definitions available for your strongly-typed code. We will be adding more wrappers in the future.
+                                    </span></p>
+                        </section>
 
-                            </div>
-                        </li>
-                    </ul>
+                    </div>
 
                     <!-- Techcnical support -->
 
                     <h3>Technical support</h3>
-                    <ul class="accordion">
+                    <div class="togglebox">
+
+
+                    </div>
+
+                  <!--  <ul class="accordion">
                         <li>
                             <div class="title">
                                 <h5>How do I report an issue?</h5>
@@ -130,7 +124,7 @@
 
                             </div>
                         </li>
-                    </ul>
+                    </ul>-->
 
                     <!-- Your account -->
 
@@ -410,12 +404,12 @@
             </div>
         </div>
     </div>
-        <div class="cant">
-            <div class="row">
-                <div class="large-12 large-centered columns">
-                    <h2 class="headline">Can’t find what you are looking for?</h2>
-                    <a href="" class="btn ghost-blue">Get in touch</a>
-                </div>
+    <div class="cant">
+        <div class="row">
+            <div class="large-12 large-centered columns">
+                <h2 class="headline">Can’t find what you are looking for?</h2>
+                <a href="" class="btn ghost-blue">Get in touch</a>
             </div>
         </div>
+    </div>
 </section>
