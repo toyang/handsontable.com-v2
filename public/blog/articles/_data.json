@@ -1,4 +1,13 @@
 {
+  "what-you-should-know-about-cell-types": {
+    "directory": "2017/5/",
+    "title": "What You Should Know About Cell Types",
+    "category": "Recipes",
+    "date": "May 30, 2017",
+    "pubDate": "Tue, 31 May 2017 13:00:00 EST",
+    "image_file": "what-you-should-know-about-cell-types/what-you-should-know-about-cell-types.png",
+    "description": "Handsontable easily handles several types of data that can be applied to particular cells, rows, columns, or the entire grid at once (...)"
+  },
   "1.11.0-beta2-0.32.0-beta2": {
     "directory": "2017/5/",
     "title": "Improvements to API and important bug fixes - Handsontable Pro 1.11.0-beta2 (CE 0.32.0-beta2)",
