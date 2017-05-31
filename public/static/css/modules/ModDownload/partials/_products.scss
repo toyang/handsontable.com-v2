@@ -3,37 +3,326 @@
 
   .handsontable-ce {
 
-    width: 96%;
+    @keyframes ce-on-hover {
+
+      from {
+        background-color: $brandGreen;
+        border-color: $brandGreenActive;
+        color: $darkWhite;
+        fill: $darkWhite;
+      }
+
+      to {
+        background-color: $darkWhite;
+        border-color: $brandGreen;
+        color: $brandBlack;
+        fill: $brandGreen;
+      }
+    }
+
     margin: 0 2% 20px 2%;
-    padding: 20px 40px 20px 40px;
+    padding: 20px 30px 20px 30px;
     border-top: 10px solid $brandGreenActive;
     background-color: $brandGreen;
     color: $darkWhite;
 
     @media only screen and (min-width: $largeWidth) {
-      margin: 0;
-      width: 48%;
+      height: 360px;
     }
 
+    .divider {
+
+      @keyframes ce-on-hover-div {
+
+        from { border-color: $darkWhite;}
+        to { border-color: $lightGray;}
+      }
+
+      width: 100%;
+      border-top: 1px solid $darkWhite;
+      margin: 20px 0 10px 0;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+
+      background-color: $brandGreen;
+      color: $darkWhite;
+
+      .divider {
+        border-top: 1px solid $darkWhite;
+      }
+
+      .link-ce {
+        color: $darkWhite;
+      }
+
+      .svg-icon {
+        fill: $darkWhite;
+      }
+
+      @media only screen and (min-width: $largeWidth) {
+
+        .divider {
+          border-top: 1px solid $lightGray;
+          animation-name: ce-on-hover-div;
+          animation-duration: 500ms;
+          animation-iteration-count: 1;
+        }
+
+        .svg-icon {
+          fill: $brandGreen;
+          animation-name: ce-on-hover;
+          animation-duration: 500ms;
+          animation-iteration-count: 1;
+        }
+
+        .link-ce {
+          color: $brandGreen;
+          text-decoration: none;
+          animation-name: ce-on-hover-link;
+          animation-duration: 500ms;
+          animation-iteration-count: 1;
+        }
+
+        color: $brandBlack;
+        background-color: $darkWhite;
+        border-color: $brandGreen;
+        animation-name: ce-on-hover;
+        animation-duration: 500ms;
+        animation-iteration-count: 1;
+      }
+    }
+
+    a.link-ce {
+
+      @keyframes ce-on-hover-link {
+
+        from {color: $darkWhite;}
+        to {color: $brandGreen;}
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+
+        text-decoration: underline;
+        font-size: 1em;
+      }
+
+      color: $darkWhite;
+      font-size: 1em;
+      float: right;
+    }
+
+    .link {
+
+      display: flex;
+      justify-content: flex-start;
+      align-content: space-around;
+
+      @media only screen and (min-width: $largeWidth) {
+        margin-top: 55px;
+        justify-content: flex-end;
+      }
+    }
+
+    .svg-icon {
+
+      @include square(15px);
+      float: left;
+      fill: $darkWhite;
+      margin: 12px 10px 0 0;
+
+      @media only screen and (min-width: $largeWidth) {
+        margin: 10px;
+      }
+    }
+
+    p {
+
+      padding: 20px 0 40px 0;
+    }
   }
 
   .handsontable-pro {
 
-    width: 96%;
+    @keyframes pro-on-hover {
+
+      from {
+        background-color: $brandBlue;
+        border-color: $brandBlueActive;
+        color: $darkWhite;
+        fill: $darkWhite;
+      }
+
+      to {
+        background-color: $darkWhite;
+        border-color: $brandBlue;
+        color: $brandBlack;
+        fill: $brandBlue;
+      }
+    }
+
     margin: 0 2% 20px 2%;
-    padding: 20px 40px 20px 40px;
+    padding: 20px 30px 20px 30px;
     border-top: 10px solid $brandBlueActive;
     background-color: $brandBlue;
     color: $darkWhite;
 
     @media only screen and (min-width: $largeWidth) {
+      height: 360px;
+    }
+
+    ul li {
+      margin: 0 0 0 20px;
+      list-style-type: disc;
+
+      .link-pro {
+        float: none;
+        line-height: 1em;
+      }
+    }
+
+    .divider {
+
+      @keyframes pro-on-hover-div {
+
+        from {border-color: $darkWhite;}
+
+        to {border-color: $lightGray;}
+      }
+
+      width: 100%;
+      border-top: 1px solid $darkWhite;
+      margin: 20px 0 10px 0;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+
+      background-color: $brandBlue;
+      color: $darkWhite;
+
+      .divider {
+        border-top: 1px solid $darkWhite;
+      }
+
+      .link-pro {
+        color: $darkWhite;
+      }
+
+      .svg-icon {
+        fill: $darkWhite;
+      }
+
+      @media only screen and (min-width: $largeWidth) {
+
+        .divider {
+          border-top: 1px solid $lightGray;
+          animation-name: pro-on-hover-div;
+          animation-duration: 500ms;
+          animation-iteration-count: 1;
+        }
+
+        .svg-icon {
+          fill: $brandBlue;
+          animation-name: pro-on-hover;
+          animation-duration: 500ms;
+          animation-iteration-count: 1;
+        }
+
+        .link-pro {
+          color: $brandBlue;
+          text-decoration: none;
+          animation-name: pro-on-hover-link;
+          animation-duration: 500ms;
+          animation-iteration-count: 1;
+        }
+
+        color: $brandBlack;
+        background-color: $darkWhite;
+        border-color: $brandBlue;
+        animation-name: pro-on-hover;
+        animation-duration: 500ms;
+        animation-iteration-count: 1;
+      }
+    }
+
+    a.link-pro {
+
+      @keyframes pro-on-hover-link {
+
+        from { color: $darkWhite;}
+        to { color: $brandBlue;}
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+
+        text-decoration: underline;
+        font-size: 1em;
+      }
+
+      color: $darkWhite;
+      font-size: 1em;
+      float: right;
+    }
+
+    .link {
+
+      margin-top: 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-content: space-around;
+
+      @media only screen and (min-width: $largeWidth) {
+        margin-top: 30px;
+        justify-content: flex-end;
+      }
+    }
+
+    .svg-icon {
+
+      @include square(15px);
+
+      margin: 12px 10px 0 0;
+      float: left;
+      fill: $darkWhite;
+
+      @media only screen and (min-width: $largeWidth) {
+        margin: 10px;
+      }
+    }
+
+    p {
+      padding: 20px 0 0 0;
+    }
+
+    .lot {
       margin: 0;
-      width: 48%;
+      padding: 10px 0 0 0;
     }
   }
+
   .download-builder {
 
-    width: 96%;
+    @keyframes build-on-hover {
+
+      from {
+        background-color: $lightGray;
+        border-top-color: $middleGray;
+      }
+
+      to {
+        background-color: $middleGray;
+        border-top-color: $lightGray;
+      }
+    }
+
     margin: 0 2% 20px 2%;
     padding: 20px 40px 20px 40px;
     border-top: 10px solid $middleGray;
@@ -41,31 +330,46 @@
     color: $darkWhite;
 
     @media only screen and (min-width: $largeWidth) {
-      margin: 40px 0 0 0;
-      width: 48%;
+      margin-top: 40px;
+      height: 120px;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+
+      background-color: $middleGray;
+      border-color: $lightGray;
+      animation-name: build-on-hover;
+      animation-duration: 500ms;
+      animation-iteration-count: 1;
     }
   }
 
+  .divider {
+    border-top: 1px solid $darkWhite;
+    margin: 20px 0 10px 0;
+  }
+
   .subscriber-r {
-    width: 96%;
     margin: 0 2% 20px 2%;
     padding: 20px 10px 20px 10px;
 
     @media only screen and (min-width: $largeWidth) {
-      padding: 20px 40px 20px 40px;
-      margin: 40px 0 0 0;
-      width: 48%;
+      padding: 20px 0;
+      margin-top: 30px;
     }
 
     span {
       font-size: 0.7em;
-      float: left;
-      margin: 0 0 10px 0;
-      padding: 0;
+      float: right;
+      margin: 0;
+      padding: 5px 0 0 0;
       color: $middleGray;
 
       @media only screen and (min-width: $largeWidth) {
-        float: right;
+        margin: 5px 180px 0 0;
+        padding: 0;
       }
     }
 
@@ -76,20 +380,156 @@
     }
 
     .btn {
-      padding-top: 4px;
-      margin-top: 4px;
-    }
-  }
+      font-weight: 400;
+      margin: 0;
 
-  p {
-    padding: 20px 0 40px 0;
+      @media only screen and (min-width: $largeWidth) {
+        margin-left: 20px;
+        margin-top: -2px;
+      }
+    }
+
+    form {
+      /* mailchimp class */
+      .mc-field-group {
+        @include rectangle(100%, 42px);
+        position: relative;
+        margin: 0 auto;
+
+        @media only screen and (min-width: $largeWidth) {
+          width: auto;
+        }
+
+        /*svg {
+          @include set-pseudo-element(50%, auto, auto, 14px);
+          @include square(11px);
+          margin-top: -5px;
+          fill: $middleGray;
+        }*/
+
+        div.mce_inline_error {
+          bottom: 44px;
+
+          @media only screen and (min-width: $largeWidth) {
+            bottom: -20px;
+          }
+        }
+      }
+
+      input[type="email"],
+      input[type="submit"] {
+        border-radius: 2px;
+      }
+
+      input[type="email"] {
+        margin: 0;
+        padding: 20px;
+        background: $brandHeaderWhite;
+        height: 42px; /* Firefox adds 2 extra pixels */
+
+        @media only screen and (min-width: $largeWidth) {
+          float: left;
+          width: 68%;
+          margin-bottom: 5px;
+          border-radius: 4px 4px 4px 2px;
+        }
+
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        margin-top: 30px;
+
+        @media only screen and (min-width: $largeWidth) {
+          width: 30%;
+          margin: 0;
+          padding: 0;
+          position: relative;
+          left: 10px;
+          float: left;
+          border-radius: 4px 4px 4px 4px;
+        }
+      }
+
+      #mce-responses {
+        position: absolute;
+        font-size: 0.715em;
+        min-height: 10px;
+        padding: 0;
+        top: 180px;
+        background: #fff;
+        text-align: center;
+        @media only screen and (min-width: $largeWidth) {
+          font-size: 0.5em;
+          top: 145px;
+          padding: 0;
+          min-height: auto;
+          text-align: left;
+          width: 65%;
+        }
+
+        #mce-error-response {
+          color: $brandRed;
+        }
+
+        #mce-success-response {
+          color: $brandGreen;
+        }
+      }
+    }
+
+
   }
 
   h3 {
 
     font-weight: 600;
     margin: 0;
+  }
 
+  /* Mixin */
+  @mixin badge($color: #fff, $width: 7px, $height: 4px) {
+    position: relative;
+    z-index: 10;
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: -#{$height};
+      width: 0;
+      height: 0;
+      border-top: $height solid $color;
+      border-right: $width solid transparent;
+    }
+  }
+
+  /* Usage */
+  button {
+    @include badge(
+            $color: $brandDarkNavy,
+            $width: 20px,
+            $height: 15px
+    );
+  }
+
+  /* other styles */
+  button {
+    display: inline-block;
+    margin-right: -50px;
+    width: 190px;
+    height: 35px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: $optionalFont;
+    background: $brandDeepNavy;
+    border: 0;
+    color: #fff;
+    float: right;;
+  }
+
+  body {
+    margin: 20px;
+    font-family: $optionalFont, sans-serif;
   }
 
 }
