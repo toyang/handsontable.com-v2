@@ -2,6 +2,8 @@
   "name": "Handsontable",
   "version": "3.0.85",
   "scripts": {
+    "start": "harp server",
+    "build": "harp build",
     "release": "generate-release",
     "deploy": "shipit production deploy"
   },
@@ -14,6 +16,7 @@
   },
   "devDependencies": {
     "generate-release": "^0.10.2",
+    "harp": "^0.23.0",
     "shipit-deploy": "^2.1.2"
   }
 }
