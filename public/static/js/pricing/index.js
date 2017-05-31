@@ -253,7 +253,7 @@
   }
 
   function createValueCarrier(productInfo, priceInfo) {
-    numbro.culture(priceInfo.formatCode);
+    // numbro.culture(priceInfo.formatCode);
 
     return {
       getPrice: function() {
