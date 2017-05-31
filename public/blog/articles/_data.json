@@ -1,10 +1,19 @@
 {
+  "1.11.0-0.32.0": {
+    "directory": "2017/5/",
+    "title": "Handsontable Pro 1.11.0 (CE 0.32.0) released",
+    "category": "Release",
+    "date": "May 31, 2017",
+    "pubDate": "Wed, 31 May 2017 13:00:00 EST",
+    "image_file": "1.11.0-0.32.0/new-release.png",
+    "description": "We initially released this version of Handsontable on May 17 in a form of a public beta. We wanted to make sure that after we replaced (...)"
+  },
   "what-you-should-know-about-cell-types": {
     "directory": "2017/5/",
     "title": "What You Should Know About Cell Types",
     "category": "Recipes",
     "date": "May 30, 2017",
-    "pubDate": "Tue, 31 May 2017 13:00:00 EST",
+    "pubDate": "Tue, 30 May 2017 13:00:00 EST",
     "image_file": "what-you-should-know-about-cell-types/what-you-should-know-about-cell-types.png",
     "description": "Handsontable easily handles several types of data that can be applied to particular cells, rows, columns, or the entire grid at once (...)"
   },
