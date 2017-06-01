@@ -82,6 +82,7 @@
   label {
     display: block;
     cursor: pointer;
+    font-size: 0.9em;
     color: $brandBlue;
     border-bottom: 5px solid transparent;
     border-top: 5px solid transparent;
@@ -90,6 +91,7 @@
   // Style accordion content
   section {
     height: 0;
+    font-size: 0.9em;
     transition: .3s all;
     overflow: hidden;
     border-left: 10px solid $brandHeaderWhite;

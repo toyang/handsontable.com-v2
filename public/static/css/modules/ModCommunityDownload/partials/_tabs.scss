@@ -14,17 +14,18 @@
     font-size: inherit;
   }
 
-  .instalation {
+  .installation {
+
     background-color: #fff;
     padding: 8px 5px 8px 10px;
-    font-size: 0.6em;
-    font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+    font-size: 0.9em;
+    font-family: "Roboto Mono", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
     border: 1px solid $gray;
+    margin-top: 10px;
     overflow: auto;
 
     @media only screen and (min-width: $mediumWidth) {
-
-      font-size: 0.9em;
+      font-size: 1em;
     }
 
     .color-red {
@@ -36,8 +37,6 @@
   .extra {
     margin: 10px 0 15px 0;
   }
-
-
 
   div.tab {
     margin-bottom: -3px;
@@ -74,25 +73,74 @@
     border-bottom: 3px solid $brandBlue;
   }
 
+
   //Create an active/current tablink class
 
   div.tab button:active {
     border-bottom: 3px solid $brandBlue;
   }
 
+
   div.tab button:focus {
     border-bottom: 3px solid $brandBlue;
   }
-
 
   /* Style the tab content */
 
   .tabcontent {
 
-    display: none;
-    padding: 20px 20px 20px 20px;
+    padding: 20px 20px 30px 20px;
     background-color: $brandHeaderWhite;
     margin-top: 3px;
+  }
+
+  .stabcontent {
+
+    padding: 20px 0 30px 0;
+    background-color: $brandHeaderWhite;
+    margin-top: 3px;
+  }
+
+  /* small tab */
+
+  div.stab {
+    margin-bottom: -3px;
+    overflow: auto;
+    display: inline-flex;
+    width: 100%;
+    border: 0 solid $darkWhite;
+    border-bottom: 1px solid $lightGray;
+
+    @media only screen and (min-width: $mediumWidth) {
+      background: none;
+    }
+  }
+
+
+  /* Style the buttons inside the tab */
+  div.stab button {
+    float: left;
+    border: none;
+    border-bottom: 3px solid transparent;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 14px;
+    background-color: inherit;
+  }
+
+  /* Change background color of buttons on hover */
+  div.stab button:hover {
+    border-bottom: 3px solid $brandBlue;
+  }
+
+  div.stab button:active {
+    border-bottom: 3px solid $brandBlue;
+  }
+
+  div.stab button:focus {
+    border-bottom: 3px solid $brandBlue;
   }
 
   .tabcontent-s {
@@ -102,27 +150,10 @@
     background-color: $brandHeaderWhite;
   }
 
-  .subscriber-r {
-    width: 96%;
-    margin: 0 2% 20px 2%;
-    padding: 20px 10px 20px 10px;
+  .stabcontent-s {
 
-    @media only screen and (min-width: $largeWidth) {
-      padding: 20px 40px 20px 40px;
-      margin: 40px 0 0 0;
-      width: 48%;
-    }
-
-    span {
-      font-size: 0.7em;
-      float: left;
-      margin: 0 0 10px 0;
-      padding: 0;
-      color: $middleGray;
-
-      @media only screen and (min-width: $largeWidth) {
-        float: right;
-      }
-    }
+    display: none;
+    padding: 20px 0 20px 0;
+    background-color: $brandHeaderWhite;
   }
 }

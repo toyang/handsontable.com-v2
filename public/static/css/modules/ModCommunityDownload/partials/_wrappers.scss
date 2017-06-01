@@ -3,17 +3,43 @@
 
   text-align: center;
   margin: 0 auto 0 auto;
-  display: block;
 
 
   @media only screen and (min-width: $largeWidth) {
     height: 200px;
-    display: flex;
+    margin-top: 50px;
+  }
+
+  .wrappers {
+
+    @keyframes wrapper-n {
+
+      0% {top: 0;}
+      50% {top: -10px;}
+      100% {top: 0;}
+    }
+
+    font-size: inherit;
+    filter: blur(0);
+
+    &:active #lad,
+    &:hover  #lad,
+    &:focus #lad {
+
+      position: static;
+
+      @media only screen and (min-width: $largeWidth) {
+        position: relative;
+        animation-name: wrapper-n;
+        animation-duration: 500ms;
+        animation-timing-function: ease;
+      }
+    }
   }
 
   .svg-wrappers {
 
-    @include square(120px);
+    @include square(60px);
     margin: 30px 0 0 0;
 
     @media only screen and (min-width: $largeWidth) {

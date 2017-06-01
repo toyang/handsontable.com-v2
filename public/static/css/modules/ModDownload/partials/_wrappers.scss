@@ -12,22 +12,24 @@
 
     @keyframes wrapper-n {
 
-      from {filter: blur(0);}
-      to {filter: blur(3px);}
+      0% {top: 0;}
+      50% {top: -20px;}
+      100% {top: 0;}
     }
 
     filter: blur(0);
 
-    &:active,
-    &:hover,
-    &:focus {
+    &:active #lad,
+    &:hover  #lad,
+    &:focus #lad {
 
-      filter: blur(0);
+      position: absolute;
 
       @media only screen and (min-width: $largeWidth) {
-        filter: blur(3px);
+        position: relative;
         animation-name: wrapper-n;
         animation-duration: 500ms;
+        animation-timing-function: ease;
       }
     }
   }
@@ -48,7 +50,7 @@
   .progress {
 
     @keyframes wrapper-pr {
-      from {filter: grayscale(100%) brightness(140%) opacity(40%) blur(0);}
+      from {}
       to {filter: grayscale(100%) brightness(140%) opacity(40%) blur(3px);}
     }
 
@@ -76,14 +78,16 @@
 
   .in-progress {
 
+    filter: grayscale(100%) brightness(140%) opacity(40%) blur(0);
+
     @include square(80px);
     margin: 8px;
     fill: $darkWhite;
-    padding: 5px;
+    padding: 10px;
 
 
     @media only screen and (min-width: $largeWidth) {
-      margin: 6px;
+      margin: 9px;
     }
   }
 }

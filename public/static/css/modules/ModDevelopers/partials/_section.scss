@@ -1,45 +1,24 @@
 
 .developers .section {
 
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 0;
-  padding-right: 0;
-
-  @media only screen and (min-width: $mediumWidth) {
-    padding-left: 0;
-    padding-right: 0;
-
-  }
-
-  .header-repo {
+  .header-section {
 
     padding: 40px 0 10px 10px;
     text-align: left;
 
     @media only screen and (min-width: $mediumWidth) {
-      padding: 40px 0 0 25px;
+      padding: 40px 0 0 0px;
     }
   }
 
-  .header-repo-right {
-
-    padding: 40px 0 10px 5px;
-    text-align: left;
-
-    @media only screen and (min-width: $mediumWidth) {
-      padding: 40px 0 0 25px;
-    }
-  }
-
-  .repo {
-    padding: 40px 15px 40px 15px;
+  .section {
     background-color: $brandHeaderWhite;
+    padding: 40px 15px 40px 15px;
     color: $baseGray;
 
     @media only screen and (min-width: $largeWidth) {
-      margin: 5px 20px 0 0;
-      padding: 40px 20px 40px 30px;
+      margin: 5px 0 0 0;
+      padding: 40px 30px 40px 30px;
     }
 
     h3 {
@@ -65,40 +44,7 @@
     }
   }
 
-  .repo-right {
-    padding: 40px 10px 40px 10px;
-    background-color: $brandHeaderWhite;
-    color: $baseGray;
-    width: 110%;
-
-    @media only screen and (min-width: $largeWidth) {
-      margin: 5px 0 0 0;
-      padding: 40px 20px 40px 30px;
-    }
-
-    .post-repo {
-
-      margin-bottom: 30px;
-
-      h4 {
-        padding: 0;
-        line-height: 1.3em;
-        font-weight: 600;
-
-        @media only screen and (min-width: $mediumWidth) {
-          margin: 0 0 15px 0;
-        }
-      }
-
-      .divide {
-        width: 100%;
-        border-bottom: 1px solid $lightGray;
-      }
-    }
-
-  }
-
-  .repo-light {
+  .section-light {
 
     padding: 0;
     color: $baseGray;
@@ -107,7 +53,7 @@
 
     @media only screen and (min-width: $largeWidth) {
       margin: 0;
-      padding: 40px 0 0 0;
+      padding: 80px 0 0 0;
       text-align: left;
     }
 
@@ -115,98 +61,71 @@
       line-height: 4em;
     }
 
-    .header-repo {
-
-      padding: 40px 0 20px 0;
-
-      @media only screen and (min-width: $mediumWidth) {
-        padding: 40px 0 0 0;
-      }
-    }
-
     ul, li {
 
-      text-align:center;
-      margin-left:0
-    ;
+      text-align: center;
+      margin-left: 0;
 
       @media only screen and (min-width: $mediumWidth) {
         text-align: left;
-        margin-left:20px;
+        margin-left: 10px;
       }
-  }
+    }
 
-  h3 {
-    padding: 0 0 20px 0;
-    text-align: left;
-    line-height: 1.1em;
-    font-weight: 400;
+   li.disc {
+      list-style-type: disc;
+    }
 
-    @media only screen and (min-width: $mediumWidth) {
-      margin: 0 0 15px 0;
+    h3 {
+      padding: 0 0 20px 0;
+      text-align: left;
+      line-height: 1.1em;
+      font-weight: 400;
+
+      @media only screen and (min-width: $mediumWidth) {
+        margin: 0 0 15px 0;
+      }
+    }
+
+    h4 {
+      margin: 0;
+      padding: 20px 0;
+      line-height: 0.7em;
+      font-weight: 400;
+      text-align: center;
+
+      @media only screen and (min-width: $mediumWidth) {
+        padding: 0 0 20px 20px;
+        text-align: left;
+      }
     }
   }
 
-  h4 {
-    padding: 40px 0 20px 0;
-    margin: 0;
-    line-height: 0.7em;
+  .btn {
+    margin: 5px 0 10px 0;
+    height: 45px;
+    font-size: 0.915em;
     font-weight: 400;
+    line-height: inherit;
+    padding-top: 7px;
+    background-color: #FFF;
+
+    @media only screen and (min-width: $largeWidth) {
+      padding-top: 10px;
+      margin: 0 10px 0 0;
+    }
+  }
+
+  .more {
+    width: 100%;
+    padding: 15px;
+    margin: -30px 0 0 0;
+    background-color: $ultraLightGray;
     text-align: center;
 
     @media only screen and (min-width: $mediumWidth) {
-      padding: 40px 0 0 40px;
-      margin: 0 0 15px 0;
-      text-align: left;
+      margin: -30px 0 0 0;
     }
   }
-}
-
-.btn {
-  margin: 5px 0 10px 0;
-  height: 45px;
-  font-size: medium;
-  line-height: inherit;
-  padding-top: 7px;
-
-  @media only screen and (min-width: $largeWidth) {
-    padding-top: 10px;
-    margin: 0 5px 0 0;
-  }
-}
-
-.btn.green {
-  height: 47px;
-  font-size: medium;
-  padding-top: 10px;
-  margin-top: 20px;
-
-  @media only screen and (min-width: $largeWidth) {
-    padding-top: 12px;
-    margin-top: 20px;
-  }
-}
-
-.inside {
-
-  margin: 0 2px 0 2px;
-
-  @media only screen and (min-width: $largeWidth) {
-    margin: 0;
-    padding: 0;
-  }
-}
-
-.more {
-  width: 100%;
-  padding: 15px;
-  margin: -30px 0 0 0;
-  background-color: $ultraLightGray;
-  text-align: center;
-
-  @media only screen and (min-width: $mediumWidth) {
-    margin: -30px 0 0 0;
-  }
-}
 
 }

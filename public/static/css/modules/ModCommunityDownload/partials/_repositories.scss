@@ -1,13 +1,6 @@
 
 .community .repositories {
 
-  display: flex;
-  flex-wrap: wrap;
-
-  @media only screen and (min-width: $mediumWidth) {
-    padding-left: 0;
-    padding-right: 0;
-  }
 
   .header-repo {
 
@@ -15,17 +8,7 @@
     text-align: left;
 
     @media only screen and (min-width: $mediumWidth) {
-      padding: 40px 0 0 22px;
-    }
-  }
-
-  .header-repo-right {
-
-    padding: 40px 0 40px 0;
-    text-align: left;
-
-    @media only screen and (min-width: $mediumWidth) {
-      padding: 40px 0 0 44px;
+      padding: 40px 0 0 0;
     }
   }
 
@@ -37,7 +20,7 @@
   .btn {
     height: 45px;
     margin-top: 20px;
-    font-size: medium;
+    font-weight: 400;
     line-height: inherit;
     padding-top: 7px;
 
@@ -47,9 +30,15 @@
     }
   }
 
+  .btn.ghost-blue {
+    font-size: 0.875em;
+    background-color: #FFF;
+  }
+
   .btn.green {
     height: 47px;
-    font-size: medium;
+    font-size: 0.875em;
+    font-weight: 400;
     padding-top: 10px;
     margin-top: 20px;
 
@@ -59,30 +48,37 @@
     }
   }
 
+  .top {
+
+    height: inherit;
+
+    @media only screen and (min-width: $largeWidth) {
+      height: 180px;
+    }
+  }
+
+  .bottom {
+
+    height: inherit;
+
+    @media only screen and (min-width: $largeWidth) {
+      height: 320px;
+    }
+  }
+
   .repo {
     padding: 40px 15px 40px 15px;
     background-color: $brandHeaderWhite;
     color: $baseGray;
 
     @media only screen and (min-width: $largeWidth) {
-      margin: 5px 20px 0 0;
-      padding: 40px 20px 40px 30px;
+      margin: 5px 0 0 0;
+      padding: 40px 30px 40px 30px;
     }
 
     a {
       font-size: inherit;
       line-height: inherit;
-    }
-  }
-
-  .repo-right {
-    padding: 40px 15px 40px 15px;
-    background-color: $brandHeaderWhite;
-    color: $baseGray;
-
-    @media only screen and (min-width: $largeWidth) {
-      margin: 5px 0 0 20px;
-      padding: 40px 20px 40px 30px;
     }
   }
 

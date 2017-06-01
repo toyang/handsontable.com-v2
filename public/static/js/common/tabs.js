@@ -1,6 +1,7 @@
 /**
  * Created by marcin on 5/19/17.
  */
+
 function openDownload(evt, downloadName){
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");

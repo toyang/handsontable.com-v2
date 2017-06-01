@@ -1,35 +1,23 @@
 
 .community .resources {
 
-  width: 100%;
-  margin: 0 auto 60px auto;
-
-  @media only screen and (min-width: $mediumWidth) {
-    width: 50%;
-  }
-
+  margin-bottom: 60px;
 
   .header-dist {
 
-    padding: 40px 10px 40px 10px;
+    padding: 40px 10px 40px 20px;
 
     @media only screen and (min-width: $mediumWidth) {
-      padding: 60px 10px 20px 10px;
-    }
-  }
-
-  .links {
-    text-align: center;
-    padding-top: 20px;
-
-    @media only screen and (min-width: $largeWidth) {
-      text-align: left;
+      padding: 60px 10px 40px 10px;
     }
   }
 
   a {
-    font-size: inherit;
+    font-size: 0.8em;
+    font-weight: 400;
     line-height: 2em;
+    @media only screen and (min-width: $largeWidth) {
+      font-size: 1em;
+    }
   }
-
 }
