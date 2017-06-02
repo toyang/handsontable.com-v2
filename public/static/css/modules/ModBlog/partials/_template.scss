@@ -6,6 +6,10 @@
  .blog  {
     padding-top: 67px;
 
+    h2 {
+        margin-left: 25px;
+    }
+
     h2.category-title {
       text-transform: capitalize;
       span {
@@ -47,8 +51,15 @@
 
    .post-element {
      overflow: hidden;
+     height: 100%;
+
+     img {
+       height: 190px;
+       width: 300px;
+     }
+
      @media only screen and (min-width: $mediumWidth) {
-       height: 320px;
+       height: 550px;
      }
    }
 

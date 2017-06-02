@@ -5,192 +5,198 @@
 /* [ local variables ] */
 
 footer {
-    padding-bottom: 47px;
-    p {
-        margin-bottom: 21px;
+  padding-bottom: 47px;
+  text-align: center;
+
+  @media only screen and (min-width: $largeWidth) {
+    text-align: left;
+  }
+
+  p {
+    margin-bottom: 21px;
+  }
+
+  a {
+    width: 100%;
+    margin: 0;
+
+    @media only screen and (min-width: $largeWidth) {
+      margin: 6px 0;
+      text-align: left;
     }
 
-    a {
-        width: 100%;
-        margin: 0;
-
-        @media only screen and (min-width: $largeWidth) {
-            margin: 6px 0;
-        }
-
-        &[target="_blank"]:hover {
-            opacity: .8;
-        }
-
-        &:after {
-            display: block;
-            content: "";
-        }
+    &[target="_blank"]:hover {
+      opacity: .8;
     }
 
-    .gray-stripe {
-        @include border-bottom;
-        padding: 36px 0 11px;
-        margin-bottom: 70px;
+    &:after {
+      display: block;
+      content: "";
     }
+  }
 
-    #mc_embed_signup {
-        position: relative;
-    }
+  .gray-stripe {
+    @include border-bottom;
+    padding: 36px 0 11px;
+    margin-bottom: 70px;
+  }
 
-    .subscribe-form {
-        margin: 40px 0 80px;
+  /* #mc_embed_signup {
+       position: relative;
+   }
 
-        @media only screen and (min-width: $largeWidth) {
-            margin: 0;
-        }
+   .subscribe-form {
+       margin: 40px 0 80px;
 
-        h5 {
-           font-weight: 600;
-            margin: 13px 0 0;
-            text-align: center;
+       @media only screen and (min-width: $largeWidth) {
+           margin: 0;
+       }
+
+       h5 {
+          font-weight: 600;
+           margin: 13px 0 0;
+           text-align: center;
+
+         @media only screen and (min-width: $largeWidth) {
+           text-align: left;
+         }
+       }
+
+       p {
+           text-align: center;
+           margin: 0 0 20px 0;
+
+           @media only screen and (min-width: $largeWidth) {
+               margin: 8px 0 20px;
+               text-align: left;
+           }
+       }*/
+
+  /*form {
+      !* mailchimp class *!
+      .mc-field-group {
+          @include rectangle(75%, 42px);
+          position: relative;
+          margin: 0 auto;
 
           @media only screen and (min-width: $largeWidth) {
+              width: auto;
+          }
+
+          svg {
+              @include set-pseudo-element(50%, auto, auto, 14px);
+              @include square(11px);
+              margin-top: -5px;
+              fill: $middleGray;
+          }
+
+          div.mce_inline_error {
+              bottom: 44px;
+
+              @media only screen and (min-width: $largeWidth) {
+                bottom: -20px;
+              }
+          }
+      }
+
+      input[type="email"],
+      input[type="submit"] {
+          border-radius: 2px;
+      }
+
+      input[type="email"] {
+          margin: 0;
+          padding: 10px 20px 10px 34px;
+          background: #FFF;
+          height: 42px; !* Firefox adds 2 extra pixels *!
+
+          @media only screen and (min-width: $largeWidth) {
+              float: left;
+              width: 70%;
+              margin-bottom: 5px;
+              border-radius: 2px 0 0 2px;
+          }
+
+      }
+
+      input[type="submit"] {
+          width: 100%;
+          margin-top: 10px;
+
+          @media only screen and (min-width: $largeWidth) {
+            width: 30%;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            left: -5px;
+            float: left;
+            border-radius: 0 2px 2px 0;
+          }
+      }
+
+      #mce-responses {
+          position: absolute;
+          font-size: 0.813em; !* 13px *!
+          min-height: 110px;
+          padding: 0 5%;
+          top: 0;
+          background: $ultraLightGray;
+          text-align: center;
+          @media only screen and (min-width: $largeWidth) {
+            top: 53px;
+            padding: 0;
+            min-height: auto;
             text-align: left;
           }
-        }
-        
-        p {
-            text-align: center;
-            margin: 0 0 20px 0;
 
-            @media only screen and (min-width: $largeWidth) {
-                margin: 8px 0 20px;
-                text-align: left;
-            }
-        }
+          #mce-error-response {
+              color: $brandRed;
+          }
 
-        /*form {
-            !* mailchimp class *!
-            .mc-field-group {
-                @include rectangle(75%, 42px);
-                position: relative;
-                margin: 0 auto;
+          #mce-success-response {
+              color: $brandGreen;
+          }
+      }
+  }*/
 
-                @media only screen and (min-width: $largeWidth) {
-                    width: auto;
-                }
+  .social-links {
+    text-align: center;
+    position: relative;
+    bottom: -46px;
+    z-index: 2;
 
-                svg {
-                    @include set-pseudo-element(50%, auto, auto, 14px);
-                    @include square(11px);
-                    margin-top: -5px;
-                    fill: $middleGray;
-                }
+    a {
+      @include circle(60px);
+      @include border;
+      position: relative;
+      display: inline-block;
+      margin: 0 2px;
+      background: #FFF;
 
-                div.mce_inline_error {
-                    bottom: 44px;
+      svg {
+        @include transition(fill .3s ease);
+        @include square(32px);
+        @include absolute-top-left(50%, 50%);
+        margin: -16px 0 0 -16px;
+        fill: $brandBlue;
+      }
+    }
+  }
 
-                    @media only screen and (min-width: $largeWidth) {
-                      bottom: -20px;
-                    }
-                }
-            }
-            
-            input[type="email"],
-            input[type="submit"] {
-                border-radius: 2px;
-            }
+  .copyright {
+    text-align: center;
 
-            input[type="email"] {
-                margin: 0;
-                padding: 10px 20px 10px 34px;
-                background: #FFF;
-                height: 42px; !* Firefox adds 2 extra pixels *!
-
-                @media only screen and (min-width: $largeWidth) {
-                    float: left;
-                    width: 70%;
-                    margin-bottom: 5px;
-                    border-radius: 2px 0 0 2px;
-                }
-                
-            }
-
-            input[type="submit"] {
-                width: 100%;
-                margin-top: 10px;
-
-                @media only screen and (min-width: $largeWidth) {
-                  width: 30%;
-                  margin: 0;
-                  padding: 0;
-                  position: relative;
-                  left: -5px;
-                  float: left;
-                  border-radius: 0 2px 2px 0;
-                }
-            }
-
-            #mce-responses {
-                position: absolute;
-                font-size: 0.813em; !* 13px *!
-                min-height: 110px;
-                padding: 0 5%;
-                top: 0;
-                background: $ultraLightGray;
-                text-align: center;
-                @media only screen and (min-width: $largeWidth) {
-                  top: 53px;
-                  padding: 0;
-                  min-height: auto;
-                  text-align: left;
-                }
-
-                #mce-error-response {
-                    color: $brandRed;
-                }
-
-                #mce-success-response {
-                    color: $brandGreen;
-                }
-            }
-        }*/
+    a {
+      margin: 0;
     }
 
-    .social-links {
-        text-align: center;
-        position: relative;
-        bottom: -46px;
-        z-index: 2;
-        
-        a {
-            @include circle(60px);
-            @include border;
-            position: relative;
-            display: inline-block;
-            margin: 0 2px;
-            background: #FFF;
-
-            svg {
-                @include transition(fill .3s ease);
-                @include square(32px);
-                @include absolute-top-left(50%, 50%);
-                margin: -16px 0 0 -16px;
-                fill: $brandBlue;
-            }
-        }
+    p {
+      margin: 3px 0 21px;
     }
 
-    .copyright {
-        text-align: center;
-
-        a {
-            margin: 0;
-        }
-
-        p {
-            margin: 3px 0 21px;
-        }
-
-        .handsoncode-logotype svg {
-            @include rectangle(120px, 20px);
-            fill: $middleGray;
-        }
+    .handsoncode-logotype svg {
+      @include rectangle(120px, 20px);
+      fill: $middleGray;
     }
+  }
 }

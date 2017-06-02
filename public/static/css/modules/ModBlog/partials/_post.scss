@@ -45,7 +45,7 @@
     font-family: $readFont;
 
     p {
-      margin: 25px 0;
+      margin: 45px 0;
       font-size: 1em;
       line-height: 1.68;
       letter-spacing: -0.003em;
@@ -150,7 +150,7 @@
     }
 
     .toolbox {
-      margin-top: 20px;
+      margin: 20px 0 40px 0;
     }
   }
 
@@ -187,4 +187,5 @@
 
 #comments {
   margin-top: 30px;
+  margin-bottom: 30px;
 }

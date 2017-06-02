@@ -11,7 +11,7 @@
 
   h4 {
     margin: 0;
-    padding: 10px 0 0 0;
+    padding: 5px 0 0 0;
     text-align: left;
     font-weight: 500;
   }
@@ -23,31 +23,36 @@
 
   .brand-blue {
     background-color: $brandBlue;
+    height: 130px;
   }
 
   .brand-red {
     background-color: $brandRed;
+    height: 130px;
   }
 
   .brand-green {
     background-color: $brandGreen;
+    height: 130px;
   }
 
   .brand-navy {
     background-color: $brandDeepNavy;
+    height: 130px;
   }
 
   .brand-blue,
   .brand-red,
   .brand-green,
   .brand-navy {
-    padding: 0 20px;
+    padding: 0 10px;
     color: $backgroundTextColor;
   }
 
   .brand-yellow {
-    padding: 0 20px;
+    padding: 0 10px;
     background-color: $brandYellow;
     color: $darkGray;
+    height: 130px;
   }
 }

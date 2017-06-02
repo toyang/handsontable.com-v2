@@ -3,8 +3,22 @@
  */
 
 .why-handsontable {
+
+    .border-bottom {
+        width: 40px;
+        margin: 10px 60px 20px 0;
+        border-bottom: solid 2px $brandBlue;
+
+        @media only screen and (min-width: $mediumWidth) {
+            margin: 10px auto;
+            display: block;
+        }
+    }
+
     text-align: center;
-    padding-bottom: 37px;
+    padding-bottom: 20px;
+
+
     > div {
         margin-bottom: 60px;
 
@@ -14,18 +28,25 @@
             fill: $iconColor;
 
             @media only screen and (min-width: $mediumWidth) {
-                @include square(82px);
+                @include square(50px);
+                margin-top: 30px;
             }
         }
     }
 
     .headline {
-        margin-top: 0;
+
+        margin: 40px 0 0 20px;
+        font-weight: 400;
+        text-align: left;
         @media only screen and (min-width: $mediumWidth) {
-            margin-top: 110px;
-            letter-spacing: -1.2px;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            letter-spacing: -0.011em;
+            text-align: center;
         }
     }
+
 
     h5 {
         font-weight: 400;

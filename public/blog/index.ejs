@@ -1,7 +1,7 @@
 <section class="blog">
     <div class="row">
         <div class="large-12 large-centered columns">
-            <h2 class="headline">Blog</h2>
+            <h2>Blog</h2>
         </div>
     </div>
 
@@ -13,6 +13,7 @@
                 <h3>
                     <a href="/blog/articles/<%= public.blog.articles._data[slug].directory %><%= slug %>"><%= public.blog.articles._data[slug].title %></a>
                 </h3>
+                <p><img src="/blog/attachments/images/<%= public.blog.articles._data[slug].image_file %>">
                 <p>
                     <small>
                         <%= public.blog.articles._data[slug].category %> / <%= public.blog.articles._data[slug].date %>

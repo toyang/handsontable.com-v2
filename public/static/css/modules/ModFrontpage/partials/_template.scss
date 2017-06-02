@@ -3,12 +3,19 @@
  */
 
 .frontpage {
+
+
+  .light {
+    background-color: $darkWhite;
+    padding: 40px 0;
+  }
+
   .headline {
     margin: 110px 0;
 
 
     @media only screen and (min-width: $mediumWidth) {
-      margin: 88px 0 82px;
+      margin: 88px 0 80px;
     }
   }
 
@@ -18,13 +25,20 @@
       text-align: left;
     }
   }
+
   .brands .headline {
     line-height: 1.5;
     @media only screen and (min-width: $mediumWidth) {
-      margin: 0 0 82px;
+      margin: 0 0 60px;
       padding: 0 0 0 0.9375rem;
       font-size: 15px;
       border: none;
     }
+  }
+
+  .btn {
+
+    font-weight: 400;
+
   }
 }

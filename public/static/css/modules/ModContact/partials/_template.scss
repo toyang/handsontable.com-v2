@@ -2,65 +2,90 @@
  * @author: Handsoncode
  */
 
-.contact  {
+.contact {
+  @media only screen and (min-width: $largeWidth) {
+    padding-top: 30px;
+  }
+
+  h2 {
+    font-weight: 400;
+    text-align: left;
+    margin: 40px 0 0 0;
+    padding: 0;
+
     @media only screen and (min-width: $largeWidth) {
-        padding-top: 30px;
+      text-align: center;
+      margin:0;
+    }
+  }
+
+  .subhead {
+    padding: 0;
+    margin: 0 0 60px 0;
+    text-align: left;
+    font-family: $regularFont;
+    font-weight: 300;
+
+    @media only screen and (min-width: $largeWidth) {
+      text-align: center;
+    }
+  }
+
+  .love {
+    @include square(17px);
+    position: relative;
+    fill: #e87677;
+    top: 3px;
+    margin-right: 5px;
+
+    @media only screen and (min-width: $largeWidth) {
+
+      margin-right: 2px;
+    }
+  }
+
+  h3 {
+    font-size: 20px;
+    line-height: 1;
+    margin: 0 0 14px 0;
+  }
+
+  .partner,
+  .office {
+    margin-top: 90px;
+    margin-bottom: 40px;
+    text-align: center;
+
+    @media only screen and (min-width: $largeWidth) {
+      text-align: left;
+      margin-top: 31px;
+    }
+  }
+
+  #form-sent,
+  #form-error {
+    display: none;
+  }
+
+  .notification {
+    margin: 0 0 20px;
+  }
+
+  form {
+    padding-bottom: 55px;
+
+    @media only screen and (min-width: $largeWidth) {
+      padding-bottom: 90px;
     }
 
-    .headline {
-        margin: 66px 0 57px;
-
-        .love {
-            @include square(17px);
-            position: relative;
-            fill: #e87677;
-            top: 3px;
-            margin-right: 5px;
-
-            @media only screen and (min-width: $largeWidth) {
-
-                margin-right: 2px;
-            }
-        }
+    textarea {
+      min-height: 175px;
+      margin-bottom: 6px;
     }
+  }
 
-    h3 {
-        font-size: 20px;
-        line-height: 1;
-        margin: 0 0 14px 0;
-    }
-
-    .partner,
-    .office {
-        margin-top: 90px;
-        text-align: center;
-
-        @media only screen and (min-width: $largeWidth) {
-            text-align: left;
-            margin-top: 31px;
-        }
-    }
-
-    #form-sent,
-    #form-error {
-        display: none;
-    }
-
-    .notification {
-        margin: 0 0 20px;
-    }
-
-    form {
-        padding-bottom: 55px;
-
-        @media only screen and (min-width: $largeWidth) {
-            padding-bottom: 0;
-        }
-
-        textarea {
-            min-height: 175px;
-            margin-bottom: 6px;
-        }
-    }
+  .btn {
+    font-weight: 400;
+  }
 
 }

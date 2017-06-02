@@ -7,6 +7,7 @@
     @media only screen and (min-width: $mediumWidth) {
         padding: 16vh 0 7vh;
 
+
         > div {
             margin-bottom: 40px;
         }
@@ -14,12 +15,18 @@
 
     h1 {
         margin: 50px 0 0 0;
+        padding: 0;
         font-size: 2.375em;
+        line-height: 1.3em;
+        text-align: left;
+
     }
 
     h4 {
-        font-family: $regularFont;
         margin: 13px 0 34px;
+        padding: 0;
+        font-family: $regularFont;
+        text-align: left;
     }
 
     img {
@@ -33,6 +40,7 @@
 
     .btn {
         padding: 0;
+        font-weight: 400;
     
         @media only screen and (min-width: $mediumWidth) {
             width: auto;

@@ -13,7 +13,7 @@
     }
 
     blockquote {
-        margin-top: 10px;
+        margin-top: 40px;
         font-size: 1.563em; /* 25px */
     }
 
@@ -25,6 +25,12 @@
     h5 {
         margin: 0;
         padding: 0;
+        text-align: center;
+
+        @media only screen and (min-width: $largeWidth) {
+            text-align: left;
+        }
+
     }
 
     a {

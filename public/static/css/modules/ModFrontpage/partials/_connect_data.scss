@@ -3,7 +3,7 @@
  */
  
  .connect-data {
-    margin-top: 65px;
+    margin: 65px 0 40px 0;
     text-align: center;
     @media only screen and (min-width: $largeWidth) {
      text-align: left;
@@ -11,10 +11,13 @@
 
     h1 {
         margin: 84px 0 0;
+        padding: 0;
     }
 
     h4 {
         margin: 13px 0 34px;
+        padding: 0;
         font-family: $regularFont;
+        text-align: left;
     }
 }

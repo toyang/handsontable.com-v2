@@ -5,23 +5,36 @@
  .customers .explore-features {
     /* [ styles only for desktop ] */
     @media only screen and (min-width: $largeWidth) {
-        @include border-top;
-        margin: 72px 0 30px;
+        margin: 72px 0 90px;
     }
 
-    h1 {
-        text-align: center;
-        margin: 44px 0 30px;
-        
-        small {
-            font-size: 0.472em; /* 17px */
-            line-height: 1.5;
-            display: inline-block;
-            margin-top: 5px;
-        }
-    }
+   h2 {
+     font-weight: 400;
+     text-align: left;
+     margin: 40px 0 0 0;
+     padding: 0;
+
+     @media only screen and (min-width: $largeWidth) {
+       text-align: center;
+       margin:0;
+     }
+   }
+
+   .subhead {
+     padding: 0;
+     margin: 0 0 60px 0;
+     text-align: left;
+     font-family: $regularFont;
+     font-weight: 300;
+
+     @media only screen and (min-width: $largeWidth) {
+       text-align: center;
+     }
+   }
+
 
     .btn {
         min-width: 194px;
+        font-weight: 400;
     }
 }

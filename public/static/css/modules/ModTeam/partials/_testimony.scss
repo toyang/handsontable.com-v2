@@ -4,8 +4,8 @@
 
  .team .testimony {
     @include border-top;
-    padding: 68px 0 19px;
-    margin-top: 42px;
+    padding: 28px 0 60px;
+    margin-top: 2px;
 
     .element-center {
         @media only screen and (min-width: $largeWidth) {
@@ -17,16 +17,11 @@
     blockquote {
         display: inline-block;
     }
-    @media only screen and (min-width: $largeWidth) {
-        blockquote {
-            margin-top: -9px;
-
-        }
-    }
 
     img {
         border-radius: 100%;
-        max-width: 100px;   
+        max-width: 100px;
+        margin-top: 20px;
     }
 
     h5 {

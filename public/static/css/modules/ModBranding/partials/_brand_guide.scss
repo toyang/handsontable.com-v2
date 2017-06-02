@@ -4,6 +4,13 @@
 
 .branding .brand-g {
 
+ margin-bottom: 40px;
+
+  h2 {
+    text-align: left;
+    padding: 0;
+  }
+
 
   .large-logo {
     width: 100%;
@@ -14,76 +21,33 @@
     }
   }
 
-  .brand-guide {
-    padding-bottom: 40px;
+  .style-guidelines {
+    margin-top: 70px;
+    padding-right: 40px;
+  }
 
-    @media only screen and (min-width: $mediumWidth) {
-      padding: 60px 0 90px 0;
-    }
 
-    .style {
-      padding: 60px 20px 60px 20px;
+  .download {
 
-      @media only screen and (min-width: $mediumWidth) {
-        padding: 0 60px 40px 20px;
-      }
-
-      h2 {
-        padding: 0;
-        text-align: left;
-        line-height: 1.1em;
-
-        @media only screen and (min-width: $mediumWidth) {
-          margin-top: 0;
-          padding-top: 40px;
-          text-align: left;
-        }
-      }
-    }
-
-    .download {
-
-      padding: 0 20px 40px 20px;
-      background-color: $brandGreen;
-      display: block;
-      color: #fff;
-      @media only screen and (min-width: $mediumWidth) {
-        padding: 0 40px 30px 40px;
-      }
-
-      h2 {
-        padding: 0;
-        text-align: left;
-        line-height: 1.1em;
-
-        @media only screen and (min-width: $mediumWidth) {
-          margin-top: 0;
-          padding-top:40px;
-          text-align: left;
-        }
-      }
-
-      p {
-        width: 100%;
-        color: #fff;
-        float: left;
-        @media only screen and (min-width: $mediumWidth) {
-          width: 60%;
-        }
-      }
-    }
+    margin-top: 30px;
+    padding: 40px;
+    background-color: $brandGreen;
+    color: #fff;
+  }
 
     .btn {
       margin-top: 20px;
       height: 55px;
-      float: right;
       color: $brandGreen;
       border: 2px solid transparent;
       background-color: $darkWhite;
-      font-weight: 600;
+      font-weight: 400;
+      font-size: 0.875em;
+      padding-top: 7px;
 
       @media only screen and (min-width: $mediumWidth) {
         height: 45px;
+        padding-top: 7px;
       }
 
       &:hover {
@@ -97,7 +61,6 @@
         color: $darkWhite;
       }
     }
-  }
 
   a {
     font-size: inherit;
