@@ -5,7 +5,6 @@
 /* [ local variables ] */
 
 footer {
-    margin-top: 10px;
     padding-bottom: 47px;
     p {
         margin-bottom: 21px;
@@ -66,8 +65,8 @@ footer {
             }
         }
 
-        form {
-            /* mailchimp class */
+        /*form {
+            !* mailchimp class *!
             .mc-field-group {
                 @include rectangle(75%, 42px);
                 position: relative;
@@ -102,7 +101,7 @@ footer {
                 margin: 0;
                 padding: 10px 20px 10px 34px;
                 background: #FFF;
-                height: 42px; /* Firefox adds 2 extra pixels */
+                height: 42px; !* Firefox adds 2 extra pixels *!
 
                 @media only screen and (min-width: $largeWidth) {
                     float: left;
@@ -130,7 +129,7 @@ footer {
 
             #mce-responses {
                 position: absolute;
-                font-size: 0.813em; /* 13px */
+                font-size: 0.813em; !* 13px *!
                 min-height: 110px;
                 padding: 0 5%;
                 top: 0;
@@ -151,7 +150,7 @@ footer {
                     color: $brandGreen;
                 }
             }
-        }
+        }*/
     }
 
     .social-links {

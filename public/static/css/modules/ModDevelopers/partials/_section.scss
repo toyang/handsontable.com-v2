@@ -12,6 +12,7 @@
   }
 
   .section {
+
     background-color: $brandHeaderWhite;
     padding: 40px 15px 40px 15px;
     color: $baseGray;
@@ -22,6 +23,7 @@
     }
 
     h3 {
+
       padding: 0 0 20px 0;
       text-align: left;
       line-height: 1.1em;
@@ -33,6 +35,7 @@
     }
 
     h4 {
+
       padding: 20px 0 20px 0;
       text-align: left;
       line-height: 0.7em;
@@ -73,7 +76,9 @@
     }
 
    li.disc {
+
       list-style-type: disc;
+      margin-left: 25px;
     }
 
     h3 {
@@ -88,6 +93,7 @@
     }
 
     h4 {
+
       margin: 0;
       padding: 20px 0;
       line-height: 0.7em;
@@ -102,6 +108,7 @@
   }
 
   .btn {
+
     margin: 5px 0 10px 0;
     height: 45px;
     font-size: 0.915em;
@@ -116,16 +123,55 @@
     }
   }
 
+  .section-new {
+
+    padding: 40px 15px 40px 15px;
+    background-color: $brandHeaderWhite;
+    color: $baseGray;
+
+    @media only screen and (min-width: $largeWidth) {
+      margin: 5px 0 0 0;
+      padding: 20px 30px 40px 30px;
+    }
+
+    h3 {
+      padding: 0 0 20px 0;
+      text-align: left;
+      line-height: 1.1em;
+      font-weight: 400;
+
+      @media only screen and (min-width: $mediumWidth) {
+        margin: 0 0 15px 0;
+      }
+    }
+
+    h4 {
+      margin: 20px 0 10px 0;
+      padding: 0;
+      text-align: left;
+      line-height: 1em;
+      font-weight: 600;
+      font-size: 0.915em;
+
+      @media only screen and (min-width: $mediumWidth) {
+        margin: 20px 0 10px 0;
+      }
+    }
+    .divide {
+
+      border-bottom: 1px solid $lightGray
+    }
+  }
+
   .more {
     width: 100%;
     padding: 15px;
-    margin: -30px 0 0 0;
     background-color: $ultraLightGray;
     text-align: center;
+    font-size: 0.815em;
 
     @media only screen and (min-width: $mediumWidth) {
       margin: -30px 0 0 0;
     }
   }
-
 }
