@@ -7,7 +7,7 @@ $dropdownColor: #FFF;
 
 .dropdown-f {
     @media only screen and (max-width: $largeWidth) {
-        background-color: $brandHeaderWhite;
+        background-color: $headerGrey;
     }
 
     ul {
@@ -32,7 +32,7 @@ $dropdownColor: #FFF;
         @include transition(all .3s ease);
         @include transform( translateY(0) scale(.95, .95));
         max-height: 0;
-        background: $brandHeaderWhite;
+        background: $headerGrey;
         opacity: 0;
         overflow: hidden;
 

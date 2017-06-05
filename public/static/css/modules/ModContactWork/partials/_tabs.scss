@@ -1,14 +1,9 @@
 
-.community .tabs-in {
-
-  padding-left: 10px;
-  padding-right: 10px;
-
-  @media only screen and (min-width: $mediumWidth) {
+.contact-work .tabs-in {
 
     padding-left: 0;
     padding-right: 0;
-  }
+
 
   a {
     font-size: inherit;
@@ -57,6 +52,7 @@
 
   /* Style the buttons inside the tab */
   div.tab button {
+    width: 100%;
     float: left;
     border: none;
     border-bottom: 3px solid transparent;
@@ -71,6 +67,7 @@
   /* Change background color of buttons on hover */
   div.tab button:hover {
     border-bottom: 3px solid $brandBlue;
+    fill: $brandBlue;
   }
 
 
@@ -78,18 +75,20 @@
 
   div.tab button:active {
     border-bottom: 3px solid $brandBlue;
+    fill: $brandBlue;
   }
 
 
   div.tab button:focus {
     border-bottom: 3px solid $brandBlue;
+    fill: $brandBlue;
   }
 
   /* Style the tab content */
 
   .tabcontent {
 
-    padding: 20px 20px 30px 20px;
+    padding: 20px 40px 0 40px;
     background-color: $headerGrey;
     margin-top: 3px;
   }

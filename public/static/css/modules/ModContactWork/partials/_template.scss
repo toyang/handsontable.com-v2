@@ -1,0 +1,124 @@
+/**
+ * @author: Handsoncode
+ */
+
+.contact-work {
+  @media only screen and (min-width: $largeWidth) {
+    padding-top: 30px;
+  }
+
+  #sales {
+    display: inherit;
+  }
+
+  #support {
+    display: none;
+  }
+
+
+
+  h2 {
+    font-weight: 400;
+    text-align: left;
+    margin: 40px 0 0 0;
+    padding: 0;
+
+    @media only screen and (min-width: $largeWidth) {
+      text-align: center;
+      margin:40px 0 0 0;
+    }
+  }
+
+  h3 {
+    margin: 0;
+    font-weight: 400;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  h4 {
+    font-weight: 400;
+    text-align: left;
+    margin: 40px 0 0 0;
+    padding: 0;
+
+    @media only screen and (min-width: $largeWidth) {
+      margin:0;
+    }
+  }
+
+  span {
+    font-size: 0.875em;
+    font-style: italic;
+    color: $darkGray;
+    float: left;
+  }
+
+  .subhead {
+    padding: 0;
+    margin: 0 0 60px 0;
+    text-align: left;
+    font-family: $regularFont;
+    font-weight: 300;
+
+    @media only screen and (min-width: $largeWidth) {
+      text-align: center;
+    }
+  }
+
+  .border-bottom {
+    width: 40px;
+    margin: 10px 60px 20px 0;
+    border-bottom: solid 2px $brandBlue;
+
+    @media only screen and (min-width: $mediumWidth) {
+      margin: 10px auto 60px auto;
+      display: block;
+    }
+  }
+
+  .love {
+    @include square(17px);
+    position: relative;
+    fill: #e87677;
+    top: 3px;
+    margin-right: 5px;
+
+    @media only screen and (min-width: $largeWidth) {
+
+      margin-right: 2px;
+    }
+  }
+
+  .partner,
+  .office {
+    margin-top: 90px;
+    margin-bottom: 40px;
+    text-align: center;
+
+    @media only screen and (min-width: $largeWidth) {
+      text-align: left;
+      margin-top: 31px;
+    }
+  }
+
+  img {
+    width: 80px;
+    margin-left: 30px;
+  }
+
+  .btn {
+    font-weight: 400;
+  }
+
+  svg {
+    @include square(24px);
+    fill: $darkGray;
+    margin: 0 10px -8px 10px;
+    padding: 0;
+
+  }
+
+}

@@ -1,0 +1,35 @@
+/**
+ * @author: Handsoncode
+ */
+
+ .contact-work .social-links {
+    text-align: center;
+    padding-top: 6px;
+    margin-bottom: 40px;
+
+    @media only screen and (min-width: $largeWidth) {
+        text-align: left;
+    }
+    a {
+        @include rectangle(17%, 10vh);
+        display: inline-block;
+        margin: 0 2%;
+        
+        /* [ styles only for desktop ] */
+        @media only screen and (min-width: $largeWidth) {
+            @include square(24px);
+            margin-right: 21px;
+        }
+
+
+        svg {
+            @include transition(fill .3s ease);
+            @include square(100%);
+            fill: #bdbdbd;
+
+            &:hover {
+                fill: #969696
+            }
+        }
+    }
+}

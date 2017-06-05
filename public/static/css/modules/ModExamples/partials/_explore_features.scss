@@ -5,8 +5,7 @@
  .examples .explore-features {
     /* [ styles only for desktop ] */
     @media only screen and (min-width: $largeWidth) {
-        @include border-top;
-        margin: 72px 0 30px;
+        margin: 72px 0 60px;
     }
 
     h1 {

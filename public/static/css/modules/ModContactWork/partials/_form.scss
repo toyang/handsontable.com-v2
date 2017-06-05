@@ -1,0 +1,46 @@
+/**
+ * @author: Handsoncode
+ */
+
+ .contact-work .form {
+    margin: 40px 0 60px 0;
+    font-size: 0.945em;
+
+   .label{
+
+     color: $darkGray;
+     font-size: 1em;
+   }
+
+   .asterisk {
+
+     color: $brandRed;
+     font-size: 1em;
+   }
+
+   .selectbox {
+
+     width: 100%;
+     @media only screen and (min-width: $largeWidth) {
+       width: 50%;
+     }
+   }
+
+   #form-sent,
+   #form-error {
+     display: none;
+   }
+
+   .notification {
+     margin: 0 0 20px;
+   }
+
+   form {
+
+     textarea {
+       min-height: 175px;
+       margin-bottom: 6px;
+     }
+   }
+
+}

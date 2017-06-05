@@ -13,7 +13,7 @@
 
   .section {
 
-    background-color: $brandHeaderWhite;
+    background-color: $headerGrey;
     padding: 40px 15px 40px 15px;
     color: $baseGray;
 
@@ -126,7 +126,7 @@
   .section-new {
 
     padding: 40px 15px 40px 15px;
-    background-color: $brandHeaderWhite;
+    background-color: $headerGrey;
     color: $baseGray;
 
     @media only screen and (min-width: $largeWidth) {

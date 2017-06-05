@@ -55,7 +55,7 @@ header.features-nav {
 }
 
 header.white-head {
-  background: $brandHeaderWhite;
+  background: $headerGrey;
 }
 
 header {
@@ -237,7 +237,7 @@ header {
           }
 
           a:hover {
-            color: $brandHeaderWhite;
+            color: $headerGrey;
           }
         }
       }
