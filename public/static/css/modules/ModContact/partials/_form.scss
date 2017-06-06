@@ -7,9 +7,14 @@
     font-size: 0.945em;
 
    .label{
-
      color: $darkGray;
      font-size: 1em;
+   }
+
+   .phone {
+     color: $darkGray;
+     font-size: 1em;
+     display: inline;
    }
 
    .asterisk {
@@ -18,13 +23,6 @@
      font-size: 1em;
    }
 
-   .selectbox {
-
-     width: 100%;
-     @media only screen and (min-width: $largeWidth) {
-       width: 50%;
-     }
-   }
 
    #form-sent,
    #form-error {
@@ -39,7 +37,7 @@
 
      textarea {
        min-height: 175px;
-       margin-bottom: 6px;
+       margin-bottom: 20px;
      }
    }
 

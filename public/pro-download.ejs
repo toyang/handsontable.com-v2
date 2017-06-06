@@ -1,0 +1,297 @@
+<section class="community">
+    <!--Download Header-->
+    <div class="header-dist">
+        <h4 class="download">Download</h4>
+        <h1>
+            Handsontable Community Edition
+        </h1>
+        <span>Version 0.30.3 released on May 18, 2017</span>
+    </div>
+
+    <!--Download tabs-->
+    <div class="row">
+        <div class="large-12  columns ">
+            <div class="tabs-in">
+                <div class="scrollmenu">
+                    <div class="tab">
+                        <button id="defaultOpen" class="tablinks" onclick="openDownload(event, 'NPM')">NPM</button>
+                        <button class="tablinks" onclick="openDownload(event, 'Bower')">Bower</button>
+                        <button class="tablinks" onclick="openDownload(event, 'NuGet')">NuGet</button>
+                        <button class="tablinks" onclick="openDownload(event, 'jspm')">jspm</button>
+                        <button class="tablinks" onclick="openDownload(event, 'Yarn')">Yarn</button>
+                        <button class="tablinks" onclick="openDownload(event, 'CommonJS')">CommonJS</button>
+                        <button class="tablinks" onclick="openDownload(event, 'AMD')">AMD</button>
+                    </div>
+                </div>
+
+                <div id="NPM" class="tabcontent">
+                    <p>Handsontable can be installed from<a href="https://www.npmjs.com/package/handsontable"> NPM</a>.
+                        It includes the files along with the complete source code.
+                    <div class="row">
+                        <div class="medium-12 large-5 columns">
+                            <div class="installation">
+                                npm install handsontable --save;
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="Bower" class="tabcontent">
+                    <p>Handsontable can be still installed via <a href="https://bower.io/">bower</a> package manager.
+                    </p>
+                    <div class="row">
+                        <div class="medium-12 large-5 columns">
+                            <div class="installation">
+                                bower install handsontable --save;
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="NuGet" class="tabcontent">
+                    <p>To install Handsontable, run the following command in the <a href="https://docs.microsoft.com/en-us/nuget/tools/package-manager-console" target="_blank">NuGet</a> package manager console.</p>
+                    <div class="row">
+                        <div class="medium-12 large-5 columns">
+                            <div class="installation">
+                                PM> Install-Package Handsontable
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="jspm" class="tabcontent">
+                    <p>To install Handsontable on <a href="https://github.com/jspm/jspm-cli/blob/master/docs/installing-packages.md" target="_blank">JSPM</a> run the following command.</p>
+                    <div class="row">
+                        <div class="medium-12 large-5 columns">
+                            <div class="installation">
+                                jspm install npm:handsontable
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="Yarn" class="tabcontent">
+                    <p>To install Handsontable, run the following command in the <a href="https://yarnpkg.com/en/" target="_blank">Yarn</a> Package
+                        Manager Console.</p>
+                    <div class="row">
+                        <div class="medium-12 large-5 columns">
+                            <div class="installation">
+                                $ yarn add handsontable
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="CommonJS" class="tabcontent">
+                    <p>You can install Handsontable using common JS.</p>
+                    <div class="row">
+                        <div class="medium-12 large-5 columns">
+                            <div class="installation">
+                                var handsontable = require(<span class="color-red">'handsontable'</span>);
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="AMD" class="tabcontent">
+                    <p>If you use a modular script loader then you can require Handsontable just like any other module:</p>
+                    <div class="row">
+                        <div class="medium-12 large-8 columns">
+                            <div class="installation">
+                                require(['handsontable'], function(Handsontable) { <br/>
+                                var hot = new Handsontable(document.getElementById('example'), {<br/>
+                                data: [[1, 2, 3, 4], [1, 2, 3, 4]]<br/>
+                                });<br/>
+                                });<br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Repositories-->
+
+    <div class="row repositories">
+
+        <div class="large-6 columns">
+            <h3 class="header-repo">Download ZIP</h3>
+            <div class="repo top">
+                <p>
+                    You can download the ZIP archive which contains all the files, examples
+                    and raw sources. Learn how to <a href="https://docs.handsontable.com/tutorial-quick-start.html">
+                    start your first project.</a>
+                </p>
+                <a href="https://github.com/handsontable/handsontable/archive/master.zip" class="btn green">Download
+                    v0.30.3</a>
+            </div>
+        </div>
+
+
+        <div class="large-6 columns">
+            <h3 class="header-repo">Clone repository</h3>
+            <div class="repo top">
+                <p>
+                    Handsontable’s source code is mainly hosted and developed on GitHub where
+                    you can fork it or contribute to its development.
+                </p>
+                <a href="https://github.com/handsontable/handsontable" class="btn ghost-blue">
+                    <svg class="svg-icon">
+                        <use xlink:href="#github_icon"></use>
+                    </svg>
+                    Download v0.30.3
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="row repositories">
+        <div class="large-6 columns">
+            <h3 class="header-repo">Wrapper and more</h3>
+            <div class="repo bottom">
+                <p>
+                    Handsontable is available for different frameworks and comes with
+                    a TypeScript definitions file included in the package for your strongly typed projects.
+
+                        So go ahead and <a href="https://docs.handsontable.com/tutorial-quick-start.html"> start your first project.</a>
+                </p>
+                <div class="row">
+                    <ul class="large-block-grid-5 small-block-grid-3  columns wrappers-w">
+                        <li class="wrappers">
+                            <a href="https://github.com/handsontable/react-handsontable" target="_blank">
+                                <svg id="lad" class="svg-wrappers">
+                                    <use xlink:href="#react-js"></use>
+                                </svg>
+                                <p>ReactJs</p>
+                            </a>
+                        </li>
+                        <li class="wrappers">
+                            <a href="https://github.com/handsontable/ngHandsontable" target="_blank">
+                                <svg id="lad" class="svg-wrappers">
+                                    <use xlink:href="#angular-l"></use>
+                                </svg>
+                                <p>Angular
+                            </a>
+                        </li>
+                        <li class="wrappers">
+                            <a href="https://github.com/handsontable/hot-table" target="_blank">
+                                <svg id="lad" class="svg-wrappers">
+                                    <use xlink:href="#polymer-l"></use>
+                                </svg>
+                                <p>Polymer</p>
+                            </a>
+                        </li>
+                        <li class="wrappers">
+                            <a href="https://github.com/handsontable/vue-handsontable-official" target="_blank">
+                                <svg id="lad" class="svg-wrappers">
+                                    <use xlink:href="#vue-l"></use>
+                                </svg>
+                                <p>Vue</p>
+                            </a>
+                        </li>
+                        <li class="wrappers">
+                            <svg id="lad" class="svg-wrappers in-progress">
+                                <use xlink:href="#angular-2"></use>
+                            </svg>
+                            <p>Angular 2</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="large-6  columns">
+            <h3 class="header-repo">Use CDN</h3>
+            <div class="repo tabs-in bottom">
+                <p>
+                    Our fast CDN is available for 10 locations around the world and includes
+                    SSL connection.
+                </p>
+
+                <!-- Need sone more complex JS, introduction in js/common/tabs.js -->
+                <div class="stab">
+                    <button class="stablinks" id="sdefaultOpen" onclick="sopenDownload(event, 'Minified')">Minified
+                    </button>
+                    <button class="stablinks" onclick="sopenDownload(event, 'Uncompresed')">Uncompresed</button>
+                </div>
+
+                <div id="Minified" class="stabcontent">
+                    <div class="installation">
+                        https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.30.0/handsontable.min.js
+                    </div>
+                    <div class="installation">
+                        https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.30.0/handsontable.min.css
+                    </div>
+                </div>
+
+                <div id="Uncompresed" class="stabcontent">
+
+                    <div class="installation">
+                        https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.30.0/handsontable.js
+                    </div>
+                    <div class="installation">
+                        https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.30.0/handsontable.css
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--Resources-->
+    <div class="row resources">
+        <h2 class="header-dist">
+            Resources
+            <div class="border-bottom"></div>
+        </h2>
+        <div class="large-2 large-offset-3 medium-4 small-4 columns">
+            <ul>
+                <li><a href="https://docs.handsontable.com/tutorial-quick-start.html">Quick
+                        start</a></li>
+                <li><a href="https://docs.handsontable.com/tutorial-setting-options.html">Setting
+                        options</a></li>
+                <li><a href="https://docs.handsontable.com/tutorial-data-binding.html">Data
+                        binding</a></li>
+                <li><a href="https://docs.handsontable.com/tutorial-load-and-save.html">Load and
+                        save</a></li>
+                <li><a href="">Typescript</a></li>
+            </ul>
+        </div>
+        <div class="large-2 medium-4 small-4 columns">
+            <ul>
+                <li><a href="/faq.html">Knowledge base</a></li>
+                <li>
+                    <a href="https://docs.handsontable.com/tutorial-compatibility.html">Compatibility</a>
+                </li>
+                <li><a href="https://docs.handsontable.com/tutorial-licensing.html">Licensing</a>
+                </li>
+                <li>
+                    <a href="https://docs.handsontable.com/tutorial-release-notes.html">Changelog</a>
+                </li>
+                <li><a href="https://trello.com/b/PztR4hpj/handsontable-roadmap-2016" target="_blank">Roadmap</a></li>
+            </ul>
+        </div>
+        <div class="large-2 medium-4 small-4 end columns">
+            <ul>
+                <li><a href="https://github.com/handsontable/handsontable" target="_blank">GitHub</a></li>
+                <li><a href="https://twitter.com/handsontable" target="_blank">Twitter</a></li>
+                <li><a href="http://stackoverflow.com/tags/handsontable" target="_blank">StackOverflow</a></li>
+                <li>
+                    <a href="https://forum.handsontable.com/?_ga=2.34684897.1313628762.1494515872-806368676.1491907536">Developer’s
+                        forum</a></li>
+            </ul>
+        </div>
+    </div>
+
+</section>
+
+<!-- tabs.js -->
+<script src="/static/js/common/tabs.js"></script>
+<script src="/static/js/common/small_tabs.js"></script>
+
+
+

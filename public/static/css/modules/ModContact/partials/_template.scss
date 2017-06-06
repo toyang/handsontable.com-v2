@@ -2,10 +2,19 @@
  * @author: Handsoncode
  */
 
-.contact {
+.contact-work {
   @media only screen and (min-width: $largeWidth) {
     padding-top: 30px;
   }
+
+  #sales {
+    display: none;
+  }
+
+  #support {
+    display: none;
+  }
+
 
   h2 {
     font-weight: 400;
@@ -15,8 +24,35 @@
 
     @media only screen and (min-width: $largeWidth) {
       text-align: center;
+      margin:40px 0 0 0;
+    }
+  }
+
+  h3 {
+    margin: 0;
+    font-weight: 400;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  h4 {
+    font-weight: 400;
+    text-align: left;
+    margin: 40px 0 0 0;
+    padding: 0;
+
+    @media only screen and (min-width: $largeWidth) {
       margin:0;
     }
+  }
+
+  span {
+    font-size: 0.875em;
+    font-style: italic;
+    color: $darkGray;
+    float: left;
   }
 
   .subhead {
@@ -31,6 +67,17 @@
     }
   }
 
+  .border-bottom {
+    width: 40px;
+    margin: 10px 60px 20px 0;
+    border-bottom: solid 2px $brandBlue;
+
+    @media only screen and (min-width: $mediumWidth) {
+      margin: 10px auto 60px auto;
+      display: block;
+    }
+  }
+
   .love {
     @include square(17px);
     position: relative;
@@ -39,53 +86,39 @@
     margin-right: 5px;
 
     @media only screen and (min-width: $largeWidth) {
-
       margin-right: 2px;
     }
   }
 
-  h3 {
-    font-size: 20px;
-    line-height: 1;
-    margin: 0 0 14px 0;
-  }
 
-  .partner,
-  .office {
-    margin-top: 90px;
-    margin-bottom: 40px;
-    text-align: center;
-
-    @media only screen and (min-width: $largeWidth) {
-      text-align: left;
-      margin-top: 31px;
-    }
-  }
-
-  #form-sent,
-  #form-error {
-    display: none;
-  }
-
-  .notification {
-    margin: 0 0 20px;
-  }
-
-  form {
-    padding-bottom: 55px;
-
-    @media only screen and (min-width: $largeWidth) {
-      padding-bottom: 90px;
-    }
-
-    textarea {
-      min-height: 175px;
-      margin-bottom: 6px;
-    }
+  img {
+    width: 80px;
+    margin-left: 30px;
   }
 
   .btn {
     font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  svg {
+    @include square(24px);
+    fill: $darkGray;
+    margin: 0 5px -8px 5px;
+    padding: 0;
+
+  }
+
+  .contact-footer {
+    text-align: center;
+    margin: 0 0 60px 0;
+    line-height: 1.8em;
+    padding: 0;
+
+    a {
+      font-size: inherit;
+    }
   }
 
 }

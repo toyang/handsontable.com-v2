@@ -9,25 +9,6 @@
     font-size: inherit;
   }
 
-  .installation {
-
-    background-color: #fff;
-    padding: 8px 5px 8px 10px;
-    font-size: 0.9em;
-    font-family: "Roboto Mono", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
-    border: 1px solid $gray;
-    margin-top: 10px;
-    overflow: auto;
-
-    @media only screen and (min-width: $mediumWidth) {
-      font-size: 1em;
-    }
-
-    .color-red {
-      color: $brandRed;
-      font-size: 0.9em;
-    }
-  }
 
   .extra {
     margin: 10px 0 15px 0;
@@ -88,9 +69,13 @@
 
   .tabcontent {
 
-    padding: 20px 40px 0 40px;
-    background-color: $headerGrey;
     margin-top: 3px;
+    padding: 20px 20px 0 20px;
+    background-color: $headerGrey;
+
+    @media only screen and (min-width: $largeWidth) {
+      padding: 20px 40px 0 40px;
+    }
   }
 
   .stabcontent {

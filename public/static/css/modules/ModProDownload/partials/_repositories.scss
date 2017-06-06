@@ -1,0 +1,93 @@
+
+.community .repositories {
+
+
+  .header-repo {
+
+    padding: 40px 0 40px 0;
+    text-align: left;
+
+    @media only screen and (min-width: $mediumWidth) {
+      padding: 40px 0 0 0;
+    }
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .btn {
+    height: 45px;
+    margin-top: 20px;
+    font-weight: 400;
+    line-height: inherit;
+    padding-top: 7px;
+
+    @media only screen and (min-width: $largeWidth) {
+      padding-top: 10px;
+      margin-top: 20px;
+    }
+  }
+
+  .btn.ghost-blue {
+    font-size: 0.875em;
+    background-color: #FFF;
+  }
+
+  .btn.green {
+    height: 47px;
+    font-size: 0.875em;
+    font-weight: 400;
+    padding-top: 10px;
+    margin-top: 20px;
+
+    @media only screen and (min-width: $largeWidth) {
+      padding-top: 12px;
+      margin-top: 20px;
+    }
+  }
+
+  .top {
+
+    height: inherit;
+
+    @media only screen and (min-width: $largeWidth) {
+      height: 180px;
+    }
+  }
+
+  .bottom {
+
+    height: inherit;
+
+    @media only screen and (min-width: $largeWidth) {
+      height: 320px;
+    }
+  }
+
+  .repo {
+    padding: 40px 15px 40px 15px;
+    background-color: $headerGrey;
+    color: $baseGray;
+
+    @media only screen and (min-width: $largeWidth) {
+      margin: 5px 0 0 0;
+      padding: 40px 30px 40px 30px;
+    }
+
+    a {
+      font-size: inherit;
+      line-height: inherit;
+    }
+  }
+
+  .tabs-content {
+    padding: 20px 5px 0 0;
+  }
+
+  .tabs {
+    width: 100%;
+
+  }
+}
