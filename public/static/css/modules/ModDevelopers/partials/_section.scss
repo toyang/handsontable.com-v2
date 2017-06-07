@@ -18,8 +18,14 @@
     color: $baseGray;
 
     @media only screen and (min-width: $largeWidth) {
+      height: 290px;
       margin: 5px 0 0 0;
       padding: 40px 30px 40px 30px;
+    }
+
+    .contribiute {
+
+      padding: 40px 0 0 0;
     }
 
     h3 {
@@ -110,16 +116,15 @@
   .btn {
 
     margin: 5px 0 10px 0;
-    height: 45px;
+    height: 44px;
     font-size: 0.915em;
     font-weight: 400;
     line-height: inherit;
     padding-top: 7px;
-    background-color: #FFF;
 
     @media only screen and (min-width: $largeWidth) {
       padding-top: 10px;
-      margin: 0 10px 0 0;
+      margin: 0 10px 20px 0;
     }
   }
 

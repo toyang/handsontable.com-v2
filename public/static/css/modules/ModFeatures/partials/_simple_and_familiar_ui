@@ -4,25 +4,39 @@
 
 .features .simple {
 
+  .columns {
+
+    padding: 0;
+  }
+
   .code-box {
     background-color: #4f4f4f;
     overflow: auto;
     color: $darkWhite;
     padding: 20px;
-    height: 400px;
+    height: 440px;
   }
 
   .plugin-preview {
 
     padding-top: 23px;
+  }
 
+  .code-holder {
+    float: right;
+    padding: 0;
+    margin: 0;
   }
 
   h5 {
 
-    margin: 0 0 5px 0;
+    margin: 20px 0 5px 0;
     padding:0;
     text-align: left;
+
+    @media only screen and (min-width: $mediumWidth) {
+      margin: 0 0 5px 0;
+    }
 
   }
 

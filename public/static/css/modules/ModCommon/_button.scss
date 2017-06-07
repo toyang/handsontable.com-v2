@@ -118,7 +118,7 @@
   &.ghost-red,
   &.ghost-white  {
     border: 2px solid currentColor;
-    background: transparent;
+    background: #FFF;
   }
 
   &.ghost-blue {
@@ -141,6 +141,26 @@
   }
 
   &.ghost-white {
+    color: $darkWhite;
+
+    &.large {
+      line-height: 45px;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $brandLightBlue;
+      border-color: currentColor;
+    }
+  }
+
+  &.ghost-white-cta  {
+    border: 2px solid currentColor;
+    background: transparent;
+  }
+
+  &.ghost-white-cta {
     color: $darkWhite;
 
     &.large {
@@ -187,9 +207,15 @@
   }
 
   &.small {
-    font-size: 0.813em; /* 13px */
-    height: 35px;
+    font-size: 0.713em; /* 13px */
+    height: 38px;
     line-height: 34px;
-    padding: 0 20px;
+    margin: 0;
+
+    @media only screen and (min-width: $mediumWidth) {
+      font-size: 0.813em; /* 13px */
+      margin: 10px;
+      padding: 0 20px;
+    }
   }
 }

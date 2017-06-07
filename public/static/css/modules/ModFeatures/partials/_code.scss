@@ -5,10 +5,9 @@
 .examples .code-box {
   @include border;
   margin-top: 40px;
-  margin-bottom: 40px;
 
   @media only screen and (min-width: $largeWidth) {
-    margin: 33px 0 40px 50px;
+    margin: 33px 0 0 50px;
   }
   .tabs {
     @include border-bottom;

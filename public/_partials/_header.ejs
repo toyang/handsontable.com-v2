@@ -1,11 +1,11 @@
 <header class="<% if (current.source === 'features') { %>
-                     features-nav
-                     <% } else if (current.source === 'pricing' || current.source === 'branding') { %>
-                     white-head
-                     <% } else { %>
-                     header
-                     <% } %>
-                     " >
+     features-nav
+     <% } else if (current.source === 'pricing' || current.source === 'branding') { %>
+     white-head
+     <% } else { %>
+     header
+     <% } %>
+     " >
     <div class="row">
         <div class="logotype clearfix">
             <a href="/index.html" class="<% if (current.source === 'features') { %>
@@ -26,7 +26,10 @@
             </div> -->
 
         </div>
-        <label for="show_menu">MENU</label>
+        <label for="show_menu">
+            <svg class="svg-icon">
+                <use xlink:href="#hamburger"></use>
+            </svg></label>
         <input id="show_menu" type="checkbox"/>
         <nav class="">
             <ul id="login_menu_signed_off" class="login_menu hide">

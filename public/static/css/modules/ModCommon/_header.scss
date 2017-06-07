@@ -138,11 +138,17 @@ header {
     }
 
     li {
-      @include border-top($lightGray);
+
+      border-top: 1px solid $lightGray;
       position: relative;
       display: block;
       float: left;
       width: 100%;
+
+      &:first-child {
+      border: none;
+    }
+
 
       /* [ styles only for desktop ] */
       @media only screen and (min-width: $largeWidth) {
@@ -150,6 +156,8 @@ header {
         border: none;
         width: auto;
       }
+
+
 
       strong {
         font-weight: 600;
@@ -265,5 +273,10 @@ header {
 
       }
     }
+  }
+
+  .svg-icon {
+    @include square(20px);
+    fill: $lightGray;
   }
 }

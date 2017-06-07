@@ -27,12 +27,12 @@ header .logotype {
         }
 
         svg {
-            @include rectangle(150px, 24.93px);
+            @include rectangle(130px, 25px);
             fill: #000;
 
             /* [ styles only for desktop ] */
             @media only screen and (min-width: $largeWidth) {
-                @include rectangle(200px, 40px);
+                @include rectangle(160px, 40px);
                 float: left;
             }
         }
@@ -45,12 +45,12 @@ header .logotype {
         }
 
         svg {
-            @include rectangle(150px, 24.93px);
+            @include rectangle(130px, 25px);
 
 
             /* [ styles only for desktop ] */
             @media only screen and (min-width: $largeWidth) {
-                @include rectangle(200px, 40px);
+                @include rectangle(160px, 40px);
                 float: left;
                 fill: #fff;
             }

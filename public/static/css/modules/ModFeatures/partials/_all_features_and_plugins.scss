@@ -28,7 +28,8 @@
   }
 
   ul, li {
-    line-height: 2em;
+    font-size: 0.950em;
+    line-height: 1.9em;
     text-align: center;
 
     @media only screen and (min-width: $largeWidth) {

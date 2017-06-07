@@ -25,11 +25,7 @@
       font-size: 1em;
     }
   }
-
-  a.btn {
-    margin-top: 55px;
-  }
-
+  
   .quotation-mark {
     @include absolute-top-left(-20px, -50px);
     display: none;

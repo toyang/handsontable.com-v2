@@ -3,7 +3,10 @@
   text-align: center;
 
   .btn {
-    margin-top: 35px;
+     margin-top: 20px;
+    @media only screen and (min-width: $largeWidth) {
+      margin-top: 35px;
+    }
   }
 
   &.visible {

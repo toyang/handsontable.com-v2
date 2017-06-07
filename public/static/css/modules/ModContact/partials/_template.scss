@@ -2,7 +2,7 @@
  * @author: Handsoncode
  */
 
-.contact-work {
+.contact {
   @media only screen and (min-width: $largeWidth) {
     padding-top: 30px;
   }
@@ -17,10 +17,10 @@
 
 
   h2 {
-    font-weight: 400;
-    text-align: left;
     margin: 40px 0 0 0;
     padding: 0;
+    font-weight: 400;
+    text-align: left;
 
     @media only screen and (min-width: $largeWidth) {
       text-align: center;
@@ -38,10 +38,10 @@
   }
 
   h4 {
-    font-weight: 400;
-    text-align: left;
     margin: 40px 0 0 0;
     padding: 0;
+    font-weight: 400;
+    text-align: left;
 
     @media only screen and (min-width: $largeWidth) {
       margin:0;
@@ -68,8 +68,9 @@
   }
 
   .border-bottom {
-    width: 40px;
+
     margin: 10px 60px 20px 0;
+    width: 40px;
     border-bottom: solid 2px $brandBlue;
 
     @media only screen and (min-width: $mediumWidth) {
@@ -79,11 +80,12 @@
   }
 
   .love {
+
     @include square(17px);
+    margin-right: 5px;
     position: relative;
     fill: #e87677;
     top: 3px;
-    margin-right: 5px;
 
     @media only screen and (min-width: $largeWidth) {
       margin-right: 2px;
@@ -92,22 +94,24 @@
 
 
   img {
-    width: 80px;
+
     margin-left: 30px;
+    width: 80px;
   }
 
   .btn {
-    font-weight: 400;
+
     margin-top: 10px;
     margin-bottom: 20px;
+    font-weight: 400;
   }
 
   svg {
+
     @include square(24px);
-    fill: $darkGray;
     margin: 0 5px -8px 5px;
     padding: 0;
-
+    fill: $darkGray;
   }
 
   .contact-footer {
@@ -117,6 +121,7 @@
     padding: 0;
 
     a {
+
       font-size: inherit;
     }
   }

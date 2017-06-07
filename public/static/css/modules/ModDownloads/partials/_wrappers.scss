@@ -1,5 +1,5 @@
 
-.community .wrappers-w {
+.downloads .wrappers-w {
 
   text-align: center;
   margin: 0 auto 0 auto;
@@ -12,29 +12,7 @@
 
   .wrappers {
 
-    @keyframes wrapper-n {
-
-      0% {top: 0;}
-      50% {top: -10px;}
-      100% {top: 0;}
-    }
-
     font-size: inherit;
-    filter: blur(0);
-
-    &:active #lad,
-    &:hover  #lad,
-    &:focus #lad {
-
-      position: static;
-
-      @media only screen and (min-width: $largeWidth) {
-        position: relative;
-        animation-name: wrapper-n;
-        animation-duration: 500ms;
-        animation-timing-function: ease;
-      }
-    }
   }
 
   .svg-wrappers {

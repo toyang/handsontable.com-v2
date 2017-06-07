@@ -11,7 +11,6 @@
     padding: 0;
 
     @media only screen and (min-width: $largeWidth) {
-      text-align: center;
       margin: 90px 0 0 0;
     }
   }
@@ -22,10 +21,6 @@
     text-align: left;
     font-family: $regularFont;
     font-weight: 300;
-
-    @media only screen and (min-width: $largeWidth) {
-      text-align: center;
-    }
   }
 
     .headline {
@@ -102,11 +97,11 @@
       }
 
       img {
-        @include absolute-top-right(30px, 30px);
+        @include absolute-top-right(40px, 40px);
       }
 
       h3 {
-        @include absolute-bottom-left(20px, 20px);
+        @include absolute-bottom-left(40px, 40px);
         padding-right: 20px;
         font-size: 1.692em;
         font-weight: 400;

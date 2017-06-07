@@ -11,9 +11,14 @@
      padding: 0;
 
      @media only screen and (min-width: $largeWidth) {
-       text-align: center;
        margin-top: 60px;
      }
+   }
+
+   h4 {
+     text-align: left;
+     margin:0;
+     padding: 0;
    }
 
    .subhead {
@@ -23,9 +28,6 @@
      font-family: $regularFont;
      font-weight: 300;
 
-     @media only screen and (min-width: $largeWidth) {
-       text-align: center;
-     }
    }
 
     .headline {
@@ -43,6 +45,7 @@
     }
 
     form, .external_links {
+        margin-bottom: 40px;
         /* [ styles only for desktop ] */
         @media only screen and (min-width: $largeWidth) {
             margin-left: 19px;

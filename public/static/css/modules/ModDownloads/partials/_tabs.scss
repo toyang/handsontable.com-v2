@@ -1,14 +1,5 @@
 
-.community .tabs-in {
-
-  padding-left: 10px;
-  padding-right: 10px;
-
-  @media only screen and (min-width: $mediumWidth) {
-
-    padding-left: 0;
-    padding-right: 0;
-  }
+.downloads .tabs-in {
 
   a {
     font-size: inherit;

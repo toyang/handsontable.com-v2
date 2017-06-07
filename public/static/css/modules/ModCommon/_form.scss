@@ -22,6 +22,7 @@ form {
   input[type="email"],
   input[type="number"],
   input[type="password"],
+  input[type="tel"],
   .selectbox,
   textarea {
     @include border($inputBorder);

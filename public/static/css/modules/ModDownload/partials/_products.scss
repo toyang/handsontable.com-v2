@@ -8,15 +8,11 @@
       from {
         background-color: $brandGreen;
         border-color: $brandGreenActive;
-        color: $darkWhite;
-        fill: $darkWhite;
       }
 
       to {
-        background-color: $darkWhite;
+        background-color: $brandGreenActive;
         border-color: $brandGreen;
-        color: $brandBlack;
-        fill: $brandGreen;
       }
     }
 
@@ -32,11 +28,6 @@
 
     .divider {
 
-      @keyframes ce-on-hover-div {
-
-        from { border-color: $darkWhite;}
-        to { border-color: $lightGray;}
-      }
 
       width: 100%;
       border-top: 1px solid $darkWhite;
@@ -64,30 +55,13 @@
 
       @media only screen and (min-width: $largeWidth) {
 
-        .divider {
-          border-top: 1px solid $lightGray;
-          animation-name: ce-on-hover-div;
-          animation-duration: 500ms;
-          animation-iteration-count: 1;
-        }
-
-        .svg-icon {
-          fill: $brandGreen;
-          animation-name: ce-on-hover;
-          animation-duration: 500ms;
-          animation-iteration-count: 1;
-        }
 
         .link-ce {
-          color: $brandGreen;
-          text-decoration: none;
-          animation-name: ce-on-hover-link;
-          animation-duration: 500ms;
-          animation-iteration-count: 1;
+          color: $darkWhite;
         }
 
-        color: $brandBlack;
-        background-color: $darkWhite;
+        color: $darkWhite;
+        background-color: $brandGreenActive;
         border-color: $brandGreen;
         animation-name: ce-on-hover;
         animation-duration: 500ms;
@@ -96,12 +70,6 @@
     }
 
     a.link-ce {
-
-      @keyframes ce-on-hover-link {
-
-        from {color: $darkWhite;}
-        to {color: $brandGreen;}
-      }
 
       &:hover,
       &:focus,
@@ -153,15 +121,11 @@
       from {
         background-color: $brandBlue;
         border-color: $brandBlueActive;
-        color: $darkWhite;
-        fill: $darkWhite;
       }
 
       to {
-        background-color: $darkWhite;
+        background-color: $brandBlueActive;
         border-color: $brandBlue;
-        color: $brandBlack;
-        fill: $brandBlue;
       }
     }
 
@@ -187,13 +151,6 @@
 
     .divider {
 
-      @keyframes pro-on-hover-div {
-
-        from {border-color: $darkWhite;}
-
-        to {border-color: $lightGray;}
-      }
-
       width: 100%;
       border-top: 1px solid $darkWhite;
       margin: 20px 0 10px 0;
@@ -203,7 +160,7 @@
     &:focus,
     &:active {
 
-      background-color: $brandBlue;
+      background-color: $brandBlueActive;
       color: $darkWhite;
 
       .divider {
@@ -220,30 +177,9 @@
 
       @media only screen and (min-width: $largeWidth) {
 
-        .divider {
-          border-top: 1px solid $lightGray;
-          animation-name: pro-on-hover-div;
-          animation-duration: 500ms;
-          animation-iteration-count: 1;
-        }
 
-        .svg-icon {
-          fill: $brandBlue;
-          animation-name: pro-on-hover;
-          animation-duration: 500ms;
-          animation-iteration-count: 1;
-        }
-
-        .link-pro {
-          color: $brandBlue;
-          text-decoration: none;
-          animation-name: pro-on-hover-link;
-          animation-duration: 500ms;
-          animation-iteration-count: 1;
-        }
-
-        color: $brandBlack;
-        background-color: $darkWhite;
+        color: $darkWhite;
+        background-color: $brandBlueActive;
         border-color: $brandBlue;
         animation-name: pro-on-hover;
         animation-duration: 500ms;
@@ -252,12 +188,6 @@
     }
 
     a.link-pro {
-
-      @keyframes pro-on-hover-link {
-
-        from { color: $darkWhite;}
-        to { color: $brandBlue;}
-      }
 
       &:hover,
       &:focus,
@@ -309,18 +239,6 @@
 
   .download-builder {
 
-    @keyframes build-on-hover {
-
-      from {
-        background-color: $lightGray;
-        border-top-color: $middleGray;
-      }
-
-      to {
-        background-color: $middleGray;
-        border-top-color: $lightGray;
-      }
-    }
 
     margin: 0 0 20px 0;
     padding: 20px 40px 20px 40px;
@@ -333,16 +251,6 @@
       height: 120px;
     }
 
-    &:hover,
-    &:focus,
-    &:active {
-
-      background-color: $middleGray;
-      border-color: $lightGray;
-      animation-name: build-on-hover;
-      animation-duration: 500ms;
-      animation-iteration-count: 1;
-    }
   }
 
   .divider {
@@ -425,7 +333,6 @@
           float: left;
           width: 65%;
           margin-bottom: 5px;
-          border-radius: 4px 4px 4px 2px;
         }
 
       }
@@ -525,5 +432,4 @@
     margin: 20px;
     font-family: $optionalFont, sans-serif;
   }
-
 }
