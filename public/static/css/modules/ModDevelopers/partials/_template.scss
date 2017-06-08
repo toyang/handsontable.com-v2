@@ -4,10 +4,10 @@
 
 .developers {
 
-
   span {
-    font-size: 0.7em;
-    color: $middleGray;
+      font-size: 1em;
+      font-weight: 600;
+      color: $brandGreen;
   }
 
   .header-dist {
@@ -24,7 +24,6 @@
       padding: 0;
     }
   }
-
 
   h1 {
     padding: 0;
@@ -50,15 +49,15 @@
   }
 
   h3 {
-      padding: 0;
-      text-align: left;
-      line-height: 1.1em;
-      font-weight: 400;
+    padding: 0;
+    text-align: left;
+    line-height: 1.1em;
+    font-weight: 400;
 
-      @media only screen and (min-width: $mediumWidth) {
-        margin: 0 0 10px 0;
-      }
+    @media only screen and (min-width: $mediumWidth) {
+      margin: 0 0 10px 0;
     }
+  }
 
   h5 {
     padding: 0;

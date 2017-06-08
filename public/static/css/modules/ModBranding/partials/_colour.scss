@@ -21,6 +21,7 @@
     font-size: 0.700em;
   }
 
+
   .brand-blue {
     background-color: $brandBlue;
     height: 130px;
@@ -45,12 +46,12 @@
   .brand-red,
   .brand-green,
   .brand-navy {
-    padding: 0 10px;
+    padding: 15px ;
     color: $backgroundTextColor;
   }
 
   .brand-yellow {
-    padding: 0 10px;
+    padding: 15px;
     background-color: $brandYellow;
     color: $darkGray;
     height: 130px;

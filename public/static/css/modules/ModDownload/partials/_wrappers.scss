@@ -50,13 +50,12 @@
       }
     }
   }
-
   .in-progress {
 
     filter: grayscale(100%) brightness(140%) opacity(40%) blur(0);
 
     @include square(80px);
-    margin: 8px;
+    margin: 13px;
     fill: $darkWhite;
     padding: 10px;
 
@@ -64,5 +63,9 @@
     @media only screen and (min-width: $largeWidth) {
       margin: 9px;
     }
+  }
+
+  a {
+    font-size: 1em;
   }
 }
