@@ -1,6 +1,6 @@
 {
   "name": "Handsontable",
-  "version": "3.0.86",
+  "version": "3.0.87",
   "scripts": {
     "start": "harp server",
     "build": "harp build",
