@@ -1,0 +1,50 @@
+/**
+ * @author: Handsoncode
+ */
+
+.branding .logo-versions {
+
+  padding-bottom: 40px;
+
+  @media only screen and (min-width: $mediumWidth) {
+    padding: 0 0 40px 0;
+  }
+
+  .logo-holder {
+    width: 100%;
+    padding: 20px 0 20px 0;
+    height: 200px;
+    background-color: $darkWhite;
+
+    @media only screen and (min-width: $mediumWidth) {
+      height: 250px;
+    }
+  }
+
+
+  .logo {
+    margin-top: 5%;
+    width: 220px;
+
+    @media only screen and (min-width: $mediumWidth) {
+      margin-top: 10%;
+      width: 280px;
+    }
+  }
+
+  .logo-two {
+    margin-top: 5%;
+
+    @media only screen and (min-width: $mediumWidth) {
+      margin-top: 10%;
+    }
+  }
+  .logo-three {
+    margin-top: 2%;
+    width: 90%;
+
+    @media only screen and (min-width: $mediumWidth) {
+      margin-top: 7%;
+    }
+  }
+}
