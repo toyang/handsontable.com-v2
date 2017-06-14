@@ -1,0 +1,102 @@
+/**
+ * @author: Handsoncode
+ */
+
+.labs .confirmation {
+
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  z-index: 100000;
+
+
+  h3 {
+    text-align: center;
+    font-weight: 400;
+  }
+
+  p {
+
+    color: $middleGray;
+    text-align: center;
+
+  }
+
+  .uploaded {
+
+    width: 300px;
+    margin: 40px auto 60px auto;
+    padding: 20px 10px 10px 10px;
+    background-color: $headerGrey;
+    border: 1px dashed $lightGray;
+    border-radius: 10px;
+
+    @media only screen and (min-width: $largeWidth) {
+      width: 400px;
+      height: 450px;
+      padding: 2px;
+      margin: 90px auto 90px auto;
+    }
+
+    .svg {
+      margin-top: 50px;
+      height: 100px;
+      fill: $brandBlue;
+
+      @media only screen and (min-width: $largeWidth) {
+        margin-top: 100px;
+      }
+    }
+
+    .btn {
+      margin-top: 10px;
+    }
+  }
+
+  .uploaded-error {
+
+    width: 300px;
+    margin: 40px auto 60px auto;
+    background-color: $brandRed;
+    padding: 20px 10px 10px 10px;
+    border-radius: 10px;
+
+
+    @media only screen and (min-width: $largeWidth) {
+      margin: 90px auto 90px auto;
+      padding: 20px;
+      height: 400px;
+      width: 450px;
+    }
+
+    p {
+      color: $darkWhite;
+    }
+
+    .svg {
+      margin-top: 50px;
+      height: 100px;
+      fill: $darkWhite;
+
+      @media only screen and (min-width: $largeWidth) {
+        margin-top: 120px;
+      }
+    }
+
+    .btn {
+      margin-top: 10px;
+    }
+  }
+
+  .buttons {
+
+    margin-left: auto;
+    margin-right: auto;
+    font-size: inherit;
+
+  }
+
+}
