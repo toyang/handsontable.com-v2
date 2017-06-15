@@ -17,7 +17,7 @@
 
   @media only screen and (min-width: $mediumWidth) {
 
-    @include vertical-align(42px);
+    @include vertical-align(35px);
     width: auto;
   }
 
@@ -80,6 +80,19 @@
     }
   }
 
+  &.white-red {
+    color: $brandRed;
+    background: $darkWhite;
+    border: 2px solid transparent;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparent;
+      color: $darkWhite;
+      border: 2px solid $darkWhite;
+    }
+  }
+
   &.white-blue {
     color: $brandBlue;
     background: $darkWhite;
@@ -116,6 +129,7 @@
 
   &.ghost-blue,
   &.ghost-red,
+  &.ghost-green,
   &.ghost-white  {
     border: 2px solid currentColor;
     background: #FFF;
@@ -125,11 +139,7 @@
     color: $linkColor;
 
     &.large {
-      line-height: 55px;
-
-      @media only screen and (min-width: $mediumWidth) {
-        line-height: 45px;
-      }
+      line-height: 37px;
     }
 
     &:hover,
@@ -144,7 +154,7 @@
     color: $darkWhite;
 
     &.large {
-      line-height: 45px;
+      line-height: 37px;
     }
 
     &:hover,
@@ -164,7 +174,7 @@
     color: $darkWhite;
 
     &.large {
-      line-height: 45px;
+      line-height: 37px;
     }
 
     &:hover,
@@ -175,17 +185,52 @@
     }
   }
 
-  &.ghost-red {
-    color: $brandRed;
+  &.ghost-white-red  {
+    border: 2px solid currentColor;
+    background: transparent;
+  }
+
+  &.ghost-white-red {
+    color: $darkWhite;
 
     &.large {
-      line-height: 45px;
+      line-height: 37px;
     }
 
     &:hover,
     &:focus,
     &:active {
       color: $brandRedActive;
+      border-color: currentColor;
+    }
+  }
+
+  &.ghost-red {
+    color: $brandRed;
+
+    &.large {
+      line-height: 37px;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $brandRedActive;
+      border-color: currentColor;
+    }
+  }
+
+  &.ghost-green {
+    color: $brandGreen;
+
+    &.large {
+      line-height: 37px;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $brandGreenActive;
       border-color: currentColor;
     }
   }
@@ -197,24 +242,21 @@
 
   &.large {
 
-    @include vertical-align(60px);
+    @include vertical-align(48px);
     font-size: 0.938em; /* 15px */
     padding: 0 33px;
 
     @media only screen and (min-width: $mediumWidth) {
-      @include vertical-align(50px);
+      @include vertical-align(42px);
     }
   }
 
   &.small {
     font-size: 0.713em; /* 13px */
-    height: 38px;
-    line-height: 34px;
     margin: 0;
 
     @media only screen and (min-width: $mediumWidth) {
       font-size: 0.813em; /* 13px */
-      margin: 10px;
       padding: 0 20px;
     }
   }

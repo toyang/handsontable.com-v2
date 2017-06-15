@@ -2,73 +2,16 @@
  * @author: Handsoncode
  */
 
-.labs .uploader {
+.labs .confirmation {
 
-  .upload {
+  background-color: rgba(255, 255, 255, 0.9) ;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  z-index: 100000;
 
-    @keyframes on-hover-in {
-
-      from {
-        background-color: $headerGrey;
-        border-color: $lightGray;
-      }
-
-      to {
-        background-color: #fff;
-        border-color: $brandBlue;
-      }
-    }
-
-    @keyframes on-hover-out {
-
-      from {
-        background-color: #fff;
-        border-color: $brandBlue;
-      }
-
-      to {
-        background-color: $headerGrey;
-        border-color: $lightGray;
-      }
-    }
-
-    margin: 40px 0 60px 0;
-    height: 500px;
-    padding: 20px;
-    background-color: $headerGrey;
-    border: 1px dashed $lightGray;
-    border-radius: 10px;
-    animation-name: on-hover-out;
-    animation-duration: 500ms;
-    animation-iteration-count: 1;
-
-    @media only screen and (min-width: $largeWidth) {
-      width: 600px;
-      height: 500px;
-      margin: 90px auto 90px auto;
-      padding: 0;
-
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
-
-      @media only screen and (min-width: $largeWidth) {
-
-        background-color: #fff;
-        border-color: $brandBlue;
-        animation-name: on-hover-in;
-        animation-duration: 500ms;
-        animation-iteration-count: 1;
-      }
-    }
-
-    .svg {
-      margin-top: 50px;
-      height: 200px;
-    }
-  }
 
   h3 {
     text-align: center;
@@ -82,24 +25,25 @@
 
   }
 
-
-  .upload-modal {
-
-    z-index: 10000;
-    background-color: $darkWhite;
+  .cancel {
+    @include square(24px);
+    float: right;
+    fill: $brandRedActive;
   }
 
   .uploaded {
 
+    width: 300px;
     margin: 40px auto 60px auto;
-    padding: 20px;
+    padding: 20px 10px 10px 10px;
     background-color: $headerGrey;
     border: 1px dashed $lightGray;
     border-radius: 10px;
 
     @media only screen and (min-width: $largeWidth) {
-      width: 600px;
-      height: 500px;
+      width: 400px;
+      height: 380px;
+      padding: 20px;
       margin: 90px auto 90px auto;
     }
 
@@ -109,7 +53,7 @@
       fill: $brandBlue;
 
       @media only screen and (min-width: $largeWidth) {
-        margin-top: 100px;
+        margin-top: 50px;
       }
     }
 
@@ -120,19 +64,18 @@
 
   .uploaded-error {
 
-    width: 600px;
-    height: 500px;
-    position: absolute;
-    display: block;
+    width: 300px;
     margin: 40px auto 60px auto;
-    padding: 20px;
     background-color: $brandRed;
+    padding: 20px 10px 10px 10px;
     border-radius: 10px;
-    z-index: 10000;
 
 
     @media only screen and (min-width: $largeWidth) {
       margin: 90px auto 90px auto;
+      padding: 20px;
+      height: 400px;
+      width: 450px;
     }
 
     p {
@@ -145,13 +88,22 @@
       fill: $darkWhite;
 
       @media only screen and (min-width: $largeWidth) {
-        margin-top: 120px;
+        margin-top: 80px;
+        margin-bottom: 50px;
       }
     }
 
     .btn {
       margin-top: 10px;
     }
+  }
+
+  .buttons {
+
+    margin-left: auto;
+    margin-right: auto;
+    font-size: inherit;
+
   }
 
 }

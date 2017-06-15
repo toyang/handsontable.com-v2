@@ -116,14 +116,8 @@
   .btn {
 
     margin: 5px 0 10px 0;
-    height: 45px;
-    font-size: 0.915em;
-    font-weight: 400;
-    line-height: inherit;
-    padding-top: 7px;
 
     @media only screen and (min-width: $largeWidth) {
-      padding-top: 10px;
       margin: 0 10px 20px 0;
     }
   }

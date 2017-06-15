@@ -2,53 +2,51 @@
  * @author: Handsoncode
  */
 
-.labs .uploader {
+.labs .sample {
 
-  .upload {
+  .sample-spreadsheets {
 
-    @keyframes on-hover-in {
+    height: 120px;
+    margin-top: 25px;
+    border: 0;
+    color: $darkWhite;
+    padding: 10px 10px 5px 20px;
+    border-radius: 8px;
+
+    h5 {
+      font-weight: 600;
+      font-size: 1em;
+    }
+  }
+
+  .gray {
+
+    @keyframes on-hover-in-gray {
 
       from {
-        background-color: $headerGrey;
-        border-color: $lightGray;
+        background-color: $gray;
       }
 
       to {
-        background-color: #fff;
-        border-color: $brandBlue;
+        background-color: $darkGray;
       }
     }
 
-    @keyframes on-hover-out {
+    @keyframes on-hover-out-gray {
 
       from {
-        background-color: #fff;
-        border-color: $brandBlue;
+        background-color: $darkGray;
       }
 
       to {
-        background-color: $headerGrey;
-        border-color: $lightGray;
+        background-color: $gray;
       }
     }
 
-    margin: 40px 0 60px 0;
-    height: 500px;
-    padding: 20px;
-    background-color: $headerGrey;
-    border: 1px dashed $lightGray;
-    border-radius: 10px;
-    animation-name: on-hover-out;
+    background-color: $gray;
+    animation-name: on-hover-out-gray;
     animation-duration: 500ms;
     animation-iteration-count: 1;
-
-    @media only screen and (min-width: $largeWidth) {
-      width: 600px;
-      height: 500px;
-      margin: 90px auto 90px auto;
-      padding: 0;
-
-    }
 
     &:hover,
     &:focus,
@@ -56,58 +54,238 @@
 
       @media only screen and (min-width: $largeWidth) {
 
-        background-color: #fff;
-        border-color: $brandBlue;
-        animation-name: on-hover-in;
+        background-color: $darkGray;
+        animation-name: on-hover-in-gray;
+        animation-duration: 500ms;
+        animation-iteration-count: 1;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .blue {
+
+    @keyframes on-hover-in-blue {
+
+    from {
+      background-color: $brandBlue;
+    }
+
+    to {
+      background-color: $brandBlueActive;
+    }
+  }
+
+    @keyframes on-hover-out-blue {
+
+      from {
+        background-color: $brandBlueActive;
+      }
+
+      to {
+        background-color: $brandBlue;
+      }
+    }
+
+    background-color: $brandBlue;
+    animation-name: on-hover-out-blue;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+
+    &:hover,
+    &:focus,
+    &:active {
+
+      @media only screen and (min-width: $largeWidth) {
+
+        background-color: $brandBlueActive;
+        animation-name: on-hover-in-blue;
         animation-duration: 500ms;
         animation-iteration-count: 1;
       }
     }
-
-    .svg {
-      margin-top: 50px;
-      height: 200px;
-    }
   }
 
-  h3 {
-    text-align: center;
-    font-weight: 400;
-  }
+  .navy {
 
-  p {
+    @keyframes on-hover-in-navy {
 
-    color: $middleGray;
-    text-align: center;
+      from {
+        background-color: $brandDeepNavy;
+      }
 
-  }
-
-  .uploaded {
-
-    margin: 40px auto 60px auto;
-    padding: 20px;
-    background-color: $headerGrey;
-    border: 1px dashed $lightGray;
-    border-radius: 10px;
-
-    @media only screen and (min-width: $largeWidth) {
-      width: 600px;
-      height: 500px;
-      margin: 90px auto 90px auto;
-    }
-
-    .svg {
-      margin-top: 50px;
-      height: 100px;
-      fill: $brandBlue;
-
-      @media only screen and (min-width: $largeWidth) {
-        margin-top: 100px;
+      to {
+        background-color: $brandDarkNavy;
       }
     }
 
-    .btn {
-      margin-top: 10px;
+    @keyframes on-hover-out-navy {
+
+      from {
+        background-color: $brandDarkNavy;
+      }
+
+      to {
+        background-color: $brandDeepNavy;
+      }
+    }
+
+    background-color: $brandDeepNavy;
+    animation-name: on-hover-out-navy;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+
+    &:hover,
+    &:focus,
+    &:active {
+
+      @media only screen and (min-width: $largeWidth) {
+
+        background-color: $brandDarkNavy;
+        animation-name: on-hover-in-navy;
+        animation-duration: 500ms;
+        animation-iteration-count: 1;
+      }
+    }
+  }
+
+  .green {
+
+    @keyframes on-hover-in-green {
+
+      from {
+        background-color: $brandGreen;
+      }
+
+      to {
+        background-color: $brandGreenActive;
+      }
+    }
+
+    @keyframes on-hover-out-green {
+
+      from {
+        background-color: $brandGreenActive;
+      }
+
+      to {
+        background-color: $brandGreen;
+      }
+    }
+
+    background-color: $brandGreen;
+    animation-name: on-hover-out-green;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+
+    &:hover,
+    &:focus,
+    &:active {
+
+      @media only screen and (min-width: $largeWidth) {
+
+        background-color: $brandGreenActive;
+        animation-name: on-hover-in-green;
+        animation-duration: 500ms;
+        animation-iteration-count: 1;
+      }
+    }
+  }
+
+  .yellow {
+
+    @keyframes on-hover-in-yellow {
+
+      from {
+        background-color: $brandYellow;
+      }
+
+      to {
+        background-color: $brandYellowActive;
+      }
+    }
+
+    @keyframes on-hover-out-yellow {
+
+      from {
+        background-color: $brandYellowActive;
+      }
+
+      to {
+        background-color: $brandYellow;
+      }
+    }
+
+    background-color: $brandYellow;
+    animation-name: on-hover-out-yellow;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+
+    &:hover,
+    &:focus,
+    &:active {
+
+      @media only screen and (min-width: $largeWidth) {
+
+        background-color: $brandYellowActive;
+        animation-name: on-hover-in-yellow;
+        animation-duration: 500ms;
+        animation-iteration-count: 1;
+      }
+    }
+  }
+
+  .red {
+
+    @keyframes on-hover-in-red {
+
+      from {
+        background-color: $brandRed;
+      }
+
+      to {
+        background-color: $brandRedActive;
+      }
+    }
+
+    @keyframes on-hover-out-red {
+
+      from {
+        background-color: $brandRedActive;
+      }
+
+      to {
+        background-color: $brandRed;
+      }
+    }
+
+    background-color: $brandRed;
+    animation-name: on-hover-out-red;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+
+    &:hover,
+    &:focus,
+    &:active {
+
+      @media only screen and (min-width: $largeWidth) {
+
+        background-color: $brandRedActive;
+        animation-name: on-hover-in-red;
+        animation-duration: 500ms;
+        animation-iteration-count: 1;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+
+      text-decoration: none;
     }
   }
 

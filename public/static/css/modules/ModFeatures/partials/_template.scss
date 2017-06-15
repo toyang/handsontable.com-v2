@@ -15,7 +15,7 @@
   // }
 
    .main-background {
-     @include gradient(#33a9dd, #4ebeed);
+     @include gradient(#1ca7e4, #a4e3ff);
    }
 
    .header-dist {
@@ -119,12 +119,6 @@
      @media only screen and (min-width: $mediumWidth) {
        margin: 20px auto 20px auto;
        padding: 0;
-     }
-
-     a {
-       font-size: 0.875em;
-       font-weight: 400;
-       line-height: 2.7em;
      }
    }
 

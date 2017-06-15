@@ -3,7 +3,7 @@
 
   .handsontable-ce {
 
-    @keyframes ce-on-hover {
+    @keyframes ce-on-hover-in {
 
       from {
         background-color: $brandGreen;
@@ -16,11 +16,27 @@
       }
     }
 
+    @keyframes ce-on-hover-out {
+
+      from {
+        background-color: $brandGreenActive;
+        border-color: $brandGreen;
+      }
+
+      to {
+        background-color: $brandGreen;
+        border-color: $brandGreenActive;
+      }
+    }
+
     margin: 0 0 20px 0;
     padding: 20px 30px 20px 30px;
     border-top: 10px solid $brandGreenActive;
     background-color: $brandGreen;
     color: $darkWhite;
+    animation-name: ce-on-hover-out;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
 
     @media only screen and (min-width: $largeWidth) {
       height: 360px;
@@ -38,7 +54,7 @@
     &:focus,
     &:active {
 
-      background-color: $brandGreen;
+      background-color: $darkWhite;
       color: $darkWhite;
 
       .divider {
@@ -63,7 +79,7 @@
         color: $darkWhite;
         background-color: $brandGreenActive;
         border-color: $brandGreen;
-        animation-name: ce-on-hover;
+        animation-name: ce-on-hover-in;
         animation-duration: 500ms;
         animation-iteration-count: 1;
       }
@@ -116,7 +132,7 @@
 
   .handsontable-pro {
 
-    @keyframes pro-on-hover {
+    @keyframes pro-on-hover-in {
 
       from {
         background-color: $brandBlue;
@@ -129,11 +145,27 @@
       }
     }
 
+    @keyframes pro-on-hover-out {
+
+      from {
+        background-color: $brandBlueActive;
+        border-color: $brandBlue;
+      }
+
+      to {
+        background-color: $brandBlue;
+        border-color: $brandBlueActive;
+      }
+    }
+
     margin: 0 0 20px 0;
     padding: 20px 30px 20px 30px;
     border-top: 10px solid $brandBlueActive;
     background-color: $brandBlue;
     color: $darkWhite;
+    animation-name: pro-on-hover-out;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
 
     @media only screen and (min-width: $largeWidth) {
       height: 360px;
@@ -181,7 +213,7 @@
         color: $darkWhite;
         background-color: $brandBlueActive;
         border-color: $brandBlue;
-        animation-name: pro-on-hover;
+        animation-name: pro-on-hover-in;
         animation-duration: 500ms;
         animation-iteration-count: 1;
       }
@@ -265,11 +297,6 @@
     @media only screen and (min-width: $largeWidth) {
       padding: 20px 0;
       margin-top: 30px;
-    }
-
-    .btn {
-      font-weight: 400;
-      font-size: 0.875em;
     }
 
     span {

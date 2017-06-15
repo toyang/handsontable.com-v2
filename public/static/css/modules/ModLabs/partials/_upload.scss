@@ -2,116 +2,83 @@
  * @author: Handsoncode
  */
 
-.labs {
-
-  h1 {
-    padding: 0;
-    text-align: left;
-    line-height: 1.1em;
-
-    @media only screen and (min-width: $mediumWidth) {
-      margin: 10px 0 5px 0;
-      text-align: center;
-    }
-  }
-
-  h2 {
-    text-align: left;
-    line-height: 1.1em;
-    padding-left: 20px;
-
-    @media only screen and (min-width: $mediumWidth) {
-      padding-left: 0;
-      margin-top: 0;
-      text-align: center;
-    }
-  }
-
-  .experimental {
-
-    margin: 0 0 20px 0;
-    font-size: 0.815em;
-    font-weight: 600;
-    background-color: purple;
-    padding: 5px;
-    color: $darkWhite;
-    width: 120px;
-
-    @media only screen and (min-width: $mediumWidth) {
-      margin: 0 auto;
-    }
-  }
-
-  span {
-    font-weight: 200;
-    text-align: left;
-  }
-
-  .header-labs {
-    background-color: $headerGrey;
-    padding: 40px 0;
-    text-align: left;
-
-    @media only screen and (min-width: $mediumWidth) {
-      padding: 40px 0 90px 0;
-      text-align: center;
-
-    }
-
-    .header-dist {
-      padding: 40px 0 0 0;
-
-      @media only screen and (min-width: $mediumWidth) {
-        padding: 100px 30px 0 30px;
-      }
-    }
-  }
-
+.labs .uploader {
 
   .upload {
-    width: 55%;
+
+    @keyframes on-hover-in {
+
+      from {
+        background-color: $headerGrey;
+        border-color: $lightGray;
+      }
+
+      to {
+        background-color: #fff;
+        border-color: $brandBlue;
+      }
+    }
+
+    @keyframes on-hover-out {
+
+      from {
+        background-color: #fff;
+        border-color: $brandBlue;
+      }
+
+      to {
+        background-color: $headerGrey;
+        border-color: $lightGray;
+      }
+    }
+
+    margin: 40px 0 60px 0;
     height: 500px;
-    margin: 40px auto 40px auto;
+    padding: 20px;
     background-color: $headerGrey;
     border: 1px dashed $lightGray;
     border-radius: 10px;
+    animation-name: on-hover-out;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+
+    @media only screen and (min-width: $largeWidth) {
+      width: 600px;
+      height: 500px;
+      margin: 90px auto 90px auto;
+      padding: 0;
+
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+
+      @media only screen and (min-width: $largeWidth) {
+
+        background-color: #fff;
+        border-color: $brandBlue;
+        animation-name: on-hover-in;
+        animation-duration: 500ms;
+        animation-iteration-count: 1;
+      }
+    }
 
     .svg {
-      margin-top: 100px;
-      height: 250px;
+      margin-top: 50px;
+      height: 200px;
     }
   }
 
-  .sample-spreadsheets {
-
-    height: 80px;
-    width: 100%;
-    background-color: $headerGrey;
-    border: 1px solid $lightGray;
-    border-radius: 10px;
+  h3 {
+    text-align: center;
+    font-weight: 400;
   }
 
+  p {
 
+    color: $middleGray;
+    text-align: center;
 
-  .border-bottom {
-    width: 40px;
-    margin-bottom: 60px;
-    margin-top: 10px;
-    border-bottom: solid 2px $brandBlue;
-    margin-left: 20px;
-
-    @media only screen and (min-width: $mediumWidth) {
-      margin-left: auto;
-      margin-right: auto;
-      display: block;
-      margin-top: 10px;
-      margin-bottom: 60px;
-    }
-  }
-
-  svg {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
   }
 }

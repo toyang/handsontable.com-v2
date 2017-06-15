@@ -1,6 +1,6 @@
 <header class="<% if (current.source === 'features') { %>
      features-nav
-     <% } else if (current.source === 'pricing' || current.source === 'branding') { %>
+     <% } else if (current.source === 'pricing' || current.source === 'branding' || current.source === 'labs-upload' || current.source === 'random-hash' ) { %>
      white-head
      <% } else { %>
      header
@@ -44,7 +44,7 @@
             </ul>
             <script>LoginBar.update()</script>
             <ul class="clearfix
-                <% if (current.source === 'features') { %>
+                <% if (current.source === 'features' ) { %>
                      features-nav-li dropdown-f<% } else { %>
                      <% } %>">
                 <li><a href="/features.html">Features</a></li>

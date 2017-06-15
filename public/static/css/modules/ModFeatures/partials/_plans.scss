@@ -66,16 +66,6 @@
       padding: 0;
       font-weight: 400;
     }
-
-    .btn {
-      padding-top: 10px;
-      font-weight: 400;
-      font-size: 0.875em;
-
-      @media only screen and (min-width: $largeWidth) {
-        padding-top: 8px;
-      }
-    }
   }
 
   .pro-background-blue {
@@ -135,17 +125,6 @@
       margin: 0;
       padding: 0;
       font-weight: 400;
-    }
-
-    .btn {
-
-      padding-top: 10px;
-      font-weight: 400;
-      font-size: 0.875em;
-
-      @media only screen and (min-width: $largeWidth) {
-        padding-top: 8px;
-      }
     }
   }
 }
