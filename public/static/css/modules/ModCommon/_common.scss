@@ -3,9 +3,9 @@
  */
  
  /* [ components ]*/
-@import "fontface";
-@import "normalize";
-@import "grid";
+@import 'fontface';
+@import 'normalize';
+@import 'grid';
 @import 'tooltip';
 @import 'typography';
 @import 'button';
@@ -16,6 +16,9 @@
 @import 'headline';
 @import 'notification';
 @import 'user_menu';
+@import 'modals';
+@import 'tabs';
+@import 'square_loader';
 
 /* [ web partials ] */
 @import 'template';

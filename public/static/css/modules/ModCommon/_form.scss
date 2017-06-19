@@ -1,8 +1,8 @@
 /**
  * @author: Handsoncode
  */
-form {
 
+form {
   @include placeholder {
     font-size: 0.938em; /* 13px */
   }
@@ -69,6 +69,7 @@ form {
     svg {
       @include absolute-top-right (50%, 18px);
       @include square (11px);
+
       margin: -4px 0 0 0;
       fill: #474747;
       z-index: 10;
@@ -106,4 +107,55 @@ div.mce_inline_error {
   margin: 0 !important;
   color: $errorColor !important;
   background-color: transparent !important;
+}
+
+.social-share {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid $gray;
+  border-radius: 6px;
+
+  p {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  p > p {
+    margin-top: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+
+    @media only screen and (min-width: $mediumWidth) {
+      margin-top: 0;
+    }
+  }
+
+  input[type="text"] {
+    margin: 0;
+    padding: 20px;
+    background: $headerGrey;
+    height: 42px;
+
+    @media only screen and (min-width: $largeWidth) {
+      width: 100%;
+      margin: 20px 0 5px 0;
+    }
+  }
+
+  svg {
+    @include square(24px);
+    padding: 0;
+    margin: 10px 10px 0 0;
+
+    @media only screen and (min-width: $mediumWidth) {
+      margin: 5px 7px 14px 0;
+    }
+  }
 }

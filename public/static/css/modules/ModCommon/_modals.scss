@@ -2,16 +2,26 @@
  * @author: Handsoncode
  */
 
-.labs .confirmation {
+.code-modal {
 
-  background-color: rgba(255, 255, 255, 0.9) ;
-  position: fixed;
-  width: 100%;
   height: 100%;
-  top:0;
+  width: 100%;
+  position: fixed;
+  top: 0;
   left: 0;
+  background-color: rgba(255, 255, 255, 0.9);
   z-index: 100000;
 
+  .cancel {
+
+    @include square(24px);
+    float: right;
+    fill: $brandRed;
+  }
+
+  small {
+    color: $gray;
+  }
 
   h3 {
     text-align: center;
@@ -19,14 +29,183 @@
   }
 
   p {
-
+    margin: 0;
     color: $middleGray;
     text-align: center;
+  }
 
+  .code {
+
+    width: 90%;
+    margin: 40px auto 60px auto;
+    padding: 20px 20px 10px 20px;
+    background-color: $headerGrey;
+    border: 1px dashed $lightGray;
+    border-radius: 10px;
+
+    @media only screen and (min-width: $largeWidth) {
+      width: 70%;
+      height: 60%;
+      margin: 90px auto 90px auto;
+    }
+
+    .svg {
+      margin-top: 50px;
+      height: 100px;
+      fill: $brandBlue;
+
+      @media only screen and (min-width: $largeWidth) {
+        margin-top: 100px;
+      }
+    }
+
+    .btn {
+      margin-top: 10px;
+    }
+  }
+
+  .buttons {
+
+    margin-left: auto;
+    margin-right: auto;
+    font-size: inherit;
+  }
+
+  .code-box {
+
+    @include border;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: #FFF;
+
+    @media only screen and (min-width: $largeWidth) {
+      margin: 25px 20px 20px 20px;
+    }
+
+    .tabs {
+
+      @include border-bottom;
+      padding: 6px;
+
+      a {
+        font-size: 0.803em;
+        display: block;
+        padding: 3px 6px;
+
+        @media only screen and (min-width: $largeWidth) {
+          font-size: inherit;
+          padding: 3px 13px;
+        }
+      }
+
+      .action-link a {
+        color: $secondTextColor;
+      }
+
+      svg {
+        @include square (15px);
+
+        position: relative;
+        top: 2px;
+        margin-right: 4px;
+        fill: currentColor;
+      }
+
+      [aria-selected="true"] {
+        text-decoration: none;
+        color: $darkGray;
+        cursor: default;
+      }
+    }
+
+    .tabs-content {
+      max-height: 350px;
+      overflow-y: auto;
+      padding: 10px 27px;
+
+      ol {
+        padding: 0;
+      }
+
+      code {
+        background: #FFF;
+        border: 0;
+        padding: 0;
+        font-size: 0.7em;
+        font-weight: 400;
+        font-family: Consolas, "Liberation Mono", Courier, monospace;
+      }
+
+      #js-tab {
+        div[id^="js_feature"] {
+          font-weight: bold;
+          margin-left: 26px;
+          color: #E87677;
+        }
+      }
+
+      #data-tab {
+        p {
+          overflow: auto;
+        }
+      }
+
+      #enabled-features-tab {
+        li[data-enabled-feature="visible"] ~ li[data-enabled-placeholder] {
+          display: none;
+        }
+
+        li[data-enabled-feature="hidden"] {
+          display: none;
+        }
+
+        li[data-enabled-feature="visible"] {
+          display: block;
+
+          h4, p {
+            margin: 6px 0 24px;
+            font-size: 1em;
+          }
+
+          h4 {
+            margin: 0;
+            font-weight: bold;
+          }
+        }
+      }
+
+      code {
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+.confirmation {
+
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 100000;
+
+  h3 {
+    text-align: center;
+    font-weight: 400;
+  }
+
+  p {
+    color: $middleGray;
+    text-align: center;
   }
 
   .cancel {
+
     @include square(24px);
+
     float: right;
     fill: $brandRedActive;
   }
@@ -41,10 +220,11 @@
     border-radius: 10px;
 
     @media only screen and (min-width: $largeWidth) {
-      width: 400px;
+
       height: 380px;
-      padding: 20px;
+      width: 400px;
       margin: 90px auto 90px auto;
+      padding: 20px;
     }
 
     .svg {
@@ -66,16 +246,15 @@
 
     width: 300px;
     margin: 40px auto 60px auto;
-    background-color: $brandRed;
-    padding: 20px 10px 10px 10px;
+    padding: 20px 20px 10px 10px;
     border-radius: 10px;
+    background-color: $brandRed;
 
 
     @media only screen and (min-width: $largeWidth) {
-      margin: 90px auto 90px auto;
-      padding: 20px;
       height: 400px;
       width: 450px;
+      margin: 90px auto;
     }
 
     p {
@@ -83,13 +262,13 @@
     }
 
     .svg {
-      margin-top: 50px;
       height: 100px;
+      margin-top: 50px;
       fill: $darkWhite;
 
       @media only screen and (min-width: $largeWidth) {
-        margin-top: 80px;
-        margin-bottom: 50px;
+        margin: 80px 20px 20px 70px;
+
       }
     }
 
@@ -103,7 +282,6 @@
     margin-left: auto;
     margin-right: auto;
     font-size: inherit;
-
   }
-
 }
+

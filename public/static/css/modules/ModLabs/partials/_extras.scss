@@ -9,19 +9,16 @@
 
 
   h3 {
-
     margin-bottom: 30px;
   }
 
   a {
-
     font-size: inherit;
   }
 
   p {
-
+    /* desktop only */
     @media only screen and (min-width: $mediumWidth) {
-
       margin: 0 0 20px 0;
       padding-right: 40px;
       line-height: 1.6em;
@@ -29,7 +26,7 @@
   }
 
 
-  .subscriber-r {
+  .subscribe-form {
 
     span {
       font-size: 0.7em;
@@ -45,22 +42,16 @@
     }
 
     form {
+
       /* mailchimp class */
       .mc-field-group {
         @include rectangle(100%, 42px);
-        position: relative;
         margin: 0 auto;
+        position: relative;
 
         @media only screen and (min-width: $largeWidth) {
           width: auto;
         }
-
-        /*svg {
-          @include set-pseudo-element(50%, auto, auto, 14px);
-          @include square(11px);
-          margin-top: -5px;
-          fill: $middleGray;
-        }*/
 
         div.mce_inline_error {
           bottom: 44px;
@@ -77,17 +68,16 @@
       }
 
       input[type="email"] {
+        height: 42px;
         margin: 0;
         padding: 20px;
         background: $headerGrey;
-        height: 42px; /* Firefox adds 2 extra pixels */
 
         @media only screen and (min-width: $largeWidth) {
-          float: left;
           width: 65%;
           margin-bottom: 5px;
+          float: left;
         }
-
       }
 
       input[type="submit"] {
@@ -100,26 +90,26 @@
           padding: 0;
           position: relative;
           left: 20px;
-
           border-radius: 4px 4px 4px 4px;
         }
       }
 
       #mce-responses {
+        padding: 0;
+        top: 180px;
         position: absolute;
         font-size: 0.715em;
         min-height: 10px;
-        padding: 0;
-        top: 180px;
         background: #fff;
         text-align: center;
+
         @media only screen and (min-width: $largeWidth) {
-          font-size: 0.5em;
-          top: 135px;
           padding: 0;
+          top: 135px;
+          width: 65%;
+          font-size: 0.5em;
           min-height: auto;
           text-align: left;
-          width: 65%;
         }
 
         #mce-error-response {

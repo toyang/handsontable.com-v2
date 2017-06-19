@@ -3,11 +3,8 @@
 */
 
 @import 'partials/template';
-@import 'partials/upload';
+@import 'partials/uploader';
 @import 'partials/sample';
 @import 'partials/extras';
-@import 'partials/square_loader';
-@import 'partials/tabs';
-@import 'partials/upload_confirmation_modals';
-@import 'partials/code_modal';
+@import '../ModCommon/square_loader';
 @import 'partials/excel_upload';
