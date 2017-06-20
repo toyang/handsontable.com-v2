@@ -5,7 +5,6 @@
 .btn {
   @include vertical-align(52px);
 
-  font-size: 0.938em; /* 15px */
   font-weight: 400;
   text-align: center;
   white-space: nowrap;
@@ -16,7 +15,6 @@
   border: none;
 
   @media only screen and (min-width: $mediumWidth) {
-
     @include vertical-align(35px);
     width: auto;
   }
@@ -139,7 +137,7 @@
     color: $linkColor;
 
     &.large {
-      line-height: 37px;
+      line-height: 42px;
     }
 
     &:hover,
@@ -154,7 +152,7 @@
     color: $darkWhite;
 
     &.large {
-      line-height: 37px;
+      line-height: 42px;
     }
 
     &:hover,
@@ -174,7 +172,7 @@
     color: $darkWhite;
 
     &.large {
-      line-height: 37px;
+      line-height: 42px;
     }
 
     &:hover,
@@ -194,7 +192,7 @@
     color: $darkWhite;
 
     &.large {
-      line-height: 37px;
+      line-height: 42px;
     }
 
     &:hover,
@@ -209,7 +207,7 @@
     color: $brandRed;
 
     &.large {
-      line-height: 37px;
+      line-height: 42px;
     }
 
     &:hover,
@@ -224,7 +222,7 @@
     color: $brandGreen;
 
     &.large {
-      line-height: 37px;
+      line-height: 42px;
     }
 
     &:hover,
@@ -247,17 +245,18 @@
     padding: 0 33px;
 
     @media only screen and (min-width: $mediumWidth) {
-      @include vertical-align(42px);
+      @include vertical-align(48px);
     }
   }
 
   &.small {
-    font-size: 0.713em; /* 13px */
+    width: 90%;
+    font-size: 0.813em; /* 13px */
     margin: 0;
+    padding-top: 8px;
 
     @media only screen and (min-width: $mediumWidth) {
-      font-size: 0.813em; /* 13px */
-      padding: 0 20px;
+      width: inherit;
     }
   }
 }

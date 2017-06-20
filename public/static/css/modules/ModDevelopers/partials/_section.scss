@@ -1,8 +1,10 @@
+/**
+ * @author: Handsoncode
+ */
 
 .developers .section {
 
   .header-section {
-
     padding: 40px 0 10px 10px;
     text-align: left;
 
@@ -12,7 +14,6 @@
   }
 
   .section {
-
     background-color: $headerGrey;
     padding: 40px 15px 40px 15px;
     color: $baseGray;
@@ -23,13 +24,11 @@
       padding: 40px 30px 40px 30px;
     }
 
-    .contribiute {
-
+    .contribute {
       padding: 40px 0 0 0;
     }
 
     h3 {
-
       padding: 0 0 20px 0;
       text-align: left;
       line-height: 1.1em;
@@ -41,7 +40,6 @@
     }
 
     h4 {
-
       padding: 20px 0 20px 0;
       text-align: left;
       line-height: 0.7em;
@@ -54,7 +52,6 @@
   }
 
   .section-light {
-
     padding: 0;
     color: $baseGray;
     width: 100%;
@@ -71,7 +68,6 @@
     }
 
     ul, li {
-
       text-align: center;
       margin-left: 0;
 
@@ -82,7 +78,6 @@
     }
 
    li.disc {
-
       list-style-type: disc;
       margin-left: 25px;
     }
@@ -99,7 +94,6 @@
     }
 
     h4 {
-
       margin: 0;
       padding: 20px 0;
       line-height: 0.7em;
@@ -114,7 +108,6 @@
   }
 
   .btn {
-
     margin: 5px 0 10px 0;
 
     @media only screen and (min-width: $largeWidth) {
@@ -122,10 +115,7 @@
     }
   }
 
-
-
   .section-new {
-
     padding: 40px 15px 40px 15px;
     background-color: $headerGrey;
     color: $baseGray;
@@ -158,8 +148,8 @@
         margin: 20px 0 10px 0;
       }
     }
-    .divide {
 
+    .divide {
       border-bottom: 1px solid $lightGray
     }
   }

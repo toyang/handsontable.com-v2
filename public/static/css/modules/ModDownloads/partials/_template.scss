@@ -5,12 +5,12 @@
 .downloads {
 
   .header-downloads {
-    text-align: left;
     margin: 40px 0 40px;
+    text-align: left;
 
     @media only screen and (min-width: $mediumWidth) {
-      text-align: center;
       margin: 40px 0 60px;
+      text-align: center;
     }
   }
 
@@ -38,41 +38,9 @@
     }
   }
 
-  h2:before {
-    height: 1px;
-    width: 40px;
-    padding-top: 0;
-    top: 70%;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    content: "";
-    border-bottom: 2px solid $brandBlue;
-
-    @media only screen and (min-width: $mediumWidth) {
-      padding-top: 60px;
-      top: 50px;
-      left: 49%;
-    }
-  }
-
-  h2 {
-    margin: 0 0 20px 20px;
-    padding: 40px 10px 40px 0;
-    position: relative;
-    z-index: 1;
-    line-height: 1.1em;
-    font-weight: 400;
-
-    @media only screen and (min-width: $mediumWidth) {
-      padding: 60px 10px 40px 10px;
-      margin: 0 0 50px;
-    }
-  }
-
   h3 {
-    padding: 0;
     margin: 0;
+    padding: 0;
     text-align: left;
     line-height: 1.1em;
     font-weight: 400;
@@ -85,14 +53,15 @@
   .svg-icon {
     @include square(25px);
 
+    margin: 0 5px -5px 0;
     float: inherit;
     fill: $brandBlue;
-    margin: 0 5px -5px 0;
 
     @media only screen and (min-width: $largeWidth) {
-      @include square(20px);
 
+      @include square(20px);
       float: left;
+      margin: 10px 5px 0 0;
     }
   }
 }

@@ -1,13 +1,14 @@
+/**
+ * @author: Handsoncode
+ */
 
-.download .wrappers-w {
-
+.download .wrappers-module {
   text-align: center;
 
   p {
     margin: 0;
     font-size: 1em;
   }
-
 
   .svg-wrappers {
 
@@ -23,12 +24,6 @@
   }
 
   .progress {
-
-    @keyframes wrapper-pr {
-      from {}
-      to {filter: grayscale(100%) brightness(140%) opacity(40%) blur(3px);}
-    }
-
     filter: grayscale(100%) brightness(140%) opacity(40%) blur(0);
     -webkit-filter: grayscale(100%) brightness(140%) opacity(40%) blur(0);
 
@@ -39,26 +34,15 @@
     &:active,
     &:hover,
     &:focus {
-
       filter: grayscale(100%) brightness(140%) opacity(40%) blur(0);
-
-      @media only screen and (min-width: $largeWidth) {
-
-        filter: grayscale(100%) brightness(140%) opacity(40%) blur(3px);
-        animation-name: wrapper-pr;
-        animation-duration: 500ms;
-      }
     }
   }
   .in-progress {
-
     filter: grayscale(100%) brightness(140%) opacity(40%) blur(0);
-
     @include square(80px);
     margin: 13px;
     fill: $darkWhite;
     padding: 10px;
-
 
     @media only screen and (min-width: $largeWidth) {
       margin: 9px;

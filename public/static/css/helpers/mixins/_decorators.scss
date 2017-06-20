@@ -45,4 +45,18 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start', endColorstr='$end',GradientType=0 );
 }
 
+@mixin badge($color: #fff, $width: 7px, $height: 4px) {
+    position: relative;
+    z-index: 10;
+    &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: -#{$height};
+        width: 0;
+        height: 0;
+        border-top: $height solid $color;
+        border-right: $width solid transparent;
+    }
+}
 

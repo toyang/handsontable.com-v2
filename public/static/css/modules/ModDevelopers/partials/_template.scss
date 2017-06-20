@@ -10,7 +10,7 @@
       color: $brandGreen;
   }
 
-  .header-dist {
+  .header-developers {
     padding: 40px 10px 40px 10px;
     text-align: left;
 
@@ -37,16 +37,6 @@
     }
   }
 
-  h2 {
-    text-align: left;
-    line-height: 1.1em;
-    font-weight: 400;
-
-    @media only screen and (min-width: $mediumWidth) {
-      margin-top: 0;
-      text-align: center;
-    }
-  }
 
   h3 {
     padding: 0;
@@ -87,15 +77,14 @@
 
   .svg-icon {
     @include square(25px);
-
     fill: $darkWhite;
     margin-bottom: -5px;
 
     @media only screen and (min-width: $largeWidth) {
       @include square(30px);
-
     }
   }
+
   a {
     font-size: inherit;
     line-height: inherit;

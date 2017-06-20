@@ -25,32 +25,12 @@
     }
   }
 
-  h2:before {
-    height: 1px;
-    width: 40px;
-    top: 120%;
-    bottom: 0;
-    left:0;
-    position: absolute;
-    content: "";
-    border-bottom: 2px solid $brandBlue;
+  h2.divider:before {
+    top: 80%;
 
     @media only screen and (min-width: $mediumWidth) {
-      top: 50px;
+      top: 40%;
       left: 49%;
-    }
-  }
-
-  h2 {
-    margin: 0 0 20px 20px;
-    position: relative;
-    z-index : 1;
-    line-height: 1.1em;
-    font-weight: 400;
-
-    @media only screen and (min-width: $mediumWidth) {
-      margin: 0 0 50px;
-      padding-left: 0;
     }
   }
 

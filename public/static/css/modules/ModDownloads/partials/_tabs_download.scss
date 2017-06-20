@@ -1,0 +1,33 @@
+/**
+ * @author: Handsoncode
+ */
+
+.downloads .tabs-download {
+
+  a {
+    font-size: inherit;
+  }
+
+  .installation {
+    padding: 8px 5px 8px 10px;
+    margin-top: 10px;
+    overflow: auto;
+    background-color: #fff;
+    font-size: 0.9em;
+    font-family: $codeFont;
+    border: 1px solid $gray;
+
+    @media only screen and (min-width: $mediumWidth) {
+      font-size: 1em;
+    }
+
+    .color-red {
+      color: $brandRed;
+      font-size: 0.9em;
+    }
+  }
+
+  .extra {
+    margin: 10px 0 15px 0;
+  }
+}

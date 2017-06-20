@@ -9,14 +9,12 @@
   }
 
   a {
-
     width: 100%;
     color: inherit;
 
     &.active,
     &:hover,
     &:focus {
-
       color: $darkGray;
       text-decoration: none;
     }
@@ -29,7 +27,6 @@
   @media only screen and (min-width: $largeWidth) {
 
     a {
-
       @include border-bottom(transparent);
       width: 100%;
       color: inherit;
@@ -37,17 +34,14 @@
       &.active,
       &:hover,
       &:focus {
-
         color: #b5dafd;
         text-decoration: none;
       }
-
       &.active {
         cursor: default;
       }
     }
   }
-
 }
 
 header.features-nav {
@@ -248,29 +242,6 @@ header {
             color: $headerGrey;
           }
         }
-      }
-    }
-
-    .btn.small {
-      font-size: 0.923em; /* 12px */
-      font-weight: 400;
-      text-transform: none;
-      padding-top: 5px;
-      margin: 25px 5% 25px 5%;
-      width: 90%;
-      height: 48px;
-
-      /* [ styles only for desktop ] */
-      @media only screen and (min-width: $largeWidth) {
-        width: auto;
-        margin: 5px 0 0 0;
-        height: 35px;
-        padding-top: 0;
-
-        &:hover {
-          color: #FFF;
-        }
-
       }
     }
   }

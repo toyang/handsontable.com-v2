@@ -88,6 +88,94 @@ form.light {
   }
 }
 
+.subscribe-form {
+  margin: 0 0 20px 0;
+  padding: 20px 0;
+
+  @media only screen and (min-width: $largeWidth) {
+    padding: 20px 0;
+    margin-top: 30px;
+  }
+
+  span {
+    font-size: 0.7em;
+    float: right;
+    margin: 0;
+    padding: 5px 0 0 0;
+    color: $middleGray;
+
+    @media only screen and (min-width: $largeWidth) {
+      margin: 5px 200px 0 0;
+      padding: 0;
+    }
+  }
+
+  h3 {
+    font-weight: 300;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px
+  }
+
+  input[type="email"],
+  input[type="submit"] {
+    border-radius: 2px;
+  }
+
+  input[type="email"] {
+    margin: 0;
+    padding: 20px;
+    background: $headerGrey;
+    height: 47px;
+
+    @media only screen and (min-width: $largeWidth) {
+      float: left;
+      width: 65%;
+      margin-bottom: 5px;
+    }
+  }
+
+  input[type="submit"] {
+    width: 100%;
+    margin-top: 30px;
+
+    @media only screen and (min-width: $largeWidth) {
+      width: 25%;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      left: 20px;
+      float: left;
+      border-radius: 4px 4px 4px 4px;
+    }
+  }
+
+  #mce-responses {
+    position: absolute;
+    font-size: 0.715em;
+    min-height: 10px;
+    padding: 0;
+    top: 180px;
+    background: #fff;
+    text-align: center;
+    @media only screen and (min-width: $largeWidth) {
+      font-size: 0.5em;
+      top: 145px;
+      padding: 0;
+      min-height: auto;
+      text-align: left;
+      width: 65%;
+    }
+
+    #mce-error-response {
+      color: $brandRed;
+    }
+
+    #mce-success-response {
+      color: $brandGreen;
+    }
+  }
+}
+
 /* mailchimp overwrite styles */
 .mc-field-group {
   position: relative;
@@ -110,6 +198,7 @@ div.mce_inline_error {
 }
 
 .social-share {
+
   margin-top: 20px;
   padding: 20px;
   border: 1px solid $gray;
@@ -141,7 +230,7 @@ div.mce_inline_error {
     margin: 0;
     padding: 20px;
     background: $headerGrey;
-    height: 42px;
+    height: 47px;
 
     @media only screen and (min-width: $largeWidth) {
       width: 100%;
@@ -155,7 +244,7 @@ div.mce_inline_error {
     margin: 10px 10px 0 0;
 
     @media only screen and (min-width: $mediumWidth) {
-      margin: 5px 7px 14px 0;
+      margin: 5px 7px 5px 0;
     }
   }
 }

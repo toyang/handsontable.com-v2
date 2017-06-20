@@ -1,65 +1,32 @@
+/**
+ * @author: Handsoncode
+ */
 
 .download .products {
 
   .handsontable-ce {
-
-    @keyframes ce-on-hover-in {
-
-      from {
-        background-color: $brandGreen;
-        border-color: $brandGreenActive;
-      }
-
-      to {
-        background-color: $brandGreenActive;
-        border-color: $brandGreen;
-      }
-    }
-
-    @keyframes ce-on-hover-out {
-
-      from {
-        background-color: $brandGreenActive;
-        border-color: $brandGreen;
-      }
-
-      to {
-        background-color: $brandGreen;
-        border-color: $brandGreenActive;
-      }
-    }
-
     margin: 0 0 20px 0;
     padding: 20px 30px 20px 30px;
     border-top: 10px solid $brandGreenActive;
     background-color: $brandGreen;
     color: $darkWhite;
-    animation-name: ce-on-hover-out;
-    animation-duration: 500ms;
-    animation-iteration-count: 1;
+    transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    -webkit-transition: all .25s;
 
     @media only screen and (min-width: $largeWidth) {
-      height: 360px;
+      height: 365px;
     }
 
-    .divider {
-
-
-      width: 100%;
-      border-top: 1px solid $darkWhite;
-      margin: 20px 0 10px 0;
+    h3 {
+      font-weight: 600;
+      border-bottom: 1px solid white;
+      padding-bottom: 10px
     }
 
     &:hover,
     &:focus,
     &:active {
-
-      background-color: $darkWhite;
-      color: $darkWhite;
-
-      .divider {
-        border-top: 1px solid $darkWhite;
-      }
 
       .link-ce {
         color: $darkWhite;
@@ -70,38 +37,29 @@
       }
 
       @media only screen and (min-width: $largeWidth) {
-
-
         .link-ce {
           color: $darkWhite;
         }
-
         color: $darkWhite;
         background-color: $brandGreenActive;
         border-color: $brandGreen;
-        animation-name: ce-on-hover-in;
-        animation-duration: 500ms;
-        animation-iteration-count: 1;
       }
     }
 
     a.link-ce {
+      color: $darkWhite;
+      font-size: 1em;
+      float: right;
 
       &:hover,
       &:focus,
       &:active {
-
         text-decoration: underline;
         font-size: 1em;
       }
-
-      color: $darkWhite;
-      font-size: 1em;
-      float: right;
     }
 
     .link {
-
       display: flex;
       justify-content: flex-start;
       align-content: space-around;
@@ -113,11 +71,10 @@
     }
 
     .svg-icon {
-
       @include square(15px);
+      margin: 12px 10px 0 0;
       float: left;
       fill: $darkWhite;
-      margin: 12px 10px 0 0;
 
       @media only screen and (min-width: $largeWidth) {
         margin: 10px;
@@ -125,75 +82,51 @@
     }
 
     p {
-
       padding: 20px 0 40px 0;
     }
   }
 
   .handsontable-pro {
-
-    @keyframes pro-on-hover-in {
-
-      from {
-        background-color: $brandBlue;
-        border-color: $brandBlueActive;
-      }
-
-      to {
-        background-color: $brandBlueActive;
-        border-color: $brandBlue;
-      }
-    }
-
-    @keyframes pro-on-hover-out {
-
-      from {
-        background-color: $brandBlueActive;
-        border-color: $brandBlue;
-      }
-
-      to {
-        background-color: $brandBlue;
-        border-color: $brandBlueActive;
-      }
-    }
-
     margin: 0 0 20px 0;
     padding: 20px 30px 20px 30px;
     border-top: 10px solid $brandBlueActive;
     background-color: $brandBlue;
     color: $darkWhite;
-    animation-name: pro-on-hover-out;
-    animation-duration: 500ms;
-    animation-iteration-count: 1;
+    transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    -webkit-transition: all .25s;
 
     @media only screen and (min-width: $largeWidth) {
-      height: 360px;
+      height: 365px;
+    }
+
+    h3 {
+      font-weight: 600;
+      border-bottom: 1px solid white;
+      padding-bottom: 10px
     }
 
     ul li {
       margin: 0 0 0 20px;
+      padding: 0;
       list-style-type: disc;
 
-      .link-pro {
+      a {
         float: none;
-        line-height: 1em;
+        line-height: 0.5em;
+        color: $darkWhite;
+
+        &:hover,
+        &:focus,
+        &:active {
+          text-decoration: underline;
+        }
       }
-    }
-
-    .divider {
-
-      width: 100%;
-      border-top: 1px solid $darkWhite;
-      margin: 20px 0 10px 0;
     }
 
     &:hover,
     &:focus,
     &:active {
-
-      background-color: $brandBlueActive;
-      color: $darkWhite;
 
       .divider {
         border-top: 1px solid $darkWhite;
@@ -208,34 +141,26 @@
       }
 
       @media only screen and (min-width: $largeWidth) {
-
-
         color: $darkWhite;
         background-color: $brandBlueActive;
         border-color: $brandBlue;
-        animation-name: pro-on-hover-in;
-        animation-duration: 500ms;
-        animation-iteration-count: 1;
       }
     }
 
     a.link-pro {
+      color: $darkWhite;
+      font-size: 1em;
+      float: right;
 
       &:hover,
       &:focus,
       &:active {
-
         text-decoration: underline;
         font-size: 1em;
       }
-
-      color: $darkWhite;
-      font-size: 1em;
-      float: right;
     }
 
     .link {
-
       margin-top: 20px;
       display: flex;
       justify-content: flex-start;
@@ -249,7 +174,6 @@
     .svg-icon {
 
       @include square(15px);
-
       margin: 12px 10px 0 0;
       float: left;
       fill: $darkWhite;
@@ -263,15 +187,13 @@
       padding: 20px 0 0 0;
     }
 
-    .lot {
+    .second-paragraph {
       margin: 0;
       padding: 10px 0 0 0;
     }
   }
 
   .download-builder {
-
-
     margin: 0 0 20px 0;
     padding: 20px 40px 20px 40px;
     border-top: 10px solid $middleGray;
@@ -280,168 +202,19 @@
 
     @media only screen and (min-width: $largeWidth) {
       margin-top: 40px;
-      height: 120px;
-    }
-
-  }
-
-  .divider {
-    border-top: 1px solid $darkWhite;
-    margin: 20px 0 10px 0;
-  }
-
-  .subscriber-r {
-    margin: 0 0 20px 0;
-    padding: 20px 0;
-
-    @media only screen and (min-width: $largeWidth) {
-      padding: 20px 0;
-      margin-top: 30px;
-    }
-
-    span {
-      font-size: 0.7em;
-      float: right;
-      margin: 0;
-      padding: 5px 0 0 0;
-      color: $middleGray;
-
-      @media only screen and (min-width: $largeWidth) {
-        margin: 5px 200px 0 0;
-        padding: 0;
-      }
+      height: 140px;
     }
 
     h3 {
-
-      font-weight: 300;
-      margin: 0 0 20px 0;
-    }
-
-    form {
-      /* mailchimp class */
-      .mc-field-group {
-        @include rectangle(100%, 42px);
-        position: relative;
-        margin: 0 auto;
-
-        @media only screen and (min-width: $largeWidth) {
-          width: auto;
-        }
-
-        /*svg {
-          @include set-pseudo-element(50%, auto, auto, 14px);
-          @include square(11px);
-          margin-top: -5px;
-          fill: $middleGray;
-        }*/
-
-        div.mce_inline_error {
-          bottom: 44px;
-
-          @media only screen and (min-width: $largeWidth) {
-            bottom: -20px;
-          }
-        }
-      }
-
-      input[type="email"],
-      input[type="submit"] {
-        border-radius: 2px;
-      }
-
-      input[type="email"] {
-        margin: 0;
-        padding: 20px;
-        background: $headerGrey;
-        height: 42px; /* Firefox adds 2 extra pixels */
-
-        @media only screen and (min-width: $largeWidth) {
-          float: left;
-          width: 65%;
-          margin-bottom: 5px;
-        }
-
-      }
-
-      input[type="submit"] {
-        width: 100%;
-        margin-top: 30px;
-
-        @media only screen and (min-width: $largeWidth) {
-          width: 25%;
-          margin: 0;
-          padding: 0;
-          position: relative;
-          left: 20px;
-          float: left;
-          border-radius: 4px 4px 4px 4px;
-        }
-      }
-
-      #mce-responses {
-        position: absolute;
-        font-size: 0.715em;
-        min-height: 10px;
-        padding: 0;
-        top: 180px;
-        background: #fff;
-        text-align: center;
-        @media only screen and (min-width: $largeWidth) {
-          font-size: 0.5em;
-          top: 145px;
-          padding: 0;
-          min-height: auto;
-          text-align: left;
-          width: 65%;
-        }
-
-        #mce-error-response {
-          color: $brandRed;
-        }
-
-        #mce-success-response {
-          color: $brandGreen;
-        }
-      }
-    }
-
-
-  }
-
-  h3 {
-
-    font-weight: 600;
-    margin: 0;
-  }
-
-  /* Mixin */
-  @mixin badge($color: #fff, $width: 7px, $height: 4px) {
-    position: relative;
-    z-index: 10;
-    &:after {
-      content: '';
-      position: absolute;
-      right: 0;
-      bottom: -#{$height};
-      width: 0;
-      height: 0;
-      border-top: $height solid $color;
-      border-right: $width solid transparent;
+      font-weight: 600;
+      border-bottom: 1px solid white;
+      padding-bottom: 10px
     }
   }
 
-  /* Usage */
   button {
-    @include badge(
-            $color: $brandDarkNavy,
-            $width: 20px,
-            $height: 15px
-    );
-  }
+    @include badge( $color: $brandDarkNavy, $width: 20px, $height: 15px);
 
-  /* other styles */
-  button {
     display: inline-block;
     margin-right: -50px;
     width: 190px;
@@ -453,10 +226,5 @@
     border: 0;
     color: #fff;
     float: right;;
-  }
-
-  body {
-    margin: 20px;
-    font-family: $optionalFont, sans-serif;
   }
 }
