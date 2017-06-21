@@ -32,15 +32,12 @@
     color: #fff;
     padding-bottom: 20px;
 
-
-
     @media only screen and (min-width: $mediumWidth) {
       margin-top: -8px;
       margin-bottom: -5px;
       border-radius: 4px;
     }
   }
-
 
   .vibrant-blue {
     color: $brandVibrantBlue;
@@ -129,8 +126,6 @@
         margin: 20px 0 20px 0;
         padding-bottom: 42px;
         bottom: 0;
-
-
       }
     }
 

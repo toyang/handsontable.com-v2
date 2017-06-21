@@ -5,7 +5,6 @@
 .download {
 
   .header-download {
-
     padding: 40px 10px 40px 20px;
 
     @media only screen and (min-width: $mediumWidth) {
@@ -39,14 +38,13 @@
   }
 
   h2.divider:before {
-    top: 80%;
+     top: 80%;
 
     @media only screen and (min-width: $mediumWidth) {
       top: 40%;
       left: 49%;
     }
   }
-
 
   a {
     font-size: 0.8em;

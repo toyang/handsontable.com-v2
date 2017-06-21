@@ -58,8 +58,7 @@ header {
   /* [ styles only for desktop ] */
   @media only screen and (min-width: $largeWidth) {
     position: relative;
-    padding-top: 32px;
-    padding-bottom: 20px;
+    padding: 32px 0 20px;
   }
 
   /* [ burger icon triger show menu ] */
@@ -119,7 +118,6 @@ header {
     opacity: 0;
     display: none;
 
-
     /* [ styles only for desktop ] */
     @media only screen and (min-width: $largeWidth) {
       @include transform(translateY(0));
@@ -131,8 +129,14 @@ header {
       display: block;
     }
 
-    li {
+    .sign-in {
+      margin:0;
+      @media only screen and (min-width: $largeWidth) {
+        margin-right: 30px;
+      }
+    }
 
+    li {
       border-top: 1px solid $lightGray;
       position: relative;
       display: block;
@@ -140,18 +144,21 @@ header {
       width: 100%;
 
       &:first-child {
-      border: none;
-    }
-
+        border: none;
+      }
+      &:last-child {
+        padding: 15px;
+        @media only screen and (min-width: $largeWidth) {
+          padding: 0;
+        }
+      }
 
       /* [ styles only for desktop ] */
       @media only screen and (min-width: $largeWidth) {
-        padding: 0 14px;
+        padding: 0 15px;
         border: none;
         width: auto;
       }
-
-
 
       strong {
         font-weight: 600;
@@ -203,7 +210,6 @@ header {
         /* [ styles only for desktop ] */
         @media only screen and (min-width: $largeWidth) {
           margin-left: 10px;
-          padding-bottom: 19px;
         }
       }
 

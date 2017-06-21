@@ -4,6 +4,13 @@
 
 .download .products {
 
+  h3 {
+    font-weight: 600;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px
+  }
+
+
   .handsontable-ce {
     margin: 0 0 20px 0;
     padding: 20px 30px 20px 30px;
@@ -16,12 +23,6 @@
 
     @media only screen and (min-width: $largeWidth) {
       height: 365px;
-    }
-
-    h3 {
-      font-weight: 600;
-      border-bottom: 1px solid white;
-      padding-bottom: 10px
     }
 
     &:hover,
@@ -37,6 +38,7 @@
       }
 
       @media only screen and (min-width: $largeWidth) {
+
         .link-ce {
           color: $darkWhite;
         }
@@ -65,7 +67,7 @@
       align-content: space-around;
 
       @media only screen and (min-width: $largeWidth) {
-        margin-top: 66px;
+        margin-top: 26px;
         justify-content: flex-end;
       }
     }
@@ -98,12 +100,6 @@
 
     @media only screen and (min-width: $largeWidth) {
       height: 365px;
-    }
-
-    h3 {
-      font-weight: 600;
-      border-bottom: 1px solid white;
-      padding-bottom: 10px
     }
 
     ul li {
@@ -183,10 +179,6 @@
       }
     }
 
-    p {
-      padding: 20px 0 0 0;
-    }
-
     .second-paragraph {
       margin: 0;
       padding: 10px 0 0 0;
@@ -204,12 +196,15 @@
       margin-top: 40px;
       height: 140px;
     }
+  }
+
+  .subscribe-form {
 
     h3 {
-      font-weight: 600;
-      border-bottom: 1px solid white;
+      font-weight: 300;
       padding-bottom: 10px
     }
+
   }
 
   button {

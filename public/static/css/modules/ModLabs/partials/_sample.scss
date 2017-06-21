@@ -66,49 +66,49 @@
     }
   }
 
-    .green {
+  .green {
 
-      background-color: $brandGreen;
+    background-color: $brandGreen;
 
-      &:hover,
-      &:focus,
-      &:active {
+    &:hover,
+    &:focus,
+    &:active {
 
-        @media only screen and (min-width: $largeWidth) {
-          background-color: $brandGreenActive;
-        }
+      @media only screen and (min-width: $largeWidth) {
+        background-color: $brandGreenActive;
       }
-    }
-
-    .yellow {
-
-      background-color: $brandYellow;
-
-      &:hover,
-      &:focus,
-      &:active {
-
-        @media only screen and (min-width: $largeWidth) {
-          background-color: $brandYellowActive;
-        }
-      }
-    }
-
-    .red {
-
-      background-color: $brandRed;
-
-      &:hover,
-      &:focus,
-      &:active {
-
-        @media only screen and (min-width: $largeWidth) {
-          background-color: $brandRedActive;
-        }
-      }
-    }
-
-    a {
-      text-decoration: none;
     }
   }
+
+  .yellow {
+
+    background-color: $brandYellow;
+
+    &:hover,
+    &:focus,
+    &:active {
+
+      @media only screen and (min-width: $largeWidth) {
+        background-color: $brandYellowActive;
+      }
+    }
+  }
+
+  .red {
+
+    background-color: $brandRed;
+
+    &:hover,
+    &:focus,
+    &:active {
+
+      @media only screen and (min-width: $largeWidth) {
+        background-color: $brandRedActive;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

@@ -128,16 +128,24 @@
   &.ghost-blue,
   &.ghost-red,
   &.ghost-green,
-  &.ghost-white  {
+  &.ghost-white,
+  &.ghost-white-red {
     border: 2px solid currentColor;
     background: #FFF;
+
+    &.large {
+      line-height: 42px;
+    }
+
+    &.small {
+      line-height: 42px;
+      @media only screen and (min-width: $mediumWidth) {
+        line-height: 30px;
+      }
   }
 
   &.ghost-blue {
     color: $linkColor;
-
-    &.large {
-      line-height: 42px;
     }
 
     &:hover,
@@ -151,10 +159,6 @@
   &.ghost-white {
     color: $darkWhite;
 
-    &.large {
-      line-height: 42px;
-    }
-
     &:hover,
     &:focus,
     &:active {
@@ -166,14 +170,14 @@
   &.ghost-white-cta  {
     border: 2px solid currentColor;
     background: transparent;
-  }
-
-  &.ghost-white-cta {
-    color: $darkWhite;
 
     &.large {
       line-height: 42px;
     }
+  }
+
+  &.ghost-white-cta {
+    color: $darkWhite;
 
     &:hover,
     &:focus,
@@ -191,9 +195,6 @@
   &.ghost-white-red {
     color: $darkWhite;
 
-    &.large {
-      line-height: 42px;
-    }
 
     &:hover,
     &:focus,
@@ -206,10 +207,6 @@
   &.ghost-red {
     color: $brandRed;
 
-    &.large {
-      line-height: 42px;
-    }
-
     &:hover,
     &:focus,
     &:active {
@@ -221,9 +218,6 @@
   &.ghost-green {
     color: $brandGreen;
 
-    &.large {
-      line-height: 42px;
-    }
 
     &:hover,
     &:focus,
@@ -250,13 +244,7 @@
   }
 
   &.small {
-    width: 90%;
     font-size: 0.813em; /* 13px */
     margin: 0;
-    padding-top: 8px;
-
-    @media only screen and (min-width: $mediumWidth) {
-      width: inherit;
-    }
   }
 }
