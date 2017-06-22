@@ -3,7 +3,6 @@
  * Inspiration: http://ogom.github.io/css-tooltip/
  */
 
-
 .tooltip-btn {
   @include relative-top-left (0px, 5px);
   @include square (21px, false);

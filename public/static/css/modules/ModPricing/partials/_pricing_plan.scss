@@ -17,8 +17,6 @@
   border-radius: 4px;
   border: 1px solid $accentBorderColor;
 
-
-
   .developer-plus {
 
     h3 {
@@ -59,11 +57,6 @@
       font-weight: 600;
       color: $brandBlue;
     }
-    .btn {
-      @media (max-width: $mediumWidth - 1) {
-        border-radius: 0;
-      }
-    }
   }
 
   ul {
@@ -100,7 +93,6 @@
 
   .btn {
     min-width: 70%;
-    height: 30px;
     font-weight: 400;
 
     &.green {
@@ -156,7 +148,7 @@
   }
 
   svg {
-      display: none;
+    display: none;
 
     @media only screen and (min-width: $semiWidth) {
       margin-right: 10px;

@@ -3,7 +3,6 @@
  */
 
 .code-modal {
-
   height: 100%;
   width: 100%;
   position: fixed;
@@ -13,7 +12,6 @@
   z-index: 100000;
 
   .cancel {
-
     @include square(24px);
     float: right;
     fill: $brandRed;
@@ -35,7 +33,6 @@
   }
 
   .code {
-
     width: 90%;
     margin: 40px auto 60px auto;
     padding: 20px 20px 10px 20px;
@@ -65,14 +62,12 @@
   }
 
   .buttons {
-
     margin-left: auto;
     margin-right: auto;
     font-size: inherit;
   }
 
   .code-box {
-
     @include border;
     margin-top: 40px;
     margin-bottom: 40px;
@@ -83,7 +78,6 @@
     }
 
     .tabs {
-
       @include border-bottom;
       padding: 6px;
 
@@ -104,7 +98,6 @@
 
       svg {
         @include square (15px);
-
         position: relative;
         top: 2px;
         margin-right: 4px;
@@ -181,9 +174,7 @@
   }
 }
 
-
 .confirmation {
-
   height: 100%;
   width: 100%;
   top: 0;
@@ -203,15 +194,12 @@
   }
 
   .cancel {
-
     @include square(24px);
-
     float: right;
     fill: $brandRedActive;
   }
 
   .uploaded {
-
     width: 300px;
     margin: 40px auto 60px auto;
     padding: 20px 10px 10px 10px;
@@ -220,7 +208,6 @@
     border-radius: 10px;
 
     @media only screen and (min-width: $largeWidth) {
-
       height: 380px;
       width: 400px;
       margin: 90px auto 90px auto;
@@ -231,7 +218,6 @@
       margin-top: 50px;
       height: 100px;
       fill: $brandBlue;
-
       @media only screen and (min-width: $largeWidth) {
         margin-top: 50px;
       }
@@ -243,13 +229,11 @@
   }
 
   .uploaded-error {
-
     width: 300px;
     margin: 40px auto 60px auto;
     padding: 20px 20px 10px 10px;
     border-radius: 10px;
     background-color: $brandRed;
-
 
     @media only screen and (min-width: $largeWidth) {
       height: 400px;
@@ -278,10 +262,98 @@
   }
 
   .buttons {
-
     margin-left: auto;
     margin-right: auto;
     font-size: inherit;
+  }
+}
+
+.success {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.96);
+  z-index: 100000;
+  transition: all .25s ease-in-out;
+  -moz-transition: all .25s ease-in-out;
+  -webkit-transition: all .25s;
+
+  &:hover,
+  &:active,
+  &:focus {
+    opacity: 1;
+  }
+
+  .mail-message {
+    margin: 200px auto 200px auto;
+    text-align: center;
+
+    h1 {
+      font-weight: 600;
+
+      span {
+        float: inherit;
+        font-style: normal;
+        color: $brandBlue;
+      }
+    }
+
+    h2 {
+      margin: 10px 0 10px 0;
+      font-size: 1.4em;
+      padding: 0;
+    }
+
+    p {
+      color: $darkGray;
+      font-size: 1em;
+      margin: 20px;
+    }
+
+    svg {
+      @include square(150px);
+      fill: $darkGray;
+      margin: 40px 10px 0 10px;
+      padding: 0;
+
+    }
+  }
+
+  .phone-message {
+    margin: 200px auto 200px auto;
+    text-align: center;
+
+    h1 {
+      font-weight: 600;
+
+      span {
+        float: inherit;
+        font-style: normal;
+        color: $brandBlue;
+      }
+    }
+
+    h2 {
+      margin: 10px 0 10px 0;
+      font-size: 1.4em;
+      padding: 0;
+    }
+
+    p {
+      color: $darkGray;
+      font-size: 1em;
+      margin: 20px;
+    }
+
+    svg {
+      @include square(150px);
+      fill: $darkGray;
+      margin: 30px 10px 30px 10px;
+      padding: 0;
+
+    }
   }
 }
 

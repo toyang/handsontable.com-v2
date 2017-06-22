@@ -27,7 +27,6 @@
      font-weight: 400;
    }
 
-
    label,
    a {
      font-size: inherit;
@@ -68,11 +67,9 @@
    }
 
    .asterisk {
-
      color: $brandRed;
      font-size: 1em;
    }
-
 
    #form-sent,
    #form-error {
@@ -84,7 +81,6 @@
    }
 
    form {
-
      textarea {
        min-height: 175px;
        margin-bottom: 40px;

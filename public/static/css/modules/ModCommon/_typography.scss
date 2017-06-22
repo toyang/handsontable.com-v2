@@ -166,6 +166,17 @@ h5 {
   }
 }
 
+.sub-header {
+  padding: 0;
+  text-align: left;
+  font-family: $regularFont;
+  font-weight: 300;
+
+  @media only screen and (min-width: $mediumWidth) {
+    text-align: center;
+  }
+}
+
 blockquote {
   margin: 0;
   font-size: 1.80em; /* 24px */
@@ -180,8 +191,7 @@ blockquote {
 a,
 p,
 li {
-  font-size: 0.938em; /* 14px */
-  //line-height: 1.7em;
+  font-size: 0.938em;
 }
 
 p a {
@@ -208,7 +218,7 @@ strong {
 code {
   @include border;
   font-family: $regularFont;
-  font-size: 0.938em; /* 15px */
+  font-size: 0.938em;
   word-break: break-all;
   display: block;
   line-height: 1.6;

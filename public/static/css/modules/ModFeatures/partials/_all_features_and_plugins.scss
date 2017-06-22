@@ -4,14 +4,13 @@
 
 .features .all-features {
 
-  padding: 60px 0 90px 0;
+  padding-bottom: 90px;
   background-color: $headerGrey;
 
   h1 {
     padding-bottom: 40px;
     text-align: center;
   }
-
 
   h4 {
     margin:10px 0 20px 0;
@@ -24,38 +23,13 @@
     @media only screen and (min-width: $largeWidth) {
       text-align: left;
     }
-
   }
 
   ul, li {
-    font-size: 0.950em;
     line-height: 1.9em;
     text-align: center;
 
     @media only screen and (min-width: $largeWidth) {
-      text-align: left;
-    }
-  }
-
-  .links {
-    margin: 20px 0 20px 0;
-    float: left;
-    display: inline-block;
-    text-align: center;
-
-    @media only screen and (min-width: $largeWidth) {
-      text-align: left;
-      margin-left: 20px;
-    }
-  }
-  .align {
-    width: 100%;
-    display: block;
-    text-align: center;
-
-    @media only screen and (min-width: $largeWidth) {
-      width: 80%;
-      margin-left: 130px;
       text-align: left;
     }
   }

@@ -3,8 +3,6 @@
  */
 
 .support {
-
-
     .border-bottom {
         width: 40px;
         margin: 10px 60px 20px 0;
@@ -16,28 +14,14 @@
         }
     }
 
-
     h2 {
-        font-weight: 400;
-        text-align: left;
         margin:40px 0 0 0;
         padding: 0;
+        font-weight: 400;
+        text-align: left;
 
         @media only screen and (min-width: $largeWidth) {
             margin-top: 60px;
-            text-align: center;
-        }
-    }
-
-
-    .subhead {
-        padding: 0;
-        margin: 0 0 40px 0;
-        text-align: left;
-        font-family: $regularFont;
-        font-weight: 300;
-
-        @media only screen and (min-width: $largeWidth) {
             text-align: center;
         }
     }
@@ -47,18 +31,25 @@
         font-weight: 400;
     }
 
+    .sub-header {
+        margin: 0 0 40px 0;
+    }
+
     p {
         margin: 0;
     }
 
     .license-key {
-        font-size: 1.1em;
         margin-top: -8px;
         padding: 10px;
+        font-size: 1.1em;
         background-color: $middleGray;
-        color: $darkWhite;
+        color: $darkGray;
         border-radius: 6px;
+    }
 
+    .license-paragraph {
+        color: $darkWhite;
     }
 
     span {
@@ -69,12 +60,12 @@
     }
 
     h4 {
+        margin: -4px 0 16px 0;
+        padding: 0;
         font-size: 20px;
         font-weight: 400;
-        margin: -4px 0 16px 0;
         line-height: 1;
         text-align: left;
-        padding: 0;
 
         + p {
             text-align: left;
@@ -86,17 +77,10 @@
         }
     }
 
-    .support-r {
-
-        margin: 60px 0 60px 0;
-
-    }
-
     .community,
     .priority {
         width: 300px;
     }
-
 
     #form-sent,
     #form-error {
@@ -107,25 +91,22 @@
         margin: 0 0 20px;
     }
 
-
     form {
-        padding-bottom: 120px;
         margin: 0;
+        padding-bottom: 120px;
 
         @media only screen and (min-width: $largeWidth) {
-            padding-bottom: 0;
             margin-bottom: 90px;
-
+            padding-bottom: 0;
         }
 
         textarea {
-            min-height: 175px;
             margin-bottom: 6px;
+            min-height: 175px;
         }
     }
 
     img {
-
         width: 80px;
     }
 
@@ -134,13 +115,12 @@
     }
 
     .contact-footer {
-        text-align: center;
         margin: 0 0 60px 0;
-        line-height: 1.8em;
         padding: 0;
+        text-align: center;
+        line-height: 1.8em;
 
         a {
-
             font-size: inherit;
         }
     }

@@ -4,21 +4,11 @@
 
  .features  {
 
-
-  //.large-offset-2 {
-  //
-  //  margin-left: 0;
-  //
-  //   @media only screen and (min-width: $mediumWidth) {
-  //    margin-left :12.3333% !important;
-  //  }
-  // }
-
    .main-background {
-     @include gradient(#1ca7e4, #a4e3ff);
+     @include linear-gradient( #1ca7e4 0%, #a4e3ff 100%);
    }
 
-   .header-dist {
+   .header-features {
      padding: 60px 10px 0 10px;
      color: $darkWhite;
    }

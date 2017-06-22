@@ -7,27 +7,6 @@
     padding-top: 30px;
   }
 
-  #sales {
-    display: none;
-  }
-
-  #support {
-    display: none;
-  }
-
-
-  h2 {
-    margin: 40px 20px 0 20px;
-    padding: 0;
-    font-weight: 400;
-    text-align: left;
-
-    @media only screen and (min-width: $largeWidth) {
-      text-align: center;
-      margin:40px 0 0 0;
-    }
-  }
-
   h3 {
     margin: 0;
     font-weight: 400;
@@ -49,11 +28,11 @@
   }
 
   span {
+    margin-bottom: 10px;
     font-size: 0.875em;
     font-style: italic;
     color: $darkGray;
     float: left;
-    margin-bottom: 10px;
 
     @media only screen and (min-width: $largeWidth) {
       margin:0;
@@ -61,8 +40,8 @@
   }
 
   .subhead {
-    padding: 0;
     margin: 0 0 60px 0;
+    padding: 0;
     text-align: left;
     font-family: $regularFont;
     font-weight: 300;
@@ -72,36 +51,9 @@
     }
   }
 
-  .border-bottom {
-
-    margin: 10px 60px 20px 0;
-    width: 40px;
-    border-bottom: solid 2px $brandBlue;
-
-    @media only screen and (min-width: $mediumWidth) {
-      margin: 10px auto 60px auto;
-      display: block;
-    }
-  }
-
-  .love {
-
-    @include square(17px);
-    margin-right: 5px;
-    position: relative;
-    fill: #e87677;
-    top: 3px;
-
-    @media only screen and (min-width: $largeWidth) {
-      margin-right: 2px;
-    }
-  }
-
-
   img {
-
-    width: 80px;
     margin-bottom: 10px;
+    width: 80px;
 
     @media only screen and (min-width: $largeWidth) {
     margin-left: 30px;
@@ -109,14 +61,11 @@
   }
 
   .btn {
-
     margin-top: 10px;
     margin-bottom: 20px;
-    font-weight: 400;
   }
 
   svg {
-
     @include square(24px);
     margin: 0 5px -8px 5px;
     padding: 0;
@@ -124,15 +73,13 @@
   }
 
   .contact-footer {
-    text-align: center;
     margin: 0 0 60px 0;
-    line-height: 1.8em;
     padding: 0;
+    text-align: center;
+    line-height: 1.8em;
 
     a {
-
       font-size: inherit;
     }
   }
-
 }

@@ -1,51 +1,9 @@
 <section class="contact">
-
-    <!-- Here starts the success modal for sucssesfully sent message without phone number -->
-<!--
-    <div class="success">
-        <div class="row">
-            <div class="large-12 columns">
-                <div class="mail-message">
-                    <h1>Thanks <span>Marcin Kordacki</span></h1>
-                    <p>Your message has been sent<br/>
-                        We'll get back to you soon</p>
-                    <svg class="svg">
-                        <use xlink:href="#envelope"></use>
-                    </svg>
-                    <h2><a href="/team.html">Handsontable</a> team.</h2>
-                    <a href="/contact-work.html" class="btn medium blue">Return to the form</a>
-                </div>
-            </div>
-        </div>
-    </div>
--->
-
-    <!-- Here starts the success modal for sucssesfully sent message without phone number -->
-<!--
-
-    <div class="success">
-        <div class="row">
-            <div class="large-12 columns">
-                <div class="phone-message">
-                    <h1>Thanks <span>Marcin Kordacki</span></h1>
-                    <p>We will call you back on this number</p>
-                    <h2>+48 606 229 937</h2>
-                    <svg class="svg">
-                        <use xlink:href="#call"></use>
-                    </svg>
-                    <h2><a href="/team.html">Handsontable</a> team.</h2>
-                    <a href="/contact-work.html" class="btn medium blue">Return to the form</a>
-                </div>
-            </div>
-        </div>
-    </div>
--->
-
-    <h2>
+    <h2 class="divider">
         Get in touch with us
         <div class="border-bottom"></div>
     </h2>
-    <div class="row tabset" id="support">
+    <div class="row">
         <div class="small-12 large-6 columns">
             <div class="row">
                 <div class="small-12 large-3 columns">
@@ -58,14 +16,12 @@
                 </div>
             </div>
         </div>
-
         <div class="small-12 large-6 columns">
             <p>email:</p>
             <a href="mailto:support@handsontable.com?subject=General Question">support@handsontable.com</a>
         </div>
     </div>
-
-    <div class="row tabset" id="sales">
+    <div class="row">
         <div class="small-12 large-6 columns">
             <div class="row">
                 <div class="small-12 large-3 columns">
@@ -78,54 +34,45 @@
                 </div>
             </div>
         </div>
-
         <div class="small-12 large-6 columns">
             <p>email:</p>
             <a href="mailto:sales@handsontable.com?subject=Sales inquiry">sales@handsontable.com</a>
         </div>
     </div>
-
     <div class="row">
         <div class="large-12 columns">
-            <div class="tabs-in form">
-                <div class="scrollmenu">
+            <div class="tabs tabs-download form">
                     <div class="tab">
-                        <button id="defaultOpen" class="tablinks"
-                                onclick="openDownload(event, 'General', 'support'); openService(event, 'support')">
+                        <button>
                             <svg class="svg">
                                 <use xlink:href="#fa-info"></use>
                             </svg>
                             General
                         </button>
-                        <button class="tablinks"
-                                onclick="openDownload(event, 'Enterprise'); openService(event, 'sales')">
+                        <button>
                             <svg class="svg">
                                 <use xlink:href="#enterprise"></use>
                             </svg>
                             Enterprise
                         </button>
-                        <button class="tablinks"
-                                onclick="openDownload(event, 'Discounts'); openService(event, 'sales')">
+                        <button>
                             <svg class="svg">
                                 <use xlink:href="#discounts"></use>
                             </svg>
                             Discounts
                         </button>
-                        <button class="tablinks"
-                                onclick="openDownload(event, 'Resselers'); openService(event, 'sales')">
+                        <button>
                             <svg class="svg">
                                 <use xlink:href="#handshake"></use>
                             </svg>
                             Resselers
                         </button>
                     </div>
-                </div>
-
-                <div id="General" class="tabcontent">
+                <div class="tabcontent">
                     <div class="row">
                         <div class="large-12 columns">
-                            <div id="form-sent" class="notification success">Thanks for contacting us. We'll get back to
-                                you very soon.
+                            <div id="form-sent" class="notification success">Thanks for contacting us.
+                                We'll get back to you very soon.
                             </div>
                             <div id="form-error" class="notification error">Oops! We were unable to send the form.
                                 Please check the invalid fields and try again.
@@ -420,7 +367,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div id="Enterprise" class="tabcontent">
                     <div class="row">
                         <div class=" large-12 columns">
@@ -430,8 +376,7 @@
                             <div id="form-error" class="notification error">Oops! We were unable to send the form.
                                 Please check the invalid fields and try again.
                             </div>
-                            <form id="contact-form" class="clearfix form"
-                                  action="https://my.handsontable.com/api/contact" method="post">
+                            <form id="contact-form" class="clearfix form" action="https://my.handsontable.com/api/contact" method="post">
                                 <div class="row">
                                     <div class="large-6 columns">
                                         <p class="label">Full name<sup class="asterisk">*</sup></p>
@@ -443,8 +388,7 @@
                                     </div>
                                 </div>
                                 <p class="label">Company name</p>
-                                <input type="text" name="companyName"/>
-
+                                 <input type="text" name="companyName"/>
                                 <div class="row">
                                     <div class="large-6 columns">
                                         <p class="label">What is your inquiry</p>
@@ -466,13 +410,13 @@
                                         <input type="tel" name="phoneNumber"/>
                                     </div>
                                 </div>
-                                <input type="hidden" placeholder="License ID" name="orderId"/>
-                                <p class="label">Subject<sup class="asterisk">*</sup></p>
-                                <input type="text" required name="subject"/>
-                                <p class="label">Your message<sup class="asterisk">*</sup></p>
-                                <textarea required name="body"></textarea>
-                                <input type="hidden" name="returnTo" value="/contact-work.html"/>
-                                <input type="submit" class="btn large blue right" value="Send mail"/>
+                                    <input type="hidden" placeholder="License ID" name="orderId"/>
+                                        <p class="label">Subject<sup class="asterisk">*</sup></p>
+                                    <input type="text" required name="subject"/>
+                                        <p class="label">Your message<sup class="asterisk">*</sup></p>
+                                    <textarea required name="body"></textarea>
+                                        <input type="hidden" name="returnTo" value="/contact-work.html"/>
+                                        <input type="submit" class="btn large blue right" value="Send mail"/>
                                 <div class="phone">
                                     <input id="callBackEnterprise" type="checkbox" class="callBack">
                                     <label for="callBackEnterprise">
@@ -492,7 +436,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div id="Discounts" class="tabcontent">
                     <div class="row">
                         <div class=" large-12 columns">
@@ -536,33 +479,31 @@
                                         <input type="tel" name="phoneNumber"/>
                                     </div>
                                 </div>
-                                <input type="hidden" placeholder="License ID" name="orderId"/>
-                                <p class="label">Subject<sup class="asterisk">*</sup></p>
-                                <input type="text" required name="subject"/>
-                                <p class="label">Your message<sup class="asterisk">*</sup></p>
-                                <textarea required name="body"></textarea>
-                                <input type="hidden" name="returnTo" value="/contact-work.html"/>
-                                <input type="submit" class="btn large blue right" value="Send mail"/>
-                                <div class="phone">
-                                    <input id="callBackDiscounts" type="checkbox" class="callBack">
-                                    <label for="callBackDiscounts">
-                                        <svg class="checkbox">
-                                            <use xlink:href="#checkbox_icon"></use>
-                                        </svg>
-                                        <svg class="checkbox checked">
-                                            <use xlink:href="#checkbox_checked_icon"></use>
-                                        </svg>
-                                    </label>
-                                    <svg>
-                                        <use xlink:href="#phone"></use>
-                                    </svg>
-                                    Request a call back.
-                                </div>
+                                    <input type="hidden" placeholder="License ID" name="orderId"/>
+                                         <p class="label">Subject<sup class="asterisk">*</sup></p>
+                                    <input type="text" required name="subject"/>
+                                         <p class="label">Your message<sup class="asterisk">*</sup></p>
+                                     <textarea required name="body"></textarea>
+                                        <input type="hidden" name="returnTo" value="/contact-work.html"/>
+                                        <input type="submit" class="btn large blue right" value="Send mail"/>
+                                    <div class="phone">
+                                        <input id="callBackDiscounts" type="checkbox" class="callBack">
+                                        <label for="callBackDiscounts">
+                                            <svg class="checkbox">
+                                                <use xlink:href="#checkbox_icon"></use>
+                                            </svg>
+                                            <svg class="checkbox checked">
+                                             <use xlink:href="#checkbox_checked_icon"></use>
+                                         </svg>
+                                        </label>
+                                        <svg>
+                                            <use xlink:href="#phone"></use>
+                                        </svg>Request a call back.
+                                    </div>
                             </form>
                         </div>
                     </div>
                 </div>
-
                 <div id="Resselers" class="tabcontent">
                     <div class="row">
                         <div class=" large-12 columns">
@@ -584,29 +525,28 @@
                                         <input type="tel" name="phoneNumber"/>
                                     </div>
                                 </div>
-
-                                <input type="hidden" placeholder="License ID" name="orderId"/>
-                                <p class="label">Subject<sup class="asterisk">*</sup></p>
-                                <input type="text" required name="subject"/>
-                                <p class="label">Your message<sup class="asterisk">*</sup></p>
-                                <textarea required name="body"></textarea>
-                                <input type="hidden" name="returnTo" value="/contact-work.html"/>
-                                <input type="submit" class="btn large blue right" value="Send mail"/>
-                                <div class="phone">
-                                    <input id="callBackResselers" type="checkbox" class="callBack">
-                                    <label for="callBackResselers">
-                                        <svg class="checkbox">
-                                            <use xlink:href="#checkbox_icon"></use>
+                                    <input type="hidden" placeholder="License ID" name="orderId"/>
+                                         <p class="label">Subject<sup class="asterisk">*</sup></p>
+                                    <input type="text" required name="subject"/>
+                                        <p class="label">Your message<sup class="asterisk">*</sup></p>
+                                    <textarea required name="body"></textarea>
+                                        <input type="hidden" name="returnTo" value="/contact-work.html"/>
+                                        <input type="submit" class="btn large blue right" value="Send mail"/>
+                                    <div class="phone">
+                                        <input id="callBackResselers" type="checkbox" class="callBack">
+                                        <label for="callBackResselers">
+                                            <svg class="checkbox">
+                                                <use xlink:href="#checkbox_icon"></use>
+                                            </svg>
+                                            <svg class="checkbox checked">
+                                                <use xlink:href="#checkbox_checked_icon"></use>
+                                            </svg>
+                                        </label>
+                                        <svg>
+                                            <use xlink:href="#phone"></use>
                                         </svg>
-                                        <svg class="checkbox checked">
-                                            <use xlink:href="#checkbox_checked_icon"></use>
-                                        </svg>
-                                    </label>
-                                    <svg>
-                                        <use xlink:href="#phone"></use>
-                                    </svg>
-                                    Request a call back.
-                                </div>
+                                        Request a call back.
+                                    </div>
                             </form>
                         </div>
                     </div>
@@ -614,16 +554,12 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="large-12 columns">
-            <p class="contact-footer">
-                You might also look for an answer in our <a href="/knowledge-base.html">knowledge base</a>.<br/>
-                If there is an emergency get in touch with <a href="/support.html">our support</a>.
-            </p>
+        <div class="row">
+            <div class="large-12 columns">
+                <p class="contact-footer">
+                    You might also look for an answer in our <a href="/knowledge-base.html">knowledge base</a>.<br/>
+                    If there is an emergency get in touch with <a href="/support.html">our support</a>.
+                </p>
+            </div>
         </div>
-    </div>
 </section>
-
-<!-- tabs.js -->
-<script src="/static/js/common/tabs.js"></script>
-<script src="/static/js/common/small_tabs.js"></script>

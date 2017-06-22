@@ -54,7 +54,7 @@
     }
   }
 
-  .renew {
+  .renew-license {
     margin: 10px auto 0 auto;
     padding-top: 60px;
     display: block;
@@ -62,13 +62,7 @@
     clear: both;
 
     @media only screen and (max-width: $mediumWidth) {
-      padding: 60px 20px 0 20px;
-    }
-
-    a {
-      font-size: 0.875em;
-      line-height: 2.7em;
-      font-weight: 400;
+      padding: 60px 20px 20px 20px;
     }
   }
 }
