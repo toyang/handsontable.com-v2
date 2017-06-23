@@ -15,7 +15,7 @@ $brandDarkNavy: #15202f;
 $brandYellow: #FAD97F;
 $headerGrey: #f7f8fa;
 $brandVibrantBlue: #00e5ff;
-$barndLuminentGreen: #2fd069;
+$barndVibrantGreen: #2fd069;
 $brandLightBlue: #b5dafd;
 
 /* [ shades of grays] */
@@ -52,7 +52,7 @@ $iconColor: $brandDeepNavy;
 $backgroundTextColor: $darkWhite;
 
 /* [ occasional colors ] */
-$vividGreen: darken($barndLuminentGreen, 5%);
+$vividGreen: darken($barndVibrantGreen, 5%);
 
 /* [ active occasional colors ] */
 $vividGreenActive: darken($vividGreen, 20%);

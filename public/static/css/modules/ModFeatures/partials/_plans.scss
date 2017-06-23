@@ -3,7 +3,6 @@
  */
 
 .features .plans {
-
   display: inline;
 
   @media only screen and (min-width: $largeWidth) {
@@ -18,7 +17,7 @@
     border: 1px solid $brandVibrantGreen;
     border-radius: 5px;
 
-    @media only screen and (min-width: $largeWidth) {
+    @media only screen and (min-width: $mediumWidth) {
       width: 49%;
       margin: 20px 1% 20px 0;
       padding: 20px 40px 20px 0;
@@ -28,8 +27,7 @@
     }
 
     .holder {
-
-      @media only screen and (min-width: $largeWidth) {
+      @media only screen and (min-width: $mediumWidth) {
         display: inline-block;
       }
     }
@@ -39,7 +37,7 @@
       float: none;
       text-align: center;
 
-      @media only screen and (min-width: $largeWidth) {
+      @media only screen and (min-width: $mediumWidth) {
         padding: 10px 0 0 20px;
         display: inline;
         float: right;
@@ -50,7 +48,7 @@
       color: $darkWhite;
       text-align: center;
 
-      @media only screen and (min-width: $largeWidth) {
+      @media only screen and (min-width: $mediumWidth) {
         text-align: right;
       }
     }

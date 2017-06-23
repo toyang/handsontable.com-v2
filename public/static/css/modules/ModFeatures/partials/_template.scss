@@ -67,9 +67,8 @@
      }
    }
 
-   .brands-f {
+   .brands-module {
      margin-top: 20px;
-
 
      @media only screen and (min-width: $mediumWidth) {
        margin-top: 80px;
@@ -99,7 +98,6 @@
    }
 
    .cta {
-
      margin: 10px auto 20px auto;
      padding: 60px 10px 0;
      text-align: center;
@@ -118,7 +116,6 @@
       }
 
     p {
-
       padding: 0 10px 0 10px;
 
       @media only screen and (min-width: $mediumWidth) {
@@ -132,7 +129,6 @@
    }
 
    .p-icon {
-
     margin-left:0;
 
      @media only screen and (min-width: $mediumWidth) {
@@ -148,7 +144,6 @@
      margin:0 10px 0 20px;
 
      @media only screen and (min-width: $mediumWidth) {
-
        margin: 0 10px 0 20px;
        float: left;
      }
@@ -167,5 +162,4 @@
           float: left;
      }
    }
-
 }

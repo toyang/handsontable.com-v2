@@ -5,11 +5,22 @@
 /* [ local variables ] */
 
 footer {
-  padding-bottom: 47px;
-  text-align: center;
 
   @media only screen and (min-width: $largeWidth) {
     text-align: left;
+  }
+
+  .handsontable-paragraph {
+    font-size: 12px;
+    color: $darkGray;
+    padding-right: 20px;
+
+    svg {
+      @include rectangle(150px, 30px);
+      position: inherit;
+      margin-top: 20px;
+      fill: $brandBlack;
+    }
   }
 
   p {
@@ -18,14 +29,17 @@ footer {
 
   a {
     margin: 0;
+    color: $baseGray;
+    font-size: 13px;
 
     @media only screen and (min-width: $largeWidth) {
       margin: 6px 0;
       text-align: left;
     }
 
-    &[target="_blank"]:hover {
-      opacity: .8;
+    &:hover {
+      color: $gray;
+      text-decoration: none;
     }
 
     &:after {
@@ -35,52 +49,7 @@ footer {
   }
 
   .gray-stripe {
-    @include border-bottom;
-    padding: 36px 0 11px;
-    margin-bottom: 70px;
-  }
-
-
-  .social-links {
-    text-align: center;
-    position: relative;
-    bottom: -46px;
-    z-index: 2;
-
-    a {
-      @include circle(60px);
-      @include border;
-      position: relative;
-      display: inline-block;
-      margin: 0 2px;
-      background: #FFF;
-
-      svg {
-        @include transition(fill .3s ease);
-        @include square(32px);
-        @include absolute-top-left(50%, 50%);
-        margin: -16px 0 0 -16px;
-        fill: $brandBlue;
-      }
-    }
-  }
-
-  .copyright {
-    text-align: center;
-
-    a {
-      margin: 0;
-      font-size: inherit;
-      display: inline-block;
-    }
-
-    p {
-      margin: 3px 0 21px;
-    }
-
-    .handsoncode-logotype svg {
-      @include rectangle(220px, 20px);
-      fill: $middleGray;
-    }
+    padding: 36px 0 40px;
+    background: $headerGrey;
   }
 }

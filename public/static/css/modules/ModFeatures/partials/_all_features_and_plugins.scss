@@ -12,6 +12,13 @@
     text-align: center;
   }
 
+  h2.divider:before {
+    top: 83%;
+    @media only screen and (min-width: $mediumWidth) {
+      top: 50px;
+    }
+  }
+
   h4 {
     margin:10px 0 20px 0;
     padding: 0;

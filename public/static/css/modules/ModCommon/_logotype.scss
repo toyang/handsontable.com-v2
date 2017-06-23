@@ -29,11 +29,11 @@ header .logotype {
 
         svg {
             @include rectangle(130px, 25px);
-            fill: #000;
+            fill: $brandBlack;
 
             /* [ styles only for desktop ] */
             @media only screen and (min-width: $largeWidth) {
-                @include rectangle(160px, 40px);
+                @include rectangle(160px, 30px);
                 float: left;
             }
         }
@@ -51,7 +51,7 @@ header .logotype {
 
             /* [ styles only for desktop ] */
             @media only screen and (min-width: $largeWidth) {
-                @include rectangle(160px, 40px);
+                @include rectangle(160px, 30px);
                 float: left;
                 fill: #fff;
             }
