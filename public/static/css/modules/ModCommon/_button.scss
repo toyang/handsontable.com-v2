@@ -66,7 +66,7 @@
   }
 
   &.white {
-    color: $brandVibrantGreen;
+    color: $brandGreen;
     background: $darkWhite;
     border: 2px solid transparent;
     &:hover,
@@ -106,12 +106,12 @@
 
   &.vivid-green {
     color: #FFF;
-    background: $barndVibrantGreen;
+    background: $brandVibrantGreen;
     &:hover,
     &:focus,
     &:active {
       color: #FFFFFF;
-      background-color: $brandLuminentGreenActive;
+      background-color: $brandVibrantGreenActive;
     }
   }
 
